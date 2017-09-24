@@ -1,0 +1,16 @@
+- React Router (with layout): https://www.techiediaries.com/react-router-dom-v4
+    - Use HashRouter
+
+- Packages: React-Bootstrap, Axios, Numerals, Moment.js
+
+- Hosting, Rackspace Cloud Files "Static Site Hosting":
+  https://support.rackspace.com/how-to/set-up-a-static-website-with-cloud-files/
+  https://www.fullstackreact.com/articles/deploying-a-react-app-to-s3/
+
+  Use CyberDuck to synchronize changes from a local build to the remote container:
+    https://trac.cyberduck.io/wiki/help/en/howto/sync
+
+- MobX: https://mobx.js.org/getting-started.html
+
+- Kaminari & pagination:
+    http://codeloveandboards.com/blog/2014/10/06/rails-and-react-iii-parent-child-communication
