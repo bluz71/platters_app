@@ -17,10 +17,10 @@ const BaseLayout = () => {
           </Navbar.Header>
           <Nav>
             <IndexLinkContainer to="/">
-              <NavItem>Home</NavItem>
+              <NavItem eventKey={1}>Home</NavItem>
             </IndexLinkContainer>
             <IndexLinkContainer to="/about">
-              <NavItem>About</NavItem>
+              <NavItem eventKey={2}>About</NavItem>
             </IndexLinkContainer>
           </Nav>
         </Navbar>
