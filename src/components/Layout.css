@@ -1,0 +1,39 @@
+/*
+$grey-dark:        #515151;
+$grey-mid-dark:    #777;
+$grey-mid-light:   #eee;
+$grey-light:       #f8f8f8;
+$black-text:       #111;
+$black-background: #333;
+$green-yeti:       #3c9a5f;
+$red-yeti:         #f04124;
+*/
+
+.Footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3em;
+  border-top: 1px solid #eee;
+  background-color: #f8f8f8;
+}
+
+.Footer-list {
+  margin-top: 1em;
+  float: right;
+}
+
+.Footer-list a {
+  color: #515151;
+  font-size: 0.9em;
+  text-decoration: none;
+}
+
+.Footer-list a:hover {
+  color: #000;
+}
+
+.Footer-list li {
+  display: inline;
+  margin-right: 1em;
+}

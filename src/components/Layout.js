@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
-import { Navbar, Nav, NavItem } from 'react-bootstrap'
+import { Navbar, Nav, NavItem, Grid } from 'react-bootstrap'
 import { IndexLinkContainer } from 'react-router-bootstrap';
+import './Layout.css';
 import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 
-const BaseLayout = () => {
+const Layout = () => {
   return (
     <div className="base">
       <header>
@@ -29,13 +30,24 @@ const BaseLayout = () => {
         <Route path="/" exact component={HomePage} />
         <Route path="/about" component={AboutPage} />
       </div>
-      <footer>
-        <p>
-          React Router v4 Browser Example (c) 2017
-        </p>
+      <footer className="Footer">
+        <Grid fluid>
+          <div pullRight>
+            <small>
+              <ul className="Footer-list">
+                <Link to="/about">
+                  <li>About</li>
+                </Link>
+                <Link to="/">
+                  <li>Details</li>
+                </Link>
+              </ul>
+            </small>
+          </div>
+        </Grid>
       </footer>
     </div>
   );
 };
 
-export default BaseLayout;
+export default Layout;

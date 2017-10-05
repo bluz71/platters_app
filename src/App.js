@@ -1,10 +1,10 @@
 import React from 'react';
 import { HashRouter } from "react-router-dom";
-import BaseLayout from './components/BaseLayout';
+import Layout from './components/Layout';
 
 const App = () => (
   <HashRouter>
-    <BaseLayout />
+    <Layout />
   </HashRouter>
 )
 
