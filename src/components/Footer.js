@@ -1,0 +1,25 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Grid } from 'react-bootstrap'
+import './Footer.css';
+
+const Footer = () => ( 
+  <footer className="Footer">
+    <Grid fluid>
+      <div pullRight>
+        <small>
+          <ul className="Footer-list">
+            <Link to="/about">
+              <li>About</li>
+            </Link>
+            <Link to="/">
+              <li>Details</li>
+            </Link>
+          </ul>
+        </small>
+      </div>
+    </Grid>
+  </footer>
+);
+
+export default Footer;

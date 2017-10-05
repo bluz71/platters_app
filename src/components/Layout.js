@@ -1,53 +1,19 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
-import { Navbar, Nav, NavItem, Grid } from 'react-bootstrap'
-import { IndexLinkContainer } from 'react-router-bootstrap';
-import './Layout.css';
+import { Route } from 'react-router-dom';
+import Header from './Header';
+import Footer from './Footer';
 import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 
-const Layout = () => {
-  return (
-    <div className="base">
-      <header>
-        <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">Platters</a>
-            </Navbar.Brand>
-          </Navbar.Header>
-          <Nav>
-            <IndexLinkContainer to="/">
-              <NavItem eventKey={1}>Home</NavItem>
-            </IndexLinkContainer>
-            <IndexLinkContainer to="/about">
-              <NavItem eventKey={2}>About</NavItem>
-            </IndexLinkContainer>
-          </Nav>
-        </Navbar>
-      </header>
-      <div className="container">
-        <Route path="/" exact component={HomePage} />
-        <Route path="/about" component={AboutPage} />
-      </div>
-      <footer className="Footer">
-        <Grid fluid>
-          <div pullRight>
-            <small>
-              <ul className="Footer-list">
-                <Link to="/about">
-                  <li>About</li>
-                </Link>
-                <Link to="/">
-                  <li>Details</li>
-                </Link>
-              </ul>
-            </small>
-          </div>
-        </Grid>
-      </footer>
+const Layout = () => (
+  <div className="base">
+    <Header />
+    <div className="container">
+      <Route path="/" exact component={HomePage} />
+      <Route path="/about" component={AboutPage} />
     </div>
-  );
-};
+    <Footer />
+  </div>
+);
 
 export default Layout;

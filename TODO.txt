@@ -1,3 +1,7 @@
+- NavItem highlighting, disable active selection if possible.
+
+- Setup <Grid fluid?> for header and content sections.
+
 - React Router (with layout): https://www.techiediaries.com/react-router-dom-v4
     - Use HashRouter
 
