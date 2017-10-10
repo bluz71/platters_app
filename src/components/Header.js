@@ -8,7 +8,7 @@ const Header = () => (
       <Grid fluid>
         <Navbar.Header>
           <Navbar.Brand className="PlattersBrand">
-            <a href="#">platters</a>
+            <a href="/">platters</a>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
