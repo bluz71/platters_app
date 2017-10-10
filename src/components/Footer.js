@@ -6,7 +6,7 @@ import './Footer.css';
 const Footer = () => ( 
   <footer className="Footer">
     <Grid fluid>
-      <div pullRight>
+      <div>
         <small>
           <ul className="Footer-list">
             <Link to="/about">
