@@ -1,6 +1,8 @@
 import React from 'react';
 import { Grid, Navbar, Nav, NavItem } from 'react-bootstrap';
 import { IndexLinkContainer } from 'react-router-bootstrap';
+import './Header.css';
+import logo from '../images/platters-white.svg';
 
 const Header = () => (
   <header>
@@ -8,15 +10,15 @@ const Header = () => (
       <Grid fluid>
         <Navbar.Header>
           <Navbar.Brand className="PlattersBrand">
-            <a href="/">platters</a>
+            <a href="/"><img src={logo} alt="Platters" /> platters</a>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
-          <IndexLinkContainer to="/" activeClassName='selected'>
-            <NavItem eventKey={1}>Home</NavItem>
+          <IndexLinkContainer to="/artists" activeClassName='selected'>
+            <NavItem eventKey={1}>Artists</NavItem>
           </IndexLinkContainer>
-          <IndexLinkContainer to="/about" activeClassName="selected">
-            <NavItem eventKey={2}>About</NavItem>
+          <IndexLinkContainer to="/albums" activeClassName="selected">
+            <NavItem eventKey={2}>Albums</NavItem>
           </IndexLinkContainer>
         </Nav>
       </Grid>
