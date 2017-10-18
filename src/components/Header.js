@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Grid, Navbar, Nav, NavItem } from 'react-bootstrap';
 import { IndexLinkContainer } from 'react-router-bootstrap';
@@ -6,22 +7,27 @@ import logo from '../images/platters-white.svg';
 
 const Header = () => (
   <header>
-    <Navbar fixedTop>
-      <Grid fluid>
-        <Navbar.Header>
-          <Navbar.Brand className="PlattersBrand">
-            <a href="/"><img src={logo} alt="Platters" /> platters</a>
-          </Navbar.Brand>
-        </Navbar.Header>
+    <Navbar fixedTop fluid collapseOnSelect>
+      <Navbar.Header>
+        <Navbar.Brand className="PlattersBrand">
+          <a href="/"><img src={logo} alt="Platters" /> platters</a>
+        </Navbar.Brand>
+        <Navbar.Toggle />
+      </Navbar.Header>
+      <Navbar.Collapse>
         <Nav>
           <IndexLinkContainer to="/artists" activeClassName='selected'>
-            <NavItem eventKey={1}>Artists</NavItem>
+            <NavItem>Artists</NavItem>
           </IndexLinkContainer>
           <IndexLinkContainer to="/albums" activeClassName="selected">
-            <NavItem eventKey={2}>Albums</NavItem>
+            <NavItem>Albums</NavItem>
           </IndexLinkContainer>
         </Nav>
-      </Grid>
+        <Nav pullRight>
+          <NavItem>Log in</NavItem>
+          <NavItem>Sign up</NavItem>
+        </Nav>
+      </Navbar.Collapse>
     </Navbar>
   </header>
 );
