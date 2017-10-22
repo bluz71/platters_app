@@ -1,5 +1,0 @@
-Using Flow static analysis:
-  % yarn add flow-bin
-  % yarn flow init
-
-  % yarn flow

@@ -1,9 +1,5 @@
-- NavItem highlighting, disable active selection if possible.
-
-- Setup <Grid fluid?> for header and content sections.
-
-- React Router (with layout): https://www.techiediaries.com/react-router-dom-v4
-    - Use HashRouter
+- yarn add react-fontawesome
+    https://github.com/danawoodman/react-fontawesome
 
 - Packages: React-Bootstrap, Axios, Numerals, Moment.js
 
