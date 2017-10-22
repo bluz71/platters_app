@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Grid, Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { IndexLinkContainer } from 'react-router-bootstrap';
 import './Header.css';
 import logo from '../images/platters-white.svg';
