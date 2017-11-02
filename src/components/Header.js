@@ -2,7 +2,7 @@
 import React from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { IndexLinkContainer } from 'react-router-bootstrap';
-import './Header.css';
+import '../styles/Header.css';
 import logo from '../images/platters-white.svg';
 
 const Header = () => (

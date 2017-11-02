@@ -2,7 +2,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Grid } from 'react-bootstrap';
-import './Layout.css';
+import '../styles/Layout.css';
 import Header from './Header';
 import Footer from './Footer';
 import HomePage from './HomePage';

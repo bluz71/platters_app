@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid } from 'react-bootstrap'
-import './Footer.css';
+import '../styles/Footer.css';
 
 const Footer = () => ( 
   <footer className="Footer">
