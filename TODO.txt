@@ -1,3 +1,5 @@
+- FIX CORS!
+
 - yarn add react-fontawesome
     https://github.com/danawoodman/react-fontawesome
 
