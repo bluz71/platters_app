@@ -1,8 +1,9 @@
 // @flow
 import React, { Component } from 'react';
 import axios from 'axios';
+import { API_HOST } from '../config';
 
-const ARTISTS_URL = 'http://localhost:3000/artists.json';
+const ARTISTS_URL = `${API_HOST}/artists.json`;
 
 class Artists extends Component {
   constructor(props) {
@@ -10,13 +11,13 @@ class Artists extends Component {
 
     this.state = {
       artists: []
-    }
+    };
   }
 
   componentDidMount() {
-    axios.get(ARTISTS_URL).then(response => {
-      console.log(response);
-    });
+    axios.get(ARTISTS_URL)
+      .then(response => console.log(response))
+      .catch(error => console.log('error'));
   }
 
   render() {
