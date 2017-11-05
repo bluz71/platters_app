@@ -10,19 +10,35 @@ class Artists extends Component {
     super(props);
 
     this.state = {
-      artists: []
+      artists: [],
+      pagination: {}
     };
   }
 
   componentDidMount() {
     axios.get(ARTISTS_URL)
-      .then(response => console.log(response))
+      .then(response => {
+        this.setState({
+          artists: response.data.artists,
+          pagination: response.data.pagination
+        });
+      })
       .catch(error => console.log('error'));
+  }
+
+  renderArtists() {
+    return (
+      this.state.artists.map(artist => <li key={artist.id}>{artist.name}</li>)
+    );
   }
 
   render() {
     return (
-      <h2>Artists Page</h2>
+      <div>
+        <h2>Artists Page</h2>
+        <h3>{this.state.artists.length}</h3>
+        <ul>{this.renderArtists()}</ul>
+      </div>
     );
   }
 }
