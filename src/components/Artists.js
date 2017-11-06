@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Row, Col, PageHeader } from 'react-bootstrap';
 import { API_HOST } from '../config';
 
 const ARTISTS_URL = `${API_HOST}/artists.json`;
@@ -34,11 +35,14 @@ class Artists extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Artists Page</h2>
-        <h3>{this.state.artists.length}</h3>
-        <ul>{this.renderArtists()}</ul>
-      </div>
+      <Row>
+        <Col md={10}>
+          <div className="Artists">
+            <PageHeader>Artists</PageHeader>
+            <ul>{this.renderArtists()}</ul>
+          </div>
+        </Col>
+      </Row>
     );
   }
 }
