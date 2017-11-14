@@ -1,0 +1,39 @@
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+  color: #111;
+}
+
+h1 small {
+  font-size: 0.4em;
+}
+
+h2 small {
+  font-size: 0.45em;
+}
+
+h1 small,
+h2 small,
+h3 small {
+  font-weight: lighter;
+  color: #777;
+}
+
+h4 {
+  color: #515151;
+  margin-top: 1em;
+}
+
+p {
+  color: #515151;
+  font-size: 0.95em;
+}
+
+.page-header h1,
+.page-header h2,
+.page-header h3 {
+  display: inline;
+}

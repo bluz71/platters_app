@@ -2,6 +2,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Row, Col, PageHeader } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import pluralize from 'pluralize';
+import '../styles/Artists.css';
 import { API_HOST } from '../config';
 
 const ARTISTS_URL = `${API_HOST}/artists.json`;
@@ -23,13 +26,35 @@ class Artists extends Component {
           artists: response.data.artists,
           pagination: response.data.pagination
         });
-      })
-      .catch(error => console.log('error'));
+      });
+  }
+
+  renderHeader() {
+    const count = this.state.pagination.total_count;
+    return (
+      <PageHeader>
+        <div className="pull-left">
+          <h1>
+            Artists <small>({count} {pluralize('Artist', count)})</small>
+          </h1>
+        </div>
+        <div className="clearfix"></div>
+      </PageHeader>
+    );
   }
 
   renderArtists() {
     return (
-      this.state.artists.map(artist => <li key={artist.id}>{artist.name}</li>)
+      this.state.artists.map(artist => {
+        return (
+          <div key={artist.id} className="Artist">
+            <Link to="/">
+              <h2>{artist.name}</h2>
+              <p>{artist.description}</p>
+            </Link>
+          </div>
+        );
+      })
     );
   }
 
@@ -38,8 +63,8 @@ class Artists extends Component {
       <Row>
         <Col md={10}>
           <div className="Artists">
-            <PageHeader>Artists</PageHeader>
-            <ul>{this.renderArtists()}</ul>
+            {this.renderHeader()}
+            {this.renderArtists()}
           </div>
         </Col>
       </Row>

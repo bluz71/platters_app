@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.17.0",
     "flow-bin": "^0.57.3",
+    "pluralize": "^7.0.0",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.3",
     "react-dom": "^15.6.1",
