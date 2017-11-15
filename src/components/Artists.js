@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import pluralize from 'pluralize';
 import '../styles/Artists.css';
 import { API_HOST } from '../config';
+import Paginator from './Paginator';
 
 const ARTISTS_URL = `${API_HOST}/artists.json`;
 
@@ -65,6 +66,7 @@ class Artists extends Component {
           <div className="Artists">
             {this.renderHeader()}
             {this.renderArtists()}
+            <Paginator pagination={this.state.pagination} />
           </div>
         </Col>
       </Row>
