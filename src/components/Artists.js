@@ -59,6 +59,10 @@ class Artists extends Component {
     );
   }
 
+  pageArtists(pageNumber) {
+    console.log(pageNumber);
+  }
+
   render() {
     return (
       <Row>
@@ -66,7 +70,7 @@ class Artists extends Component {
           <div className="Artists">
             {this.renderHeader()}
             {this.renderArtists()}
-            <Paginator pagination={this.state.pagination} />
+            <Paginator pagination={this.state.pagination} onPage={this.pageArtists} />
           </div>
         </Col>
       </Row>

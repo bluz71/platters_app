@@ -2,7 +2,6 @@ import React from 'react';
 import { Pagination } from 'react-bootstrap';
 
 const Paginator = (props) => {
-  // onSelect={props.getNewArtists}
   return (
     <Pagination
       prev
@@ -14,6 +13,7 @@ const Paginator = (props) => {
       items={props.pagination.total_pages}
       maxButtons={7}
       activePage={props.pagination.current_page}
+      onSelect={props.onPage}
     />
   );
 };
