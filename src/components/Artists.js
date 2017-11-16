@@ -30,6 +30,16 @@ class Artists extends Component {
       });
   }
 
+  onPageChange = (pageNumber) => {
+    axios.get(`${ARTISTS_URL}?page=${pageNumber}`)
+      .then(response => {
+        this.setState({
+          artists: response.data.artists,
+          pagination: response.data.pagination
+        });
+      });
+  }
+
   renderHeader() {
     const count = this.state.pagination.total_count;
     return (
@@ -59,18 +69,16 @@ class Artists extends Component {
     );
   }
 
-  pageArtists(pageNumber) {
-    console.log(pageNumber);
-  }
-
   render() {
+    window.scrollTo(0,0);
+
     return (
       <Row>
         <Col md={10}>
           <div className="Artists">
             {this.renderHeader()}
             {this.renderArtists()}
-            <Paginator pagination={this.state.pagination} onPage={this.pageArtists} />
+            <Paginator pagination={this.state.pagination} onPageChange={this.onPageChange} />
           </div>
         </Col>
       </Row>

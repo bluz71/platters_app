@@ -1,19 +1,19 @@
 import React from 'react';
 import { Pagination } from 'react-bootstrap';
 
-const Paginator = (props) => {
+const Paginator = ({ pagination, onPageChange }) => {
   return (
     <Pagination
-      prev
-      next
-      first
-      last
+      prev={pagination.current_page === 1 ? false : true}
+      next={pagination.current_page === pagination.total_pages ? false : true}
+      first={pagination.current_page === 1 ? false : true}
+      last={pagination.current_page === pagination.total_pages ? false : true}
       ellipsis
       boundaryLinks
-      items={props.pagination.total_pages}
+      items={pagination.total_pages}
       maxButtons={7}
-      activePage={props.pagination.current_page}
-      onSelect={props.onPage}
+      activePage={pagination.current_page}
+      onSelect={onPageChange}
     />
   );
 };
