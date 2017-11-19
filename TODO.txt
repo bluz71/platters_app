@@ -1,4 +1,4 @@
-- FIX CORS!
+- `yarn flow` now lists many errors, try to fix.
 
 - yarn add react-fontawesome
     https://github.com/danawoodman/react-fontawesome
