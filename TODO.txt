@@ -1,3 +1,7 @@
+- Change to hashBrowser, read 'pushState' notes on create-react-app
+
+- Try to get back button working with pagination.
+
 - `yarn flow` now lists many errors, try to fix.
 
 - yarn add react-fontawesome
