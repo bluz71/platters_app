@@ -6,9 +6,15 @@
 
 - Packages: React-Bootstrap, Axios, Numerals, Moment.js
 
+- Hosting, Surge.sh:
+    https://surge.sh
+    https://surge.sh/help/getting-started-with-surge
+    https://hackernoon.com/simple-react-development-in-2017-113bd563691f
+    https://surge.sh/help/adding-a-custom-domain (custom domain)
+
 - Hosting, Rackspace Cloud Files "Static Site Hosting":
-  https://support.rackspace.com/how-to/set-up-a-static-website-with-cloud-files/
-  https://www.fullstackreact.com/articles/deploying-a-react-app-to-s3/
+    https://support.rackspace.com/how-to/set-up-a-static-website-with-cloud-files/
+    https://www.fullstackreact.com/articles/deploying-a-react-app-to-s3/
 
   Use CyberDuck to synchronize changes from a local build to the remote container:
     https://trac.cyberduck.io/wiki/help/en/howto/sync
