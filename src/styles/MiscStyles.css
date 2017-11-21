@@ -37,3 +37,8 @@ p {
 .page-header h3 {
   display: inline;
 }
+
+.icon {
+  color: #777;
+  font-weight: lighter;
+}

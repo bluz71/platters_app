@@ -2,6 +2,10 @@
   padding: 0.5em 0 0.5em 0.5em;
 }
 
+.Artist h2 {
+  margin-top: 0.25em;
+}
+
 .Artist:hover {
   background: rgba(0, 0, 0, .025);
   border-radius: 0.25em;
@@ -13,4 +17,8 @@
 
 .Artists h1 {
   font-size: 1.58em;
+}
+
+.icon {
+  font-size: 0.75em;
 }

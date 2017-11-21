@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Row, Col, PageHeader } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import FontAwesome from 'react-fontawesome';
 import pluralize from 'pluralize';
 import '../styles/Artists.css';
 import { API_HOST } from '../config';
@@ -62,6 +63,10 @@ class Artists extends Component {
             <Link to="/">
               <h2>{artist.name}</h2>
               <p>{artist.description}</p>
+              <span className="icon">
+                <FontAwesome name="music" /> {artist.albums_count}
+                <FontAwesome name="comment-o" className="spacer-left-xs" /> {artist.comments_count}
+              </span>
             </Link>
           </div>
         );
