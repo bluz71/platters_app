@@ -7,6 +7,7 @@ import Header from './Header';
 import Footer from './Footer';
 import HomePage from './HomePage';
 import Artists from './Artists';
+import ArtistShow from './ArtistShow';
 import Albums from './Albums';
 import AboutPage from './AboutPage';
 import DetailsPage from './DetailsPage';
@@ -20,6 +21,7 @@ const Layout = () => (
         <Switch>
           <Route path="/" exact component={HomePage} />
           <Route path="/artists" exact component={Artists} />
+          <Route path="/artist/:id" component={ArtistShow}  />
           <Route path="/albums" exact component={Albums} />
           <Route path="/about" component={AboutPage} />
           <Route path="/details" component={DetailsPage} />

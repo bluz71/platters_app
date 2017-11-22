@@ -60,7 +60,7 @@ class Artists extends Component {
       this.state.artists.map(artist => {
         return (
           <div key={artist.id} className="Artist">
-            <Link to="/">
+            <Link to={`/artist/${artist.slug}`}>
               <h2>{artist.name}</h2>
               <p>{artist.description}</p>
               <span className="icon">
