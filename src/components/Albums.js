@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import axios from 'axios';
-import { PageHeader } from 'react-bootstrap';
+import { Col, PageHeader } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 import pluralize from 'pluralize';
 import numeral from 'numeral';
@@ -47,25 +47,46 @@ class Albums extends Component {
 
     return (
       <PageHeader>
-        <h1>
-          Albums <small>({albumsCount} {pluralize('Album', count)})</small>
-        </h1>
+        Albums <small>({albumsCount} {pluralize('Album', count)})</small>
       </PageHeader>
     );
   }
 
   renderAlbums() {
+    if (this.state.albums.length === 0) {
+      return <h4>No matching albums</h4>
+    }
+
     return (
-      this.state.albums.map(album => <li key={album.id}>{album.title}</li>)
+      this.state.albums.map(album => {
+        return (
+          <Col key={album.id} md={6}>
+            <div className="Album">
+              <h2>{album.title}</h2>
+              <h3>by {album.artist} <small>({album.tracks_count} {pluralize('Track', album.tracks_count)})</small></h3>
+              <div className="icon">
+                <FontAwesome name="calendar" /> {album.year}
+                <FontAwesome name="tag" className="spacer-left-xs" /> {album.genre}
+                <FontAwesome name="comment-o" className="spacer-left-xs" /> {album.comments_count}
+              </div>
+              <img className="img-responsive" src={album.cover} />
+            </div>
+          </Col>
+        );
+      })
     );
   }
 
   render() {
+    window.scrollTo(0,0);
+
     return (
       <div className="Albums">
         {this.renderHeader()}
-        <ul>{this.renderAlbums()}</ul>
-        <Paginator pagination={this.state.pagination} onPageChange={this.onPageChange} />
+        {this.renderAlbums()}
+        <Col md={8}>
+          <Paginator pagination={this.state.pagination} onPageChange={this.onPageChange} />
+        </Col>
       </div>
     );
   }

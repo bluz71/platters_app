@@ -48,17 +48,16 @@ class Artists extends Component {
 
     return (
       <PageHeader>
-        <div className="pull-left">
-          <h1>
-            Artists <small>({artistsCount} {pluralize('Artist', count)})</small>
-          </h1>
-        </div>
-        <div className="clearfix"></div>
+        Artists <small>({artistsCount} {pluralize('Artist', count)})</small>
       </PageHeader>
     );
   }
 
   renderArtists() {
+    if (this.state.artists.length === 0) {
+      return <h4>No matching artists</h4>
+    }
+
     return (
       this.state.artists.map(artist => {
         return (

@@ -1,3 +1,78 @@
-.Albums h1 {
-  font-size: 1.58em;
+.Albums h4 {
+  text-align: center;
+}
+
+.Albums .col-md-6 {
+  padding: 0 10px;
+}
+
+.Album {
+  background-color: #f8f8f8;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  height: 18.5em;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.Album h2 {
+  padding: 0 0.25em 0.1em 0.25em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-align: center;
+}
+
+.Album h3 {
+  margin-top: 0.25em;
+  text-align: center;
+  color: #111;
+  font-size: 1em;
+}
+
+.Album h3 small {
+  font-size: 0.8em;
+}
+
+.Album a {
+  color: #515151;
+  text-decoration: none;
+}
+
+.Album a:hover {
+  color: #3c9a5f;
+}
+
+.icon {
+  text-align: center;
+  font-size: 0.75em;
+  color: #515151;
+  margin-bottom: 0.5em;
+}
+
+.Album img {
+  height: 125px;
+  width: 125px;
+  float: left;
+  margin: 15px 15px 15px 20px;
+  border: 1px solid #777;
+  border-radius: 4px;
+}
+
+.Album img:hover {
+  border: 1px solid #3c9a5f;
+}
+
+.Album ul {
+  display: inline;
+  font-size: 0.75em;
+  color: #515151;
+}
+
+.Album ul li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  list-style-type: none;
 }
