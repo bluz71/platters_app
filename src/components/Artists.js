@@ -5,6 +5,7 @@ import { Row, Col, PageHeader } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import pluralize from 'pluralize';
+import numeral from 'numeral';
 import '../styles/Artists.css';
 import { API_HOST } from '../config';
 import Paginator from './Paginator';
@@ -43,11 +44,13 @@ class Artists extends Component {
 
   renderHeader() {
     const count = this.state.pagination.total_count;
+    const artistsCount = numeral(count).format('0,0');
+
     return (
       <PageHeader>
         <div className="pull-left">
           <h1>
-            Artists <small>({count} {pluralize('Artist', count)})</small>
+            Artists <small>({artistsCount} {pluralize('Artist', count)})</small>
           </h1>
         </div>
         <div className="clearfix"></div>
