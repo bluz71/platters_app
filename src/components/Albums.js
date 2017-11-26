@@ -54,7 +54,7 @@ class Albums extends Component {
 
   renderAlbums() {
     if (this.state.albums.length === 0) {
-      return <h4>No matching albums</h4>
+      return <h4>No matching albums</h4>;
     }
 
     return (
@@ -69,7 +69,10 @@ class Albums extends Component {
                 <FontAwesome name="tag" className="spacer-left-xs" /> {album.genre}
                 <FontAwesome name="comment-o" className="spacer-left-xs" /> {album.comments_count}
               </div>
-              <img className="img-responsive" src={album.cover} />
+              <img className="img-responsive" src={album.cover_url} alt={album.title} />
+              <ul>
+                {album.tracks.map(track => <li>{track}</li>)}
+              </ul>
             </div>
           </Col>
         );
