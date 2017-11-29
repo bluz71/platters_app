@@ -48,7 +48,7 @@ class Artists extends Component {
 
     return (
       <PageHeader>
-        Artists <small>({artistsCount} {pluralize('Artist', count)})</small>
+        Artists {count > 0 && <small>({artistsCount} {pluralize('Artist', count)})</small>}
       </PageHeader>
     );
   }

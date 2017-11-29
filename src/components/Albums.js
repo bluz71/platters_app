@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Col, PageHeader } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import pluralize from 'pluralize';
 import numeral from 'numeral';
@@ -47,7 +48,7 @@ class Albums extends Component {
 
     return (
       <PageHeader>
-        Albums <small>({albumsCount} {pluralize('Album', count)})</small>
+        Albums {count > 0 && <small>({albumsCount} {pluralize('Album', count)})</small>}
       </PageHeader>
     );
   }
@@ -62,14 +63,16 @@ class Albums extends Component {
         return (
           <Col key={album.id} md={6}>
             <div className="Album">
-              <h2>{album.title}</h2>
-              <h3>by {album.artist} <small>({album.tracks_count} {pluralize('Track', album.tracks_count)})</small></h3>
+              <h2><Link to={`/artist/${album.artist_slug}/album/${album.album_slug}`}>{album.title}</Link></h2>
+              <h3>by <Link to={`/artist/${album.artist_slug}`}>{album.artist}</Link> <small>({album.tracks_count} {pluralize('Track', album.tracks_count)})</small></h3>
               <div className="icon">
                 <FontAwesome name="calendar" /> {album.year}
                 <FontAwesome name="tag" className="spacer-left-xs" /> {album.genre}
                 <FontAwesome name="comment-o" className="spacer-left-xs" /> {album.comments_count}
               </div>
-              <img className="img-responsive" src={album.cover_url} alt={album.title} />
+              <Link to={`/artist/${album.artist_slug}/album/${album.album_slug}`}>
+                <img className="img-responsive" src={album.cover_url} alt={album.title} />
+              </Link>
               <ul>
                 {album.tracks.map(track => <li>{track}</li>)}
               </ul>
