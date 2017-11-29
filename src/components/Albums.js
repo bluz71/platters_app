@@ -63,8 +63,12 @@ class Albums extends Component {
         return (
           <Col key={album.id} md={6}>
             <div className="Album">
-              <h2><Link to={`/artist/${album.artist_slug}/album/${album.album_slug}`}>{album.title}</Link></h2>
-              <h3>by <Link to={`/artist/${album.artist_slug}`}>{album.artist}</Link> <small>({album.tracks_count} {pluralize('Track', album.tracks_count)})</small></h3>
+              <h2>
+                <Link to={`/artist/${album.artist_slug}/album/${album.album_slug}`}>{album.title}</Link>
+              </h2>
+              <h3>
+                by <Link to={`/artist/${album.artist_slug}`}>{album.artist}</Link> <small>({album.tracks_count} {pluralize('Track', album.tracks_count)})</small>
+              </h3>
               <div className="icon">
                 <FontAwesome name="calendar" /> {album.year}
                 <FontAwesome name="tag" className="spacer-left-xs" /> {album.genre}
