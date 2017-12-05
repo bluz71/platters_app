@@ -6,15 +6,21 @@ import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import pluralize from 'pluralize';
 import numeral from 'numeral';
+import queryString from 'query-string';
+import _ from 'lodash';
 import '../styles/Artists.css';
 import { API_HOST } from '../config';
 import Paginator from './Paginator';
 
-const ARTISTS_URL = `${API_HOST}/artists.json`;
+const ARTISTS_ENDPOINT = `${API_HOST}/artists.json`;
 
 class Artists extends Component {
   constructor(props) {
     super(props);
+
+    // params is not React state since we do not want to re-render when it
+    // changes; just use an instance variable instead.
+    this.params = {};
 
     this.state = {
       artists: [],
@@ -23,7 +29,37 @@ class Artists extends Component {
   }
 
   componentDidMount() {
-    axios.get(ARTISTS_URL)
+    this.getArtists();
+  }
+
+  handlePageChange = (pageNumber) => {
+    _.merge(this.params, { page: pageNumber });
+    this.getArtists();
+  }
+
+  handleAll = () => {
+    this.params = {};
+    this.getArtists();
+  }
+
+  handleFilter = (letter) => {
+    this.params = { letter: letter };
+    this.getArtists();
+  }
+
+  artistsURL() {
+    const params = queryString.stringify(this.params);
+
+    if (params.length > 0) {
+      return `${ARTISTS_ENDPOINT}?${params}`;
+    }
+    else {
+      return ARTISTS_ENDPOINT;
+    }
+  }
+
+  getArtists() {
+    axios.get(this.artistsURL())
       .then(response => {
         this.setState({
           artists: response.data.artists,
@@ -32,14 +68,10 @@ class Artists extends Component {
       });
   }
 
-  onPageChange = (pageNumber) => {
-    axios.get(`${ARTISTS_URL}?page=${pageNumber}`)
-      .then(response => {
-        this.setState({
-          artists: response.data.artists,
-          pagination: response.data.pagination
-        });
-      });
+  letterActivity(letter) {
+    if (this.params.letter === letter) {
+      return 'active';
+    }
   }
 
   renderHeader() {
@@ -50,6 +82,19 @@ class Artists extends Component {
       <PageHeader>
         Artists {count > 0 && <small>({artistsCount} {pluralize('Artist', count)})</small>}
       </PageHeader>
+    );
+  }
+
+  renderFilters() {
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+    return (
+      <div className="filters">
+        <ul className="pagination pagination-sm">
+          <li onClick={this.handleAll}><a>All</a></li>
+          {letters.map((letter, index) => <li onClick={() => this.handleFilter(letter)} key={index} className={this.letterActivity(letter)}><a>{letter}</a></li>)}
+        </ul>
+      </div>
     );
   }
 
@@ -76,6 +121,14 @@ class Artists extends Component {
     );
   }
 
+  renderPaginator() {
+    if (this.state.pagination.total_pages > 1) {
+      return (
+        <Paginator pagination={this.state.pagination} onPageChange={this.handlePageChange} />
+      );
+    }
+  }
+
   render() {
     window.scrollTo(0,0);
 
@@ -84,8 +137,9 @@ class Artists extends Component {
         <Col md={10}>
           <div className="Artists">
             {this.renderHeader()}
+            {this.renderFilters()}
             {this.renderArtists()}
-            <Paginator pagination={this.state.pagination} onPageChange={this.onPageChange} />
+            {this.renderPaginator()}
           </div>
         </Col>
       </Row>

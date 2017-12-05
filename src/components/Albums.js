@@ -21,22 +21,12 @@ class Albums extends Component {
     // params is not React state since we do not want to re-render when it
     // changes; just use an instance variable instead.
     this.params = {};
+    this.starting = true;
 
     this.state = {
       albums: [],
       pagination: {}
     };
-  }
-
-  albumsURL() {
-    const params = queryString.stringify(this.params);
-
-    if (params.length > 0) {
-      return `${ALBUMS_ENDPOINT}?${params}`;
-    }
-    else {
-      return ALBUMS_ENDPOINT;
-    }
   }
 
   componentDidMount() {
@@ -58,6 +48,17 @@ class Albums extends Component {
     this.getAlbums();
   }
 
+  albumsURL() {
+    const params = queryString.stringify(this.params);
+
+    if (params.length > 0) {
+      return `${ALBUMS_ENDPOINT}?${params}`;
+    }
+    else {
+      return ALBUMS_ENDPOINT;
+    }
+  }
+
   getAlbums() {
     axios.get(this.albumsURL())
       .then(response => {
@@ -66,6 +67,9 @@ class Albums extends Component {
           pagination: response.data.pagination
         });
       });
+    if (this.starting) {
+      this.starting = false;
+    }
   }
 
   letterActivity(letter) {
@@ -99,7 +103,7 @@ class Albums extends Component {
   }
 
   renderAlbums() {
-    if (this.state.albums.length === 0) {
+    if (this.state.albums.length === 0 && !this.starting) {
       return <h4>No matching albums</h4>;
     }
 
