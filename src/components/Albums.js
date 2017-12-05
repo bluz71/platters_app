@@ -6,15 +6,21 @@ import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import pluralize from 'pluralize';
 import numeral from 'numeral';
+import queryString from 'query-string';
+import _ from 'lodash';
 import '../styles/Albums.css';
 import { API_HOST } from '../config';
 import Paginator from './Paginator';
 
-const ALBUMS_URL = `${API_HOST}/albums.json`;
+const ALBUMS_ENDPOINT = `${API_HOST}/albums.json`;
 
 class Albums extends Component {
   constructor(props) {
     super(props);
+
+    // params is not React state since we do not want to re-render when it
+    // changes; just use an instance variable instead.
+    this.params = {};
 
     this.state = {
       albums: [],
@@ -22,8 +28,38 @@ class Albums extends Component {
     };
   }
 
+  albumsURL() {
+    const params = queryString.stringify(this.params);
+
+    if (params.length > 0) {
+      return `${ALBUMS_ENDPOINT}?${params}`;
+    }
+    else {
+      return ALBUMS_ENDPOINT;
+    }
+  }
+
   componentDidMount() {
-    axios.get(ALBUMS_URL)
+    this.getAlbums();
+  }
+
+  handlePageChange = (pageNumber) => {
+    _.merge(this.params, { page: pageNumber });
+    this.getAlbums();
+  }
+
+  handleAll = () => {
+    this.params = {};
+    this.getAlbums();
+  }
+
+  handleFilter = (letter) => {
+    this.params = { letter: letter };
+    this.getAlbums();
+  }
+
+  getAlbums() {
+    axios.get(this.albumsURL())
       .then(response => {
         this.setState({
           albums: response.data.albums,
@@ -32,14 +68,10 @@ class Albums extends Component {
       });
   }
 
-  onPageChange = (pageNumber) => {
-    axios.get(`${ALBUMS_URL}?page=${pageNumber}`)
-      .then(response => {
-        this.setState({
-          albums: response.data.albums,
-          pagination: response.data.pagination
-        });
-      });
+  letterActivity(letter) {
+    if (this.params.letter === letter) {
+      return 'active';
+    }
   }
 
   renderHeader() {
@@ -50,6 +82,19 @@ class Albums extends Component {
       <PageHeader>
         Albums {count > 0 && <small>({albumsCount} {pluralize('Album', count)})</small>}
       </PageHeader>
+    );
+  }
+
+  renderFilters() {
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+    return (
+      <div className="filters">
+        <ul className="pagination pagination-sm">
+          <li onClick={this.handleAll}><a>All</a></li>
+          {letters.map((letter, index) => <li onClick={() => this.handleFilter(letter)} key={index} className={this.letterActivity(letter)}><a>{letter}</a></li>)}
+        </ul>
+      </div>
     );
   }
 
@@ -78,7 +123,7 @@ class Albums extends Component {
                 <img className="img-responsive" src={album.cover_url} alt={album.title} />
               </Link>
               <ul>
-                {album.tracks.map(track => <li>{track}</li>)}
+                {album.tracks.map((track, index) => <li key={index}>{track}</li>)}
               </ul>
             </div>
           </Col>
@@ -87,16 +132,25 @@ class Albums extends Component {
     );
   }
 
+  renderPaginator() {
+    if (this.state.pagination.total_pages > 1) {
+      return (
+        <Col md={8}>
+          <Paginator pagination={this.state.pagination} onPageChange={this.handlePageChange} />
+        </Col>
+      );
+    }
+  }
+
   render() {
     window.scrollTo(0,0);
 
     return (
       <div className="Albums">
         {this.renderHeader()}
+        {this.renderFilters()}
         {this.renderAlbums()}
-        <Col md={8}>
-          <Paginator pagination={this.state.pagination} onPageChange={this.onPageChange} />
-        </Col>
+        {this.renderPaginator()}
       </div>
     );
   }

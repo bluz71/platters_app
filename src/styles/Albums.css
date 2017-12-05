@@ -6,6 +6,14 @@
   padding: 0 10px;
 }
 
+.Albums .filters {
+  text-align: center;
+}
+
+.Albums .filters .pagination {
+  margin: 0 0 0.5em;
+}
+
 .Album {
   background-color: #f8f8f8;
   border: 1px solid #eee;

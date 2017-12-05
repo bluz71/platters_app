@@ -3,10 +3,6 @@ import React from 'react';
 import { Pagination } from 'react-bootstrap';
 
 const Paginator = ({ pagination, onPageChange }) => {
-  if (pagination.total_pages < 2) {
-    return;
-  }
-
   return (
     <Pagination
       prev={pagination.current_page === 1 ? false : true}
