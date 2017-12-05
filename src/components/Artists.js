@@ -42,7 +42,7 @@ class Artists extends Component {
     this.getArtists();
   }
 
-  handleFilter = (letter) => {
+  handleLetter = (letter) => {
     this.params = { letter: letter };
     this.getArtists();
   }
@@ -92,7 +92,7 @@ class Artists extends Component {
       <div className="filters">
         <ul className="pagination pagination-sm">
           <li onClick={this.handleAll}><a>All</a></li>
-          {letters.map((letter, index) => <li onClick={() => this.handleFilter(letter)} key={index} className={this.letterActivity(letter)}><a>{letter}</a></li>)}
+          {letters.map((letter, index) => <li onClick={() => this.handleLetter(letter)} key={index} className={this.letterActivity(letter)}><a>{letter}</a></li>)}
         </ul>
       </div>
     );

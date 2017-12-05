@@ -14,6 +14,10 @@
   margin: 0 0 0.5em;
 }
 
+.Albums .filters .pagination li {
+  cursor: pointer;
+}
+
 .Album {
   background-color: #f8f8f8;
   border: 1px solid #eee;
@@ -57,6 +61,10 @@
   font-size: 0.75em;
   color: #515151;
   margin-bottom: 0.5em;
+}
+
+.icon a {
+  cursor: pointer;
 }
 
 .Album img {

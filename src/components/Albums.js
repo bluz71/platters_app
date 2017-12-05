@@ -43,7 +43,17 @@ class Albums extends Component {
     this.getAlbums();
   }
 
-  handleFilter = (letter) => {
+  handleYear = (year) => {
+    this.params = { year: year }
+    this.getAlbums();
+  }
+
+  handleGenre = (genre) => {
+    this.params = { genre: genre }
+    this.getAlbums();
+  }
+
+  handleLetter = (letter) => {
     this.params = { letter: letter };
     this.getAlbums();
   }
@@ -96,7 +106,7 @@ class Albums extends Component {
       <div className="filters">
         <ul className="pagination pagination-sm">
           <li onClick={this.handleAll}><a>All</a></li>
-          {letters.map((letter, index) => <li onClick={() => this.handleFilter(letter)} key={index} className={this.letterActivity(letter)}><a>{letter}</a></li>)}
+          {letters.map((letter, index) => <li onClick={() => this.handleLetter(letter)} key={index} className={this.letterActivity(letter)}><a>{letter}</a></li>)}
         </ul>
       </div>
     );
@@ -119,8 +129,8 @@ class Albums extends Component {
                 by <Link to={`/artist/${album.artist_slug}`}>{album.artist}</Link> <small>({album.tracks_count} {pluralize('Track', album.tracks_count)})</small>
               </h3>
               <div className="icon">
-                <FontAwesome name="calendar" /> {album.year}
-                <FontAwesome name="tag" className="spacer-left-xs" /> {album.genre}
+                <a onClick={() => this.handleYear(album.year)}><FontAwesome name="calendar" /> {album.year}</a>
+                <a onClick={() => this.handleGenre(album.genre)}><FontAwesome name="tag" className="spacer-left-xs" /> {album.genre}</a>
                 <FontAwesome name="comment-o" className="spacer-left-xs" /> {album.comments_count}
               </div>
               <Link to={`/artist/${album.artist_slug}/album/${album.album_slug}`}>
