@@ -104,20 +104,18 @@ class Artists extends Component {
     }
 
     return (
-      this.state.artists.map(artist => {
-        return (
-          <div key={artist.id} className="Artist">
-            <Link to={`/artist/${artist.slug}`}>
-              <h2>{artist.name}</h2>
-              <p>{artist.description}</p>
-              <span className="icon">
-                <FontAwesome name="music" /> {artist.albums_count}
-                <FontAwesome name="comment-o" className="spacer-left-xs" /> {artist.comments_count}
-              </span>
-            </Link>
-          </div>
-        );
-      })
+      this.state.artists.map(artist =>
+        <div key={artist.id} className="Artist">
+          <Link to={`/artist/${artist.slug}`}>
+            <h2>{artist.name}</h2>
+            <p>{artist.description}</p>
+            <span className="icon">
+              <FontAwesome name="music" /> {artist.albums_count}
+              <FontAwesome name="comment-o" className="spacer-left-xs" /> {artist.comments_count}
+            </span>
+          </Link>
+        </div>
+      )
     );
   }
 
