@@ -44,17 +44,17 @@ class Albums extends Component {
   }
 
   handleYear = (year) => {
-    this.params = { year: year }
+    this.params = { year: year };
     this.getAlbums();
   }
 
   handleGenre = (genre) => {
-    this.params = { genre: genre }
+    this.params = { genre: genre };
     this.getAlbums();
   }
 
   handleLetter = (letter) => {
-    this.params = { letter: letter };
+    this.params.letter = letter;
     this.getAlbums();
   }
 
@@ -91,10 +91,12 @@ class Albums extends Component {
   renderHeader() {
     const count = this.state.pagination.total_count;
     const albumsCount = numeral(count).format('0,0');
+    const genre = this.params.hasOwnProperty('genre') ? this.params.genre : '';
+    const year = this.params.hasOwnProperty('year') ? ` from ${this.params.year}` : '';
 
     return (
       <PageHeader>
-        Albums {count > 0 && <small>({albumsCount} {pluralize('Album', count)})</small>}
+        Albums {count > 0 && <small>({albumsCount} {genre} {pluralize('Album', count)}{year})</small>}
       </PageHeader>
     );
   }
