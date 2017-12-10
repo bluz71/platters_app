@@ -2,6 +2,9 @@
 
 - `yarn flow` now lists many errors, try to fix.
 
+- Use debounce in search form (to prevent too many AJAX calls per user
+  keydowns)
+
 - Hosting, Surge.sh:
     https://surge.sh
     https://surge.sh/help/getting-started-with-surge

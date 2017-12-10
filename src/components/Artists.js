@@ -21,6 +21,7 @@ class Artists extends Component {
     // params is not React state since we do not want to re-render when it
     // changes; just use an instance variable instead.
     this.params = {};
+    this.starting = true;
 
     this.state = {
       artists: [],
@@ -66,6 +67,9 @@ class Artists extends Component {
           pagination: response.data.pagination
         });
       });
+    if (this.starting) {
+      this.starting = false;
+    }
   }
 
   letterActivity(letter) {
@@ -80,7 +84,7 @@ class Artists extends Component {
 
     return (
       <PageHeader>
-        Artists {count > 0 && <small>({artistsCount} {pluralize('Artist', count)})</small>}
+        Artists {!this.starting && <small>({artistsCount} {pluralize('Artist', count)})</small>}
       </PageHeader>
     );
   }
@@ -99,7 +103,7 @@ class Artists extends Component {
   }
 
   renderArtists() {
-    if (this.state.artists.length === 0) {
+    if (this.state.artists.length === 0 && !this.starting) {
       return <h4>No matching artists</h4>
     }
 

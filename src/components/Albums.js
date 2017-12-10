@@ -96,7 +96,7 @@ class Albums extends Component {
 
     return (
       <PageHeader>
-        Albums {count > 0 && <small>({albumsCount} {genre} {pluralize('Album', count)}{year})</small>}
+        Albums {!this.starting && <small>({albumsCount} {genre} {pluralize('Album', count)}{year})</small>}
       </PageHeader>
     );
   }
