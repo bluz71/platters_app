@@ -43,7 +43,7 @@ class Artists extends Component {
   }
 
   handleLetter = (letter) => {
-    this.params = { letter: letter };
+    this.params = { letter };
     this.getArtists();
   }
 
