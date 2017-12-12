@@ -21,7 +21,7 @@ class Artists extends Component {
     // params is not React state since we do not want to re-render when it
     // changes; just use an instance variable instead.
     this.params = {};
-    this.starting = true;
+    this.mounted = false;
 
     this.state = {
       artists: [],
@@ -62,14 +62,14 @@ class Artists extends Component {
   getArtists() {
     axios.get(this.artistsURL())
       .then(response => {
+        if (!this.mounted) {
+          this.mounted = true;
+        }
         this.setState({
           artists: response.data.artists,
           pagination: response.data.pagination
         });
       });
-    if (this.starting) {
-      this.starting = false;
-    }
   }
 
   letterActivity(letter) {
@@ -84,7 +84,7 @@ class Artists extends Component {
 
     return (
       <PageHeader>
-        Artists {!this.starting && <small>({artistsCount} {pluralize('Artist', count)})</small>}
+        Artists {this.mounted && <small>({artistsCount} {pluralize('Artist', count)})</small>}
       </PageHeader>
     );
   }
@@ -103,7 +103,7 @@ class Artists extends Component {
   }
 
   renderArtists() {
-    if (this.state.artists.length === 0 && !this.starting) {
+    if (this.mounted && this.state.artists.length === 0) {
       return <h4>No matching artists</h4>
     }
 

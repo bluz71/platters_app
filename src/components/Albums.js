@@ -21,7 +21,7 @@ class Albums extends Component {
     // params is not React state since we do not want to re-render when it
     // changes; just use an instance variable instead.
     this.params = {};
-    this.starting = true;
+    this.mounted = false;
 
     this.state = {
       albums: [],
@@ -72,14 +72,14 @@ class Albums extends Component {
   getAlbums() {
     axios.get(this.albumsURL())
       .then(response => {
+        if (!this.mounted) {
+          this.mounted = true;
+        }
         this.setState({
           albums: response.data.albums,
           pagination: response.data.pagination
         });
       });
-    if (this.starting) {
-      this.starting = false;
-    }
   }
 
   letterActivity(letter) {
@@ -96,7 +96,7 @@ class Albums extends Component {
 
     return (
       <PageHeader>
-        Albums {!this.starting && <small>({albumsCount} {genre} {pluralize('Album', count)}{year})</small>}
+        Albums {this.mounted && <small>({albumsCount} {genre} {pluralize('Album', count)}{year})</small>}
       </PageHeader>
     );
   }
@@ -115,7 +115,7 @@ class Albums extends Component {
   }
 
   renderAlbums() {
-    if (this.state.albums.length === 0 && !this.starting) {
+    if (this.mounted && this.state.albums.length === 0) {
       return <h4>No matching albums</h4>;
     }
 
