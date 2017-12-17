@@ -34,7 +34,7 @@ class Albums extends Component {
   }
 
   handlePageChange = (pageNumber) => {
-    _.merge(this.params, { page: pageNumber });
+    this.params = { ...this.params, page: pageNumber };
     this.getAlbums();
   }
 

@@ -34,7 +34,7 @@ class Artists extends Component {
   }
 
   handlePageChange = (pageNumber) => {
-    _.merge(this.params, { page: pageNumber });
+    this.params = { ...this.params, page: pageNumber };
     this.getArtists();
   }
 
@@ -105,7 +105,7 @@ class Artists extends Component {
 
   renderArtists() {
     if (this.mounted && this.state.artists.length === 0) {
-      return <h4>No matching artists</h4>
+      return <h4>No matching artists</h4>;
     }
 
     return (
