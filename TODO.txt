@@ -1,11 +1,3 @@
-- Fix albums error (filtering params will be the issue):
-    - go to albums
-    - go "next"
-    - go "next"
-    - go to "N" albums
-
-- Change to hashBrowser, read 'pushState' notes on create-react-app
-
 - `yarn flow` now lists many errors, try to fix.
 
 - Use debounce in search form (to prevent too many AJAX calls per user

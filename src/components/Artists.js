@@ -44,6 +44,7 @@ class Artists extends Component {
   }
 
   handleLetter = (letter) => {
+    this.params = _.omit(this.params, ['page']);
     this.params = { letter };
     this.getArtists();
   }

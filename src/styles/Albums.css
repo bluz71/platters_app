@@ -56,14 +56,14 @@
   color: #3c9a5f;
 }
 
-.icon {
+.Album .icon {
   text-align: center;
   font-size: 0.75em;
   color: #515151;
   margin-bottom: 0.5em;
 }
 
-.icon a {
+.Album .icon a {
   cursor: pointer;
 }
 

@@ -44,16 +44,19 @@ class Albums extends Component {
   }
 
   handleYear = (year) => {
+    this.params = _.omit(this.params, ['page']);
     this.params = { year };
     this.getAlbums();
   }
 
   handleGenre = (genre) => {
+    this.params = _.omit(this.params, ['page']);
     this.params = { genre };
     this.getAlbums();
   }
 
   handleLetter = (letter) => {
+    this.params = _.omit(this.params, ['page']);
     this.params.letter = letter;
     this.getAlbums();
   }
