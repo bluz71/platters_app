@@ -19,3 +19,10 @@
     https://trac.cyberduck.io/wiki/help/en/howto/sync
 
 - MobX: https://mobx.js.org/getting-started.html
+
+- How to upgrade React from 15.X to 16.X:
+    % yarn add react@^16.2.0 react-dom@^16.2.0
+
+- Add enzyme:
+    % yarn add enzyme enzyme-adapter-react-16 --dev
+    % yarn add jest-enzyme --dev
