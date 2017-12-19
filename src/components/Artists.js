@@ -25,7 +25,8 @@ class Artists extends Component {
 
     this.state = {
       artists: [],
-      pagination: {}
+      pagination: {},
+      error: null
     };
   }
 
@@ -68,7 +69,13 @@ class Artists extends Component {
         }
         this.setState({
           artists: response.data.artists,
-          pagination: response.data.pagination
+          pagination: response.data.pagination,
+          error: null
+        });
+      })
+      .catch(error => {
+        this.setState({
+          error: error
         });
       });
   }
@@ -104,6 +111,10 @@ class Artists extends Component {
   }
 
   renderArtists() {
+    if (this.state.error) {
+      return <h4>Error retrieving artists</h4>;
+    }
+
     if (this.mounted && this.state.artists.length === 0) {
       return <h4>No matching artists</h4>;
     }
@@ -125,7 +136,7 @@ class Artists extends Component {
   }
 
   renderPaginator() {
-    if (this.state.pagination.total_pages > 1) {
+    if (!this.state.error && this.state.pagination.total_pages > 1) {
       return (
         <Paginator pagination={this.state.pagination} onPageChange={this.handlePageChange} />
       );

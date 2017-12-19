@@ -25,7 +25,8 @@ class Albums extends Component {
 
     this.state = {
       albums: [],
-      pagination: {}
+      pagination: {},
+      error: null
     };
   }
 
@@ -80,7 +81,13 @@ class Albums extends Component {
         }
         this.setState({
           albums: response.data.albums,
-          pagination: response.data.pagination
+          pagination: response.data.pagination,
+          error: null
+        });
+      })
+      .catch(error => {
+        this.setState({
+          error: error
         });
       });
   }
@@ -118,6 +125,10 @@ class Albums extends Component {
   }
 
   renderAlbums() {
+    if (this.state.error) {
+      return <h4>Error retrieving albums</h4>;
+    }
+
     if (this.mounted && this.state.albums.length === 0) {
       return <h4>No matching albums</h4>;
     }
