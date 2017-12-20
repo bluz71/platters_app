@@ -39,6 +39,12 @@ class Artists extends Component {
     window.onpopstate = null;
   }
 
+  shouldComponentUpdate(nextProps) {
+    console.log(this.props.history.location);
+    console.log(nextProps.history.location);
+    return _.isEqual(this.props.history.location, nextProps.location);
+  }
+
   handleBackButton = (event) => {
     event.preventDefault();
     if (this.props.history.location.state) {
@@ -51,20 +57,28 @@ class Artists extends Component {
   }
 
   handlePageChange = (pageNumber) => {
-    this.params = { ...this.params, page: pageNumber };
-    this.props.history.push('/artists', this.params);
-    this.getArtists();
+    const newParams = { ...this.params, page: pageNumber };
+    this.manageParams(newParams);
   }
 
   handleAll = () => {
-    this.params = {};
-    this.props.history.push('/artists', this.params);
-    this.getArtists();
+    const newParams = {};
+    this.manageParams(newParams);
   }
 
   handleLetter = (letter) => {
-    this.params = _.omit(this.params, ['page']);
-    this.params = { letter };
+    const newParams = _.omit(this.params, ['page']);
+    newParams.letter = letter;
+    this.manageParams(newParams);
+  }
+
+  manageParams(newParams) {
+    if (_.isEqual(this.params, newParams)) {
+      // Nothing to do, new params have not changed, just return.
+      return;
+    }
+
+    this.params = newParams;
     this.props.history.push('/artists', this.params);
     this.getArtists();
   }
@@ -91,6 +105,7 @@ class Artists extends Component {
           pagination: response.data.pagination,
           error: null
         });
+        window.scrollTo(0,0);
       })
       .catch(error => {
         this.setState({
@@ -163,8 +178,6 @@ class Artists extends Component {
   }
 
   render() {
-    window.scrollTo(0,0);
-
     return (
       <Row>
         <Col md={10}>

@@ -1,4 +1,5 @@
-- Figure out back button, if possible.
+- Pushing state to history is causing a re-render, we don't want that. See if
+  componentShouldUpdate can help.
 
 - `yarn flow` now lists many errors, try to fix.
 
@@ -26,3 +27,8 @@
 - Add enzyme:
     % yarn add enzyme enzyme-adapter-react-16 --dev
     % yarn add jest-enzyme --dev
+
+- Back button:
+    https://github.com/ReactTraining/history
+    https://github.com/ReactTraining/react-router/issues/967
+    https://reacttraining.com/react-router/web/api/withRouter

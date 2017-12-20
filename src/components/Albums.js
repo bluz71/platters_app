@@ -51,47 +51,41 @@ class Albums extends Component {
   }
 
   handlePageChange = (pageNumber) => {
-    this.params = { ...this.params, page: pageNumber };
-    this.props.history.push('/albums', this.params);
-    this.getAlbums();
+    const newParams = { ...this.params, page: pageNumber };
+    this.manageParams(newParams);
   }
 
   handleAll = () => {
-    this.params = {};
-    this.props.history.push('/albums', this.params);
-    this.getAlbums();
+    const newParams = {};
+    this.manageParams(newParams);
   }
 
   handleYear = (year) => {
-    this.params = _.omit(this.params, ['page']);
-    this.params = { year };
-    this.props.history.push('/albums', this.params);
-    this.getAlbums();
+    const newParams = { year };
+    this.manageParams(newParams);
   }
 
   handleGenre = (genre) => {
-    this.params = _.omit(this.params, ['page']);
-    this.params = { genre };
-    this.props.history.push('/albums', this.params);
-    this.getAlbums();
+    const newParams = { genre };
+    this.manageParams(newParams);
   }
 
   handleLetter = (letter) => {
-    this.params = _.omit(this.params, ['page']);
-    this.params.letter = letter;
+    const newParams = _.omit(this.params, ['page']);
+    newParams.letter = letter;
+    this.manageParams(newParams);
+  }
+
+  manageParams(newParams) {
+    if (_.isEqual(this.params, newParams)) {
+      // Nothing to do, new params have not changed, just return.
+      return;
+    }
+
+    this.params = newParams;
     this.props.history.push('/albums', this.params);
     this.getAlbums();
   }
-
-  // changeParams = (newParams) => {
-  //   if (_.isEqual(this.params, newParams)) {
-  //     return false;
-  //   }
-  //   else {
-  //     this.params = newParams;
-  //     return true;
-  //   }
-  // }
 
   albumsURL() {
     const params = queryString.stringify(this.params);
@@ -115,6 +109,7 @@ class Albums extends Component {
           pagination: response.data.pagination,
           error: null
         });
+        window.scrollTo(0,0);
       })
       .catch(error => {
         this.setState({
@@ -202,8 +197,6 @@ class Albums extends Component {
   }
 
   render() {
-    window.scrollTo(0,0);
-
     return (
       <div className="Albums">
         {this.renderHeader()}
