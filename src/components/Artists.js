@@ -39,11 +39,11 @@ class Artists extends Component {
     window.onpopstate = null;
   }
 
-  shouldComponentUpdate(nextProps) {
-    console.log(this.props.history.location);
-    console.log(nextProps.history.location);
-    return _.isEqual(this.props.history.location, nextProps.location);
-  }
+  // shouldComponentUpdate(nextProps) {
+  //   console.log(this.props.history.location);
+  //   console.log(nextProps.history.location);
+  //   return _.isEqual(this.props.history.location, nextProps.location);
+  // }
 
   handleBackButton = (event) => {
     event.preventDefault();
