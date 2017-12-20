@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Row, Col, PageHeader } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import pluralize from 'pluralize';
 import numeral from 'numeral';
@@ -32,21 +32,40 @@ class Artists extends Component {
 
   componentDidMount() {
     this.getArtists();
+    window.onpopstate = this.handleBackButton;
+  }
+
+  componentWillUnmount() {
+    window.onpopstate = null;
+  }
+
+  handleBackButton = (event) => {
+    event.preventDefault();
+    if (this.props.history.location.state) {
+      this.params = this.props.history.location.state;
+    }
+    else {
+      this.params = {};
+    }
+    this.getArtists();
   }
 
   handlePageChange = (pageNumber) => {
     this.params = { ...this.params, page: pageNumber };
+    this.props.history.push('/artists', this.params);
     this.getArtists();
   }
 
   handleAll = () => {
     this.params = {};
+    this.props.history.push('/artists', this.params);
     this.getArtists();
   }
 
   handleLetter = (letter) => {
     this.params = _.omit(this.params, ['page']);
     this.params = { letter };
+    this.props.history.push('/artists', this.params);
     this.getArtists();
   }
 
@@ -161,4 +180,4 @@ class Artists extends Component {
   }
 }
 
-export default Artists;
+export default withRouter(Artists);

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Col, PageHeader } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import pluralize from 'pluralize';
 import numeral from 'numeral';
@@ -32,35 +32,66 @@ class Albums extends Component {
 
   componentDidMount() {
     this.getAlbums();
+    window.onpopstate = this.handleBackButton;
+  }
+
+  componentWillUnmount() {
+    window.onpopstate = null;
+  }
+
+  handleBackButton = (event) => {
+    event.preventDefault();
+    if (this.props.history.location.state) {
+      this.params = this.props.history.location.state;
+    }
+    else {
+      this.params = {};
+    }
+    this.getAlbums();
   }
 
   handlePageChange = (pageNumber) => {
     this.params = { ...this.params, page: pageNumber };
+    this.props.history.push('/albums', this.params);
     this.getAlbums();
   }
 
   handleAll = () => {
     this.params = {};
+    this.props.history.push('/albums', this.params);
     this.getAlbums();
   }
 
   handleYear = (year) => {
     this.params = _.omit(this.params, ['page']);
     this.params = { year };
+    this.props.history.push('/albums', this.params);
     this.getAlbums();
   }
 
   handleGenre = (genre) => {
     this.params = _.omit(this.params, ['page']);
     this.params = { genre };
+    this.props.history.push('/albums', this.params);
     this.getAlbums();
   }
 
   handleLetter = (letter) => {
     this.params = _.omit(this.params, ['page']);
     this.params.letter = letter;
+    this.props.history.push('/albums', this.params);
     this.getAlbums();
   }
+
+  // changeParams = (newParams) => {
+  //   if (_.isEqual(this.params, newParams)) {
+  //     return false;
+  //   }
+  //   else {
+  //     this.params = newParams;
+  //     return true;
+  //   }
+  // }
 
   albumsURL() {
     const params = queryString.stringify(this.params);
@@ -184,4 +215,4 @@ class Albums extends Component {
   }
 }
 
-export default Albums;
+export default withRouter(Albums);
