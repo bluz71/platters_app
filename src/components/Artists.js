@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Row, Col, PageHeader } from 'react-bootstrap';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import pluralize from 'pluralize';
 import numeral from 'numeral';
@@ -31,22 +31,48 @@ class Artists extends Component {
   }
 
   componentDidMount() {
-    this.getArtists();
     window.onpopstate = this.handleBackButton;
+    this.applyState();
   }
 
   componentWillUnmount() {
     window.onpopstate = null;
   }
 
-  // shouldComponentUpdate(nextProps) {
-  //   console.log(this.props.history.location);
-  //   console.log(nextProps.history.location);
-  //   return _.isEqual(this.props.history.location, nextProps.location);
-  // }
+  shouldComponentUpdate(nextProps) {
+    // Location change indicates either a direct 'this.props.history.push' or
+    // back/forward in a browser. In both circumstances we do NOT want to
+    // re-render since a GET for a new set of resources will immediately occur
+    // after which will result in a re-render. Basically we only want to render
+    // once upon a state change, not twice, hence we can safely ignore location
+    // changes.
+    return _.isEqual(this.props.location, nextProps.location);
+  }
 
   handleBackButton = (event) => {
     event.preventDefault();
+    this.applyState();
+  }
+
+  handlePageChange = (pageNumber) => {
+    const newParams = { ...this.params, page: pageNumber };
+    this.applyParams(newParams);
+  }
+
+  handleAll = () => {
+    const newParams = {};
+    this.applyParams(newParams);
+  }
+
+  handleLetter = (letter) => {
+    const newParams = _.omit(this.params, ['page']);
+    newParams.letter = letter;
+    this.applyParams(newParams);
+  }
+
+  // Apply state for back and forward transistion into/outof/within this
+  // component.
+  applyState() {
     if (this.props.history.location.state) {
       this.params = this.props.history.location.state;
     }
@@ -56,23 +82,8 @@ class Artists extends Component {
     this.getArtists();
   }
 
-  handlePageChange = (pageNumber) => {
-    const newParams = { ...this.params, page: pageNumber };
-    this.manageParams(newParams);
-  }
-
-  handleAll = () => {
-    const newParams = {};
-    this.manageParams(newParams);
-  }
-
-  handleLetter = (letter) => {
-    const newParams = _.omit(this.params, ['page']);
-    newParams.letter = letter;
-    this.manageParams(newParams);
-  }
-
-  manageParams(newParams) {
+  // Apply paramaters and update resources only if they are changed.
+  applyParams(newParams) {
     if (_.isEqual(this.params, newParams)) {
       // Nothing to do, new params have not changed, just return.
       return;
@@ -193,4 +204,4 @@ class Artists extends Component {
   }
 }
 
-export default withRouter(Artists);
+export default Artists;
