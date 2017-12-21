@@ -1,7 +1,8 @@
-- Pushing state to history is causing a re-render, we don't want that. See if
-  componentShouldUpdate can help.
+- Blog about getting forward/back working in Single Page component.
 
 - `yarn flow` now lists many errors, try to fix.
+
+- Create details page.
 
 - Use debounce in search form (to prevent too many AJAX calls per user
   keydowns)
@@ -10,14 +11,6 @@
     https://surge.sh
     https://surge.sh/help/getting-started-with-surge
     https://hackernoon.com/simple-react-development-in-2017-113bd563691f
-    https://surge.sh/help/adding-a-custom-domain (custom domain)
-
-- Hosting, Rackspace Cloud Files "Static Site Hosting":
-    https://support.rackspace.com/how-to/set-up-a-static-website-with-cloud-files/
-    https://www.fullstackreact.com/articles/deploying-a-react-app-to-s3/
-
-  Use CyberDuck to synchronize changes from a local build to the remote container:
-    https://trac.cyberduck.io/wiki/help/en/howto/sync
 
 - MobX: https://mobx.js.org/getting-started.html
 
