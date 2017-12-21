@@ -31,7 +31,7 @@ class Albums extends Component {
   }
 
   componentDidMount() {
-    window.onpopstate = this.handleBackButton;
+    window.onpopstate = this.handlePopState;
     this.applyState();
   }
 
@@ -49,7 +49,7 @@ class Albums extends Component {
     return _.isEqual(this.props.location, nextProps.location);
   }
 
-  handleBackButton = (event) => {
+  handlePopState = (event) => {
     event.preventDefault();
     this.applyState();
   }
@@ -83,13 +83,13 @@ class Albums extends Component {
   // Apply state for back and forward transistion into/outof/within this
   // component.
   applyState() {
-    if (this.props.history.location.state) {
-      this.params = this.props.history.location.state;
+    if (this.props.location.state) {
+      this.params = this.props.location.state;
     }
     else {
       this.params = {};
     }
-    this.getAlbums();
+    this.getAlbums(false);
   }
 
   // Apply paramaters and update resources only if they are changed.
@@ -115,7 +115,7 @@ class Albums extends Component {
     }
   }
 
-  getAlbums() {
+  getAlbums(scrollToTop = true) {
     axios.get(this.albumsURL())
       .then(response => {
         if (!this.mounted) {
@@ -126,7 +126,9 @@ class Albums extends Component {
           pagination: response.data.pagination,
           error: null
         });
-        window.scrollTo(0,0);
+        if (scrollToTop) {
+          window.scrollTo(0,0);
+        }
       })
       .catch(error => {
         this.setState({

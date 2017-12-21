@@ -32,3 +32,6 @@
     https://github.com/ReactTraining/history
     https://github.com/ReactTraining/react-router/issues/967
     https://reacttraining.com/react-router/web/api/withRouter
+    Route Components are auto-injected with history, location and match.
+    For non Route Components wrap your Component with withRouter to gain those
+    inject properties.
