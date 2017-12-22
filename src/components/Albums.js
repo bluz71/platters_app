@@ -54,8 +54,8 @@ class Albums extends Component {
     this.applyState();
   }
 
-  handlePageChange = (pageNumber) => {
-    const newParams = { ...this.params, page: pageNumber };
+  handlePageChange = (page) => {
+    const newParams = { ...this.params, page };
     this.applyParams(newParams);
   }
 
@@ -83,12 +83,7 @@ class Albums extends Component {
   // Apply state for back and forward transistion into/outof/within this
   // component.
   applyState() {
-    if (this.props.location.state) {
-      this.params = this.props.location.state;
-    }
-    else {
-      this.params = {};
-    }
+    this.params = this.props.location.state || {};
     this.getAlbums(false);
   }
 
@@ -107,12 +102,7 @@ class Albums extends Component {
   albumsURL() {
     const params = queryString.stringify(this.params);
 
-    if (params.length > 0) {
-      return `${ALBUMS_ENDPOINT}?${params}`;
-    }
-    else {
-      return ALBUMS_ENDPOINT;
-    }
+    return params.length > 0 ? `${ALBUMS_ENDPOINT}?${params}` : ALBUMS_ENDPOINT;
   }
 
   getAlbums(scrollToTop = true) {
