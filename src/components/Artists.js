@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Row, Col, PageHeader } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import pluralize from 'pluralize';
 import numeral from 'numeral';
@@ -72,12 +72,7 @@ class Artists extends Component {
   // Apply state for back and forward transistion into/outof/within this
   // component.
   applyState() {
-    if (this.props.location) {
-      this.params = this.props.location.state || {};
-    }
-    else {
-      this.params = {};
-    }
+    this.params = this.props.location.state || {};
     this.getArtists(false);
   }
 
@@ -200,4 +195,4 @@ class Artists extends Component {
   }
 }
 
-export default Artists;
+export default withRouter(Artists);
