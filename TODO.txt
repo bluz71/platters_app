@@ -1,7 +1,3 @@
-- Blog about getting forward/back working in Single Page component.
-
-- `yarn flow` now lists many errors, try to fix.
-
 - Create details page.
 
 - Use debounce in search form (to prevent too many AJAX calls per user

@@ -1,7 +1,6 @@
-// @flow
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Grid } from 'react-bootstrap'
+import { Grid } from 'react-bootstrap';
 import '../styles/Footer.css';
 
 const Footer = () => ( 

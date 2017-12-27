@@ -1,7 +1,7 @@
-import React from "react";
-import { shallow } from "enzyme";
-import Albums from "../components/Albums";
+import React from 'react';
+import { shallow } from 'enzyme';
+import Albums from '../components/Albums';
 
-it("renders without crashing", () => {
+it('renders without crashing', () => {
   shallow(<Albums />);
 });

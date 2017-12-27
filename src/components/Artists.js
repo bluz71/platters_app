@@ -1,4 +1,3 @@
-// @flow
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Row, Col, PageHeader } from 'react-bootstrap';
@@ -73,7 +72,12 @@ class Artists extends Component {
   // Apply state for back and forward transistion into/outof/within this
   // component.
   applyState() {
-    this.params = this.props.location.state || {};
+    if (this.props.location) {
+      this.params = this.props.location.state || {};
+    }
+    else {
+      this.params = {};
+    }
     this.getArtists(false);
   }
 
