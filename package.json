@@ -22,6 +22,9 @@
     "eject": "react-scripts eject",
     "deploy": "yarn build && surge -p build -d platters.surge.sh"
   },
+  "jest": {
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
+  },
   "devDependencies": {
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.1",

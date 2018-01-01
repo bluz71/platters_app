@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
 import Artists from '../../components/Artists';
 
-const flushPromises = () => (
-  new Promise(resolve => setImmediate(resolve))
-);
+// Details:
+//   https://blog.rescale.com/testing-promise-side-effects-with-asyncawait
+//   https://github.com/facebook/jest/issues/2157#issuecomment-279171856
+const flushPromises = () => new Promise(resolve => setImmediate(resolve));
 
 describe('<Artists />', () => {
   it('renders without crashing', () => {
@@ -13,15 +13,15 @@ describe('<Artists />', () => {
   });
 
   it('renders div.Artists', () => {
-    const artists = shallow(<Artists />);
-    expect(artists.find('div.Artists').length).toEqual(1);
+    const wrapper = shallow(<Artists />);
+    expect(wrapper.find('div.Artists').length).toEqual(1);
   });
 
   it('renders default snapshot', async () => {
     const wrapper = shallow(<Artists />);
     await flushPromises();
     wrapper.update();
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });
 
