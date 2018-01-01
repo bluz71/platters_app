@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Col, PageHeader } from 'react-bootstrap';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import pluralize from 'pluralize';
 import numeral from 'numeral';
@@ -82,7 +82,12 @@ class Albums extends Component {
   // Apply state for back and forward transistion into/outof/within this
   // component.
   applyState() {
-    this.params = this.props.location.state || {};
+    if (this.props.location) {
+      this.params = this.props.location.state || {};
+    }
+    else {
+      this.params = {};
+    }
     this.getAlbums(false);
   }
 
@@ -216,4 +221,4 @@ class Albums extends Component {
   }
 }
 
-export default withRouter(Albums);
+export default Albums;

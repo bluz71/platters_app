@@ -1,0 +1,50 @@
+{
+  "data": {
+    "albums": [
+      {
+        "id": 1,
+        "title": "ABC",
+        "tracks_count": 15,
+        "comments_count": 42,
+        "artist": "ABC-Artist",
+        "year": 2008,
+        "genre": "Rock",
+        "artist_slug": "abc_artist",
+        "album_slug": "abc",
+        "cover_url": "http://localhost:3000/uploads/album/cover/1/small_abc--abc.jpg",
+        "tracks": [
+          "1. First",
+          "2. Second",
+          "3. Third",
+          "4. Fourth",
+          "5. Fifth",
+          "6. Sixth",
+          "..."
+        ]
+      },
+      {
+        "id": 2,
+        "title": "DEF",
+        "tracks_count": 27,
+        "comments_count": 44,
+        "artist": "DEF-Artist",
+        "year": 2015,
+        "genre": "Classical",
+        "artist_slug": "def_artist",
+        "album_slug": "def",
+        "cover_url": "http://localhost:3000/uploads/album/cover/978/small_def--def.jpg",
+        "tracks": [
+          "1. One",
+          "2. Two"
+        ]
+      }
+    ],
+    "pagination": {
+      "current_page": 1,
+      "next_page": 2,
+      "prev_page": null,
+      "total_pages": 2,
+      "total_count": 6
+    }
+  }
+}
