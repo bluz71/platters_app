@@ -1,15 +1,4 @@
 - Tests
-    Move existing smoke tests to __tests__/components/
-
-    Artists (create a set of Artists and mock API call):
-      - Display a page of Artists
-      - Next paginates to next page
-      - 2 paginates to next page
-      - Prev paginates to previous page
-      - 1 paginates to 1st page
-      - Click on an Artists displays Artist show page
-      - DO SNAPSHOT TESTS
-
     Albums (create a set of Albums and mock API call):
       - Display a page of Artists
       - Next paginates to next page

@@ -8,22 +8,14 @@
         "slug": "abc",
         "albums_count": 2,
         "comments_count": 50
-      },
-      {
-        "id": 2,
-        "name": "DEF",
-        "description": "",
-        "slug": "def",
-        "albums_count": 4,
-        "comments_count": 2
       }
     ],
     "pagination": {
       "current_page": 1,
-      "next_page": 2,
+      "next_page": null,
       "prev_page": null,
-      "total_pages": 2,
-      "total_count": 3
+      "total_pages": 1,
+      "total_count": 1
     }
   }
 }

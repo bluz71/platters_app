@@ -17,8 +17,26 @@ describe('<Artists />', () => {
     expect(wrapper.find('div.Artists').length).toEqual(1);
   });
 
-  it('renders default snapshot', async () => {
+  it('renders first page', async () => {
     const wrapper = shallow(<Artists />);
+    await flushPromises();
+    wrapper.update();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders second page', async () => {
+    const wrapper = shallow(<Artists history={[]} />);
+    // Manually trigger the callback
+    wrapper.instance().handlePageChange(2);
+    await flushPromises();
+    wrapper.update();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders A matches', async () => {
+    const wrapper = shallow(<Artists history={[]} />);
+    // Manually trigger the callback
+    wrapper.instance().handleLetter('A');
     await flushPromises();
     wrapper.update();
     expect(wrapper).toMatchSnapshot();

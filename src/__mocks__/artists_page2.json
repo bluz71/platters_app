@@ -1,0 +1,21 @@
+{
+  "data": {
+    "artists": [
+      {
+        "id": 3,
+        "name": "GHI",
+        "description": "",
+        "slug": "ghi",
+        "albums_count": 7,
+        "comments_count": 23
+      }
+    ],
+    "pagination": {
+      "current_page": 2,
+      "next_page": null,
+      "prev_page": 1,
+      "total_pages": 2,
+      "total_count": 3
+    }
+  }
+}
