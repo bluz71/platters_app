@@ -1,0 +1,28 @@
+{
+  "data": {
+    "albums": [
+      {
+        "id": 1,
+        "title": "MNO",
+        "tracks_count": 17,
+        "comments_count": 31,
+        "artist": "MNO-Artist",
+        "year": 2009,
+        "genre": "Pop",
+        "artist_slug": "mno_artist",
+        "album_slug": "mno",
+        "cover_url": "http://localhost:3000/uploads/album/cover/1/small_mno--mno.jpg",
+        "tracks": [
+          "1. First"
+        ]
+      }
+    ],
+    "pagination": {
+      "current_page": 1,
+      "next_page": null,
+      "prev_page": null,
+      "total_pages": 1,
+      "total_count": 1
+    }
+  }
+}

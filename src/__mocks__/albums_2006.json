@@ -1,0 +1,32 @@
+{
+  "data": {
+    "albums": [
+      {
+        "id": 1,
+        "title": "JKL",
+        "tracks_count": 11,
+        "comments_count": 23,
+        "artist": "JKL-Artist",
+        "year": 2006,
+        "genre": "Rock",
+        "artist_slug": "jkl_artist",
+        "album_slug": "jkl",
+        "cover_url": "http://localhost:3000/uploads/album/cover/1/small_jkl--jkl.jpg",
+        "tracks": [
+          "1. First",
+          "2. Second",
+          "3. Third",
+          "4. Fourth",
+          "5. Fifth"
+        ]
+      }
+    ],
+    "pagination": {
+      "current_page": 1,
+      "next_page": null,
+      "prev_page": null,
+      "total_pages": 1,
+      "total_count": 1
+    }
+  }
+}

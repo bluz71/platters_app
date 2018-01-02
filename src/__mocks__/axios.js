@@ -3,6 +3,10 @@ import { data as artists } from './artists.json';
 import { data as artistsPage2 } from './artists_page2.json';
 import { data as artistsA } from './artists_a.json';
 import { data as albums } from './albums.json';
+import { data as albumsPage2 } from './albums_page2.json';
+import { data as albumsA } from './albums_a.json';
+import { data as albums2006 } from './albums_2006.json';
+import { data as albumsPop } from './albums_pop.json';
 
 // Details:
 //   https://stackoverflow.com/questions/45016033/how-do-i-test-axios-in-jest
@@ -27,6 +31,26 @@ module.exports = {
     if (url === `${API_HOST}/albums.json`) {
       return Promise.resolve({
         data: albums
+      });
+    }
+    if (url === `${API_HOST}/albums.json?page=2`) {
+      return Promise.resolve({
+        data: albumsPage2
+      });
+    }
+    if (url === `${API_HOST}/albums.json?letter=A`) {
+      return Promise.resolve({
+        data: albumsA
+      });
+    }
+    if (url === `${API_HOST}/albums.json?year=2006`) {
+      return Promise.resolve({
+        data: albums2006
+      });
+    }
+    if (url === `${API_HOST}/albums.json?genre=Pop`) {
+      return Promise.resolve({
+        data: albumsPop
       });
     }
   })

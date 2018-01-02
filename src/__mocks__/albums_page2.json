@@ -1,0 +1,30 @@
+{
+  "data": {
+    "albums": [
+      {
+        "id": 1,
+        "title": "GHI",
+        "tracks_count": 15,
+        "comments_count": 42,
+        "artist": "GHI-Artist",
+        "year": 2003,
+        "genre": "Rock",
+        "artist_slug": "ghi_artist",
+        "album_slug": "ghi",
+        "cover_url": "http://localhost:3000/uploads/album/cover/1/small_ghi--ghi.jpg",
+        "tracks": [
+          "1. First",
+          "2. Second",
+          "3. Third"
+        ]
+      }
+    ],
+    "pagination": {
+      "current_page": 1,
+      "next_page": 2,
+      "prev_page": null,
+      "total_pages": 2,
+      "total_count": 3
+    }
+  }
+}

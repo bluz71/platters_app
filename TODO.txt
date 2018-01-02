@@ -1,15 +1,3 @@
-- Tests
-    Albums (create a set of Albums and mock API call):
-      - Display a page of Artists
-      - Next paginates to next page
-      - 2 paginates to next page
-      - Prev paginates to previous page
-      - 1 paginates to 1st page
-      - Clicking on year shows albums for that year
-      - Clicking on genre shows albums for that genre
-      - Clicking on title displays Album show page
-      - DO SNAPSHOT TESTS
-
 - Once tests are done register the app with TravisCI:
     https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#travis-ci
 
