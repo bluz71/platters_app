@@ -13,45 +13,39 @@ import { data as albumsPop } from './albums_pop.json';
 //   https://alexjoverm.github.io/2017/09/25/Test-Methods-and-Mock-Dependencies-in-Vue-js-with-Jest
 module.exports = {
   get: jest.fn((url) => {
-    if (url === `${API_HOST}/artists.json`) {
-      return Promise.resolve({
-        data: artists
-      });
-    }
-    if (url === `${API_HOST}/artists.json?page=2`) {
-      return Promise.resolve({
-        data: artistsPage2
-      });
-    }
-    if (url === `${API_HOST}/artists.json?letter=A`) {
-      return Promise.resolve({
-        data: artistsA
-      });
-    }
-    if (url === `${API_HOST}/albums.json`) {
-      return Promise.resolve({
-        data: albums
-      });
-    }
-    if (url === `${API_HOST}/albums.json?page=2`) {
-      return Promise.resolve({
-        data: albumsPage2
-      });
-    }
-    if (url === `${API_HOST}/albums.json?letter=A`) {
-      return Promise.resolve({
-        data: albumsA
-      });
-    }
-    if (url === `${API_HOST}/albums.json?year=2006`) {
-      return Promise.resolve({
-        data: albums2006
-      });
-    }
-    if (url === `${API_HOST}/albums.json?genre=Pop`) {
-      return Promise.resolve({
-        data: albumsPop
-      });
+    switch (url) {
+      case `${API_HOST}/artists.json`: 
+        return Promise.resolve({
+          data: artists
+        });
+      case `${API_HOST}/artists.json?page=2`:
+        return Promise.resolve({
+          data: artistsPage2
+        });
+      case `${API_HOST}/artists.json?letter=A`:
+        return Promise.resolve({
+          data: artistsA
+        });
+      case `${API_HOST}/albums.json`:
+        return Promise.resolve({
+          data: albums
+        });
+      case `${API_HOST}/albums.json?page=2`:
+        return Promise.resolve({
+          data: albumsPage2
+        });
+      case `${API_HOST}/albums.json?letter=A`:
+        return Promise.resolve({
+          data: albumsA
+        });
+      case `${API_HOST}/albums.json?year=2006`:
+        return Promise.resolve({
+          data: albums2006
+        });
+      case `${API_HOST}/albums.json?genre=Pop`:
+        return Promise.resolve({
+          data: albumsPop
+        });
     }
   })
 };
