@@ -1,9 +1,14 @@
 language: node_js
+
+dist: trusty
+
 node_js:
-  - 6
+  - "stable"
+
 cache:
   directories:
     - node_modules
+
 script:
   - npm run build
   - npm test
