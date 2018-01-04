@@ -3,6 +3,8 @@ import { Row, Col, PageHeader } from 'react-bootstrap';
 import '../styles/DetailsPage.css';
 
 const DetailsPage = () => {
+  window.scrollTo(0,0);
+
   return (
     <Row>
       <Col md={10} mdOffset={1}>
