@@ -1,0 +1,20 @@
+.DetailsPage h4 {
+  font-size: 1.1em;
+}
+
+.DetailsPage a {
+  color: #111;
+  text-decoration: none;
+}
+
+.DetailsPage a:hover { 
+  color: #3c9a5f;
+}
+
+.DetailsPage .standout {
+  color: #3c9a5f;
+}
+
+.DetailsPage .todo {
+  color: #f04124;
+}
