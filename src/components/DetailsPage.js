@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col, PageHeader } from 'react-bootstrap';
-import '../styles/DetailsPage.css';
+import '../styles/MiscPage.css';
 
 const DetailsPage = () => {
   window.scrollTo(0,0);
@@ -8,7 +8,7 @@ const DetailsPage = () => {
   return (
     <Row>
       <Col md={10} mdOffset={1}>
-        <div className="DetailsPage">
+        <div className="MiscPage">
           <PageHeader>Core technologies</PageHeader>
           <ul>
             <li>

@@ -1,20 +1,20 @@
-.DetailsPage h4 {
+.MiscPage h4 {
   font-size: 1.1em;
 }
 
-.DetailsPage a {
+.MiscPage a {
   color: #111;
   text-decoration: none;
 }
 
-.DetailsPage a:hover { 
+.MiscPage a:hover { 
   color: #3c9a5f;
 }
 
-.DetailsPage .standout {
+.MiscPage .standout {
   color: #3c9a5f;
 }
 
-.DetailsPage .todo {
+.MiscPage .todo {
   color: #f04124;
 }
