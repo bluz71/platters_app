@@ -67,8 +67,10 @@ const DetailsPage = () => {
             <li>
               <h3><a href="https://surge.sh" target="_blank" rel="noopener noreferrer">Surge</a></h3>
               <p>
-                A <em>content delivery network</em> (CDN) provider for front-end developers
-                who need to deploy and host static site projects.
+                A <em>content delivery network</em> (CDN) provider for front-end
+                developers who need to deploy and host static site projects.
+                Details about using Surge can be found 
+                <a href="https://hackernoon.com/simple-react-development-in-2017-113bd563691f" target="_blank" rel="noopener noreferrer" class="standout"> here</a>
               </p>
             </li>
             <li>

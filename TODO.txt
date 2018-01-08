@@ -1,26 +1,6 @@
-- Create details page.
+- Finish About page
+
+- Implement Search component. This needs to be a show/hide component.
 
 - Use debounce in search form (to prevent too many AJAX calls per user
   keydowns)
-
-- Hosting, Surge.sh:
-    https://surge.sh
-    https://surge.sh/help/getting-started-with-surge
-    https://hackernoon.com/simple-react-development-in-2017-113bd563691f
-
-- MobX: https://mobx.js.org/getting-started.html
-
-- How to upgrade React from 15.X to 16.X:
-    % yarn add react@^16.2.0 react-dom@^16.2.0
-
-- Add enzyme:
-    % yarn add enzyme enzyme-adapter-react-16 --dev
-    % yarn add jest-enzyme --dev
-
-- Back button:
-    https://github.com/ReactTraining/history
-    https://github.com/ReactTraining/react-router/issues/967
-    https://reacttraining.com/react-router/web/api/withRouter
-    Route Components are auto-injected with history, location and match.
-    For non Route Components wrap your Component with withRouter to gain those
-    inject properties.
