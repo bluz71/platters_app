@@ -1,5 +1,3 @@
-- Finish About page
-
 - Implement Search component. This needs to be a show/hide component.
 
 - Use debounce in search form (to prevent too many AJAX calls per user

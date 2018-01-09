@@ -3,7 +3,7 @@ import { Row, Col, PageHeader } from 'react-bootstrap';
 import '../styles/MiscPage.css';
 
 const DetailsPage = () => {
-  window.scrollTo(0,0);
+  window.scrollTo(0, 0);
 
   return (
     <Row>
@@ -26,7 +26,7 @@ const DetailsPage = () => {
           </ul>
           <br />
 
-          <h2 class="page-header">Significant JavaScript Libraries</h2>
+          <h2 className="page-header">Significant JavaScript Libraries</h2>
           <ul>
             <li>
               <h3>
@@ -62,7 +62,7 @@ const DetailsPage = () => {
           <br />
 
 
-          <h2 class="page-header">Deployment</h2>
+          <h2 className="page-header">Deployment</h2>
           <ul>
             <li>
               <h3><a href="https://surge.sh" target="_blank" rel="noopener noreferrer">Surge</a></h3>
@@ -70,7 +70,7 @@ const DetailsPage = () => {
                 A <em>content delivery network</em> (CDN) provider for front-end
                 developers who need to deploy and host static site projects.
                 Details about using Surge can be found 
-                <a href="https://hackernoon.com/simple-react-development-in-2017-113bd563691f" target="_blank" rel="noopener noreferrer" class="standout"> here</a>
+                <a href="https://hackernoon.com/simple-react-development-in-2017-113bd563691f" target="_blank" rel="noopener noreferrer" className="standout"> here</a>
               </p>
             </li>
             <li>
@@ -82,7 +82,7 @@ const DetailsPage = () => {
           </ul>
           <br />
 
-          <h2 class="page-header">Development</h2>
+          <h2 className="page-header">Development</h2>
           <ul>
             <li>
               <h3><a href="https://travis-ci.org/bluz71/platters" target="_blank" rel="noopener noreferrer">Travis CI</a></h3>
@@ -98,7 +98,7 @@ const DetailsPage = () => {
           </ul>
           <br />
 
-          <h2 class="page-header">Testing</h2>
+          <h2 className="page-header">Testing</h2>
           <ul>
             <li>
               <h3>
@@ -125,25 +125,25 @@ const DetailsPage = () => {
           </ul>
           <br />
 
-          <h2 class="page-header">Miscellaneous application features</h2>
+          <h2 className="page-header">Miscellaneous application features</h2>
           <ul>
             <li>
               <h3><a href="https://bluz71.github.io/2017/12/22/browser-navigation-in-react-components.html" target="_blank" rel="noopener noreferrer">Browser navigation with React components</a></h3>
               <p>
-                The main content React components use HTML5 <em>pushState</em>
-                such that browser navigation correctly transistions through
+                The main content React components use HTML5 <em>pushState</em> such
+                that browser navigation correctly transistions through
                 client-side page changes.
               </p>
             </li>
           </ul>
           <br />
 
-          <h2 class="page-header">Logo</h2>
+          <h2 className="page-header">Logo</h2>
           <p>
             Record player icon, made by&nbsp;
-            <a href="http://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer" class="standout">Freepik</a> from&nbsp;
-            <a href="http://www.flaticon.com" target="_blank" rel="noopener noreferrer" class="standout">www.flaticon.com</a>, is licensed by&nbsp;
-            <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer" class="standout">CC 3.0 BY</a>
+            <a href="http://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer" className="standout">Freepik</a> from&nbsp;
+            <a href="http://www.flaticon.com" target="_blank" rel="noopener noreferrer" className="standout">www.flaticon.com</a>, is licensed by&nbsp;
+            <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer" className="standout">CC 3.0 BY</a>
           </p>
           <br />
         </div>

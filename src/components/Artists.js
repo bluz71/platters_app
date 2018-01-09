@@ -112,7 +112,7 @@ class Artists extends Component {
           error: null
         });
         if (scrollToTop) {
-          window.scrollTo(0,0);
+          window.scrollTo(0, 0);
         }
       })
       .catch(error => {
