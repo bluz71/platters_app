@@ -78,7 +78,6 @@ class Artists extends Component {
     else {
       this.params = {};
     }
-    this.params = {};
     this.getArtists(false);
   }
 
