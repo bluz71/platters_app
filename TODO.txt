@@ -1,4 +1,5 @@
 - Implement Search component. This needs to be a show/hide component.
 
-- Use debounce in search form (to prevent too many AJAX calls per user
-  keydowns)
+- Make sure search form value is filled in when going forward and back through
+  history. Do this after show/hide form. Note, show search form if
+  'this.params.search' is set.

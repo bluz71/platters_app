@@ -1,0 +1,9 @@
+.Search {
+  margin-bottom: 0.5em;
+  height: 2.5em;
+}
+
+.Search input {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}

@@ -9,6 +9,7 @@ import queryString from 'query-string';
 import _ from 'lodash';
 import '../styles/Artists.css';
 import { API_HOST } from '../config';
+import Search from './Search';
 import Paginator from './Paginator';
 
 const ARTISTS_ENDPOINT = `${API_HOST}/artists.json`;
@@ -66,6 +67,15 @@ class Artists extends Component {
   handleLetter = (letter) => {
     const newParams = _.omit(this.params, ['page']);
     newParams.letter = letter;
+    this.applyParams(newParams);
+  }
+
+  handleSearchVisibility = () => {
+    console.log('In Search Visibility');
+  }
+
+  handleSearch = (term) => {
+    const newParams = term ? { search: term} : {};
     this.applyParams(newParams);
   }
 
@@ -142,11 +152,15 @@ class Artists extends Component {
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
     return (
-      <div className="filters">
-        <ul className="pagination pagination-sm">
-          <li onClick={this.handleAll}><a>All</a></li>
-          {letters.map((letter, index) => <li onClick={() => this.handleLetter(letter)} key={index} className={this.letterActivity(letter)}><a>{letter}</a></li>)}
-        </ul>
+      <div>
+        <div className="filters">
+          <ul className="pagination pagination-sm">
+            <li onClick={this.handleAll}><a>All</a></li>
+            {letters.map((letter, index) => <li onClick={() => this.handleLetter(letter)} key={index} className={this.letterActivity(letter)}><a>{letter}</a></li>)}
+            <li onClick={this.handleSearchVisibility}><FontAwesome name="search" /></li>
+          </ul>
+        </div>
+        <Search placeholder="Search Artists..." onSearch={this.handleSearch} />
       </div>
     );
   }
