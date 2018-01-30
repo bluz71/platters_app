@@ -74,7 +74,14 @@ class Artists extends Component {
     console.log('In Search Visibility');
   }
 
-  handleSearch = (term) => {
+  handleSearchChange = (term) => {
+    const newParams = term ? { search: term} : {};
+    this.applyParams(newParams);
+  }
+
+  handleSearchSubmit = (event) => {
+    event.preventDefault();
+    const term = event.target.elements.search.value;
     const newParams = term ? { search: term} : {};
     this.applyParams(newParams);
   }
@@ -160,7 +167,7 @@ class Artists extends Component {
             <li onClick={this.handleSearchVisibility}><FontAwesome name="search" /></li>
           </ul>
         </div>
-        <Search placeholder="Search Artists..." onSearch={this.handleSearch} />
+        <Search placeholder="Search Artists..." onSearchChange={this.handleSearchChange} onSearchSubmit={this.handleSearchSubmit} />
       </div>
     );
   }
