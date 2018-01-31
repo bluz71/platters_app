@@ -22,6 +22,7 @@ class Artists extends Component {
     // changes; just use an instance variable instead.
     this.params = {};
     this.mounted = false;
+    this.searching = false;
 
     this.state = {
       artists: [],
@@ -71,7 +72,8 @@ class Artists extends Component {
   }
 
   handleSearchVisibility = () => {
-    console.log('In Search Visibility');
+    this.searching = !this.searching;
+    this.forceUpdate();
   }
 
   handleSearchChange = (term) => {
@@ -163,11 +165,11 @@ class Artists extends Component {
         <div className="filters">
           <ul className="pagination pagination-sm">
             <li onClick={this.handleAll}><a>All</a></li>
-            {letters.map((letter, index) => <li onClick={() => this.handleLetter(letter)} key={index} className={this.letterActivity(letter)}><a>{letter}</a></li>)}
+            {!this.searching && letters.map((letter, index) => <li onClick={() => this.handleLetter(letter)} key={index} className={this.letterActivity(letter)}><a>{letter}</a></li>)}
             <li onClick={this.handleSearchVisibility}><FontAwesome name="search" /></li>
           </ul>
         </div>
-        <Search placeholder="Search Artists..." onSearchChange={this.handleSearchChange} onSearchSubmit={this.handleSearchSubmit} />
+        {this.searching && <Search placeholder="Search Artists..." onSearchChange={this.handleSearchChange} onSearchSubmit={this.handleSearchSubmit} />}
       </div>
     );
   }

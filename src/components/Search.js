@@ -16,6 +16,7 @@ const Search = ({ placeholder, onSearchChange, onSearchSubmit }) => {
               bsSize="sm"
               placeholder={placeholder}
               onChange={event => debouncedSearch(event.target.value)}
+              autoFocus
               name="search"
             />
           </FormGroup>
