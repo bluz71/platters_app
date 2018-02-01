@@ -30,7 +30,7 @@ describe('<Albums />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders A matches', async () => {
+  it('renders A albums', async () => {
     const wrapper = shallow(<Albums history={[]} />);
     // Manually trigger the callback
     wrapper.instance().handleLetter('A');
@@ -39,7 +39,7 @@ describe('<Albums />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders 2006 matches', async () => {
+  it('renders 2006 albums', async () => {
     const wrapper = shallow(<Albums history={[]} />);
     // Manually trigger the callback
     wrapper.instance().handleYear(2006);
@@ -48,7 +48,7 @@ describe('<Albums />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders Pop matches', async () => {
+  it('renders Pop albums', async () => {
     const wrapper = shallow(<Albums history={[]} />);
     // Manually trigger the callback
     wrapper.instance().handleGenre('Pop');

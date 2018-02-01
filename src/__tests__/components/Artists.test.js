@@ -33,10 +33,19 @@ describe('<Artists />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders A matches', async () => {
+  it('renders A artists', async () => {
     const wrapper = shallow(<Artists history={[]} />);
     // Manually trigger the callback
     wrapper.instance().handleLetter('A');
+    await flushPromises();
+    wrapper.update();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders ABC search match', async () => {
+    const wrapper = shallow(<Artists history={[]} />);
+    // Manually trigger the callback
+    wrapper.instance().handleSearchChange('ABC');
     await flushPromises();
     wrapper.update();
     expect(wrapper).toMatchSnapshot();

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Albums /> renders 2006 matches 1`] = `
+exports[`<Albums /> renders 2006 albums 1`] = `
 <div
   className="Albums"
 >
@@ -346,7 +346,7 @@ exports[`<Albums /> renders 2006 matches 1`] = `
 </div>
 `;
 
-exports[`<Albums /> renders A matches 1`] = `
+exports[`<Albums /> renders A albums 1`] = `
 <div
   className="Albums"
 >
@@ -702,7 +702,7 @@ exports[`<Albums /> renders A matches 1`] = `
 </div>
 `;
 
-exports[`<Albums /> renders Pop matches 1`] = `
+exports[`<Albums /> renders Pop albums 1`] = `
 <div
   className="Albums"
 >

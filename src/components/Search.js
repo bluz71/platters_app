@@ -1,10 +1,10 @@
 import React from 'react';
 import { Row, Col, FormGroup, FormControl } from 'react-bootstrap';
-import _ from 'lodash';
+import debounce from 'lodash/debounce';
 import '../styles/Search.css';
 
 const Search = ({ placeholder, onSearchChange, onSearchSubmit }) => {
-  const debouncedSearch = _.debounce(term => { onSearchChange(term) }, 500);
+  const debouncedSearch = debounce(term => { onSearchChange(term) }, 500);
 
   return (
     <Row className="Search">

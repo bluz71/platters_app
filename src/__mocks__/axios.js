@@ -26,6 +26,10 @@ module.exports = {
         return Promise.resolve({
           data: artistsA
         });
+      case `${API_HOST}/artists.json?search=ABC`:
+        return Promise.resolve({
+          data: artistsA
+        });
       case `${API_HOST}/albums.json`:
         return Promise.resolve({
           data: albums

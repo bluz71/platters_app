@@ -135,6 +135,16 @@ const DetailsPage = () => {
                 client-side page changes.
               </p>
             </li>
+            <li>
+              <h3>Live Search results</h3>
+              <p>
+                Artists and Albums search results will update live as a user is
+                typing in search terms. Note,
+                <a href="https://lodash.com/docs#debounce" target="_blank" rel="noopener noreferrer" className="standout"> debounce </a> 
+                of 500ms is used control how often search results are retrieved
+                from the back-end server.
+              </p>
+            </li>
           </ul>
           <br />
 
