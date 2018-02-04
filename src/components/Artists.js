@@ -61,6 +61,7 @@ class Artists extends Component {
   }
 
   handleAll = () => {
+    this.searching = false;
     const newParams = {};
     this.applyParams(newParams);
   }
