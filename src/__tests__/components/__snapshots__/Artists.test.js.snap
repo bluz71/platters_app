@@ -257,6 +257,32 @@ exports[`<Artists /> renders A artists 1`] = `
             </li>
           </ul>
         </div>
+        <VelocityTransitionGroup
+          enter={
+            Object {
+              "animation": "slideDown",
+              "complete": [Function],
+              "duration": 250,
+            }
+          }
+          enterHideStyle={
+            Object {
+              "display": "none",
+            }
+          }
+          enterShowStyle={
+            Object {
+              "display": "",
+            }
+          }
+          leave={
+            Object {
+              "animation": "slideUp",
+              "duration": 250,
+            }
+          }
+          runOnMount={false}
+        />
       </div>
       <div
         className="Artist"
@@ -548,6 +574,32 @@ exports[`<Artists /> renders ABC search match 1`] = `
             </li>
           </ul>
         </div>
+        <VelocityTransitionGroup
+          enter={
+            Object {
+              "animation": "slideDown",
+              "complete": [Function],
+              "duration": 250,
+            }
+          }
+          enterHideStyle={
+            Object {
+              "display": "none",
+            }
+          }
+          enterShowStyle={
+            Object {
+              "display": "",
+            }
+          }
+          leave={
+            Object {
+              "animation": "slideUp",
+              "duration": 250,
+            }
+          }
+          runOnMount={false}
+        />
       </div>
       <div
         className="Artist"
@@ -839,6 +891,32 @@ exports[`<Artists /> renders first page 1`] = `
             </li>
           </ul>
         </div>
+        <VelocityTransitionGroup
+          enter={
+            Object {
+              "animation": "slideDown",
+              "complete": [Function],
+              "duration": 250,
+            }
+          }
+          enterHideStyle={
+            Object {
+              "display": "none",
+            }
+          }
+          enterShowStyle={
+            Object {
+              "display": "",
+            }
+          }
+          leave={
+            Object {
+              "animation": "slideUp",
+              "duration": 250,
+            }
+          }
+          runOnMount={false}
+        />
       </div>
       <div
         className="Artist"
@@ -1171,6 +1249,32 @@ exports[`<Artists /> renders second page 1`] = `
             </li>
           </ul>
         </div>
+        <VelocityTransitionGroup
+          enter={
+            Object {
+              "animation": "slideDown",
+              "complete": [Function],
+              "duration": 250,
+            }
+          }
+          enterHideStyle={
+            Object {
+              "display": "none",
+            }
+          }
+          enterShowStyle={
+            Object {
+              "display": "",
+            }
+          }
+          leave={
+            Object {
+              "animation": "slideUp",
+              "duration": 250,
+            }
+          }
+          runOnMount={false}
+        />
       </div>
       <div
         className="Artist"

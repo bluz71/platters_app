@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Search from '../../components/Search'
+import Search from '../../components/Search';
 
 // Mock the lodash debounce function used in the Search component.
 // See: https://github.com/facebook/jest/issues/3465

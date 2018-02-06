@@ -7,6 +7,7 @@ import pluralize from 'pluralize';
 import numeral from 'numeral';
 import queryString from 'query-string';
 import _ from 'lodash';
+import { VelocityTransitionGroup } from 'velocity-react';
 import '../styles/Artists.css';
 import { API_HOST } from '../config';
 import Search from './Search';
@@ -61,9 +62,12 @@ class Artists extends Component {
   }
 
   handleAll = () => {
+    const searching = this.searching;
     this.searching = false;
     const newParams = {};
-    this.applyParams(newParams);
+    if (!this.applyParams(newParams) && searching) {
+      this.forceUpdate();
+    }
   }
 
   handleLetter = (letter) => {
@@ -105,12 +109,13 @@ class Artists extends Component {
   applyParams(newParams) {
     if (_.isEqual(this.params, newParams)) {
       // Nothing to do, new params have not changed, just return.
-      return;
+      return false;
     }
 
     this.params = newParams;
     this.props.history.push('/artists', this.params);
     this.getArtists();
+    return true;
   }
 
   artistsURL() {
@@ -158,6 +163,28 @@ class Artists extends Component {
     );
   }
 
+  renderSearch() {
+    return (
+      <VelocityTransitionGroup
+        enter={{
+          animation: 'slideDown',
+          duration: 250,
+          complete: () => {
+            this.search.focusSearchInput();
+          }
+        }}
+        leave={{animation: 'slideUp', duration: 250}}>
+        {this.searching &&
+          <Search
+            placeholder="Search Artists..."
+            onSearchChange={this.handleSearchChange}
+            onSearchSubmit={this.handleSearchSubmit}
+            ref={(search) => this.search = search}
+          />}
+      </VelocityTransitionGroup>
+    );
+  }
+
   renderFilters() {
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
@@ -170,7 +197,7 @@ class Artists extends Component {
             <li onClick={this.handleSearchVisibility}><FontAwesome name="search" /></li>
           </ul>
         </div>
-        {this.searching && <Search placeholder="Search Artists..." onSearchChange={this.handleSearchChange} onSearchSubmit={this.handleSearchSubmit} />}
+        {this.renderSearch()}
       </div>
     );
   }
