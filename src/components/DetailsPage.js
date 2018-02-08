@@ -58,6 +58,17 @@ const DetailsPage = () => {
               </h3>
               <p>A declarative routing library for React applications.</p>
             </li>
+            <li>
+              <h3>
+                <a href="https://github.com/google-fabric/velocity-react" target="_blank" rel="noopener noreferrer">velocity-react</a>
+              </h3>
+              <p>
+                React components for interacting with
+                the <a href="http://velocityjs.org/" target="_blank" rel="noopener noreferrer" className="standout">Velocity</a> DOM
+                animation library. These components are used to animate effects
+                such as the Artists search form <em>slide-down</em> motion.
+              </p>
+            </li>
           </ul>
           <br />
 
