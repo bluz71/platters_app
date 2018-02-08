@@ -92,3 +92,9 @@
   text-overflow: ellipsis;
   list-style-type: none;
 }
+
+.Albums .loading-spinner {
+  text-align: center;
+  font-size: 2em;
+  color: #777;
+}

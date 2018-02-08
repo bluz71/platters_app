@@ -22,7 +22,7 @@ class Artists extends Component {
     // params is not React state since we do not want to re-render when it
     // changes; just use an instance variable instead.
     this.params = {};
-    this.mounted = false;
+    this.loaded = false;
     this.searching = false;
 
     this.state = {
@@ -127,8 +127,8 @@ class Artists extends Component {
   getArtists(scrollToTop = true) {
     axios.get(this.artistsURL())
       .then(response => {
-        if (!this.mounted) {
-          this.mounted = true;
+        if (!this.loaded) {
+          this.loaded = true;
         }
         this.setState({
           artists: response.data.artists,
@@ -158,7 +158,7 @@ class Artists extends Component {
 
     return (
       <PageHeader>
-        Artists {this.mounted && <small>({artistsCount} {pluralize('Artist', count)})</small>}
+        Artists {this.loaded && <small>({artistsCount} {pluralize('Artist', count)})</small>}
       </PageHeader>
     );
   }
@@ -203,11 +203,19 @@ class Artists extends Component {
   }
 
   renderArtists() {
+    if (!this.loaded) {
+      return (
+        <div className="loading-spinner">
+          <FontAwesome name="spinner" spin pulse />
+        </div>
+      );
+    }
+
     if (this.state.error) {
       return <h4>Error retrieving artists</h4>;
     }
 
-    if (this.mounted && this.state.artists.length === 0) {
+    if (this.loaded && this.state.artists.length === 0) {
       return <h4>No matching artists</h4>;
     }
 

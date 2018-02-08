@@ -34,3 +34,9 @@
 .Artist .icon {
   font-size: 0.75em;
 }
+
+.Artists .loading-spinner {
+  text-align: center;
+  font-size: 2em;
+  color: #777;
+}

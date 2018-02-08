@@ -156,6 +156,14 @@ const DetailsPage = () => {
                 from the back-end server.
               </p>
             </li>
+            <li>
+              <h3>Loading spinner</h3>
+              <p>
+                Pages which may be slow to load, such as the Artists or Albums
+                pages, will display an animated spinner whilst the page is
+                retrieving content from the back-end API server.
+              </p>
+            </li>
           </ul>
           <br />
 
