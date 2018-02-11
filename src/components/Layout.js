@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Grid } from 'react-bootstrap';
+import 'nprogress/nprogress.css';
 import '../styles/Layout.css';
 import Header from './Header';
 import Footer from './Footer';

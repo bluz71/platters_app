@@ -1,5 +1,2 @@
-- Implement Search component. This needs to be a show/hide component.
-
-- Make sure search form value is filled in when going forward and back through
-  history. Do this after show/hide form. Note, show search form if
-  'this.params.search' is set.
+- Set Component interface with PropTypes, see page 149 of "The Road to Learn
+  React".

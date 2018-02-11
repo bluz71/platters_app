@@ -69,6 +69,17 @@ const DetailsPage = () => {
                 such as the Artists search form <em>slide-down</em> motion.
               </p>
             </li>
+            <li>
+              <h3>
+                <a href="https://github.com/rstacruz/nprogress" target="_blank" rel="noopener noreferrer">nprogress</a>
+              </h3>
+              <p>
+                Pages which may be slow to load, such as the Artists or Albums
+                pages, will display a slim progress bar, from this library,
+                whilst the page is retrieving content from the back-end API
+                server.
+              </p>
+            </li>
           </ul>
           <br />
 
@@ -154,14 +165,6 @@ const DetailsPage = () => {
                 <a href="https://lodash.com/docs#debounce" target="_blank" rel="noopener noreferrer" className="standout"> debounce </a> 
                 of 500ms is used control how often search results are retrieved
                 from the back-end server.
-              </p>
-            </li>
-            <li>
-              <h3>Loading spinner</h3>
-              <p>
-                Pages which may be slow to load, such as the Artists or Albums
-                pages, will display an animated spinner whilst the page is
-                retrieving content from the back-end API server.
               </p>
             </li>
           </ul>

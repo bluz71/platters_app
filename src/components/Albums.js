@@ -7,6 +7,7 @@ import pluralize from 'pluralize';
 import numeral from 'numeral';
 import queryString from 'query-string';
 import _ from 'lodash';
+import NProgress from 'nprogress';
 import '../styles/Albums.css';
 import { API_HOST } from '../config';
 import Paginator from './Paginator';
@@ -114,6 +115,7 @@ class Albums extends Component {
       .then(response => {
         if (!this.loaded) {
           this.loaded = true;
+          NProgress.done();
         }
         this.setState({
           albums: response.data.albums,
@@ -165,11 +167,7 @@ class Albums extends Component {
 
   renderAlbums() {
     if (!this.loaded) {
-      return (
-        <div className="loading-spinner">
-          <FontAwesome name="spinner" spin pulse />
-        </div>
-      );
+      NProgress.start();
     }
 
     if (this.state.error) {

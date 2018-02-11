@@ -8,6 +8,7 @@ import numeral from 'numeral';
 import queryString from 'query-string';
 import _ from 'lodash';
 import { VelocityTransitionGroup } from 'velocity-react';
+import NProgress from 'nprogress';
 import '../styles/Artists.css';
 import { API_HOST } from '../config';
 import Search from './Search';
@@ -129,6 +130,7 @@ class Artists extends Component {
       .then(response => {
         if (!this.loaded) {
           this.loaded = true;
+          NProgress.done();
         }
         this.setState({
           artists: response.data.artists,
@@ -204,11 +206,7 @@ class Artists extends Component {
 
   renderArtists() {
     if (!this.loaded) {
-      return (
-        <div className="loading-spinner">
-          <FontAwesome name="spinner" spin pulse />
-        </div>
-      );
+      NProgress.start();
     }
 
     if (this.state.error) {

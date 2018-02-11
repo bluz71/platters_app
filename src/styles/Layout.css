@@ -3,6 +3,10 @@ html {
   min-height: 100%;
 }
 
+#nprogress .bar {
+  background: #3c9a5f;
+}
+
 .PlattersBrand {
   font-family: 'Capriola', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.2em;
