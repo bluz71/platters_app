@@ -67,6 +67,7 @@ class Artists extends Component {
     this.searching = false;
     const newParams = {};
     if (!this.applyParams(newParams) && searching) {
+      // Hide the search form if it was previously visible.
       this.forceUpdate();
     }
   }

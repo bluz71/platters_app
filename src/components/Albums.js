@@ -7,9 +7,11 @@ import pluralize from 'pluralize';
 import numeral from 'numeral';
 import queryString from 'query-string';
 import _ from 'lodash';
+import { VelocityTransitionGroup } from 'velocity-react';
 import NProgress from 'nprogress';
 import '../styles/Albums.css';
 import { API_HOST } from '../config';
+import Search from './Search';
 import Paginator from './Paginator';
 
 const ALBUMS_ENDPOINT = `${API_HOST}/albums.json`;
@@ -22,6 +24,7 @@ class Albums extends Component {
     // changes; just use an instance variable instead.
     this.params = {};
     this.loaded = false;
+    this.searching = false;
 
     this.state = {
       albums: [],
@@ -60,8 +63,13 @@ class Albums extends Component {
   }
 
   handleAll = () => {
+    const searching = this.searching;
+    this.searching = false;
     const newParams = {};
-    this.applyParams(newParams);
+    if (!this.applyParams(newParams) && searching) {
+      // Hide the search form if it was previously visible.
+      this.forceUpdate();
+    }
   }
 
   handleYear = (year) => {
@@ -75,8 +83,34 @@ class Albums extends Component {
   }
 
   handleLetter = (letter) => {
-    const newParams = _.omit(this.params, ['page']);
+    const newParams = _.omit(this.params, ['page', 'search']);
     newParams.letter = letter;
+    this.applyParams(newParams);
+  }
+
+  handleRandom = () => {
+    const newParams = { random: true };
+    this.applyParams(newParams);
+  }
+
+  handleFilterVisibility = () => {
+    console.log('In Filter Visibility');
+  }
+
+  handleSearchVisibility = () => {
+    this.searching = !this.searching;
+    this.forceUpdate();
+  }
+
+  handleSearchChange = (term) => {
+    const newParams = term ? { search: term} : {};
+    this.applyParams(newParams);
+  }
+
+  handleSearchSubmit = (event) => {
+    event.preventDefault();
+    const term = event.target.elements.search.value;
+    const newParams = term ? { search: term} : {};
     this.applyParams(newParams);
   }
 
@@ -94,14 +128,17 @@ class Albums extends Component {
 
   // Apply paramaters and update resources only if they are changed.
   applyParams(newParams) {
-    if (_.isEqual(this.params, newParams)) {
+    if (_.isEqual(this.params, newParams) && !newParams.hasOwnProperty('random')) {
       // Nothing to do, new params have not changed, just return.
-      return;
+      // Note, if random is set then ignore this opt-out since it will always
+      // generate a new set of albums.
+      return false;
     }
 
     this.params = newParams;
     this.props.history.push('/albums', this.params);
     this.getAlbums();
+    return true;
   }
 
   albumsURL() {
@@ -152,15 +189,52 @@ class Albums extends Component {
     );
   }
 
+  showLettersFilter() {
+    if (this.searching || this.params.hasOwnProperty('random')) { 
+       return false;
+    }
+    else {
+      return true;
+    }
+  }
+
+  renderSearch() {
+    return (
+      <VelocityTransitionGroup
+        enter={{
+          animation: 'slideDown',
+          duration: 250,
+          complete: () => {
+            this.search.focusSearchInput();
+          }
+        }}
+        leave={{animation: 'slideUp', duration: 250}}>
+        {this.searching &&
+          <Search
+            placeholder="Search Artists..."
+            onSearchChange={this.handleSearchChange}
+            onSearchSubmit={this.handleSearchSubmit}
+            ref={(search) => this.search = search}
+          />}
+      </VelocityTransitionGroup>
+    );
+  }
+
   renderFilters() {
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
     return (
-      <div className="filters">
-        <ul className="pagination pagination-sm">
-          <li onClick={this.handleAll}><a>All</a></li>
-          {letters.map(letter => <li onClick={() => this.handleLetter(letter)} key={letter} className={this.letterActivity(letter)}><a>{letter}</a></li>)}
-        </ul>
+      <div>
+        <div className="filters">
+          <ul className="pagination pagination-sm">
+            <li onClick={this.handleAll}><a>All</a></li>
+            {this.showLettersFilter() && letters.map(letter => <li onClick={() => this.handleLetter(letter)} key={letter} className={this.letterActivity(letter)}><a>{letter}</a></li>)}
+            <li onClick={this.handleRandom}><FontAwesome name="random" /></li>
+            <li onClick={this.handleFilterVisibility}><FontAwesome name="filter" /></li>
+            <li onClick={this.handleSearchVisibility}><FontAwesome name="search" /></li>
+          </ul>
+        </div>
+        {this.renderSearch()}
       </div>
     );
   }

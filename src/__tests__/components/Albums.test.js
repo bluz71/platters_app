@@ -56,4 +56,22 @@ describe('<Albums />', () => {
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('renders random albums', async () => {
+    const wrapper = shallow(<Albums history={[]} />);
+    // Manually trigger the callback
+    wrapper.instance().handleRandom();
+    await flushPromises();
+    wrapper.update();
+    expect(wrapper).toMatchSnapshot();
+  })
+
+  it('renders ABC search match', async () => {
+    const wrapper = shallow(<Albums history={[]} />);
+    // Manually trigger the callback
+    wrapper.instance().handleSearchChange('ABC');
+    await flushPromises();
+    wrapper.update();
+    expect(wrapper).toMatchSnapshot();
+  });
 });

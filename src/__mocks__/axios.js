@@ -7,6 +7,7 @@ import { data as albumsPage2 } from './albums_page2.json';
 import { data as albumsA } from './albums_a.json';
 import { data as albums2006 } from './albums_2006.json';
 import { data as albumsPop } from './albums_pop.json';
+import { data as albumsRandom } from './albums_random.json';
 
 // Details:
 //   https://stackoverflow.com/questions/45016033/how-do-i-test-axios-in-jest
@@ -49,6 +50,14 @@ module.exports = {
       case `${API_HOST}/albums.json?genre=Pop`:
         return Promise.resolve({
           data: albumsPop
+        });
+      case `${API_HOST}/albums.json?random=true`:
+        return Promise.resolve({
+          data: albumsRandom
+        });
+      case `${API_HOST}/albums.json?search=ABC`:
+        return Promise.resolve({
+          data: albumsA
         });
     }
   })
