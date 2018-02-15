@@ -267,6 +267,31 @@ exports[`<Albums /> renders 2006 albums 1`] = `
       enter={
         Object {
           "animation": "slideDown",
+          "duration": 250,
+        }
+      }
+      enterHideStyle={
+        Object {
+          "display": "none",
+        }
+      }
+      enterShowStyle={
+        Object {
+          "display": "",
+        }
+      }
+      leave={
+        Object {
+          "animation": "slideUp",
+          "duration": 250,
+        }
+      }
+      runOnMount={false}
+    />
+    <VelocityTransitionGroup
+      enter={
+        Object {
+          "animation": "slideDown",
           "complete": [Function],
           "duration": 250,
         }
@@ -658,6 +683,31 @@ exports[`<Albums /> renders A albums 1`] = `
         </li>
       </ul>
     </div>
+    <VelocityTransitionGroup
+      enter={
+        Object {
+          "animation": "slideDown",
+          "duration": 250,
+        }
+      }
+      enterHideStyle={
+        Object {
+          "display": "none",
+        }
+      }
+      enterShowStyle={
+        Object {
+          "display": "",
+        }
+      }
+      leave={
+        Object {
+          "animation": "slideUp",
+          "duration": 250,
+        }
+      }
+      runOnMount={false}
+    />
     <VelocityTransitionGroup
       enter={
         Object {
@@ -1062,6 +1112,31 @@ exports[`<Albums /> renders ABC search match 1`] = `
         </li>
       </ul>
     </div>
+    <VelocityTransitionGroup
+      enter={
+        Object {
+          "animation": "slideDown",
+          "duration": 250,
+        }
+      }
+      enterHideStyle={
+        Object {
+          "display": "none",
+        }
+      }
+      enterShowStyle={
+        Object {
+          "display": "",
+        }
+      }
+      leave={
+        Object {
+          "animation": "slideUp",
+          "duration": 250,
+        }
+      }
+      runOnMount={false}
+    />
     <VelocityTransitionGroup
       enter={
         Object {
@@ -1471,6 +1546,31 @@ exports[`<Albums /> renders Pop albums 1`] = `
       enter={
         Object {
           "animation": "slideDown",
+          "duration": 250,
+        }
+      }
+      enterHideStyle={
+        Object {
+          "display": "none",
+        }
+      }
+      enterShowStyle={
+        Object {
+          "display": "",
+        }
+      }
+      leave={
+        Object {
+          "animation": "slideUp",
+          "duration": 250,
+        }
+      }
+      runOnMount={false}
+    />
+    <VelocityTransitionGroup
+      enter={
+        Object {
+          "animation": "slideDown",
           "complete": [Function],
           "duration": 250,
         }
@@ -1845,6 +1945,31 @@ exports[`<Albums /> renders first page 1`] = `
       enter={
         Object {
           "animation": "slideDown",
+          "duration": 250,
+        }
+      }
+      enterHideStyle={
+        Object {
+          "display": "none",
+        }
+      }
+      enterShowStyle={
+        Object {
+          "display": "",
+        }
+      }
+      leave={
+        Object {
+          "animation": "slideUp",
+          "duration": 250,
+        }
+      }
+      runOnMount={false}
+    />
+    <VelocityTransitionGroup
+      enter={
+        Object {
+          "animation": "slideDown",
           "complete": [Function],
           "duration": 250,
         }
@@ -2142,6 +2267,31 @@ exports[`<Albums /> renders random albums 1`] = `
         </li>
       </ul>
     </div>
+    <VelocityTransitionGroup
+      enter={
+        Object {
+          "animation": "slideDown",
+          "duration": 250,
+        }
+      }
+      enterHideStyle={
+        Object {
+          "display": "none",
+        }
+      }
+      enterShowStyle={
+        Object {
+          "display": "",
+        }
+      }
+      leave={
+        Object {
+          "animation": "slideUp",
+          "duration": 250,
+        }
+      }
+      runOnMount={false}
+    />
     <VelocityTransitionGroup
       enter={
         Object {
@@ -2633,6 +2783,31 @@ exports[`<Albums /> renders second page 1`] = `
         </li>
       </ul>
     </div>
+    <VelocityTransitionGroup
+      enter={
+        Object {
+          "animation": "slideDown",
+          "duration": 250,
+        }
+      }
+      enterHideStyle={
+        Object {
+          "display": "none",
+        }
+      }
+      enterShowStyle={
+        Object {
+          "display": "",
+        }
+      }
+      leave={
+        Object {
+          "animation": "slideUp",
+          "duration": 250,
+        }
+      }
+      runOnMount={false}
+    />
     <VelocityTransitionGroup
       enter={
         Object {
