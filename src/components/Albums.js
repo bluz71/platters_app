@@ -11,6 +11,7 @@ import { VelocityTransitionGroup } from 'velocity-react';
 import NProgress from 'nprogress';
 import '../styles/Albums.css';
 import { API_HOST } from '../config';
+import AlbumsFilter from './AlbumsFilter';
 import Search from './Search';
 import Paginator from './Paginator';
 
@@ -24,6 +25,7 @@ class Albums extends Component {
     // changes; just use an instance variable instead.
     this.params = {};
     this.loaded = false;
+    this.filtering = false;
     this.searching = false;
 
     this.state = {
@@ -94,16 +96,26 @@ class Albums extends Component {
   }
 
   handleFilterVisibility = () => {
-    console.log('In Filter Visibility');
+    this.filtering = !this.filtering;
+    this.searching = false;
+    this.forceUpdate();
+  }
+
+  handleFilterSubmit = (event) => {
+    event.preventDefault();
+    const genre = this.albumsFilter.genreChoice();
+    const newParams = genre !== "Choose" ? { genre } : {};
+    this.applyParams(newParams);
   }
 
   handleSearchVisibility = () => {
     this.searching = !this.searching;
+    this.filtering = false;
     this.forceUpdate();
   }
 
   handleSearchChange = (term) => {
-    const newParams = term ? { search: term} : {};
+    const newParams = term ? { search: term } : {};
     this.applyParams(newParams);
   }
 
@@ -190,12 +202,29 @@ class Albums extends Component {
   }
 
   showLettersFilter() {
-    if (this.searching || this.params.hasOwnProperty('random')) { 
-       return false;
+    if (this.filtering || this.searching || this.params.hasOwnProperty('random')) {
+      return false;
     }
     else {
       return true;
     }
+  }
+
+  renderAlbumsFilter() {
+    return (
+      <VelocityTransitionGroup
+        enter={{
+          animation: 'slideDown',
+          duration: 250
+        }}
+        leave={{animation: 'slideUp', duration: 250}}>
+        {this.filtering &&
+          <AlbumsFilter
+            onFilterSubmit={this.handleFilterSubmit}
+            ref={(albumsFilter) => this.albumsFilter = albumsFilter}
+          />}
+      </VelocityTransitionGroup>
+    );
   }
 
   renderSearch() {
@@ -234,6 +263,7 @@ class Albums extends Component {
             <li onClick={this.handleSearchVisibility}><FontAwesome name="search" /></li>
           </ul>
         </div>
+        {this.renderAlbumsFilter()}
         {this.renderSearch()}
       </div>
     );

@@ -1,0 +1,32 @@
+.AlbumsFilter {
+  color: #777;
+}
+
+.AlbumsFilter label {
+  font-weight: lighter;
+}
+
+.AlbumsFilter input {
+  border-radius: 3px;
+}
+
+.AlbumsFilter .RadioFirst {
+  margin-top: 0.2em;
+}
+
+.AlbumsFilter .RadioLast {
+  margin-bottom: 0;
+}
+
+.AlbumsFilter .form-group {
+  margin-bottom: 0.5em;
+}
+
+
+.AlbumsFilter .col-md-1 {
+  margin-bottom: 0;
+}
+
+.AlbumsFilter .submit {
+  margin-top: 1.2em;
+}
