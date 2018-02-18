@@ -1,2 +1,6 @@
+- Add test for AlbumsFilter component
+
+- Extend Albums test with filtering tests
+
 - Set Component interface with PropTypes, see page 149 of "The Road to Learn
-  React".
+  React"

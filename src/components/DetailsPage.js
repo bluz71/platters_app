@@ -167,6 +167,14 @@ const DetailsPage = () => {
                 from the back-end server.
               </p>
             </li>
+            <li>
+              <h3>Busy submission buttons</h3>
+              <p>
+                Form submission buttons, such as the Albums
+                filter <em>Select</em> button, will display a spinner icon
+                whilst the submitted form is being processed.
+              </p>
+            </li>
           </ul>
           <br />
 
