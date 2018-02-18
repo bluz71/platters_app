@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { IndexLinkContainer } from 'react-router-bootstrap';
 import '../styles/Header.css';
 import logo from '../images/platters-white.svg';
@@ -8,8 +9,10 @@ const Header = () => (
   <header>
     <Navbar fixedTop fluid collapseOnSelect>
       <Navbar.Header>
-        <Navbar.Brand className="PlattersBrand">
-          <a href="/"><img src={logo} alt="Platters" /> platters</a>
+        <Navbar.Brand>
+          <Link to='/' className='PlattersBrand'>
+            <img src={logo} alt="Platters" /> platters
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle />
       </Navbar.Header>
