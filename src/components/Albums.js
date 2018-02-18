@@ -135,15 +135,15 @@ class Albums extends Component {
     this.forceUpdate();
   }
 
-  handleSearchChange = (term) => {
-    const newParams = term ? { search: term } : {};
+  handleSearchChange = (search) => {
+    const newParams = search ? { search } : {};
     this.applyParams(newParams);
   }
 
   handleSearchSubmit = (event) => {
     event.preventDefault();
-    const term = event.target.elements.search.value;
-    const newParams = term ? { search: term} : {};
+    const search = this.search.value();
+    const newParams = search ? { search } : {};
     this.applyParams(newParams);
   }
 

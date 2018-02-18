@@ -14,6 +14,10 @@ class Search extends Component {
     this.searchInput.focus();
   }
 
+  value() {
+    return this.searchInput.value;
+  }
+
   render() {
     return (
       <Row className="Search">
@@ -25,7 +29,6 @@ class Search extends Component {
                 bsSize="sm"
                 placeholder={this.props.placeholder}
                 onChange={event => this.debouncedSearch(event.target.value)}
-                name="search"
                 inputRef={(input) => this.searchInput = input}
               />
             </FormGroup>
