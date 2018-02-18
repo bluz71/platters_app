@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Row, Col, FormGroup, FormControl, ControlLabel, Radio, Button } from 'react-bootstrap';
+import FontAwesome from 'react-fontawesome';
 import '../styles/AlbumsFilter.css';
 import { API_HOST } from '../config';
 
@@ -10,8 +11,13 @@ class AlbumsFilter extends Component {
   constructor(props) {
     super(props);
 
+    // The value of the radio controls.
+    this.sort = 'title';
+    this.order = 'forward';
+
     this.state = {
-      genres: []
+      genres: [],
+      selectButtonText: 'Select'
     };
   }
 
@@ -28,8 +34,49 @@ class AlbumsFilter extends Component {
       });
   }
 
-  genreChoice() {
+  genreValue() {
     return this.genreSelect.value;
+  }
+
+  yearValue() {
+    return this.yearInput.value;
+  }
+
+  sortValue() {
+    return this.sort;
+  }
+
+  orderValue() {
+    return this.order;
+  }
+
+  handleSortTitle = () => {
+    this.sort = 'title';
+  }
+
+  handleSortYear = () => {
+    this.sort = 'year';
+  }
+
+  handleOrderForward = () => {
+    this.order = 'forward';
+  }
+
+  handleOrderReverse = () => {
+    this.order = 'reverse';
+  }
+
+  selecting() {
+    this.setState({
+      selectButtonText:
+      <div>
+        <FontAwesome name="spinner" spin pulse /> Selecting
+      </div>
+    });
+  }
+
+  selected() {
+    this.setState({ selectButtonText: 'Select' });
   }
 
   renderGenreOptions() {
@@ -47,7 +94,7 @@ class AlbumsFilter extends Component {
           <form onSubmit={this.props.onFilterSubmit}>
             <FormGroup className="col-md-2 col-md-offset-2">
               <ControlLabel>Genre</ControlLabel>
-              <FormControl 
+              <FormControl
                 componentClass="select"
                 bsSize="sm"
                 inputRef={(select) => this.genreSelect = select}
@@ -65,23 +112,57 @@ class AlbumsFilter extends Component {
                 placeholder="2000, 2004..2008"
                 name="years"
                 pattern="[0-9., ]+"
+                inputRef={(input) => this.yearInput = input}
               />
             </FormGroup>
 
             <FormGroup className="col-md-1">
               <ControlLabel>Sort</ControlLabel>
-              <Radio name="sortRadioGroup" className="RadioFirst" defaultChecked>Title</Radio>
-              <Radio name="sortRadioGroup" className="RadioLast">Year</Radio>
+              <Radio
+                name="sortRadioGroup"
+                className="RadioFirst"
+                defaultChecked
+                onChange={this.handleSortTitle}
+              >
+                Title
+              </Radio>
+              <Radio
+                name="sortRadioGroup"
+                className="RadioLast"
+                onChange={this.handleSortYear}
+              >
+                Year
+              </Radio>
             </FormGroup>
 
             <FormGroup className="col-md-1">
               <ControlLabel>Order</ControlLabel>
-              <Radio name="orderRadioGroup" className="RadioFirst" defaultChecked>Forward</Radio>
-              <Radio name="orderRadioGroup" className="RadioLast">Reverse</Radio>
+              <Radio
+                name="orderRadioGroup"
+                className="RadioFirst"
+                defaultChecked
+                onChange={this.handleOrderForward}
+              >
+                Forward
+              </Radio>
+              <Radio
+                name="orderRadioGroup"
+                className="RadioLast"
+                onChange={this.handleOrderReverse}
+              >
+                Reverse
+              </Radio>
             </FormGroup>
 
             <FormGroup className="col-md-1">
-              <Button type="submit" bsStyle="success" bsSize="small" className="submit">Select</Button>
+              <Button
+                type="submit"
+                bsStyle="success"
+                bsSize="small"
+                className="submit"
+              >
+                {this.state.selectButtonText}
+              </Button>
             </FormGroup>
           </form>
         </Col>

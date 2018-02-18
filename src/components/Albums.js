@@ -65,11 +65,11 @@ class Albums extends Component {
   }
 
   handleAll = () => {
-    const searching = this.searching;
-    this.searching = false;
+    const formVisible = this.searching || this.filtering;
+    this.searching = this.filtering = false;
     const newParams = {};
-    if (!this.applyParams(newParams) && searching) {
-      // Hide the search form if it was previously visible.
+    if (!this.applyParams(newParams) && formVisible) {
+      // Hide all forms if they were previously visible.
       this.forceUpdate();
     }
   }
@@ -91,6 +91,7 @@ class Albums extends Component {
   }
 
   handleRandom = () => {
+    this.searching = this.filtering = false;
     const newParams = { random: true };
     this.applyParams(newParams);
   }
@@ -103,8 +104,28 @@ class Albums extends Component {
 
   handleFilterSubmit = (event) => {
     event.preventDefault();
-    const genre = this.albumsFilter.genreChoice();
-    const newParams = genre !== "Choose" ? { genre } : {};
+    const newParams = {};
+
+    const genre = this.albumsFilter.genreValue();
+    if (genre !== 'Choose') {
+      newParams.genre = genre;
+    }
+
+    const year = this.albumsFilter.yearValue();
+    if (year.length > 0 ) {
+      newParams.year = year;
+    }
+
+    const sort = this.albumsFilter.sortValue();
+    if (sort !== 'title') {
+      newParams.sort = sort;
+    }
+
+    const order = this.albumsFilter.orderValue();
+    if (order !== 'forward') {
+      newParams.order = order;
+    }
+
     this.applyParams(newParams);
   }
 
@@ -149,6 +170,7 @@ class Albums extends Component {
 
     this.params = newParams;
     this.props.history.push('/albums', this.params);
+    this.filtering && this.albumsFilter && this.albumsFilter.selecting();
     this.getAlbums();
     return true;
   }
@@ -166,6 +188,7 @@ class Albums extends Component {
           this.loaded = true;
           NProgress.done();
         }
+        this.filtering && this.albumsFilter && this.albumsFilter.selected();
         this.setState({
           albums: response.data.albums,
           pagination: response.data.pagination,
