@@ -110,7 +110,7 @@ class AlbumsFilter extends Component {
                 type="text"
                 bsSize="sm"
                 placeholder="2000, 2004..2008"
-                name="years"
+                className="year"
                 pattern="[0-9., ]+"
                 inputRef={(input) => this.yearInput = input}
               />
