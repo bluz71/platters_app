@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Pagination } from 'react-bootstrap';
 
 const Paginator = ({ pagination, onPageChange }) => {
@@ -18,6 +19,11 @@ const Paginator = ({ pagination, onPageChange }) => {
       onSelect={onPageChange}
     />
   );
+};
+
+Paginator.propTypes = {
+  pagination: PropTypes.object,
+  onPageChange: PropTypes.func
 };
 
 export default Paginator;

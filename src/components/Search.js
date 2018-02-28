@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Row, Col, FormGroup, FormControl } from 'react-bootstrap';
 import debounce from 'lodash/debounce';
 import '../styles/Search.css';
@@ -38,5 +39,11 @@ class Search extends Component {
     );
   }
 }
+
+Search.propTypes = {
+  onSearchChange: PropTypes.func,
+  onSearchSubmit: PropTypes.func,
+  placeholder: PropTypes.string
+};
 
 export default Search;

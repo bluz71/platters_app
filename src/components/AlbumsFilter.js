@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Row, Col, FormGroup, FormControl, ControlLabel, Radio, Button } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
@@ -170,5 +171,9 @@ class AlbumsFilter extends Component {
     );
   }
 }
+
+AlbumsFilter.propTypes = {
+  onFilterSubmit: PropTypes.func
+};
 
 export default AlbumsFilter;
