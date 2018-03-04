@@ -13,6 +13,7 @@ import '../styles/Artists.css';
 import { API_HOST } from '../config';
 import Search from './Search';
 import Paginator from './Paginator';
+import ArtistsSidebar from './ArtistsSidebar';
 
 const ARTISTS_ENDPOINT = `${API_HOST}/artists.json`;
 
@@ -28,6 +29,8 @@ class Artists extends Component {
 
     this.state = {
       artists: [],
+      mostRecentAlbums: [],
+      mostRecentComments: [],
       pagination: {},
       error: null
     };
@@ -135,6 +138,8 @@ class Artists extends Component {
         }
         this.setState({
           artists: response.data.artists,
+          mostRecentAlbums: response.data.most_recent.albums,
+          mostRecentComments: response.data.most_recent.comments,
           pagination: response.data.pagination,
           error: null
         });
@@ -253,6 +258,10 @@ class Artists extends Component {
             {this.renderPaginator()}
           </div>
         </Col>
+        <ArtistsSidebar
+          mostRecentAlbums={this.state.mostRecentAlbums}
+          mostRecentComments={this.state.mostRecentComments}
+        />
       </Row>
     );
   }
