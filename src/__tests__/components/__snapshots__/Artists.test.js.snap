@@ -315,6 +315,50 @@ exports[`<Artists /> renders A artists 1`] = `
       </div>
     </div>
   </Col>
+  <ArtistsSidebar
+    mostRecentAlbums={
+      Array [
+        Object {
+          "album_slug": "abc",
+          "artist": "ABC",
+          "artist_slug": "abc",
+          "cover_url": "http://localhost:3000/uploads/album/cover/898/small_ABC--ABC.jpg",
+          "id": 1,
+          "title": "ABC",
+        },
+        Object {
+          "album_slug": "def",
+          "artist": "DEF",
+          "artist_slug": "def",
+          "cover_url": "http://localhost:3000/uploads/album/cover/154/small_DEF--DEF.jpg",
+          "id": 2,
+          "title": "DEF",
+        },
+      ]
+    }
+    mostRecentComments={
+      Array [
+        Object {
+          "created_at": "<time datetime=\\"2018-03-08T02:55:33Z\\" data-local=\\"time-ago\\">March  8, 2018  2:55am</time>",
+          "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
+          "id": 1,
+          "name": "abc",
+          "path": "artist/abc",
+          "user_name": "fred",
+          "user_slug": "fred",
+        },
+        Object {
+          "created_at": "<time datetime=\\"2018-03-07T04:22:52Z\\" data-local=\\"time-ago\\">March  7, 2018  4:22am</time>",
+          "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
+          "id": 2,
+          "name": "def",
+          "path": "artist/def/album/def",
+          "user_name": "jon",
+          "user_slug": "jon",
+        },
+      ]
+    }
+  />
 </Row>
 `;
 
@@ -632,6 +676,50 @@ exports[`<Artists /> renders ABC search match 1`] = `
       </div>
     </div>
   </Col>
+  <ArtistsSidebar
+    mostRecentAlbums={
+      Array [
+        Object {
+          "album_slug": "abc",
+          "artist": "ABC",
+          "artist_slug": "abc",
+          "cover_url": "http://localhost:3000/uploads/album/cover/898/small_ABC--ABC.jpg",
+          "id": 1,
+          "title": "ABC",
+        },
+        Object {
+          "album_slug": "def",
+          "artist": "DEF",
+          "artist_slug": "def",
+          "cover_url": "http://localhost:3000/uploads/album/cover/154/small_DEF--DEF.jpg",
+          "id": 2,
+          "title": "DEF",
+        },
+      ]
+    }
+    mostRecentComments={
+      Array [
+        Object {
+          "created_at": "<time datetime=\\"2018-03-08T02:55:33Z\\" data-local=\\"time-ago\\">March  8, 2018  2:55am</time>",
+          "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
+          "id": 1,
+          "name": "abc",
+          "path": "artist/abc",
+          "user_name": "fred",
+          "user_slug": "fred",
+        },
+        Object {
+          "created_at": "<time datetime=\\"2018-03-07T04:22:52Z\\" data-local=\\"time-ago\\">March  7, 2018  4:22am</time>",
+          "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
+          "id": 2,
+          "name": "def",
+          "path": "artist/def/album/def",
+          "user_name": "jon",
+          "user_slug": "jon",
+        },
+      ]
+    }
+  />
 </Row>
 `;
 
@@ -990,6 +1078,50 @@ exports[`<Artists /> renders first page 1`] = `
       />
     </div>
   </Col>
+  <ArtistsSidebar
+    mostRecentAlbums={
+      Array [
+        Object {
+          "album_slug": "abc",
+          "artist": "ABC",
+          "artist_slug": "abc",
+          "cover_url": "http://localhost:3000/uploads/album/cover/898/small_ABC--ABC.jpg",
+          "id": 1,
+          "title": "ABC",
+        },
+        Object {
+          "album_slug": "def",
+          "artist": "DEF",
+          "artist_slug": "def",
+          "cover_url": "http://localhost:3000/uploads/album/cover/154/small_DEF--DEF.jpg",
+          "id": 2,
+          "title": "DEF",
+        },
+      ]
+    }
+    mostRecentComments={
+      Array [
+        Object {
+          "created_at": "<time datetime=\\"2018-03-08T02:55:33Z\\" data-local=\\"time-ago\\">March  8, 2018  2:55am</time>",
+          "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
+          "id": 1,
+          "name": "abc",
+          "path": "artist/abc",
+          "user_name": "fred",
+          "user_slug": "fred",
+        },
+        Object {
+          "created_at": "<time datetime=\\"2018-03-07T04:22:52Z\\" data-local=\\"time-ago\\">March  7, 2018  4:22am</time>",
+          "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
+          "id": 2,
+          "name": "def",
+          "path": "artist/def/album/def",
+          "user_name": "jon",
+          "user_slug": "jon",
+        },
+      ]
+    }
+  />
 </Row>
 `;
 
@@ -1319,5 +1451,49 @@ exports[`<Artists /> renders second page 1`] = `
       />
     </div>
   </Col>
+  <ArtistsSidebar
+    mostRecentAlbums={
+      Array [
+        Object {
+          "album_slug": "abc",
+          "artist": "ABC",
+          "artist_slug": "abc",
+          "cover_url": "http://localhost:3000/uploads/album/cover/898/small_ABC--ABC.jpg",
+          "id": 1,
+          "title": "ABC",
+        },
+        Object {
+          "album_slug": "def",
+          "artist": "DEF",
+          "artist_slug": "def",
+          "cover_url": "http://localhost:3000/uploads/album/cover/154/small_DEF--DEF.jpg",
+          "id": 2,
+          "title": "DEF",
+        },
+      ]
+    }
+    mostRecentComments={
+      Array [
+        Object {
+          "created_at": "<time datetime=\\"2018-03-08T02:55:33Z\\" data-local=\\"time-ago\\">March  8, 2018  2:55am</time>",
+          "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
+          "id": 1,
+          "name": "abc",
+          "path": "artist/abc",
+          "user_name": "fred",
+          "user_slug": "fred",
+        },
+        Object {
+          "created_at": "<time datetime=\\"2018-03-07T04:22:52Z\\" data-local=\\"time-ago\\">March  7, 2018  4:22am</time>",
+          "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
+          "id": 2,
+          "name": "def",
+          "path": "artist/def/album/def",
+          "user_name": "jon",
+          "user_slug": "jon",
+        },
+      ]
+    }
+  />
 </Row>
 `;

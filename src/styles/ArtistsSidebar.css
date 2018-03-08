@@ -42,17 +42,16 @@
     border: 1px solid #3c9a5f;
   }
 
-  /*   .comment { */
-  /*     height: 10.2em; */
+  .ArtistsSidebar .comment {
+    height: 10.2em;
+  }
 
-  /*     img { */
-  /*       height: 45px; */
-  /*       width: 45px; */
-  /*       border: 1px solid $grey-mid-light; */
-  /*       border-radius: 50%; */
-  /*       margin-top: 0.5em; */
-  /*       margin-bottom: 0.5em; */
-  /*     } */
-  /*   } */
-  /* } */
+  .ArtistsSidebar .comment img {
+    height: 45px;
+    width: 45px;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
 }

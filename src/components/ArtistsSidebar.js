@@ -15,6 +15,21 @@ const renderAlbums = (albums) => (
   )
 );
 
+const renderComments = (comments) => (
+  comments.map(comment =>
+    <ListGroupItem key={comment.id} className="comment">
+      <h5 dangerouslySetInnerHTML={{ __html: `${comment.created_at} by` }} />
+      <h5><Link to={`/comments/${comment.user_slug}`}>{comment.user_name}</Link></h5>
+      <Link to={`/comments/${comment.user_slug}`}>
+        <img className="img-responsive center-block" src={comment.gravatar_url} alt={comment.user_name} />
+      </Link>
+      <h5>
+        in <Link to={comment.path}>{comment.name}</Link>
+      </h5>
+    </ListGroupItem>
+  )
+);
+
 const ArtistsSidebar = ({ mostRecentAlbums, mostRecentComments }) => {
   if (mostRecentAlbums.length === 0) {
     return <aside></aside>;
@@ -29,6 +44,14 @@ const ArtistsSidebar = ({ mostRecentAlbums, mostRecentComments }) => {
           </div>
           <ListGroup>
             {renderAlbums(mostRecentAlbums)}
+          </ListGroup>
+        </section>
+        <section className="panel panel-default">
+          <div className="panel-heading">
+            <h4 className="panel-title">New Comments</h4>
+          </div>
+          <ListGroup>
+            {renderComments(mostRecentComments)}
           </ListGroup>
         </section>
     </Col>

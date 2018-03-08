@@ -18,6 +18,46 @@
         "comments_count": 2
       }
     ],
+    "most_recent": {
+      "albums": [
+        {
+          "id": 1,
+          "title": "ABC",
+          "artist": "ABC",
+          "artist_slug": "abc",
+          "album_slug": "abc",
+          "cover_url": "http://localhost:3000/uploads/album/cover/898/small_ABC--ABC.jpg"
+        },
+        {
+          "id": 2,
+          "title": "DEF",
+          "artist": "DEF",
+          "artist_slug": "def",
+          "album_slug": "def",
+          "cover_url": "http://localhost:3000/uploads/album/cover/154/small_DEF--DEF.jpg"
+        }
+      ],
+      "comments": [
+        {
+          "id": 1,
+          "created_at": "<time datetime=\"2018-03-08T02:55:33Z\" data-local=\"time-ago\">March  8, 2018  2:55am</time>",
+          "user_name": "fred",
+          "user_slug": "fred",
+          "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
+          "name": "abc",
+          "path": "artist/abc"
+        },
+        {
+          "id": 2,
+          "created_at": "<time datetime=\"2018-03-07T04:22:52Z\" data-local=\"time-ago\">March  7, 2018  4:22am</time>",
+          "user_name": "jon",
+          "user_slug": "jon",
+          "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
+          "name": "def",
+          "path": "artist/def/album/def"
+        }
+      ]
+    },
     "pagination": {
       "current_page": 1,
       "next_page": 2,

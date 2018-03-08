@@ -23,6 +23,9 @@ Significant JavaScript Libraries
 * [Pluralize](https://github.com/blakeembrey/pluralize)
 * [React-Bootstrap](https://react-bootstrap.github.io)
 * [React Router](https://reacttraining.com/react-router)
+* [velocity-react](https://github.com/google-fabric/velocity-react)
+* [nprogress](https://github.com/rstacruz/nprogress)
+* [local-time](https://www.npmjs.com/package/local-time)
 
 Deployment
 ----------

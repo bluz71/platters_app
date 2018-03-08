@@ -10,6 +10,7 @@ import Artists from './Artists';
 import ArtistShow from './ArtistShow';
 import Albums from './Albums';
 import AlbumShow from './AlbumShow';
+import UserComments from './UserComments';
 import AboutPage from './AboutPage';
 import DetailsPage from './DetailsPage';
 import NotFound from './NotFound';
@@ -25,6 +26,7 @@ const Layout = () => (
           <Route path="/artist/:artist_id/album/:album_id" component={AlbumShow}  />
           <Route path="/artists" exact component={Artists} />
           <Route path="/artist/:id" component={ArtistShow}  />
+          <Route path="/comments/:id" component={UserComments}  />
           <Route path="/about" component={AboutPage} />
           <Route path="/details" component={DetailsPage} />
           <Route component={NotFound} />

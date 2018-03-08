@@ -80,6 +80,16 @@ const DetailsPage = () => {
                 server.
               </p>
             </li>
+            <li>
+              <h3>
+                <a href="https://www.npmjs.com/package/local-time" target="_blank" rel="noopener noreferrer">local-time</a>
+              </h3>
+              <p>
+                Convert server-side timestamps into end-user local times. This
+                library affords artist and album comments to be displayed
+                using Twitter-like local-time-ago timestamps.
+              </p>
+            </li>
           </ul>
           <br />
 
