@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArtistsSidebar /> renders a sidebar 1`] = `
+<aside
+  className="ArtistsSidebar"
+>
+  <Col
+    bsClass="col"
+    componentClass="div"
+    md={2}
+  >
+    <section
+      className="panel panel-default"
+    >
+      <div
+        className="panel-heading"
+      >
+        <h4
+          className="panel-title"
+        >
+          New Albums
+        </h4>
+      </div>
+      <ListGroup
+        bsClass="list-group"
+      >
+        <ListGroupItem
+          bsClass="list-group-item"
+          className="album"
+          key="1"
+          listItem={false}
+        >
+          <h5>
+            <Link
+              replace={false}
+              to="/artist/abc/album/abc"
+            >
+              ABC
+            </Link>
+          </h5>
+          <h5>
+            by 
+            <Link
+              replace={false}
+              to="/artist/abc"
+            >
+              ABC
+            </Link>
+          </h5>
+          <Link
+            replace={false}
+            to="/artist/abc/album/abc"
+          >
+            <img
+              alt="ABC"
+              className="img-responsive center-block"
+              src="http://localhost:3000/small_ABC--ABC.jpg"
+            />
+          </Link>
+        </ListGroupItem>
+        <ListGroupItem
+          bsClass="list-group-item"
+          className="album"
+          key="2"
+          listItem={false}
+        >
+          <h5>
+            <Link
+              replace={false}
+              to="/artist/def/album/def"
+            >
+              DEF
+            </Link>
+          </h5>
+          <h5>
+            by 
+            <Link
+              replace={false}
+              to="/artist/def"
+            >
+              DEF
+            </Link>
+          </h5>
+          <Link
+            replace={false}
+            to="/artist/def/album/def"
+          >
+            <img
+              alt="DEF"
+              className="img-responsive center-block"
+              src="http://localhost:3000/small_DEF--DEF.jpg"
+            />
+          </Link>
+        </ListGroupItem>
+      </ListGroup>
+    </section>
+    <section
+      className="panel panel-default"
+    >
+      <div
+        className="panel-heading"
+      >
+        <h4
+          className="panel-title"
+        >
+          New Comments
+        </h4>
+      </div>
+      <ListGroup
+        bsClass="list-group"
+      >
+        <ListGroupItem
+          bsClass="list-group-item"
+          className="comment"
+          key="1"
+          listItem={false}
+        >
+          <h5
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<time>March 8, 2018 2:55am</time> by",
+              }
+            }
+          />
+          <h5>
+            <Link
+              replace={false}
+              to="/comments/fred"
+            >
+              fred
+            </Link>
+          </h5>
+          <Link
+            replace={false}
+            to="/comments/fred"
+          >
+            <img
+              alt="fred"
+              className="img-responsive center-block"
+              src="https://gravatar.com/avatar/88884e5cb90c02031f031bc"
+            />
+          </Link>
+          <h5>
+            in 
+            <Link
+              replace={false}
+              to="artist/abc"
+            >
+              abc
+            </Link>
+          </h5>
+        </ListGroupItem>
+        <ListGroupItem
+          bsClass="list-group-item"
+          className="comment"
+          key="2"
+          listItem={false}
+        >
+          <h5
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<time>March 7, 2018 4:22am</time> by",
+              }
+            }
+          />
+          <h5>
+            <Link
+              replace={false}
+              to="/comments/jon"
+            >
+              jon
+            </Link>
+          </h5>
+          <Link
+            replace={false}
+            to="/comments/jon"
+          >
+            <img
+              alt="jon"
+              className="img-responsive center-block"
+              src="https://gravatar.com/avatar/88884e5cb90c02031f031bc"
+            />
+          </Link>
+          <h5>
+            in 
+            <Link
+              replace={false}
+              to="artist/def/album/def"
+            >
+              def
+            </Link>
+          </h5>
+        </ListGroupItem>
+      </ListGroup>
+    </section>
+  </Col>
+</aside>
+`;
