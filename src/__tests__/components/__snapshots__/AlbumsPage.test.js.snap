@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Albums /> renders 2006 albums 1`] = `
+exports[`<AlbumsPage /> renders 2006 albums 1`] = `
 <div
   className="Albums"
 >
@@ -420,7 +420,7 @@ exports[`<Albums /> renders 2006 albums 1`] = `
 </div>
 `;
 
-exports[`<Albums /> renders A albums 1`] = `
+exports[`<AlbumsPage /> renders A albums 1`] = `
 <div
   className="Albums"
 >
@@ -850,7 +850,7 @@ exports[`<Albums /> renders A albums 1`] = `
 </div>
 `;
 
-exports[`<Albums /> renders ABC search match 1`] = `
+exports[`<AlbumsPage /> renders ABC search match 1`] = `
 <div
   className="Albums"
 >
@@ -1279,7 +1279,7 @@ exports[`<Albums /> renders ABC search match 1`] = `
 </div>
 `;
 
-exports[`<Albums /> renders Pop albums 1`] = `
+exports[`<AlbumsPage /> renders Pop albums 1`] = `
 <div
   className="Albums"
 >
@@ -1679,7 +1679,7 @@ exports[`<Albums /> renders Pop albums 1`] = `
 </div>
 `;
 
-exports[`<Albums /> renders first page 1`] = `
+exports[`<AlbumsPage /> renders first page 1`] = `
 <div
   className="Albums"
 >
@@ -2213,7 +2213,7 @@ exports[`<Albums /> renders first page 1`] = `
 </div>
 `;
 
-exports[`<Albums /> renders random albums 1`] = `
+exports[`<AlbumsPage /> renders random albums 1`] = `
 <div
   className="Albums"
 >
@@ -2521,7 +2521,7 @@ exports[`<Albums /> renders random albums 1`] = `
 </div>
 `;
 
-exports[`<Albums /> renders second page 1`] = `
+exports[`<AlbumsPage /> renders second page 1`] = `
 <div
   className="Albums"
 >

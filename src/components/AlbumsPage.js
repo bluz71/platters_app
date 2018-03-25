@@ -9,7 +9,7 @@ import queryString from 'query-string';
 import _ from 'lodash';
 import { VelocityTransitionGroup } from 'velocity-react';
 import NProgress from 'nprogress';
-import '../styles/Albums.css';
+import '../styles/AlbumsPage.css';
 import { API_HOST } from '../config';
 import AlbumsFilter from './AlbumsFilter';
 import Search from './Search';
@@ -17,7 +17,7 @@ import Paginator from './Paginator';
 
 const ALBUMS_ENDPOINT = `${API_HOST}/albums.json`;
 
-class Albums extends Component {
+class AlbumsPage extends Component {
   constructor(props) {
     super(props);
 
@@ -354,4 +354,4 @@ class Albums extends Component {
   }
 }
 
-export default Albums;
+export default AlbumsPage;

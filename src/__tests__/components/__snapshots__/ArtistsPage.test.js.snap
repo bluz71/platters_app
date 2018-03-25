@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Artists /> renders A artists 1`] = `
+exports[`<ArtistsPage /> renders A artists 1`] = `
 <Row
   bsClass="row"
   componentClass="div"
@@ -362,7 +362,7 @@ exports[`<Artists /> renders A artists 1`] = `
 </Row>
 `;
 
-exports[`<Artists /> renders ABC search match 1`] = `
+exports[`<ArtistsPage /> renders ABC search match 1`] = `
 <Row
   bsClass="row"
   componentClass="div"
@@ -723,7 +723,7 @@ exports[`<Artists /> renders ABC search match 1`] = `
 </Row>
 `;
 
-exports[`<Artists /> renders first page 1`] = `
+exports[`<ArtistsPage /> renders first page 1`] = `
 <Row
   bsClass="row"
   componentClass="div"
@@ -1125,7 +1125,7 @@ exports[`<Artists /> renders first page 1`] = `
 </Row>
 `;
 
-exports[`<Artists /> renders second page 1`] = `
+exports[`<ArtistsPage /> renders second page 1`] = `
 <Row
   bsClass="row"
   componentClass="div"

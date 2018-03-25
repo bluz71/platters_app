@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AlbumShow = (props) => {
+const AlbumShowPage = (props) => {
   const { artist_id, album_id } = props.match.params;
 
   return (
@@ -8,4 +8,4 @@ const AlbumShow = (props) => {
   );
 };
 
-export default AlbumShow;
+export default AlbumShowPage;

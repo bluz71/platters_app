@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserComments = (props) => {
+const UserCommentsPage = (props) => {
   const { id } = props.match.params;
 
   return (
@@ -8,4 +8,4 @@ const UserComments = (props) => {
   );
 };
 
-export default UserComments;
+export default UserCommentsPage;

@@ -9,7 +9,7 @@ import queryString from 'query-string';
 import _ from 'lodash';
 import { VelocityTransitionGroup } from 'velocity-react';
 import NProgress from 'nprogress';
-import '../styles/Artists.css';
+import '../styles/ArtistsPage.css';
 import { API_HOST } from '../config';
 import Search from './Search';
 import Paginator from './Paginator';
@@ -17,7 +17,7 @@ import ArtistsSidebar from './ArtistsSidebar';
 
 const ARTISTS_ENDPOINT = `${API_HOST}/artists.json`;
 
-class Artists extends Component {
+class ArtistsPage extends Component {
   constructor(props) {
     super(props);
 
@@ -267,4 +267,4 @@ class Artists extends Component {
   }
 }
 
-export default Artists;
+export default ArtistsPage;

@@ -1,31 +1,31 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Artists from '../../components/Artists';
+import ArtistsPage from '../../components/ArtistsPage';
 
 // Details:
 //   https://blog.rescale.com/testing-promise-side-effects-with-asyncawait
 //   https://github.com/facebook/jest/issues/2157#issuecomment-279171856
 const flushPromises = () => new Promise(resolve => setImmediate(resolve));
 
-describe('<Artists />', () => {
+describe('<ArtistsPage />', () => {
   it('renders without crashing', () => {
-    shallow(<Artists />);
+    shallow(<ArtistsPage />);
   });
 
   it('renders div.Artists', () => {
-    const wrapper = shallow(<Artists />);
+    const wrapper = shallow(<ArtistsPage />);
     expect(wrapper.find('div.Artists').length).toEqual(1);
   });
 
   it('renders first page', async () => {
-    const wrapper = shallow(<Artists />);
+    const wrapper = shallow(<ArtistsPage />);
     await flushPromises();
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
   });
 
   it('renders second page', async () => {
-    const wrapper = shallow(<Artists history={[]} />);
+    const wrapper = shallow(<ArtistsPage history={[]} />);
     // Manually trigger the callback
     wrapper.instance().handlePageChange(2);
     await flushPromises();
@@ -34,7 +34,7 @@ describe('<Artists />', () => {
   });
 
   it('renders A artists', async () => {
-    const wrapper = shallow(<Artists history={[]} />);
+    const wrapper = shallow(<ArtistsPage history={[]} />);
     // Manually trigger the callback
     wrapper.instance().handleLetter('A');
     await flushPromises();
@@ -43,7 +43,7 @@ describe('<Artists />', () => {
   });
 
   it('renders ABC search match', async () => {
-    const wrapper = shallow(<Artists history={[]} />);
+    const wrapper = shallow(<ArtistsPage history={[]} />);
     // Manually trigger the callback
     wrapper.instance().handleSearchChange('ABC');
     await flushPromises();
