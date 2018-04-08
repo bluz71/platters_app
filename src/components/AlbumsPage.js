@@ -23,8 +23,8 @@ class AlbumsPage extends Component {
 
     // params is not React state since we do not want to re-render when it
     // changes; just use an instance variable instead.
-    this.params = {};
-    this.loaded = false;
+    this.params    = {};
+    this.loaded    = false;
     this.filtering = false;
     this.searching = false;
 
@@ -33,6 +33,20 @@ class AlbumsPage extends Component {
       pagination: {},
       error: null
     };
+
+    // Bind 'this' for callback functions.
+    this.handlePopState         = this.handlePopState.bind(this);
+    this.handlePageChange       = this.handlePageChange.bind(this);
+    this.handleAll              = this.handleAll.bind(this);
+    this.handleYear             = this.handleYear.bind(this);
+    this.handleGenre            = this.handleGenre.bind(this);
+    this.handleLetter           = this.handleLetter.bind(this);
+    this.handleRandom           = this.handleRandom.bind(this);
+    this.handleFilterVisibility = this.handleFilterVisibility.bind(this);
+    this.handleFilterSubmit     = this.handleFilterSubmit.bind(this);
+    this.handleSearchVisibility = this.handleSearchVisibility.bind(this);
+    this.handleSearchChange     = this.handleSearchChange.bind(this);
+    this.handleSearchSubmit     = this.handleSearchSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -54,17 +68,17 @@ class AlbumsPage extends Component {
     return _.isEqual(this.props.location, nextProps.location);
   }
 
-  handlePopState = (event) => {
+  handlePopState(event) {
     event.preventDefault();
     this.applyState();
   }
 
-  handlePageChange = (page) => {
+  handlePageChange(page) {
     const newParams = { ...this.params, page };
     this.applyParams(newParams);
   }
 
-  handleAll = () => {
+  handleAll() {
     const formVisible = this.searching || this.filtering;
     this.searching = this.filtering = false;
     const newParams = {};
@@ -74,35 +88,35 @@ class AlbumsPage extends Component {
     }
   }
 
-  handleYear = (year) => {
+  handleYear(year) {
     const newParams = { year };
     this.applyParams(newParams);
   }
 
-  handleGenre = (genre) => {
+  handleGenre(genre) {
     const newParams = { genre };
     this.applyParams(newParams);
   }
 
-  handleLetter = (letter) => {
+  handleLetter(letter) {
     const newParams = _.omit(this.params, ['page', 'search']);
     newParams.letter = letter;
     this.applyParams(newParams);
   }
 
-  handleRandom = () => {
+  handleRandom() {
     this.searching = this.filtering = false;
     const newParams = { random: true };
     this.applyParams(newParams);
   }
 
-  handleFilterVisibility = () => {
+  handleFilterVisibility() {
     this.filtering = !this.filtering;
     this.searching = false;
     this.forceUpdate();
   }
 
-  handleFilterSubmit = (event) => {
+  handleFilterSubmit(event) {
     event.preventDefault();
     const newParams = {};
 
@@ -129,18 +143,18 @@ class AlbumsPage extends Component {
     this.applyParams(newParams);
   }
 
-  handleSearchVisibility = () => {
+  handleSearchVisibility() {
     this.searching = !this.searching;
     this.filtering = false;
     this.forceUpdate();
   }
 
-  handleSearchChange = (search) => {
+  handleSearchChange(search) {
     const newParams = search ? { search } : {};
     this.applyParams(newParams);
   }
 
-  handleSearchSubmit = (event) => {
+  handleSearchSubmit(event) {
     event.preventDefault();
     const search = this.search.value();
     const newParams = search ? { search } : {};

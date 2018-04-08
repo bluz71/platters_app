@@ -23,8 +23,8 @@ class ArtistsPage extends Component {
 
     // params is not React state since we do not want to re-render when it
     // changes; just use an instance variable instead.
-    this.params = {};
-    this.loaded = false;
+    this.params    = {};
+    this.loaded    = false;
     this.searching = false;
 
     this.state = {
@@ -34,6 +34,15 @@ class ArtistsPage extends Component {
       pagination: {},
       error: null
     };
+
+    // Bind 'this' for callback functions.
+    this.handlePopState         = this.handlePopState.bind(this);
+    this.handlePageChange       = this.handlePageChange.bind(this);
+    this.handleAll              = this.handleAll.bind(this);
+    this.handleLetter           = this.handleLetter.bind(this);
+    this.handleSearchVisibility = this.handleSearchVisibility.bind(this);
+    this.handleSearchChange     = this.handleSearchChange.bind(this);
+    this.handleSearchSubmit     = this.handleSearchSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -55,17 +64,17 @@ class ArtistsPage extends Component {
     return _.isEqual(this.props.location, nextProps.location);
   }
 
-  handlePopState = (event) => {
+  handlePopState(event) {
     event.preventDefault();
     this.applyState();
   }
 
-  handlePageChange = (page) => {
+  handlePageChange(page) {
     const newParams = { ...this.params, page };
     this.applyParams(newParams);
   }
 
-  handleAll = () => {
+  handleAll() {
     const searching = this.searching;
     this.searching = false;
     const newParams = {};
@@ -75,23 +84,23 @@ class ArtistsPage extends Component {
     }
   }
 
-  handleLetter = (letter) => {
+  handleLetter(letter) {
     const newParams = _.omit(this.params, ['page']);
     newParams.letter = letter;
     this.applyParams(newParams);
   }
 
-  handleSearchVisibility = () => {
+  handleSearchVisibility() {
     this.searching = !this.searching;
     this.forceUpdate();
   }
 
-  handleSearchChange = (search) => {
+  handleSearchChange(search) {
     const newParams = search ? { search } : {};
     this.applyParams(newParams);
   }
 
-  handleSearchSubmit = (event) => {
+  handleSearchSubmit(event) {
     event.preventDefault();
     const search = this.search.value();
     const newParams = search ? { search } : {};

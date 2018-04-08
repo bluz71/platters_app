@@ -9,9 +9,12 @@ class Search extends Component {
     super(props);
 
     this.debouncedSearch = debounce(term => { this.props.onSearchChange(term); }, 500);
+
+    // Bind 'this' for callback functions.
+    this.focusSearchInput = this.focusSearchInput.bind(this);
   }
 
-  focusSearchInput = () => {
+  focusSearchInput() {
     this.searchInput.focus();
   }
 

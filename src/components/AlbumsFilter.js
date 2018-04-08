@@ -13,13 +13,19 @@ class AlbumsFilter extends Component {
     super(props);
 
     // The value of the radio controls.
-    this.sort = 'title';
+    this.sort  = 'title';
     this.order = 'forward';
 
     this.state = {
       genres: [],
       selectButtonText: 'Select'
     };
+
+    // Bind 'this' for callback functions.
+    this.handleSortTitle    = this.handleSortTitle.bind(this);
+    this.handleSortYear     = this.handleSortYear.bind(this);
+    this.handleOrderForward = this.handleOrderForward.bind(this);
+    this.handleOrderReverse = this.handleOrderReverse.bind(this);
   }
 
   componentDidMount() {
@@ -51,19 +57,19 @@ class AlbumsFilter extends Component {
     return this.order;
   }
 
-  handleSortTitle = () => {
+  handleSortTitle() {
     this.sort = 'title';
   }
 
-  handleSortYear = () => {
+  handleSortYear() {
     this.sort = 'year';
   }
 
-  handleOrderForward = () => {
+  handleOrderForward() {
     this.order = 'forward';
   }
 
-  handleOrderReverse = () => {
+  handleOrderReverse() {
     this.order = 'reverse';
   }
 
