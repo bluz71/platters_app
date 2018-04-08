@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import pluralize from 'pluralize';
 import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -31,6 +32,12 @@ const AlbumsList = ({ albums, onYear, onGenre }) => {
       </Col>
     )
   );
+};
+
+AlbumsList.propTypes = {
+  albums: PropTypes.array,
+  onYear: PropTypes.func,
+  onGenre: PropTypes.func
 };
 
 export default AlbumsList;
