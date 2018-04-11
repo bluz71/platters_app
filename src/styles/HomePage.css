@@ -1,0 +1,74 @@
+.Home .first {
+  margin-top: 1em;
+}
+
+.Home h1 {
+  text-align: center;
+}
+
+.Home .logo img {
+  height: 24em;
+}
+
+.Home .dark {
+  background-color: #333;
+  border-radius: 6px;
+}
+
+.Home .dark h2 {
+  text-align: center;
+  color: #eee;
+  margin: 1.5em;
+}
+
+.Home .dark span {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  color: #eee;
+}
+
+.Home .dark p {
+  font-size: 1.4em;
+  font-weight: lighter;
+  color: #eee;
+  margin-bottom: 1.5em;
+}
+
+.Home .dark .complete-details {
+  margin-bottom: 1.5em;
+}
+
+.Home .album-of-the-day .page-header {
+  margin-top: 0.75em;
+}
+
+.Home .album-of-the-day a {
+  color: #111;
+  text-decoration: none;
+}
+
+.Home .album-of-the-day a:hover {
+  color: #3c9a5f;
+}
+
+.Home .album-of-the-day img {
+  max-height: 400px;
+  max-width: 400px;
+  height: 100%;
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #777;
+  border-radius: 4px;
+}
+
+.Home .album-of-the-day img:hover {
+  border: 1px solid #3c9a5f;
+}
+
+/*   .albums { */
+/*     margin-top: 1em; */
+/*     margin-bottom: 1em; */
+/*   } */
+/* } */
+

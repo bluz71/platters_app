@@ -73,19 +73,96 @@ exports[`<AlbumsList /> renders a list of albums 1`] = `
         ]
       }
     >
-      <Col
-        bsClass="col"
-        componentClass="div"
-        key="1"
-        md={6}
+      <div
+        className="AlbumsList"
       >
-        <div
-          className="col-md-6"
+        <Col
+          bsClass="col"
+          componentClass="div"
+          key="1"
+          md={6}
         >
           <div
-            className="Album"
+            className="col-md-6"
           >
-            <h2>
+            <div
+              className="Album"
+            >
+              <h2>
+                <Link
+                  replace={false}
+                  to="/artist/abc/album/abc"
+                >
+                  <a
+                    href="/artist/abc/album/abc"
+                    onClick={[Function]}
+                  >
+                    ABC
+                  </a>
+                </Link>
+              </h2>
+              <h3>
+                by 
+                <Link
+                  replace={false}
+                  to="/artist/abc"
+                >
+                  <a
+                    href="/artist/abc"
+                    onClick={[Function]}
+                  >
+                    ABC
+                  </a>
+                </Link>
+                 
+                <small>
+                  (
+                   
+                  Tracks
+                  )
+                </small>
+              </h3>
+              <div
+                className="icon"
+              >
+                <a
+                  onClick={[Function]}
+                >
+                  <FontAwesome
+                    name="calendar"
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-calendar"
+                    />
+                  </FontAwesome>
+                   
+                </a>
+                <a
+                  onClick={[Function]}
+                >
+                  <FontAwesome
+                    className="spacer-left-xs"
+                    name="tag"
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-tag spacer-left-xs"
+                    />
+                  </FontAwesome>
+                   
+                </a>
+                <FontAwesome
+                  className="spacer-left-xs"
+                  name="comment-o"
+                >
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-comment-o spacer-left-xs"
+                  />
+                </FontAwesome>
+                 
+              </div>
               <Link
                 replace={false}
                 to="/artist/abc/album/abc"
@@ -94,115 +171,115 @@ exports[`<AlbumsList /> renders a list of albums 1`] = `
                   href="/artist/abc/album/abc"
                   onClick={[Function]}
                 >
-                  ABC
+                  <img
+                    alt="ABC"
+                    className="img-responsive"
+                    src="http://localhost:3000/small_ABC--ABC.jpg"
+                  />
                 </a>
               </Link>
-            </h2>
-            <h3>
-              by 
-              <Link
-                replace={false}
-                to="/artist/abc"
-              >
-                <a
-                  href="/artist/abc"
-                  onClick={[Function]}
+              <ul>
+                <li
+                  key="0"
                 >
-                  ABC
-                </a>
-              </Link>
-               
-              <small>
-                (
-                 
-                Tracks
-                )
-              </small>
-            </h3>
-            <div
-              className="icon"
-            >
-              <a
-                onClick={[Function]}
-              >
-                <FontAwesome
-                  name="calendar"
+                  1. First
+                </li>
+                <li
+                  key="1"
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-calendar"
-                  />
-                </FontAwesome>
-                 
-              </a>
-              <a
-                onClick={[Function]}
-              >
-                <FontAwesome
-                  className="spacer-left-xs"
-                  name="tag"
-                >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-tag spacer-left-xs"
-                  />
-                </FontAwesome>
-                 
-              </a>
-              <FontAwesome
-                className="spacer-left-xs"
-                name="comment-o"
-              >
-                <span
-                  aria-hidden={true}
-                  className="fa fa-comment-o spacer-left-xs"
-                />
-              </FontAwesome>
-               
+                  2. Second
+                </li>
+              </ul>
             </div>
-            <Link
-              replace={false}
-              to="/artist/abc/album/abc"
-            >
-              <a
-                href="/artist/abc/album/abc"
-                onClick={[Function]}
-              >
-                <img
-                  alt="ABC"
-                  className="img-responsive"
-                  src="http://localhost:3000/small_ABC--ABC.jpg"
-                />
-              </a>
-            </Link>
-            <ul>
-              <li
-                key="0"
-              >
-                1. First
-              </li>
-              <li
-                key="1"
-              >
-                2. Second
-              </li>
-            </ul>
           </div>
-        </div>
-      </Col>
-      <Col
-        bsClass="col"
-        componentClass="div"
-        key="2"
-        md={6}
-      >
-        <div
-          className="col-md-6"
+        </Col>
+        <Col
+          bsClass="col"
+          componentClass="div"
+          key="2"
+          md={6}
         >
           <div
-            className="Album"
+            className="col-md-6"
           >
-            <h2>
+            <div
+              className="Album"
+            >
+              <h2>
+                <Link
+                  replace={false}
+                  to="/artist/def/album/def"
+                >
+                  <a
+                    href="/artist/def/album/def"
+                    onClick={[Function]}
+                  >
+                    DEF
+                  </a>
+                </Link>
+              </h2>
+              <h3>
+                by 
+                <Link
+                  replace={false}
+                  to="/artist/def"
+                >
+                  <a
+                    href="/artist/def"
+                    onClick={[Function]}
+                  >
+                    DEF
+                  </a>
+                </Link>
+                 
+                <small>
+                  (
+                   
+                  Tracks
+                  )
+                </small>
+              </h3>
+              <div
+                className="icon"
+              >
+                <a
+                  onClick={[Function]}
+                >
+                  <FontAwesome
+                    name="calendar"
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-calendar"
+                    />
+                  </FontAwesome>
+                   
+                </a>
+                <a
+                  onClick={[Function]}
+                >
+                  <FontAwesome
+                    className="spacer-left-xs"
+                    name="tag"
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-tag spacer-left-xs"
+                    />
+                  </FontAwesome>
+                   
+                </a>
+                <FontAwesome
+                  className="spacer-left-xs"
+                  name="comment-o"
+                >
+                  <span
+                    aria-hidden={true}
+                    className="fa fa-comment-o spacer-left-xs"
+                  />
+                </FontAwesome>
+                 
+              </div>
               <Link
                 replace={false}
                 to="/artist/def/album/def"
@@ -211,107 +288,34 @@ exports[`<AlbumsList /> renders a list of albums 1`] = `
                   href="/artist/def/album/def"
                   onClick={[Function]}
                 >
-                  DEF
+                  <img
+                    alt="DEF"
+                    className="img-responsive"
+                    src="http://localhost:3000/small_DEF--DEF.jpg"
+                  />
                 </a>
               </Link>
-            </h2>
-            <h3>
-              by 
-              <Link
-                replace={false}
-                to="/artist/def"
-              >
-                <a
-                  href="/artist/def"
-                  onClick={[Function]}
+              <ul>
+                <li
+                  key="0"
                 >
-                  DEF
-                </a>
-              </Link>
-               
-              <small>
-                (
-                 
-                Tracks
-                )
-              </small>
-            </h3>
-            <div
-              className="icon"
-            >
-              <a
-                onClick={[Function]}
-              >
-                <FontAwesome
-                  name="calendar"
+                  1. First
+                </li>
+                <li
+                  key="1"
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-calendar"
-                  />
-                </FontAwesome>
-                 
-              </a>
-              <a
-                onClick={[Function]}
-              >
-                <FontAwesome
-                  className="spacer-left-xs"
-                  name="tag"
+                  2. Second
+                </li>
+                <li
+                  key="2"
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-tag spacer-left-xs"
-                  />
-                </FontAwesome>
-                 
-              </a>
-              <FontAwesome
-                className="spacer-left-xs"
-                name="comment-o"
-              >
-                <span
-                  aria-hidden={true}
-                  className="fa fa-comment-o spacer-left-xs"
-                />
-              </FontAwesome>
-               
+                  3. Third
+                </li>
+              </ul>
             </div>
-            <Link
-              replace={false}
-              to="/artist/def/album/def"
-            >
-              <a
-                href="/artist/def/album/def"
-                onClick={[Function]}
-              >
-                <img
-                  alt="DEF"
-                  className="img-responsive"
-                  src="http://localhost:3000/small_DEF--DEF.jpg"
-                />
-              </a>
-            </Link>
-            <ul>
-              <li
-                key="0"
-              >
-                1. First
-              </li>
-              <li
-                key="1"
-              >
-                2. Second
-              </li>
-              <li
-                key="2"
-              >
-                3. Third
-              </li>
-            </ul>
           </div>
-        </div>
-      </Col>
+        </Col>
+      </div>
     </AlbumsList>
   </Router>
 </MemoryRouter>

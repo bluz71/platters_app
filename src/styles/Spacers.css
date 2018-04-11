@@ -43,6 +43,10 @@
   margin-bottom: 3em;
 }
 
+.spacer-left-tiny {
+  margin-left: 0.25em;
+}
+
 .spacer-left-xs {
   margin-left: 0.5em;
 }

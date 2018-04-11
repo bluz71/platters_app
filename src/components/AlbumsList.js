@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import '../styles/AlbumsList.css';
 
-const AlbumsList = ({ albums, onYear, onGenre }) => {
+const renderAlbums = (albums, onYear, onGenre) => {
   return (
     albums.map(album =>
       <Col key={album.id} md={6}>
@@ -31,6 +31,14 @@ const AlbumsList = ({ albums, onYear, onGenre }) => {
         </div>
       </Col>
     )
+  )
+}
+
+const AlbumsList = ({ albums, onYear, onGenre }) => {
+  return (
+    <div className="AlbumsList">
+      {renderAlbums(albums, onYear, onGenre)}
+    </div>
   );
 };
 
