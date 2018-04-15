@@ -2,7 +2,7 @@ Platters App
 ============
 
 This application, Platters App, is an example web application developed using
-the [React](http://reactjs.org) and associated technologies.
+[React](http://reactjs.org) and associated technologies.
 
 Build Status
 ------------
@@ -14,6 +14,7 @@ Core Technologies
 
 * [React](https://reactjs.org)
 * [Create React App](https://github.com/facebookincubator/create-react-app)
+* [Ruby on Rails API back-end](https://platters.live/details)
 
 Significant JavaScript Libraries
 --------------------------------
@@ -52,3 +53,12 @@ Miscellaneous application features
 * #### [Browser navigation with React components](https://bluz71.github.io/2017/12/22/browser-navigation-in-react-components.html)
 The main content React components use HTML5 pushState such that browser
 navigation correctly transistions through client-side page changes.
+
+* #### Live Search Result
+Artists and Albums search results will update live as a user is typing in
+search terms. Note, debounce of 500ms is used control how often search results
+are retrieved from the back-end server.
+
+* #### Busy submission buttons
+Form submission buttons, such as the Albums filter Select button, will display
+a spinner icon whilst the submitted form is being processed.

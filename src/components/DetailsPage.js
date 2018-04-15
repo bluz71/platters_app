@@ -23,6 +23,16 @@ const DetailsPage = () => {
               </h3>
               <p>Creates React apps with no build configuration.</p>
             </li>
+            <li>
+              <h3>
+                <a href="https://platters.live/details" target="_blank" rel="noopener noreferrer">Ruby on Rails API back-end</a>
+              </h3>
+              <p>
+                Content for this application is delivered in JSON format from
+                a complimentary <a href="https://platters.live/details" target="_blank" rel="noopener noreferrer" className="standout">Ruby on Rails</a> back-end
+                API application.
+              </p>
+            </li>
           </ul>
           <br />
 
