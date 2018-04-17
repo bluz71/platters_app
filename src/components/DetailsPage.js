@@ -30,7 +30,7 @@ const DetailsPage = () => {
               <p>
                 Content for this application is delivered in JSON format from
                 a complimentary <a href="https://platters.live/details" target="_blank" rel="noopener noreferrer" className="standout">Ruby on Rails</a> back-end
-                API application.
+                application.
               </p>
             </li>
           </ul>
