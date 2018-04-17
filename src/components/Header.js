@@ -26,8 +26,12 @@ const Header = () => (
           </IndexLinkContainer>
         </Nav>
         <Nav pullRight>
-          <NavItem>Log in</NavItem>
-          <NavItem>Sign up</NavItem>
+          <IndexLinkContainer to="/log_in" activeClassName='selected'>
+            <NavItem>Log in</NavItem>
+          </IndexLinkContainer>
+          <IndexLinkContainer to="/sign_up" activeClassName='selected'>
+            <NavItem>Sign up</NavItem>
+          </IndexLinkContainer>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

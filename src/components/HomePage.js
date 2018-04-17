@@ -62,7 +62,7 @@ class HomePage extends Component {
                 <Link to="/about" className="btn btn-success btn-lg">
                   About
                 </Link>
-                <Link to="/" className="btn btn-success btn-lg spacer-left-tiny">
+                <Link to="/sign_up" className="btn btn-success btn-lg spacer-left-tiny">
                   Sign Up
                 </Link>
               </div>
