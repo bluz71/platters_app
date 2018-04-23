@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.17.0",
-    "linkify-urls": "^1.6.0",
+    "linkify-lite": "^1.0.0",
     "local-time": "^2.0.0",
     "moment": "^2.19.2",
     "nprogress": "^0.2.0",

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import linkifyUrls from 'linkify-urls';
+import linkify from 'linkify-lite';
 import '../styles/CommentsList.css';
 
 // Code snippet provided by:
@@ -41,7 +41,7 @@ const renderComments = (comments) => (
         </small>
       </h2>
       <h3 dangerouslySetInnerHTML={{ __html: comment.created_at }} />
-      <div dangerouslySetInnerHTML={{ __html: linkifyUrls(simpleFormat(comment.body)) }} />
+      <div dangerouslySetInnerHTML={{ __html: linkify(simpleFormat(comment.body)) }} />
     </div>
   )
 );

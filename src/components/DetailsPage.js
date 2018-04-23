@@ -102,7 +102,7 @@ const DetailsPage = () => {
             </li>
             <li>
               <h3>
-                <a href="https://github.com/sindresorhus/linkify-urls" target="_blank" rel="noopener noreferrer">linkify-urls</a>
+                <a href="https://github.com/andre487/node-linkify-lite" target="_blank" rel="noopener noreferrer">linkify-lite</a>
               </h3>
               <p>
                 Linkify URLs in text.
