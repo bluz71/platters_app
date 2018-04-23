@@ -7,6 +7,7 @@ import { API_HOST } from '../config';
 import  '../styles/HomePage.css';
 import logo from '../images/platters-black.svg';
 import AlbumsList from './AlbumsList';
+import CommentsList from './CommentsList';
 
 const HOME_ENDPOINT = `${API_HOST}/home.json`;
 
@@ -120,7 +121,7 @@ class HomePage extends Component {
 
   renderMostRecentAlbums() {
     return (
-      <div className="albums">
+      <div>
         <Row>
           <Col md={12}>
             <h2 className="page-header">New Albums</h2>
@@ -135,12 +136,26 @@ class HomePage extends Component {
     );
   }
 
+  renderMostRecentComments() {
+    return (
+      <div>
+        <Row>
+          <Col md={12}>
+            <h2 className="page-header">New Comments</h2>
+            <CommentsList comments={this.state.mostRecentComments} />
+          </Col>
+        </Row>
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="Home">
         {this.renderIntroduction()}
         {this.renderAlbumOfTheDay()}
         {this.renderMostRecentAlbums()}
+        {this.renderMostRecentComments()}
       </div>
     );
   }

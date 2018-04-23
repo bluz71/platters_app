@@ -1,0 +1,42 @@
+.Comment {
+  background-color: #f8f8f8;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.Comment img {
+  height: 45px;
+  width: 45px;
+  float: left;
+  border: 1px solid #eee;
+  border-radius: 50%;
+  margin: 0 0.75em 0 0;
+}
+
+.Comment h2 {
+  display: inline;
+  margin-top: 0.5em;
+  font-size: 1.4em;
+  color: #3c9a5f;
+}
+
+.Comment h2 a {
+  text-decoration: none;
+}
+
+.Comment h2 small {
+  font-size: 0.75em;
+}
+
+.Comment h3 {
+  margin-top: 0.5em;
+  font-size: 0.75em;
+  color: #515151;
+}
+
+.Comment p {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

@@ -27,6 +27,7 @@ Significant JavaScript Libraries
 * [velocity-react](https://github.com/google-fabric/velocity-react)
 * [nprogress](https://github.com/rstacruz/nprogress)
 * [local-time](https://www.npmjs.com/package/local-time)
+* [linkify-urls](https://github.com/sindresorhus/linkify-urls)
 
 Deployment
 ----------

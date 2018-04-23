@@ -100,6 +100,14 @@ const DetailsPage = () => {
                 using Twitter-like local-time-ago timestamps.
               </p>
             </li>
+            <li>
+              <h3>
+                <a href="https://github.com/sindresorhus/linkify-urls" target="_blank" rel="noopener noreferrer">linkify-urls</a>
+              </h3>
+              <p>
+                Linkify URLs in text.
+              </p>
+            </li>
           </ul>
           <br />
 
