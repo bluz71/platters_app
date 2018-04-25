@@ -6,7 +6,11 @@ import '../styles/ArtistsSidebar.css';
 const renderAlbums = (albums) => (
   albums.map(album =>
     <ListGroupItem key={album.id} className="album">
-      <h5><Link to={`/artist/${album.artist_slug}/album/${album.album_slug}`}>{album.title}</Link></h5>
+      <h5>
+        <Link to={`/artist/${album.artist_slug}/album/${album.album_slug}`}>
+          {album.title}
+        </Link>
+      </h5>
       <h5>by <Link to={`/artist/${album.artist_slug}`}>{album.artist}</Link></h5>
       <Link to={`/artist/${album.artist_slug}/album/${album.album_slug}`}>
         <img className="img-responsive center-block" src={album.cover_url} alt={album.title} />
