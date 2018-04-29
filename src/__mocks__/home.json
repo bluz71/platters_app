@@ -1,0 +1,90 @@
+{
+  "data": {
+    "album_of_the_day": {
+      "title": "Album of the Day",
+      "artist": "XYZ",
+      "artist_slug": "xyz",
+      "album_slug": "album_of_the_day",
+      "cover_url": "http://localhost:3000/uploads/album/cover/832/XYZ--Album_of_the_Day.jpg"
+    },
+    "most_recent": {
+      "albums": [
+        {
+          "id": 1,
+          "title": "ABB",
+          "tracks_count": 11,
+          "comments_count": 41,
+          "artist": "ABC-Artist",
+          "year": 2008,
+          "genre": "Rock",
+          "artist_slug": "abc_artist",
+          "album_slug": "abc",
+          "cover_url": "http://localhost:3000/uploads/album/cover/1/small_abc--abc.jpg",
+          "tracks": [
+            "1. First",
+            "2. Second",
+            "3. Third",
+            "4. Fourth",
+            "5. Fifth",
+            "6. Sixth",
+            "..."
+          ]
+        },
+        {
+          "id": 2,
+          "title": "DEF",
+          "tracks_count": 27,
+          "comments_count": 44,
+          "artist": "DEF-Artist",
+          "year": 2015,
+          "genre": "Classical",
+          "artist_slug": "def_artist",
+          "album_slug": "def",
+          "cover_url": "http://localhost:3000/uploads/album/cover/978/small_def--def.jpg",
+          "tracks": [
+            "1. One",
+            "2. Two"
+          ]
+        }
+      ],
+      "comments": [
+        {
+          "id": 20,
+          "body": "A comment",
+          "created_at": "<time datetime=\"2018-04-22T05:50:26Z\" data-local=\"time-ago\">April 22, 2018  5:50am</time>",
+          "user_name": "user1",
+          "user_slug": "user1",
+          "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
+          "for": "Artist",
+          "artist": "ABC-Artist",
+          "name": "ABC-Artist",
+          "path": "artist/abc_artist"
+        },
+        {
+          "id": 21,
+          "body": "Another comment",
+          "created_at": "<time datetime=\"2018-04-22T05:12:25Z\" data-local=\"time-ago\">April 22, 2018  5:12am</time>",
+          "user_name": "admin",
+          "user_slug": "admin",
+          "gravatar_url": "https://gravatar.com/avatar/699b7e1dd13a6638d847f2d7acf94843?s=80&r=pg&d=identicon",
+          "for": "Artist",
+          "artist": "ABC-Artist",
+          "name": "ABC-Artist",
+          "path": "artist/abc_artist"
+        },
+        {
+          "id": 22,
+          "body": "A final comment",
+          "created_at": "<time datetime=\"2018-04-14T04:29:39Z\" data-local=\"time-ago\">April 14, 2018  4:29am</time>",
+          "user_name": "user1",
+          "user_slug": "user1",
+          "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
+          "for": "Album",
+          "artist": "ABC",
+          "name": "ABC",
+          "path": "artist/abc_artist/album/abc"
+        }
+      ]
+    }
+  }
+}

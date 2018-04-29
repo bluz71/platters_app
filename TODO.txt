@@ -1,1 +1,1 @@
-- Add tests for HomePage component
+- User comments page including endless page scrolling.
