@@ -29,12 +29,20 @@ const postedIn = (comment) => {
 
 const renderComments = (comments) => (
   comments.map(comment =>
-    <div className="Comment">
-      <Link to={`/comments/${comment.user_slug}`}>
+    <div key={comment.id} className="Comment">
+      <Link to={{
+        pathname: `/comments/${comment.user_slug}`,
+        state: { user: comment.user_name }
+      }}>
         <img className="img-responsive center-block" src={comment.gravatar_url} alt={comment.user_name} />
       </Link>
       <h2>
-        <Link to={`/comments/${comment.user_slug}`}>{comment.user_name}</Link>
+        <Link to={{
+          pathname: `/comments/${comment.user_slug}`,
+          state: { user: comment.user_name }
+        }}>
+          {comment.user_name}
+        </Link>
         <small>
           {postedIn(comment)}
           <Link to={comment.path}>{comment.name}</Link>

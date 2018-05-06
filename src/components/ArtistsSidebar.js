@@ -23,8 +23,18 @@ const renderComments = (comments) => (
   comments.map(comment =>
     <ListGroupItem key={comment.id} className="comment">
       <h5 dangerouslySetInnerHTML={{ __html: `${comment.created_at} by` }} />
-      <h5><Link to={`/comments/${comment.user_slug}`}>{comment.user_name}</Link></h5>
-      <Link to={`/comments/${comment.user_slug}`}>
+      <h5>
+        <Link to={{
+          pathname: `/comments/${comment.user_slug}`,
+          state: { user: comment.user_name }
+        }}>
+          {comment.user_name}
+        </Link>
+      </h5>
+      <Link to={{
+        pathname: `/comments/${comment.user_slug}`,
+        state: { user: comment.user_name }
+      }}>
         <img className="img-responsive center-block" src={comment.gravatar_url} alt={comment.user_name} />
       </Link>
       <h5>

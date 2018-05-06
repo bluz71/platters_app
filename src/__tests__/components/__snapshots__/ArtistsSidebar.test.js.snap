@@ -125,14 +125,28 @@ exports[`<ArtistsSidebar /> renders a sidebar 1`] = `
           <h5>
             <Link
               replace={false}
-              to="/comments/fred"
+              to={
+                Object {
+                  "pathname": "/comments/fred",
+                  "state": Object {
+                    "user": "fred",
+                  },
+                }
+              }
             >
               fred
             </Link>
           </h5>
           <Link
             replace={false}
-            to="/comments/fred"
+            to={
+              Object {
+                "pathname": "/comments/fred",
+                "state": Object {
+                  "user": "fred",
+                },
+              }
+            }
           >
             <img
               alt="fred"
@@ -166,14 +180,28 @@ exports[`<ArtistsSidebar /> renders a sidebar 1`] = `
           <h5>
             <Link
               replace={false}
-              to="/comments/jon"
+              to={
+                Object {
+                  "pathname": "/comments/jon",
+                  "state": Object {
+                    "user": "jon",
+                  },
+                }
+              }
             >
               jon
             </Link>
           </h5>
           <Link
             replace={false}
-            to="/comments/jon"
+            to={
+              Object {
+                "pathname": "/comments/jon",
+                "state": Object {
+                  "user": "jon",
+                },
+              }
+            }
           >
             <img
               alt="jon"
