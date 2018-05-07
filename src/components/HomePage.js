@@ -121,31 +121,27 @@ class HomePage extends Component {
 
   renderMostRecentAlbums() {
     return (
-      <div>
-        <Row>
-          <Col md={12}>
-            <h2 className="page-header">New Albums</h2>
-            <AlbumsList
-              albums={this.state.mostRecentAlbums}
-              onYear={this.handleYear}
-              onGenre={this.handleGenre}
-            />
-          </Col>
-        </Row>
-      </div>
+      <Row>
+        <Col md={12}>
+          <h2 className="page-header">New Albums</h2>
+          <AlbumsList
+            albums={this.state.mostRecentAlbums}
+            onYear={this.handleYear}
+            onGenre={this.handleGenre}
+          />
+        </Col>
+      </Row>
     );
   }
 
   renderMostRecentComments() {
     return (
-      <div>
-        <Row>
-          <Col md={12}>
-            <h2 className="page-header">New Comments</h2>
-            <CommentsList comments={this.state.mostRecentComments} />
-          </Col>
-        </Row>
-      </div>
+      <Row>
+        <Col md={12}>
+          <h2 className="page-header">New Comments</h2>
+          <CommentsList comments={this.state.mostRecentComments} />
+        </Col>
+      </Row>
     );
   }
 
