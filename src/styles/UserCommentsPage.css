@@ -5,3 +5,10 @@
 .UserComments .page-header h1 small {
   font-size: 65%;
 }
+
+.UserComments .LoadingSpinner {
+  text-align: center;
+  font-size: 2em;
+  color: #777;
+  margin-bottom: 0.5em;
+}

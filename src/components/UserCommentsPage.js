@@ -4,6 +4,7 @@ import pluralize from 'pluralize';
 import numeral from 'numeral';
 import NProgress from 'nprogress';
 import { Row, Col, PageHeader } from 'react-bootstrap';
+import FontAwesome from 'react-fontawesome';
 import { API_HOST } from '../config';
 import CommentsList from './CommentsList';
 import '../styles/UserCommentsPage.css';
@@ -15,6 +16,7 @@ class UserCommentsPage extends Component {
     this.user_slug         = props.match.params.id;
     this.comments_endpoint = `${API_HOST}/comments/${this.user_slug}.json`;
     this.loaded            = false;
+    this.waiting           = false;
     if (props.location.state) {
       this.user = props.location.state.user || this.user_slug;
     }
@@ -70,6 +72,9 @@ class UserCommentsPage extends Component {
           this.loaded = true;
           NProgress.done();
         }
+        if (!this.waiting) {
+          this.waiting = true;
+        }
         if (!window.onscroll) {
           // Re-enable scroll handling now that the records have been
           // retrieved.
@@ -93,6 +98,16 @@ class UserCommentsPage extends Component {
     );
   }
 
+  renderSpinner() {
+    if (this.waiting) {
+      return (
+        <div className="LoadingSpinner">
+          <FontAwesome name="spinner" spin pulse />
+        </div>
+      );
+    }
+  }
+
   render() {
     if (!this.loaded) {
       NProgress.start();
@@ -104,6 +119,7 @@ class UserCommentsPage extends Component {
           <div className="UserComments">
             {this.renderHeader()}
             <CommentsList comments={this.state.comments} />
+            {this.renderSpinner()}
           </div>
         </Col>
       </Row>
