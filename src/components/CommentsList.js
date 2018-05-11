@@ -39,7 +39,7 @@ const renderComments = (comments) => (
         </Link>
         <small>
           {postedIn(comment)}
-          <Link to={comment.path}>{comment.name}</Link>
+          <Link to={`/${comment.path}`}>{comment.name}</Link>
         </small>
       </h2>
       <h3 dangerouslySetInnerHTML={{ __html: comment.created_at }} />
