@@ -93,7 +93,7 @@ class UserCommentsPage extends Component {
 
     return (
       <PageHeader>
-        {`${this.user}'s Comments`} {this.loaded && <small>({commentsCount} {pluralize('Comment', count)})</small>}
+        Comments {this.loaded && <small>({commentsCount} {pluralize('Comment', count)})</small>}
       </PageHeader>
     );
   }
