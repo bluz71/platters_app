@@ -10,6 +10,8 @@ import { data as albumsPop } from './albums_pop.json';
 import { data as albumsRandom } from './albums_random.json';
 import { data as genres } from './genres.json';
 import { data as home } from './home.json';
+import { data as userComments } from './user_comments.json'
+
 
 // Details:
 //   https://stackoverflow.com/questions/45016033/how-do-i-test-axios-in-jest
@@ -69,6 +71,10 @@ module.exports = {
         return Promise.resolve({
           data: home
         });
+      case `${API_HOST}/comments/joe.json`:
+        return Promise.resolve({
+          data: userComments
+        })
     }
   })
 };
