@@ -1,0 +1,25 @@
+{
+  "data": {
+    "comments": [
+      {
+        "id": 3,
+        "body": "Third comment",
+        "created_at": "<time datetime=\"2018-05-02T08:15:00Z\" data-local=\"time-ago\">May  2, 2018  8:15am</time>",
+        "user_name": "joe",
+        "user_slug": "joe",
+        "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
+        "for": "Album",
+        "artist": "XYZ",
+        "name": "XYZ",
+        "path": "artist/xyz/album/xyz"
+      }
+    ],
+    "pagination": {
+      "current_page": 2,
+      "next_page": null,
+      "prev_page": 1,
+      "total_pages": 2,
+      "total_count": 3
+    }
+  }
+}

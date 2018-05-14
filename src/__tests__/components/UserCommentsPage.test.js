@@ -16,4 +16,14 @@ describe('<UserCommentsPage />', () => {
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('renders all user comments when scrolled', async () => {
+    const match = { params: { id: 'joe' } };
+    const wrapper = shallow(<UserCommentsPage  match={match}/>);
+    await flushPromises();
+    wrapper.instance().handlePageEnd();
+    await flushPromises();
+    wrapper.update();
+    expect(wrapper).toMatchSnapshot();
+  })
 });

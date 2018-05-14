@@ -6,6 +6,7 @@ import NProgress from 'nprogress';
 import { Row, Col, PageHeader } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 import { API_HOST } from '../config';
+import infiniteScroll from '../helpers/infiniteScroll';
 import CommentsList from './CommentsList';
 import '../styles/UserCommentsPage.css';
 
@@ -24,7 +25,8 @@ class UserCommentsPage extends Component {
     };
 
     // Bind 'this' for callback functions.
-    this.handleScroll = this.handleScroll.bind(this);
+    this.handleScroll  = this.handleScroll.bind(this);
+    this.handlePageEnd = this.handlePageEnd.bind(this);
   }
 
   componentDidMount() {
@@ -37,26 +39,20 @@ class UserCommentsPage extends Component {
   }
 
   handleScroll() {
-    // See: http://blog.sodhanalibrary.com/2016/08/detect-when-user-scrolls-to-bottom-of.html
+    infiniteScroll(this.state.pagination, this.handlePageEnd);
+  }
 
-    const windowHeight = window.innerHeight;
-    const body         = document.body;
-    const html         = document.documentElement;
-    const docHeight    = Math.max(body.scrollHeight, body.offsetHeight,
-                                  html.clientHeight,  html.scrollHeight,
-                                  html.offsetHeight) - 20;
-    const windowBottom = windowHeight + window.pageYOffset;
-    const moreToScroll = this.state.pagination && this.state.pagination.next_page;
+  handlePageEnd() {
+    // Page has been scrolled to the end, hence retrieve the next set of
+    // comments.
 
-    if (moreToScroll && windowBottom >= docHeight) {
-      // Disable scroll handling whilst records are being retrieved.
-      window.onscroll = null;
-      this.commentsEndPoint
-        = `${API_HOST}/comments/${this.userSlug}.json?page=${this.state.pagination.next_page}`;
-      this.loaded = false;
-      this.forceUpdate();
-      this.getComments();
-    }
+    // Disable scroll handling whilst records are being retrieved.
+    window.onscroll = null;
+    this.commentsEndPoint
+      = `${API_HOST}/comments/${this.userSlug}.json?page=${this.state.pagination.next_page}`;
+    this.waiting = true;
+    this.forceUpdate();
+    this.getComments();
   }
 
   getComments() {
@@ -66,9 +62,7 @@ class UserCommentsPage extends Component {
           this.loaded = true;
           NProgress.done();
         }
-        if (!this.waiting) {
-          this.waiting = true;
-        }
+        this.waiting = false;
         if (!window.onscroll) {
           // Re-enable scroll handling now that the records have been
           // retrieved.
