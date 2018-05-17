@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import linkify from 'linkify-lite';
 import simpleFormat from '../helpers/simpleFormat';
@@ -40,6 +41,10 @@ const CommentsList = ({ comments }) => {
       {renderComments(comments)}
     </div>
   );
+};
+
+CommentsList.propTypes = {
+  comments: PropTypes.array
 };
 
 export default CommentsList;
