@@ -1,1 +1,2 @@
 - Albums Show Page
+    Infinite Comments - CommentsController#index
