@@ -39,5 +39,5 @@ describe('<CommentsList />', () => {
   it('renders a list of comments', () => {
     const wrapper = shallow(<CommentsList comments={comments()} />);
     expect(wrapper).toMatchSnapshot();
-  })
+  });
 });

@@ -25,5 +25,5 @@ describe('<UserCommentsPage />', () => {
     await flushPromises();
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
-  })
+  });
 });

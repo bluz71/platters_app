@@ -10,8 +10,8 @@ import { data as albumsPop } from './albums_pop.json';
 import { data as albumsRandom } from './albums_random.json';
 import { data as genres } from './genres.json';
 import { data as home } from './home.json';
-import { data as userComments } from './user_comments.json'
-import { data as userCommentsPage2 } from './user_comments_page2.json'
+import { data as userComments } from './user_comments.json';
+import { data as userCommentsPage2 } from './user_comments_page2.json';
 
 
 // Details:
@@ -75,11 +75,11 @@ module.exports = {
       case `${API_HOST}/comments/joe.json`:
         return Promise.resolve({
           data: userComments
-        })
+        });
       case `${API_HOST}/comments/joe.json?page=2`:
         return Promise.resolve({
           data: userCommentsPage2
-        })
+        });
     }
   })
 };
