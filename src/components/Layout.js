@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Grid } from 'react-bootstrap';
+import { ToastContainer, Zoom } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import 'nprogress/nprogress.css';
 import '../styles/Layout.css';
 import Header from './Header';
@@ -19,6 +21,7 @@ const Layout = () => (
   <div>
     <Header />
     <div className="Main">
+      <ToastContainer autoClose={false}  draggablePercent={50} position="top-left" transition={Zoom}/>
       <Grid>
         <Switch>
           <Route path="/" exact component={HomePage} />

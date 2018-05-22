@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import pluralize from 'pluralize';
 import numeral from 'numeral';
 import NProgress from 'nprogress';
+import { toast } from 'react-toastify';
 import { Row, Col, PageHeader } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 import { API_HOST } from '../config';
@@ -16,12 +18,14 @@ class UserCommentsPage extends Component {
 
     this.userSlug         = props.match.params.id;
     this.commentsEndPoint = `${API_HOST}/comments/${this.userSlug}.json`;
-    this.loaded            = false;
-    this.waiting           = false;
+    this.loaded           = false;
+    this.waiting          = false;
 
     this.state = {
       comments: [],
-      pagination: {}
+      pagination: {},
+      notFound: false,
+      error: null
     };
 
     // Bind 'this' for callback functions.
@@ -55,13 +59,17 @@ class UserCommentsPage extends Component {
     this.getComments();
   }
 
+  progressDone() {
+    if (!this.loaded) {
+      this.loaded = true;
+      NProgress.done();
+    }
+  }
+
   getComments() {
     axios.get(this.commentsEndPoint)
       .then(response => {
-        if (!this.loaded) {
-          this.loaded = true;
-          NProgress.done();
-        }
+        this.progressDone();
         this.waiting = false;
         if (!window.onscroll) {
           // Re-enable scroll handling now that the records have been
@@ -72,11 +80,24 @@ class UserCommentsPage extends Component {
         this.setState({
           comments: [...this.state.comments, ...response.data.comments],
           pagination: response.data.pagination,
+          error: null
         });
+      }).catch(error => {
+        this.progressDone();
+        if (error.response.status === 404) {
+          this.setState({ notFound: true });
+        }
+        else {
+          this.setState({ error: error });
+        }
       });
   }
 
   renderHeader() {
+    if (this.state.error) {
+      return null;
+    }
+
     const count = this.state.pagination.total_count;
     const commentsCount = numeral(count).format('0,0');
 
@@ -84,6 +105,21 @@ class UserCommentsPage extends Component {
       <PageHeader>
         Comments {this.loaded && <small>({commentsCount} {pluralize('Comment', count)})</small>}
       </PageHeader>
+    );
+  }
+
+  renderComments() {
+    if (this.state.notFound) {
+      toast.error(`User ${this.userSlug} does not exist`, { className: 'ToastAlert' });
+      return <Redirect to="/" />;
+    }
+    if (this.state.error) {
+      toast.error(`Error retrieving comments`, { className: 'ToastAlert' });
+      return null;
+    }
+
+    return (
+      <CommentsList comments={this.state.comments} />
     );
   }
 
@@ -107,7 +143,7 @@ class UserCommentsPage extends Component {
         <Col md={10} mdOffset={1}>
           <div className="UserComments">
             {this.renderHeader()}
-            <CommentsList comments={this.state.comments} />
+            {this.renderComments()}
             {this.renderSpinner()}
           </div>
         </Col>
