@@ -21,7 +21,7 @@ const Layout = () => (
   <div>
     <Header />
     <div className="Main">
-      <ToastContainer autoClose={false}  draggablePercent={50} position="top-left" transition={Zoom}/>
+      <ToastContainer autoClose={false} draggablePercent={50} position="top-left" transition={Zoom}/>
       <Grid>
         <Switch>
           <Route path="/" exact component={HomePage} />
