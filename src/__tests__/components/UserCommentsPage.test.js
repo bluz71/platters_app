@@ -26,4 +26,12 @@ describe('<UserCommentsPage />', () => {
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('handles invalid user', async () => {
+    const match = { params: { id: 'nobody' } };
+    const wrapper = shallow(<UserCommentsPage  match={match}/>);
+    await flushPromises();
+    wrapper.update();
+    expect(wrapper).toMatchSnapshot();
+  });
 });

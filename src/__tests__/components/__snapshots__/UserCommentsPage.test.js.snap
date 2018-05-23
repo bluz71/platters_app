@@ -1,5 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<UserCommentsPage /> handles invalid user 1`] = `
+<Row
+  bsClass="row"
+  componentClass="div"
+>
+  <Col
+    bsClass="col"
+    componentClass="div"
+    md={10}
+    mdOffset={1}
+  >
+    <div
+      className="UserComments"
+    >
+      <PageHeader
+        bsClass="page-header"
+      >
+        Comments 
+        <small>
+          (
+          0
+           
+          Comments
+          )
+        </small>
+      </PageHeader>
+      <Redirect
+        push={false}
+        to="/"
+      />
+    </div>
+  </Col>
+</Row>
+`;
+
 exports[`<UserCommentsPage /> renders all user comments when scrolled 1`] = `
 <Row
   bsClass="row"

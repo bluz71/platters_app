@@ -80,6 +80,12 @@ module.exports = {
         return Promise.resolve({
           data: userCommentsPage2
         });
+      case `${API_HOST}/comments/nobody.json`:
+        return Promise.reject({
+          response: {
+            status: 404
+          }
+        });
     }
   })
 };
