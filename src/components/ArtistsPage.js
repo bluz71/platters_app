@@ -9,6 +9,7 @@ import queryString from 'query-string';
 import _ from 'lodash';
 import { VelocityTransitionGroup } from 'velocity-react';
 import NProgress from 'nprogress';
+import { toast } from 'react-toastify';
 import '../styles/ArtistsPage.css';
 import { API_HOST } from '../config';
 import Search from './Search';
@@ -138,13 +139,17 @@ class ArtistsPage extends Component {
     return params.length > 0 ? `${ARTISTS_ENDPOINT}?${params}` : ARTISTS_ENDPOINT;
   }
 
+  progressDone() {
+    if (!this.loaded) {
+      this.loaded = true;
+      NProgress.done();
+    }
+  }
+
   getArtists(scrollToTop = true) {
     axios.get(this.artistsURL())
       .then(response => {
-        if (!this.loaded) {
-          this.loaded = true;
-          NProgress.done();
-        }
+        this.progressDone();
         this.setState({
           artists: response.data.artists,
           mostRecentAlbums: response.data.most_recent.albums,
@@ -157,9 +162,8 @@ class ArtistsPage extends Component {
         }
       })
       .catch(error => {
-        this.setState({
-          error: error
-        });
+        this.progressDone();
+        this.setState({ error: error });
       });
   }
 
@@ -169,13 +173,22 @@ class ArtistsPage extends Component {
     }
   }
 
+  artistsRetrieved() {
+    if (!this.loaded || this.state.error) {
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+
   renderHeader() {
     const count = this.state.pagination.total_count;
     const artistsCount = numeral(count).format('0,0');
 
     return (
       <PageHeader>
-        Artists {this.loaded && <small>({artistsCount} {pluralize('Artist', count)})</small>}
+        Artists {this.artistsRetrieved() && <small>({artistsCount} {pluralize('Artist', count)})</small>}
       </PageHeader>
     );
   }
@@ -203,6 +216,10 @@ class ArtistsPage extends Component {
   }
 
   renderFilters() {
+    if (!this.artistsRetrieved()) {
+      return;
+    }
+
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
     return (
@@ -225,10 +242,10 @@ class ArtistsPage extends Component {
     }
 
     if (this.state.error) {
-      return <h4>Error retrieving artists</h4>;
+      toast.error('Connection failure, please retry again later', { className: 'ToastAlert' });
     }
 
-    if (this.loaded && this.state.artists.length === 0) {
+    if (!this.state.error && this.loaded && this.state.artists.length === 0) {
       return <h4>No matching artists</h4>;
     }
 

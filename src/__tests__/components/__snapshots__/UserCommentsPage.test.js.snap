@@ -18,13 +18,6 @@ exports[`<UserCommentsPage /> handles invalid user 1`] = `
         bsClass="page-header"
       >
         Comments 
-        <small>
-          (
-          0
-           
-          Comments
-          )
-        </small>
       </PageHeader>
       <Redirect
         push={false}

@@ -84,7 +84,7 @@ class UserCommentsPage extends Component {
         });
       }).catch(error => {
         this.progressDone();
-        if (error.response.status === 404) {
+        if (error.response && error.response.status === 404) {
           this.setState({ notFound: true });
         }
         else {
@@ -93,17 +93,22 @@ class UserCommentsPage extends Component {
       });
   }
 
-  renderHeader() {
-    if (this.state.error) {
-      return null;
+  commentsRetrieved() {
+    if (!this.loaded || this.state.notFound || this.state.error) {
+      return false;
     }
+    else {
+      return true;
+    }
+  }
 
+  renderHeader() {
     const count = this.state.pagination.total_count;
     const commentsCount = numeral(count).format('0,0');
 
     return (
       <PageHeader>
-        Comments {this.loaded && <small>({commentsCount} {pluralize('Comment', count)})</small>}
+        Comments {this.commentsRetrieved() && <small>({commentsCount} {pluralize('Comment', count)})</small>}
       </PageHeader>
     );
   }
@@ -114,8 +119,7 @@ class UserCommentsPage extends Component {
       return <Redirect to="/" />;
     }
     if (this.state.error) {
-      toast.error(`Error retrieving comments`, { className: 'ToastAlert' });
-      return null;
+      toast.error('Connection failure, please retry again soon', { className: 'ToastAlert' });
     }
 
     return (

@@ -8,6 +8,7 @@ import queryString from 'query-string';
 import _ from 'lodash';
 import { VelocityTransitionGroup } from 'velocity-react';
 import NProgress from 'nprogress';
+import { toast } from 'react-toastify';
 import '../styles/AlbumsPage.css';
 import { API_HOST } from '../config';
 import AlbumsFilter from './AlbumsFilter';
@@ -195,13 +196,17 @@ class AlbumsPage extends Component {
     return params.length > 0 ? `${ALBUMS_ENDPOINT}?${params}` : ALBUMS_ENDPOINT;
   }
 
+  progressDone() {
+    if (!this.loaded) {
+      this.loaded = true;
+      NProgress.done();
+    }
+  }
+
   getAlbums(scrollToTop = true) {
     axios.get(this.albumsURL())
       .then(response => {
-        if (!this.loaded) {
-          this.loaded = true;
-          NProgress.done();
-        }
+        this.progressDone();
         this.filtering && this.albumsFilter && this.albumsFilter.selected();
         this.setState({
           albums: response.data.albums,
@@ -213,15 +218,23 @@ class AlbumsPage extends Component {
         }
       })
       .catch(error => {
-        this.setState({
-          error: error
-        });
+        this.progressDone();
+        this.setState({ error: error });
       });
   }
 
   letterActivity(letter) {
     if (this.params.letter === letter) {
       return 'active';
+    }
+  }
+
+  albumsRetrieved() {
+    if (!this.loaded || this.state.error) {
+      return false;
+    }
+    else {
+      return true;
     }
   }
 
@@ -233,7 +246,7 @@ class AlbumsPage extends Component {
 
     return (
       <PageHeader>
-        Albums {this.loaded && <small>({albumsCount} {genre} {pluralize('Album', count)}{year})</small>}
+        Albums {this.albumsRetrieved() && <small>({albumsCount} {genre} {pluralize('Album', count)}{year})</small>}
       </PageHeader>
     );
   }
@@ -287,6 +300,10 @@ class AlbumsPage extends Component {
   }
 
   renderFilters() {
+    if (!this.albumsRetrieved()) {
+      return;
+    }
+
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
     return (
@@ -312,10 +329,10 @@ class AlbumsPage extends Component {
     }
 
     if (this.state.error) {
-      return <h4>Error retrieving albums</h4>;
+      toast.error('Connection failure, please retry again later', { className: 'ToastAlert' });
     }
 
-    if (this.loaded && this.state.albums.length === 0) {
+    if (!this.state.error && this.loaded && this.state.albums.length === 0) {
       return <h4>No matching albums</h4>;
     }
 

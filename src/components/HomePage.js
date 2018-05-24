@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Row, Col, Jumbotron } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
+import { toast } from 'react-toastify';
 import { API_HOST } from '../config';
 import  '../styles/HomePage.css';
 import logo from '../images/platters-black.svg';
@@ -18,7 +19,8 @@ class HomePage extends Component {
     this.state = {
       albumOfTheDay: {},
       mostRecentAlbums: [],
-      mostRecentComments: []
+      mostRecentComments: [],
+      error: null
     };
 
     // Bind 'this' for callback functions.
@@ -46,8 +48,12 @@ class HomePage extends Component {
         this.setState({
           albumOfTheDay: response.data.album_of_the_day,
           mostRecentAlbums: response.data.most_recent.albums,
-          mostRecentComments: response.data.most_recent.comments
+          mostRecentComments: response.data.most_recent.comments,
+          error: null
         });
+      })
+      .catch(error => {
+        this.setState({ error: error });
       });
   }
 
@@ -102,6 +108,11 @@ class HomePage extends Component {
   }
 
   renderAlbumOfTheDay() {
+    if (this.state.error) {
+      toast.error('Connection failure, please retry again later', { className: 'ToastAlert' });
+      return;
+    }
+
     const { title, artist, artist_slug, album_slug, cover_url } = this.state.albumOfTheDay;
     return (
       <div className="album-of-the-day">
@@ -120,6 +131,10 @@ class HomePage extends Component {
   }
 
   renderMostRecentAlbums() {
+    if (this.state.error) {
+      return;
+    }
+
     return (
       <Row>
         <Col md={12}>
@@ -135,6 +150,10 @@ class HomePage extends Component {
   }
 
   renderMostRecentComments() {
+    if (this.state.error) {
+      return;
+    }
+
     return (
       <Row>
         <Col md={12}>
