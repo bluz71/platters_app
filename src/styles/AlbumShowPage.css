@@ -1,0 +1,39 @@
+.AlbumShow a {
+  color: #515151;
+  text-decoration: none;
+}
+
+.AlbumShow a:hover {
+  color: #3c9a5f;
+}
+
+.AlbumShow img {
+  height: 315px;
+  width: 315px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #777;
+  border-radius: 4px;
+}
+
+.AlbumShow h2 {
+  display: inline;
+  font-size: 1.8em;
+}
+
+.AlbumShow .icon {
+  font-size: 0.8em;
+  float: right;
+  color: #515151;
+  margin: 1em 0.5em;
+
+}
+
+.AlbumShow .icon a {
+  color: #515151;
+  cursor: pointer;
+}
+
+.AlbumShow .icon a:hover {
+  color: #3c9a5f;
+}

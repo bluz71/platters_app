@@ -1,2 +1,4 @@
 - Albums Show Page
     Infinite Comments - CommentsController#index
+
+- Create Git 'pre-push' hook that validates with eslint
