@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Row, Col, PageHeader, Table } from 'react-bootstrap';
+import { Row, Col, PageHeader, Table, Button } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 import axios from 'axios';
 import { API_HOST } from '../config';
@@ -10,9 +10,10 @@ class AlbumShowPage extends Component {
   constructor(props) {
     super(props);
 
-    this.artistSlug    = props.match.params.artist_id;
-    this.albumSlug     = props.match.params.album_id;
-    this.albumEndPoint = `${API_HOST}/${this.artistSlug}/${this.albumSlug}.json`;
+    this.artistSlug       = props.match.params.artist_id;
+    this.albumSlug        = props.match.params.album_id;
+    this.albumEndPoint    = `${API_HOST}/${this.artistSlug}/${this.albumSlug}.json`;
+    this.showingAllTracks = false;
 
     this.state = {
       album: {},
@@ -20,6 +21,8 @@ class AlbumShowPage extends Component {
       comments: [],
       commentsPagination: {}
     };
+
+    this.handleTrackVisibility = this.handleTrackVisibility.bind(this);
   }
 
   componentDidMount() {
@@ -29,6 +32,7 @@ class AlbumShowPage extends Component {
   getAlbum() {
     axios.get(this.albumEndPoint)
       .then(response => {
+        document.title = response.data.album.title;
         this.setState({
           album: response.data.album,
           tracks: response.data.tracks,
@@ -46,6 +50,12 @@ class AlbumShowPage extends Component {
   handleGenre(genre) {
     const params = { genre };
     this.props.history.push('/albums', params);
+  }
+
+  handleTrackVisibility() {
+    this.showingAllTracks = !this.showingAllTracks;
+    this.tracksBtn.scrollIntoView();
+    this.forceUpdate();
   }
 
   renderHeader() {
@@ -75,17 +85,51 @@ class AlbumShowPage extends Component {
     );
   }
 
+  trackVisibilityVal(track) {
+    if (track.number <= 20 || this.showingAllTracks) {
+      return 'visible';
+    }
+    else {
+      return 'invisible';
+    }
+  }
+
   renderTracks(tracks) {
     return (
       tracks.map(track => {
         return (
-          <tr key={track.id}>
+          <tr key={track.id} className={this.trackVisibilityVal(track)}>
             <td>{track.number}.</td>
             <td>{track.title}</td>
             <td>{track.duration}</td>
           </tr>
         );
       })
+    );
+  }
+
+  renderTracksVisibility() {
+    const { tracks } = this.state;
+
+    if (tracks.length <= 20) {
+      return;
+    }
+
+    const btnText  = this.showingAllTracks ? 'Show less tracks' : 'Show more tracks';
+
+    return (
+      <div>
+        {!this.showingAllTracks && <div className="tracks-gradient" />}
+        <div ref={tracksBtn => this.tracksBtn = tracksBtn}>
+          <Button
+            bsSize="small"
+            className={this.showingAllTracks ? 'tracks-less' : 'tracks-more'}
+            onClick={this.handleTrackVisibility}
+          >
+            {btnText}
+          </Button>
+        </div>
+      </div>
     );
   }
 
@@ -117,6 +161,7 @@ class AlbumShowPage extends Component {
             {this.renderTracks(tracks)}
           </tbody>
         </Table>
+        {this.renderTracksVisibility()}
       </Col>
     );
   }
