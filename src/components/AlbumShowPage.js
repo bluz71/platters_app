@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, PageHeader, Table, Button } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
+import NProgress from 'nprogress';
 import axios from 'axios';
 import { API_HOST } from '../config';
 import '../styles/AlbumShowPage.css';
@@ -14,6 +15,7 @@ class AlbumShowPage extends Component {
     this.albumSlug        = props.match.params.album_id;
     this.albumEndPoint    = `${API_HOST}/${this.artistSlug}/${this.albumSlug}.json`;
     this.showingAllTracks = false;
+    this.loaded           = false;
 
     this.state = {
       album: {},
@@ -29,9 +31,17 @@ class AlbumShowPage extends Component {
     this.getAlbum();
   }
 
+  progressDone() {
+    if (!this.loaded) {
+      this.loaded = true;
+      NProgress.done();
+    }
+  }
+
   getAlbum() {
     axios.get(this.albumEndPoint)
       .then(response => {
+        this.progressDone();
         document.title = response.data.album.title;
         this.setState({
           album: response.data.album,
@@ -167,6 +177,10 @@ class AlbumShowPage extends Component {
   }
 
   render() {
+    if (!this.loaded) {
+      NProgress.start();
+    }
+
     return (
       <Row>
         <div className="AlbumShow">
