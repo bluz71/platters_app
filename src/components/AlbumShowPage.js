@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { Row, Col, PageHeader, Table, Button } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 import NProgress from 'nprogress';
+import { toast } from 'react-toastify';
 import axios from 'axios';
 import { API_HOST } from '../config';
 import '../styles/AlbumShowPage.css';
@@ -21,7 +22,9 @@ class AlbumShowPage extends Component {
       album: {},
       tracks: [],
       comments: [],
-      commentsPagination: {}
+      commentsPagination: {},
+      notFound: false,
+      error: null
     };
 
     this.handleTrackVisibility = this.handleTrackVisibility.bind(this);
@@ -49,6 +52,14 @@ class AlbumShowPage extends Component {
           comments: response.data.comments,
           commentsPagination: response.data.comments_pagination
         });
+      }).catch(error => {
+        this.progressDone();
+        if (error.response && error.response.status === 404) {
+          this.setState({ notFound: true });
+        }
+        else {
+          this.setState({ error: error });
+        }
       });
   }
 
@@ -90,7 +101,8 @@ class AlbumShowPage extends Component {
         <img 
           className="img-responsive center-block" 
           src={album.cover_url} 
-          alt={album.title} />
+          alt={album.title}
+        />
       </Col>
     );
   }
@@ -144,6 +156,20 @@ class AlbumShowPage extends Component {
   }
 
   renderAlbum() {
+    if (this.state.notFound) {
+      toast.error(
+        `The album ${this.albumSlug} does not exist`,
+        { className: 'ToastAlert' }
+      );
+      return <Redirect to="/albums" />;
+    }
+    if (this.state.error) {
+      toast.error(
+        'Connection failure, please retry again soon',
+        { className: 'ToastAlert' }
+      );
+    }
+
     const { album, tracks } = this.state;
 
     return (

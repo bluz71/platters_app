@@ -115,11 +115,17 @@ class UserCommentsPage extends Component {
 
   renderComments() {
     if (this.state.notFound) {
-      toast.error(`User ${this.userSlug} does not exist`, { className: 'ToastAlert' });
+      toast.error(
+        `User ${this.userSlug} does not exist`,
+        { className: 'ToastAlert' }
+      );
       return <Redirect to="/" />;
     }
     if (this.state.error) {
-      toast.error('Connection failure, please retry again soon', { className: 'ToastAlert' });
+      toast.error(
+        'Connection failure, please retry again soon',
+        { className: 'ToastAlert' }
+      );
     }
 
     return (
