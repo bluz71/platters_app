@@ -7,7 +7,7 @@
   color: #3c9a5f;
 }
 
-.AlbumShow img {
+.AlbumShow .large-cover img {
   height: 315px;
   width: 315px;
   margin-top: 1em;
@@ -16,12 +16,12 @@
   border-radius: 4px;
 }
 
-.AlbumShow h2 {
+.AlbumShow .album-data h2 {
   display: inline;
   font-size: 1.8em;
 }
 
-.AlbumShow .icon {
+.AlbumShow .album-data .icon {
   font-size: 0.8em;
   float: right;
   color: #515151;
@@ -29,28 +29,28 @@
 
 }
 
-.AlbumShow .icon a {
+.AlbumShow .album-data .icon a {
   color: #515151;
   cursor: pointer;
 }
 
-.AlbumShow .icon a:hover {
+.AlbumShow .album-data .icon a:hover {
   color: #3c9a5f;
 }
 
-.AlbumShow table {
+.AlbumShow .album-data table {
   margin-bottom: 0;
 }
 
-.AlbumShow tbody .visible {
+.AlbumShow .album-data tbody .visible {
   display: table-row;
 }
 
-.AlbumShow tbody .invisible {
+.AlbumShow .album-data tbody .invisible {
   display: none;
 }
 
-.AlbumShow .tracks-gradient {
+.AlbumShow .album-data .tracks-gradient {
   position: absolute;
   bottom: 3em;
   left: 0;
@@ -59,24 +59,36 @@
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
 }
 
-.AlbumShow .tracks-less {
+.AlbumShow .album-data .tracks-less {
   margin-top: 0.5em;
 }
 
-.AlbumShow .tracks-less:before {
+.AlbumShow .album-data .tracks-less:before {
   font-family: "FontAwesome";
   font-size: 0.9em;
   padding-right: 1em;
   content: "\f102";
 }
 
-.AlbumShow .tracks-more {
+.AlbumShow .album-data .tracks-more {
   margin-top: 0.5em;
 }
 
-.AlbumShow .tracks-more:before {
+.AlbumShow .album-data .tracks-more:before {
   font-family: "FontAwesome";
   font-size: 0.9em;
   padding-right: 1em;
   content: "\f103";
+}
+
+.AlbumShow .album-comments .page-header h1 {
+  font-size: 26px;
+}
+
+.AlbumShow .album-comments .page-header h1 small {
+  font-size: 65%;
+}
+
+.AlbumShow .album-comments h4 {
+  margin-bottom: 1em;
 }

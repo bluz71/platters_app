@@ -14,14 +14,12 @@ exports[`<UserCommentsPage /> handles invalid user 1`] = `
     <div
       className="UserComments"
     >
-      <PageHeader
-        bsClass="page-header"
-      >
-        Comments 
-      </PageHeader>
       <Redirect
         push={false}
         to="/"
+      />
+      <CommentsList
+        comments={Array []}
       />
     </div>
   </Col>

@@ -5,7 +5,10 @@ import FontAwesome from 'react-fontawesome';
 import NProgress from 'nprogress';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import numeral from 'numeral';
+import pluralize from 'pluralize';
 import { API_HOST } from '../config';
+import CommentsList from './CommentsList';
 import '../styles/AlbumShowPage.css';
 
 class AlbumShowPage extends Component {
@@ -79,7 +82,31 @@ class AlbumShowPage extends Component {
     this.forceUpdate();
   }
 
+  albumRetrieved() {
+    if (!this.loaded || this.state.notFound || this.state.error) {
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+
   renderHeader() {
+    if (this.state.notFound) {
+      toast.error(
+        `The album ${this.albumSlug} does not exist`,
+        { className: 'ToastAlert' }
+      );
+      return <Redirect to="/albums" />;
+    }
+    if (this.state.error) {
+      toast.error(
+        'Connection failure, please retry again soon',
+        { className: 'ToastAlert' }
+      );
+      return <Redirect to="/" />;
+    }
+
     const albumTitle = this.state.album.title;
     const artistName = this.state.album.artist_name;
 
@@ -97,7 +124,7 @@ class AlbumShowPage extends Component {
     const { album } = this.state;
 
     return (
-      <Col md={4} mdOffset={1}>
+      <Col md={4} mdOffset={1} className="large-cover">
         <img 
           className="img-responsive center-block" 
           src={album.cover_url} 
@@ -137,7 +164,7 @@ class AlbumShowPage extends Component {
       return;
     }
 
-    const btnText  = this.showingAllTracks ? 'Show less tracks' : 'Show more tracks';
+    const btnText  = this.showingAllTracks ? 'Show less tracks' : 'Show all tracks';
 
     return (
       <div>
@@ -156,24 +183,10 @@ class AlbumShowPage extends Component {
   }
 
   renderAlbum() {
-    if (this.state.notFound) {
-      toast.error(
-        `The album ${this.albumSlug} does not exist`,
-        { className: 'ToastAlert' }
-      );
-      return <Redirect to="/albums" />;
-    }
-    if (this.state.error) {
-      toast.error(
-        'Connection failure, please retry again soon',
-        { className: 'ToastAlert' }
-      );
-    }
-
     const { album, tracks } = this.state;
 
     return (
-      <Col md={6}>
+      <Col md={6} className="album-data">
         <h2>
           {album.track_count} Tracks <small>(Time {album.total_duration})</small>
         </h2>
@@ -202,6 +215,32 @@ class AlbumShowPage extends Component {
     );
   }
 
+  renderCommentsList(count) {
+    if (count === 0) {
+      return (
+        <h4>No comments have been posted for this album</h4>
+      );
+    }
+
+    return (
+      <CommentsList comments={this.state.comments} shortHeader />
+    );
+  }
+
+  renderComments() {
+    const count = this.state.commentsPagination.total_count;
+    const commentsCount = numeral(count).format('0,0');
+
+    return (
+      <Col md={10} mdOffset={1} className="album-comments">
+        <PageHeader>
+          Comments {this.albumRetrieved() && <small>({commentsCount} {pluralize('Comment', count)})</small>}
+        </PageHeader>
+        {this.renderCommentsList(count)}
+      </Col>
+    );
+  }
+
   render() {
     if (!this.loaded) {
       NProgress.start();
@@ -213,6 +252,7 @@ class AlbumShowPage extends Component {
           {this.renderHeader()}
           {this.renderCover()}
           {this.renderAlbum()}
+          {this.renderComments()}
         </div>
       </Row>
     );

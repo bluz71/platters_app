@@ -14,7 +14,7 @@ const postedIn = (comment) => {
   }
 };
 
-const renderComments = (comments) => (
+const renderComments = (comments, shortHeader) => (
   comments.map(comment =>
     <div key={comment.id} className="Comment">
       <Link to={`/comments/${comment.user_slug}`}>
@@ -24,10 +24,11 @@ const renderComments = (comments) => (
         <Link to={`/comments/${comment.user_slug}`}>
           {comment.user_name}
         </Link>
-        <small>
-          {postedIn(comment)}
-          <Link to={`/${comment.path}`}>{comment.name}</Link>
-        </small>
+        {!shortHeader &&
+            <small>
+              {postedIn(comment)}
+              <Link to={`/${comment.path}`}>{comment.name}</Link>
+            </small>}
       </h2>
       <h3 dangerouslySetInnerHTML={{ __html: comment.created_at }} />
       <div dangerouslySetInnerHTML={{ __html: linkify(simpleFormat(comment.body)) }} />
@@ -35,16 +36,21 @@ const renderComments = (comments) => (
   )
 );
 
-const CommentsList = ({ comments }) => {
+const CommentsList = ({ comments, shortHeader }) => {
   return (
     <div className="CommentsList">
-      {renderComments(comments)}
+      {renderComments(comments, shortHeader)}
     </div>
   );
 };
 
+CommentsList.defaultTypes = {
+  shortHeader: false
+};
+
 CommentsList.propTypes = {
-  comments: PropTypes.array
+  comments:    PropTypes.array,
+  shortHeader: PropTypes.bool
 };
 
 export default CommentsList;

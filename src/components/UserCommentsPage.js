@@ -103,17 +103,6 @@ class UserCommentsPage extends Component {
   }
 
   renderHeader() {
-    const count = this.state.pagination.total_count;
-    const commentsCount = numeral(count).format('0,0');
-
-    return (
-      <PageHeader>
-        Comments {this.commentsRetrieved() && <small>({commentsCount} {pluralize('Comment', count)})</small>}
-      </PageHeader>
-    );
-  }
-
-  renderComments() {
     if (this.state.notFound) {
       toast.error(
         `User ${this.userSlug} does not exist`,
@@ -126,8 +115,20 @@ class UserCommentsPage extends Component {
         'Connection failure, please retry again soon',
         { className: 'ToastAlert' }
       );
+      return <Redirect to="/" />;
     }
 
+    const count = this.state.pagination.total_count;
+    const commentsCount = numeral(count).format('0,0');
+
+    return (
+      <PageHeader>
+        Comments {this.commentsRetrieved() && <small>({commentsCount} {pluralize('Comment', count)})</small>}
+      </PageHeader>
+    );
+  }
+
+  renderComments() {
     return (
       <CommentsList comments={this.state.comments} />
     );
