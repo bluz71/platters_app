@@ -8,6 +8,7 @@ import axios from 'axios';
 import numeral from 'numeral';
 import pluralize from 'pluralize';
 import { API_HOST } from '../config';
+import infiniteScroll from '../helpers/infiniteScroll';
 import CommentsList from './CommentsList';
 import '../styles/AlbumShowPage.css';
 
@@ -20,6 +21,8 @@ class AlbumShowPage extends Component {
     this.albumEndPoint    = `${API_HOST}/${this.artistSlug}/${this.albumSlug}.json`;
     this.showingAllTracks = false;
     this.loaded           = false;
+    this.commentsEndPoint = `${API_HOST}/${this.artistSlug}/${this.albumSlug}/comments.json`;
+    this.waiting          = false; // For comments when infinite-scrolling.
 
     this.state = {
       album: {},
@@ -30,11 +33,52 @@ class AlbumShowPage extends Component {
       error: null
     };
 
+    // Bind 'this' for callback functions.
     this.handleTrackVisibility = this.handleTrackVisibility.bind(this);
+    this.handleScroll  = this.handleScroll.bind(this);
+    this.handlePageEnd = this.handlePageEnd.bind(this);
   }
 
   componentDidMount() {
+    window.onscroll = this.handleScroll;
     this.getAlbum();
+  }
+
+  componentWillUnmount() {
+    window.onscroll = null;
+  }
+
+  handleScroll() {
+    infiniteScroll(this.state.commentsPagination, this.handlePageEnd);
+  }
+
+  handlePageEnd() {
+    // Page has been scrolled to the end, hence retrieve the next set of
+    // comments.
+
+    // Disable scroll handling whilst records are being retrieved.
+    window.onscroll = null;
+    this.commentsEndPoint
+      = `${API_HOST}/${this.artistSlug}/${this.albumSlug}/comments.json?page=${this.state.commentsPagination.next_page}`;
+    this.waiting = true;
+    this.forceUpdate(); // Render spinner
+    this.getComments();
+  }
+
+  handleYear(year) {
+    const params = { year };
+    this.props.history.push('/albums', params);
+  }
+
+  handleGenre(genre) {
+    const params = { genre };
+    this.props.history.push('/albums', params);
+  }
+
+  handleTrackVisibility() {
+    this.showingAllTracks = !this.showingAllTracks;
+    this.tracksBtn.scrollIntoView();
+    this.forceUpdate();
   }
 
   progressDone() {
@@ -66,20 +110,22 @@ class AlbumShowPage extends Component {
       });
   }
 
-  handleYear(year) {
-    const params = { year };
-    this.props.history.push('/albums', params);
-  }
-
-  handleGenre(genre) {
-    const params = { genre };
-    this.props.history.push('/albums', params);
-  }
-
-  handleTrackVisibility() {
-    this.showingAllTracks = !this.showingAllTracks;
-    this.tracksBtn.scrollIntoView();
-    this.forceUpdate();
+  getComments() {
+    axios.get(this.commentsEndPoint)
+      .then(response => {
+        this.waiting = false;
+        if (!window.onscroll) {
+          // Re-enable scroll handling now that the records have been
+          // retrieved.
+          window.onscroll = this.handleScroll;
+        }
+        this.setState({
+          comments: [...this.state.comments, ...response.data.comments],
+          commentsPagination: response.data.pagination,
+        });
+      }).catch(error => {
+        this.setState({ error: error });
+      });
   }
 
   albumRetrieved() {

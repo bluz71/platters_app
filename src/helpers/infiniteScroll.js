@@ -1,4 +1,4 @@
-// Code snippet provided by:
+// Code snippet based on:
 //   http://blog.sodhanalibrary.com/2016/08/detect-when-user-scrolls-to-bottom-of.html
 //
 const infiniteScoll = (pagination, onPageEnd) => {

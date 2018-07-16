@@ -55,7 +55,7 @@ class UserCommentsPage extends Component {
     this.commentsEndPoint
       = `${API_HOST}/comments/${this.userSlug}.json?page=${this.state.pagination.next_page}`;
     this.waiting = true;
-    this.forceUpdate();
+    this.forceUpdate(); // Render spinner
     this.getComments();
   }
 
@@ -80,7 +80,6 @@ class UserCommentsPage extends Component {
         this.setState({
           comments: [...this.state.comments, ...response.data.comments],
           pagination: response.data.pagination,
-          error: null
         });
       }).catch(error => {
         this.progressDone();
