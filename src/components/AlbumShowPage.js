@@ -58,11 +58,11 @@ class AlbumShowPage extends Component {
 
     // Disable scroll handling whilst records are being retrieved.
     window.onscroll = null;
-    this.commentsEndPoint
-      = `${API_HOST}/${this.artistSlug}/${this.albumSlug}/comments.json?page=${this.state.commentsPagination.next_page}`;
+    const commentsPageEndPoint
+      = `${this.commentsEndPoint}?page=${this.state.commentsPagination.next_page}`;
     this.waiting = true;
     this.forceUpdate(); // Render spinner
-    this.getComments();
+    this.getComments(commentsPageEndPoint);
   }
 
   handleYear(year) {
@@ -110,8 +110,8 @@ class AlbumShowPage extends Component {
       });
   }
 
-  getComments() {
-    axios.get(this.commentsEndPoint)
+  getComments(commentsEndPoint) {
+    axios.get(commentsEndPoint)
       .then(response => {
         this.waiting = false;
         if (!window.onscroll) {
@@ -273,6 +273,16 @@ class AlbumShowPage extends Component {
     );
   }
 
+  renderSpinner() {
+    if (this.waiting) {
+      return (
+        <div className="WaitingSpinner">
+          <FontAwesome name="spinner" spin pulse />
+        </div>
+      );
+    }
+  }
+
   renderComments() {
     const count = this.state.commentsPagination.total_count;
     const commentsCount = numeral(count).format('0,0');
@@ -280,9 +290,11 @@ class AlbumShowPage extends Component {
     return (
       <Col md={10} mdOffset={1} className="album-comments">
         <PageHeader>
-          Comments {this.albumRetrieved() && <small>({commentsCount} {pluralize('Comment', count)})</small>}
+          Comments {this.albumRetrieved()
+              && <small>({commentsCount} {pluralize('Comment', count)})</small>}
         </PageHeader>
         {this.renderCommentsList(count)}
+        {this.renderSpinner()}
       </Col>
     );
   }

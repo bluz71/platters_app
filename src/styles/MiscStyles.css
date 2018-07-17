@@ -42,3 +42,10 @@ p {
   color: #777;
   font-weight: lighter;
 }
+
+.WaitingSpinner {
+  text-align: center;
+  font-size: 2em;
+  color: #777;
+  margin-bottom: 0.5em;
+}

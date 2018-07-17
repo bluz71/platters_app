@@ -35,7 +35,7 @@ class UserCommentsPage extends Component {
 
   componentDidMount() {
     window.onscroll = this.handleScroll;
-    this.getComments();
+    this.getComments(this.commentsEndPoint);
   }
 
   componentWillUnmount() {
@@ -52,11 +52,11 @@ class UserCommentsPage extends Component {
 
     // Disable scroll handling whilst records are being retrieved.
     window.onscroll = null;
-    this.commentsEndPoint
-      = `${API_HOST}/comments/${this.userSlug}.json?page=${this.state.pagination.next_page}`;
+    const commentsPageEndPoint
+      = `${this.commentsEndPoint}?page=${this.state.pagination.next_page}`;
     this.waiting = true;
     this.forceUpdate(); // Render spinner
-    this.getComments();
+    this.getComments(commentsPageEndPoint);
   }
 
   progressDone() {
@@ -66,8 +66,8 @@ class UserCommentsPage extends Component {
     }
   }
 
-  getComments() {
-    axios.get(this.commentsEndPoint)
+  getComments(commentsEndPoint) {
+    axios.get(commentsEndPoint)
       .then(response => {
         this.progressDone();
         this.waiting = false;
@@ -122,7 +122,8 @@ class UserCommentsPage extends Component {
 
     return (
       <PageHeader>
-        Comments {this.commentsRetrieved() && <small>({commentsCount} {pluralize('Comment', count)})</small>}
+        Comments {this.commentsRetrieved()
+            && <small>({commentsCount} {pluralize('Comment', count)})</small>}
       </PageHeader>
     );
   }
@@ -136,7 +137,7 @@ class UserCommentsPage extends Component {
   renderSpinner() {
     if (this.waiting) {
       return (
-        <div className="LoadingSpinner">
+        <div className="WaitingSpinner">
           <FontAwesome name="spinner" spin pulse />
         </div>
       );
