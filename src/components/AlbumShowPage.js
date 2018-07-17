@@ -77,8 +77,10 @@ class AlbumShowPage extends Component {
 
   handleTrackVisibility() {
     this.showingAllTracks = !this.showingAllTracks;
-    this.tracksBtn.scrollIntoView();
     this.forceUpdate();
+    if (!this.showingAllTracks) {
+      window.scrollTo(0, 540);
+    }
   }
 
   progressDone() {
@@ -215,7 +217,7 @@ class AlbumShowPage extends Component {
     return (
       <div>
         {!this.showingAllTracks && <div className="tracks-gradient" />}
-        <div ref={tracksBtn => this.tracksBtn = tracksBtn}>
+        <div>
           <Button
             bsSize="small"
             className={this.showingAllTracks ? 'tracks-less' : 'tracks-more'}
@@ -288,7 +290,7 @@ class AlbumShowPage extends Component {
     const commentsCount = numeral(count).format('0,0');
 
     return (
-      <Col md={10} mdOffset={1} className="album-comments">
+      <Col md={10} mdOffset={1} id="comments" className="album-comments">
         <PageHeader>
           Comments {this.albumRetrieved()
               && <small>({commentsCount} {pluralize('Comment', count)})</small>}

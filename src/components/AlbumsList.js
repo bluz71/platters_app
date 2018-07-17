@@ -27,7 +27,9 @@ const renderAlbums = (albums, onYear, onGenre) => (
           <a onClick={() => onGenre(album.genre)}>
             <FontAwesome name="tag" className="spacer-left-xs" /> {album.genre}
           </a>
-          <FontAwesome name="comment-o" className="spacer-left-xs" /> {album.comments_count}
+          <Link to={`/artist/${album.artist_slug}/album/${album.album_slug}`}>
+            <FontAwesome name="comment-o" className="spacer-left-xs" /> {album.comments_count}
+          </Link>
         </div>
         <Link to={`/artist/${album.artist_slug}/album/${album.album_slug}`}>
           <img className="img-responsive" src={album.cover_url} alt={album.title} />
