@@ -20,6 +20,7 @@ class AlbumShowPage extends Component {
     this.albumSlug        = props.match.params.album_id;
     this.albumEndPoint    = `${API_HOST}/${this.artistSlug}/${this.albumSlug}.json`;
     this.showingAllTracks = false;
+    this.scrollLessTracks = false;
     this.loaded           = false;
     this.commentsEndPoint = `${API_HOST}/${this.artistSlug}/${this.albumSlug}/comments.json`;
     this.waiting          = false; // For comments when infinite-scrolling.
@@ -34,18 +35,26 @@ class AlbumShowPage extends Component {
     };
 
     // Bind 'this' for callback functions.
-    this.handleTrackVisibility = this.handleTrackVisibility.bind(this);
-    this.handleScroll  = this.handleScroll.bind(this);
-    this.handlePageEnd = this.handlePageEnd.bind(this);
+    this.handleTracksVisibility = this.handleTracksVisibility.bind(this);
+    this.handleScroll           = this.handleScroll.bind(this);
+    this.handlePageEnd          = this.handlePageEnd.bind(this);
   }
 
   componentDidMount() {
     window.onscroll = this.handleScroll;
+    window.scrollTo(0, 0);
     this.getAlbum();
   }
 
   componentWillUnmount() {
     window.onscroll = null;
+  }
+
+  componentDidUpdate() {
+    if (this.scrollLessTracks) {
+      this.scrollLessTracks = false;
+      this.tracksAnchor.scrollIntoView({block: 'center', behavior: 'instant'});
+    }
   }
 
   handleScroll() {
@@ -75,12 +84,12 @@ class AlbumShowPage extends Component {
     this.props.history.push('/albums', params);
   }
 
-  handleTrackVisibility() {
+  handleTracksVisibility() {
     this.showingAllTracks = !this.showingAllTracks;
-    this.forceUpdate();
     if (!this.showingAllTracks) {
-      window.scrollTo(0, 540);
+      this.scrollLessTracks = true;
     }
+    this.forceUpdate();
   }
 
   progressDone() {
@@ -215,17 +224,15 @@ class AlbumShowPage extends Component {
     const btnText  = this.showingAllTracks ? 'Show less tracks' : 'Show all tracks';
 
     return (
-      <div>
+      <div ref={tracksAnchor => this.tracksAnchor = tracksAnchor}>
         {!this.showingAllTracks && <div className="tracks-gradient" />}
-        <div>
-          <Button
-            bsSize="small"
-            className={this.showingAllTracks ? 'tracks-less' : 'tracks-more'}
-            onClick={this.handleTrackVisibility}
-          >
-            {btnText}
-          </Button>
-        </div>
+        <Button
+          bsSize="small"
+          className={this.showingAllTracks ? 'tracks-less' : 'tracks-more'}
+          onClick={this.handleTracksVisibility}
+        >
+          {btnText}
+        </Button>
       </div>
     );
   }
