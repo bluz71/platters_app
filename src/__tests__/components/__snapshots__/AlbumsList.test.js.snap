@@ -154,7 +154,14 @@ exports[`<AlbumsList /> renders a list of albums 1`] = `
                 </a>
                 <Link
                   replace={false}
-                  to="/artist/abc/album/abc"
+                  to={
+                    Object {
+                      "pathname": "/artist/abc/album/abc",
+                      "state": Object {
+                        "scrollToComments": true,
+                      },
+                    }
+                  }
                 >
                   <a
                     href="/artist/abc/album/abc"
@@ -281,7 +288,14 @@ exports[`<AlbumsList /> renders a list of albums 1`] = `
                 </a>
                 <Link
                   replace={false}
-                  to="/artist/def/album/def"
+                  to={
+                    Object {
+                      "pathname": "/artist/def/album/def",
+                      "state": Object {
+                        "scrollToComments": true,
+                      },
+                    }
+                  }
                 >
                   <a
                     href="/artist/def/album/def"

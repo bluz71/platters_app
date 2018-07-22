@@ -24,6 +24,8 @@ class AlbumShowPage extends Component {
     this.loaded           = false;
     this.commentsEndPoint = `${API_HOST}/${this.artistSlug}/${this.albumSlug}/comments.json`;
     this.waiting          = false; // For comments when infinite-scrolling.
+    this.scrollToComments =
+      (this.props.location.state && this.props.location.state.scrollToComments) || false;
 
     this.state = {
       album: {},
@@ -109,6 +111,10 @@ class AlbumShowPage extends Component {
           comments: response.data.comments,
           commentsPagination: response.data.comments_pagination
         });
+        if (this.scrollToComments) {
+          this.scrollToComments = false;
+          this.commentsAnchor.scrollIntoView();
+        }
       }).catch(error => {
         this.progressDone();
         if (error.response && error.response.status === 404) {
@@ -297,10 +303,12 @@ class AlbumShowPage extends Component {
 
     return (
       <Col md={10} mdOffset={1} id="comments" className="album-comments">
-        <PageHeader>
-          Comments {this.albumRetrieved()
-              && <small>({commentsCount} {pluralize('Comment', count)})</small>}
-        </PageHeader>
+        <div ref={commentsAnchor => this.commentsAnchor = commentsAnchor}>
+          <PageHeader>
+            Comments {this.albumRetrieved()
+                && <small>({commentsCount} {pluralize('Comment', count)})</small>}
+          </PageHeader>
+        </div>
         {this.renderCommentsList(count)}
         {this.renderSpinner()}
       </Col>

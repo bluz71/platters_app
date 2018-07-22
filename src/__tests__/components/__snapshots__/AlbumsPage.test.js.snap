@@ -512,7 +512,14 @@ exports[`<AlbumsPage /> renders 2006 albums 1`] = `
                     </a>
                     <Link
                       replace={false}
-                      to="/artist/jkl_artist/album/jkl"
+                      to={
+                        Object {
+                          "pathname": "/artist/jkl_artist/album/jkl",
+                          "state": Object {
+                            "scrollToComments": true,
+                          },
+                        }
+                      }
                     >
                       <a
                         href="/artist/jkl_artist/album/jkl"
@@ -1099,7 +1106,14 @@ exports[`<AlbumsPage /> renders A albums 1`] = `
                     </a>
                     <Link
                       replace={false}
-                      to="/artist/abc_artist/album/abc"
+                      to={
+                        Object {
+                          "pathname": "/artist/abc_artist/album/abc",
+                          "state": Object {
+                            "scrollToComments": true,
+                          },
+                        }
+                      }
                     >
                       <a
                         href="/artist/abc_artist/album/abc"
@@ -1695,7 +1709,14 @@ exports[`<AlbumsPage /> renders ABC search match 1`] = `
                     </a>
                     <Link
                       replace={false}
-                      to="/artist/abc_artist/album/abc"
+                      to={
+                        Object {
+                          "pathname": "/artist/abc_artist/album/abc",
+                          "state": Object {
+                            "scrollToComments": true,
+                          },
+                        }
+                      }
                     >
                       <a
                         href="/artist/abc_artist/album/abc"
@@ -2286,7 +2307,14 @@ exports[`<AlbumsPage /> renders Pop albums 1`] = `
                     </a>
                     <Link
                       replace={false}
-                      to="/artist/mno_artist/album/mno"
+                      to={
+                        Object {
+                          "pathname": "/artist/mno_artist/album/mno",
+                          "state": Object {
+                            "scrollToComments": true,
+                          },
+                        }
+                      }
                     >
                       <a
                         href="/artist/mno_artist/album/mno"
@@ -2859,7 +2887,14 @@ exports[`<AlbumsPage /> renders first page 1`] = `
                     </a>
                     <Link
                       replace={false}
-                      to="/artist/abc_artist/album/abc"
+                      to={
+                        Object {
+                          "pathname": "/artist/abc_artist/album/abc",
+                          "state": Object {
+                            "scrollToComments": true,
+                          },
+                        }
+                      }
                     >
                       <a
                         href="/artist/abc_artist/album/abc"
@@ -3015,7 +3050,14 @@ exports[`<AlbumsPage /> renders first page 1`] = `
                     </a>
                     <Link
                       replace={false}
-                      to="/artist/def_artist/album/def"
+                      to={
+                        Object {
+                          "pathname": "/artist/def_artist/album/def",
+                          "state": Object {
+                            "scrollToComments": true,
+                          },
+                        }
+                      }
                     >
                       <a
                         href="/artist/def_artist/album/def"
@@ -3549,7 +3591,14 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
                     </a>
                     <Link
                       replace={false}
-                      to="/artist/def_artist/album/def"
+                      to={
+                        Object {
+                          "pathname": "/artist/def_artist/album/def",
+                          "state": Object {
+                            "scrollToComments": true,
+                          },
+                        }
+                      }
                     >
                       <a
                         href="/artist/def_artist/album/def"
@@ -3680,7 +3729,14 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
                     </a>
                     <Link
                       replace={false}
-                      to="/artist/abc_artist/album/abc"
+                      to={
+                        Object {
+                          "pathname": "/artist/abc_artist/album/abc",
+                          "state": Object {
+                            "scrollToComments": true,
+                          },
+                        }
+                      }
                     >
                       <a
                         href="/artist/abc_artist/album/abc"
@@ -4272,7 +4328,14 @@ exports[`<AlbumsPage /> renders second page 1`] = `
                     </a>
                     <Link
                       replace={false}
-                      to="/artist/ghi_artist/album/ghi"
+                      to={
+                        Object {
+                          "pathname": "/artist/ghi_artist/album/ghi",
+                          "state": Object {
+                            "scrollToComments": true,
+                          },
+                        }
+                      }
                     >
                       <a
                         href="/artist/ghi_artist/album/ghi"

@@ -27,7 +27,10 @@ const renderAlbums = (albums, onYear, onGenre) => (
           <a onClick={() => onGenre(album.genre)}>
             <FontAwesome name="tag" className="spacer-left-xs" /> {album.genre}
           </a>
-          <Link to={`/artist/${album.artist_slug}/album/${album.album_slug}`}>
+          <Link to={{
+            pathname: `/artist/${album.artist_slug}/album/${album.album_slug}`,
+            state: { scrollToComments: true }
+          }}>
             <FontAwesome name="comment-o" className="spacer-left-xs" /> {album.comments_count}
           </Link>
         </div>
