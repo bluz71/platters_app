@@ -42,7 +42,6 @@ class AlbumShowPage extends Component {
 
   componentDidMount() {
     window.onscroll = this.handleScroll;
-    window.scrollTo(0, 0);
     this.getAlbum();
   }
 
@@ -53,7 +52,7 @@ class AlbumShowPage extends Component {
   componentDidUpdate() {
     if (this.scrollLessTracks) {
       this.scrollLessTracks = false;
-      this.tracksAnchor.scrollIntoView({block: 'center', behavior: 'instant'});
+      this.tracksAnchor.scrollIntoView(false);
     }
   }
 
