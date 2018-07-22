@@ -152,16 +152,26 @@ exports[`<AlbumsList /> renders a list of albums 1`] = `
                   </FontAwesome>
                    
                 </a>
-                <FontAwesome
-                  className="spacer-left-xs"
-                  name="comment-o"
+                <Link
+                  replace={false}
+                  to="/artist/abc/album/abc"
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-comment-o spacer-left-xs"
-                  />
-                </FontAwesome>
-                 
+                  <a
+                    href="/artist/abc/album/abc"
+                    onClick={[Function]}
+                  >
+                    <FontAwesome
+                      className="spacer-left-xs"
+                      name="comment-o"
+                    >
+                      <span
+                        aria-hidden={true}
+                        className="fa fa-comment-o spacer-left-xs"
+                      />
+                    </FontAwesome>
+                     
+                  </a>
+                </Link>
               </div>
               <Link
                 replace={false}
@@ -269,16 +279,26 @@ exports[`<AlbumsList /> renders a list of albums 1`] = `
                   </FontAwesome>
                    
                 </a>
-                <FontAwesome
-                  className="spacer-left-xs"
-                  name="comment-o"
+                <Link
+                  replace={false}
+                  to="/artist/def/album/def"
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-comment-o spacer-left-xs"
-                  />
-                </FontAwesome>
-                 
+                  <a
+                    href="/artist/def/album/def"
+                    onClick={[Function]}
+                  >
+                    <FontAwesome
+                      className="spacer-left-xs"
+                      name="comment-o"
+                    >
+                      <span
+                        aria-hidden={true}
+                        className="fa fa-comment-o spacer-left-xs"
+                      />
+                    </FontAwesome>
+                     
+                  </a>
+                </Link>
               </div>
               <Link
                 replace={false}

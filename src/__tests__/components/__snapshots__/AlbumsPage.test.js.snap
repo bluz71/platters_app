@@ -510,17 +510,27 @@ exports[`<AlbumsPage /> renders 2006 albums 1`] = `
                        
                       Rock
                     </a>
-                    <FontAwesome
-                      className="spacer-left-xs"
-                      name="comment-o"
+                    <Link
+                      replace={false}
+                      to="/artist/jkl_artist/album/jkl"
                     >
-                      <span
-                        aria-hidden={true}
-                        className="fa fa-comment-o spacer-left-xs"
-                      />
-                    </FontAwesome>
-                     
-                    23
+                      <a
+                        href="/artist/jkl_artist/album/jkl"
+                        onClick={[Function]}
+                      >
+                        <FontAwesome
+                          className="spacer-left-xs"
+                          name="comment-o"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="fa fa-comment-o spacer-left-xs"
+                          />
+                        </FontAwesome>
+                         
+                        23
+                      </a>
+                    </Link>
                   </div>
                   <Link
                     replace={false}
@@ -1087,17 +1097,27 @@ exports[`<AlbumsPage /> renders A albums 1`] = `
                        
                       Rock
                     </a>
-                    <FontAwesome
-                      className="spacer-left-xs"
-                      name="comment-o"
+                    <Link
+                      replace={false}
+                      to="/artist/abc_artist/album/abc"
                     >
-                      <span
-                        aria-hidden={true}
-                        className="fa fa-comment-o spacer-left-xs"
-                      />
-                    </FontAwesome>
-                     
-                    42
+                      <a
+                        href="/artist/abc_artist/album/abc"
+                        onClick={[Function]}
+                      >
+                        <FontAwesome
+                          className="spacer-left-xs"
+                          name="comment-o"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="fa fa-comment-o spacer-left-xs"
+                          />
+                        </FontAwesome>
+                         
+                        42
+                      </a>
+                    </Link>
                   </div>
                   <Link
                     replace={false}
@@ -1673,17 +1693,27 @@ exports[`<AlbumsPage /> renders ABC search match 1`] = `
                        
                       Rock
                     </a>
-                    <FontAwesome
-                      className="spacer-left-xs"
-                      name="comment-o"
+                    <Link
+                      replace={false}
+                      to="/artist/abc_artist/album/abc"
                     >
-                      <span
-                        aria-hidden={true}
-                        className="fa fa-comment-o spacer-left-xs"
-                      />
-                    </FontAwesome>
-                     
-                    42
+                      <a
+                        href="/artist/abc_artist/album/abc"
+                        onClick={[Function]}
+                      >
+                        <FontAwesome
+                          className="spacer-left-xs"
+                          name="comment-o"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="fa fa-comment-o spacer-left-xs"
+                          />
+                        </FontAwesome>
+                         
+                        42
+                      </a>
+                    </Link>
                   </div>
                   <Link
                     replace={false}
@@ -2254,17 +2284,27 @@ exports[`<AlbumsPage /> renders Pop albums 1`] = `
                        
                       Pop
                     </a>
-                    <FontAwesome
-                      className="spacer-left-xs"
-                      name="comment-o"
+                    <Link
+                      replace={false}
+                      to="/artist/mno_artist/album/mno"
                     >
-                      <span
-                        aria-hidden={true}
-                        className="fa fa-comment-o spacer-left-xs"
-                      />
-                    </FontAwesome>
-                     
-                    31
+                      <a
+                        href="/artist/mno_artist/album/mno"
+                        onClick={[Function]}
+                      >
+                        <FontAwesome
+                          className="spacer-left-xs"
+                          name="comment-o"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="fa fa-comment-o spacer-left-xs"
+                          />
+                        </FontAwesome>
+                         
+                        31
+                      </a>
+                    </Link>
                   </div>
                   <Link
                     replace={false}
@@ -2817,17 +2857,27 @@ exports[`<AlbumsPage /> renders first page 1`] = `
                        
                       Rock
                     </a>
-                    <FontAwesome
-                      className="spacer-left-xs"
-                      name="comment-o"
+                    <Link
+                      replace={false}
+                      to="/artist/abc_artist/album/abc"
                     >
-                      <span
-                        aria-hidden={true}
-                        className="fa fa-comment-o spacer-left-xs"
-                      />
-                    </FontAwesome>
-                     
-                    42
+                      <a
+                        href="/artist/abc_artist/album/abc"
+                        onClick={[Function]}
+                      >
+                        <FontAwesome
+                          className="spacer-left-xs"
+                          name="comment-o"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="fa fa-comment-o spacer-left-xs"
+                          />
+                        </FontAwesome>
+                         
+                        42
+                      </a>
+                    </Link>
                   </div>
                   <Link
                     replace={false}
@@ -2963,17 +3013,27 @@ exports[`<AlbumsPage /> renders first page 1`] = `
                        
                       Classical
                     </a>
-                    <FontAwesome
-                      className="spacer-left-xs"
-                      name="comment-o"
+                    <Link
+                      replace={false}
+                      to="/artist/def_artist/album/def"
                     >
-                      <span
-                        aria-hidden={true}
-                        className="fa fa-comment-o spacer-left-xs"
-                      />
-                    </FontAwesome>
-                     
-                    44
+                      <a
+                        href="/artist/def_artist/album/def"
+                        onClick={[Function]}
+                      >
+                        <FontAwesome
+                          className="spacer-left-xs"
+                          name="comment-o"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="fa fa-comment-o spacer-left-xs"
+                          />
+                        </FontAwesome>
+                         
+                        44
+                      </a>
+                    </Link>
                   </div>
                   <Link
                     replace={false}
@@ -3487,17 +3547,27 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
                        
                       Classical
                     </a>
-                    <FontAwesome
-                      className="spacer-left-xs"
-                      name="comment-o"
+                    <Link
+                      replace={false}
+                      to="/artist/def_artist/album/def"
                     >
-                      <span
-                        aria-hidden={true}
-                        className="fa fa-comment-o spacer-left-xs"
-                      />
-                    </FontAwesome>
-                     
-                    44
+                      <a
+                        href="/artist/def_artist/album/def"
+                        onClick={[Function]}
+                      >
+                        <FontAwesome
+                          className="spacer-left-xs"
+                          name="comment-o"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="fa fa-comment-o spacer-left-xs"
+                          />
+                        </FontAwesome>
+                         
+                        44
+                      </a>
+                    </Link>
                   </div>
                   <Link
                     replace={false}
@@ -3608,17 +3678,27 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
                        
                       Rock
                     </a>
-                    <FontAwesome
-                      className="spacer-left-xs"
-                      name="comment-o"
+                    <Link
+                      replace={false}
+                      to="/artist/abc_artist/album/abc"
                     >
-                      <span
-                        aria-hidden={true}
-                        className="fa fa-comment-o spacer-left-xs"
-                      />
-                    </FontAwesome>
-                     
-                    42
+                      <a
+                        href="/artist/abc_artist/album/abc"
+                        onClick={[Function]}
+                      >
+                        <FontAwesome
+                          className="spacer-left-xs"
+                          name="comment-o"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="fa fa-comment-o spacer-left-xs"
+                          />
+                        </FontAwesome>
+                         
+                        42
+                      </a>
+                    </Link>
                   </div>
                   <Link
                     replace={false}
@@ -4190,17 +4270,27 @@ exports[`<AlbumsPage /> renders second page 1`] = `
                        
                       Rock
                     </a>
-                    <FontAwesome
-                      className="spacer-left-xs"
-                      name="comment-o"
+                    <Link
+                      replace={false}
+                      to="/artist/ghi_artist/album/ghi"
                     >
-                      <span
-                        aria-hidden={true}
-                        className="fa fa-comment-o spacer-left-xs"
-                      />
-                    </FontAwesome>
-                     
-                    42
+                      <a
+                        href="/artist/ghi_artist/album/ghi"
+                        onClick={[Function]}
+                      >
+                        <FontAwesome
+                          className="spacer-left-xs"
+                          name="comment-o"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="fa fa-comment-o spacer-left-xs"
+                          />
+                        </FontAwesome>
+                         
+                        42
+                      </a>
+                    </Link>
                   </div>
                   <Link
                     replace={false}
