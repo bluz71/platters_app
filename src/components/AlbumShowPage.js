@@ -44,7 +44,7 @@ class AlbumShowPage extends Component {
 
   componentDidMount() {
     window.onscroll = this.handleScroll;
-    this.getAlbum();
+    this.getAlbum(true);
   }
 
   componentWillUnmount() {
@@ -100,7 +100,7 @@ class AlbumShowPage extends Component {
     }
   }
 
-  getAlbum() {
+  getAlbum(scrollToTop = false) {
     axios.get(this.albumEndPoint)
       .then(response => {
         this.progressDone();
@@ -114,6 +114,9 @@ class AlbumShowPage extends Component {
         if (this.scrollToComments) {
           this.scrollToComments = false;
           this.commentsAnchor.scrollIntoView();
+        }
+        else if (scrollToTop) {
+          window.scrollTo(0, 0);
         }
       }).catch(error => {
         this.progressDone();
