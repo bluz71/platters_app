@@ -25,7 +25,7 @@ class AlbumShowPage extends Component {
     this.commentsEndPoint = `${API_HOST}/${this.artistSlug}/${this.albumSlug}/comments.json`;
     this.waiting          = false; // For comments when infinite-scrolling.
     this.scrollToComments =
-      (this.props.location.state && this.props.location.state.scrollToComments) || false;
+      (props.location.state && props.location.state.scrollToComments) || false;
 
     this.state = {
       album: {},

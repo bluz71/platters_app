@@ -11,7 +11,7 @@ const flushPromises = () => new Promise(resolve => setImmediate(resolve));
 describe('<UserCommentsPage />', () => {
   it('renders user comments page', async () => {
     const match = { params: { id: 'joe' } };
-    const wrapper = shallow(<UserCommentsPage  match={match}/>);
+    const wrapper = shallow(<UserCommentsPage match={match} />);
     await flushPromises();
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
@@ -19,7 +19,7 @@ describe('<UserCommentsPage />', () => {
 
   it('renders all user comments when scrolled', async () => {
     const match = { params: { id: 'joe' } };
-    const wrapper = shallow(<UserCommentsPage  match={match}/>);
+    const wrapper = shallow(<UserCommentsPage match={match} />);
     await flushPromises();
     wrapper.instance().handlePageEnd();
     await flushPromises();
@@ -29,7 +29,7 @@ describe('<UserCommentsPage />', () => {
 
   it('handles invalid user', async () => {
     const match = { params: { id: 'nobody' } };
-    const wrapper = shallow(<UserCommentsPage  match={match}/>);
+    const wrapper = shallow(<UserCommentsPage match={match} />);
     await flushPromises();
     wrapper.update();
     expect(wrapper).toMatchSnapshot();

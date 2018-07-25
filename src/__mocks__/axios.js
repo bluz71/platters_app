@@ -12,6 +12,7 @@ import { data as genres } from './genres.json';
 import { data as home } from './home.json';
 import { data as userComments } from './user_comments.json';
 import { data as userCommentsPage2 } from './user_comments_page2.json';
+import { data as albumShow } from './album_show.json';
 
 
 // Details:
@@ -85,6 +86,10 @@ module.exports = {
           response: {
             status: 404
           }
+        });
+      case `${API_HOST}/abc/def.json`:
+        return Promise.resolve({
+          data: albumShow
         });
     }
   })
