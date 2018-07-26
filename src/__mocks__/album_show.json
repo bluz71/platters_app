@@ -3,8 +3,8 @@
     "album": {
       "title": "DEF",
       "artist_name": "ABC",
-      "track_count": 10,
-      "total_duration": "45:55",
+      "track_count": 21,
+      "total_duration": "91:56",
       "genre": "Rock",
       "year": 2002,
       "cover_url": "http://localhost:3000/uploads/album/cover/1/ABC--DEF.jpg"
@@ -12,69 +12,135 @@
     "tracks": [
       {
         "id": 1,
-        "title": "First",
+        "title": "Track 1",
         "number": 1,
         "duration": "4:22"
       },
       {
         "id": 2,
-        "title": "Second",
+        "title": "Track 2",
         "number": 2,
         "duration": "4:34"
       },
       {
         "id": 3,
-        "title": "Third",
+        "title": "Track 3",
         "number": 3,
         "duration": "3:53"
       },
       {
         "id": 4,
-        "title": "Fourth",
+        "title": "Track 4",
         "number": 4,
         "duration": "3:52"
       },
       {
         "id": 5,
-        "title": "Fifth",
+        "title": "Track 5",
         "number": 5,
         "duration": "6:22"
       },
       {
         "id": 6,
-        "title": "Sixth",
+        "title": "Track 6",
         "number": 6,
         "duration": "4:06"
       },
       {
         "id": 7,
-        "title": "Seventh",
+        "title": "Track 7",
         "number": 7,
         "duration": "5:39"
       },
       {
         "id": 8,
-        "title": "Eighth",
+        "title": "Track 8",
         "number": 8,
         "duration": "4:44"
       },
       {
         "id": 9,
-        "title": "Ninth",
+        "title": "Track 9",
         "number": 9,
         "duration": "4:19"
       },
       {
         "id": 10,
-        "title": "Tenth",
+        "title": "Track 10",
         "number": 10,
         "duration": "4:04"
+      },
+      {
+        "id": 11,
+        "title": "Track 11",
+        "number": 11,
+        "duration": "4:22"
+      },
+      {
+        "id": 12,
+        "title": "Track 12",
+        "number": 12,
+        "duration": "4:34"
+      },
+      {
+        "id": 13,
+        "title": "Track 13",
+        "number": 13,
+        "duration": "3:53"
+      },
+      {
+        "id": 14,
+        "title": "Track 14",
+        "number": 14,
+        "duration": "3:52"
+      },
+      {
+        "id": 15,
+        "title": "Track 15",
+        "number": 15,
+        "duration": "6:22"
+      },
+      {
+        "id": 16,
+        "title": "Track 16",
+        "number": 16,
+        "duration": "4:06"
+      },
+      {
+        "id": 17,
+        "title": "Track 17",
+        "number": 17,
+        "duration": "5:39"
+      },
+      {
+        "id": 18,
+        "title": "Track 18",
+        "number": 18,
+        "duration": "4:44"
+      },
+      {
+        "id": 19,
+        "title": "Track 19",
+        "number": 19,
+        "duration": "4:19"
+      },
+      {
+        "id": 20,
+        "title": "Track 20",
+        "number": 20,
+        "duration": "4:04"
+      },
+      {
+        "id": 21,
+        "title": "Track 21",
+        "number": 21,
+        "duration": "0:06"
       }
     ],
     "comments": [
       {
         "id": 29995,
-        "body": "First comment",
+        "body": "Comment 1",
         "created_at": "<time datetime=\"2018-06-28T08:56:53Z\" data-local=\"time-ago\">June 28, 2018  8:56am</time>",
         "user_name": "fermin_gottlieb83",
         "user_slug": "fermin_gottlieb83",
@@ -82,7 +148,7 @@
       },
       {
         "id": 29991,
-        "body": "Comment",
+        "body": "Comment 2",
         "created_at": "<time datetime=\"2018-06-23T09:25:36Z\" data-local=\"time-ago\">June 23, 2018  9:25am</time>",
         "user_name": "anahi26",
         "user_slug": "anahi26",
@@ -90,7 +156,7 @@
       },
       {
         "id": 29984,
-        "body": "Comment",
+        "body": "Comment 3",
         "created_at": "<time datetime=\"2018-05-28T08:27:27Z\" data-local=\"time-ago\">May 28, 2018  8:27am</time>",
         "user_name": "rosalind_mante11",
         "user_slug": "rosalind_mante11",
@@ -98,7 +164,7 @@
       },
       {
         "id": 30013,
-        "body": "Comment",
+        "body": "Comment 4",
         "created_at": "<time datetime=\"2018-05-10T12:10:03Z\" data-local=\"time-ago\">May 10, 2018 12:10pm</time>",
         "user_name": "devin16",
         "user_slug": "devin16",
@@ -106,7 +172,7 @@
       },
       {
         "id": 29980,
-        "body": "Comment",
+        "body": "Comment 5",
         "created_at": "<time datetime=\"2018-04-30T02:03:15Z\" data-local=\"time-ago\">April 30, 2018  2:03am</time>",
         "user_name": "lexi_jones94",
         "user_slug": "lexi_jones94",
@@ -114,7 +180,7 @@
       },
       {
         "id": 29985,
-        "body": "Comment",
+        "body": "Comment 6",
         "created_at": "<time datetime=\"2018-04-26T08:45:34Z\" data-local=\"time-ago\">April 26, 2018  8:45am</time>",
         "user_name": "devin16",
         "user_slug": "devin16",
@@ -122,7 +188,7 @@
       },
       {
         "id": 30012,
-        "body": "Comment",
+        "body": "Comment 7",
         "created_at": "<time datetime=\"2018-04-09T20:05:33Z\" data-local=\"time-ago\">April  9, 2018  8:05pm</time>",
         "user_name": "ernesto31",
         "user_slug": "ernesto31",
@@ -130,7 +196,7 @@
       },
       {
         "id": 30000,
-        "body": "Comment",
+        "body": "Comment 8",
         "created_at": "<time datetime=\"2018-03-27T00:27:27Z\" data-local=\"time-ago\">March 27, 2018 12:27am</time>",
         "user_name": "rollin50",
         "user_slug": "rollin50",
@@ -138,7 +204,7 @@
       },
       {
         "id": 29993,
-        "body": "Comment",
+        "body": "Comment 9",
         "created_at": "<time datetime=\"2018-03-15T05:38:12Z\" data-local=\"time-ago\">March 15, 2018  5:38am</time>",
         "user_name": "dawn_parker79",
         "user_slug": "dawn_parker79",
@@ -146,7 +212,7 @@
       },
       {
         "id": 30006,
-        "body": "Comment",
+        "body": "Comment 10",
         "created_at": "<time datetime=\"2018-03-14T19:37:15Z\" data-local=\"time-ago\">March 14, 2018  7:37pm</time>",
         "user_name": "kennith_rolfson66",
         "user_slug": "kennith_rolfson66",
@@ -154,7 +220,7 @@
       },
       {
         "id": 29992,
-        "body": "Comment",
+        "body": "Comment 11",
         "created_at": "<time datetime=\"2018-03-13T14:42:54Z\" data-local=\"time-ago\">March 13, 2018  2:42pm</time>",
         "user_name": "elmore16",
         "user_slug": "elmore16",
@@ -162,7 +228,7 @@
       },
       {
         "id": 30007,
-        "body": "Comment",
+        "body": "Comment 12",
         "created_at": "<time datetime=\"2018-02-28T21:42:35Z\" data-local=\"time-ago\">February 28, 2018  9:42pm</time>",
         "user_name": "bettie54",
         "user_slug": "bettie54",
@@ -170,7 +236,7 @@
       },
       {
         "id": 30001,
-        "body": "Comment",
+        "body": "Comment 13",
         "created_at": "<time datetime=\"2018-02-24T14:00:09Z\" data-local=\"time-ago\">February 24, 2018  2:00pm</time>",
         "user_name": "jennifer28",
         "user_slug": "jennifer28",
@@ -178,7 +244,7 @@
       },
       {
         "id": 29994,
-        "body": "Comment",
+        "body": "Comment 14",
         "created_at": "<time datetime=\"2018-02-19T19:11:12Z\" data-local=\"time-ago\">February 19, 2018  7:11pm</time>",
         "user_name": "ally_shields57",
         "user_slug": "ally_shields57",
@@ -186,7 +252,7 @@
       },
       {
         "id": 29978,
-        "body": "Comment",
+        "body": "Comment 15",
         "created_at": "<time datetime=\"2018-02-02T21:59:06Z\" data-local=\"time-ago\">February  2, 2018  9:59pm</time>",
         "user_name": "orlando36",
         "user_slug": "orlando36",
@@ -194,7 +260,7 @@
       },
       {
         "id": 30004,
-        "body": "Comment",
+        "body": "Comment 16",
         "created_at": "<time datetime=\"2018-01-23T17:46:36Z\" data-local=\"time-ago\">January 23, 2018  5:46pm</time>",
         "user_name": "jennifer28",
         "user_slug": "jennifer28",
@@ -202,7 +268,7 @@
       },
       {
         "id": 30008,
-        "body": "Comment",
+        "body": "Comment 17",
         "created_at": "<time datetime=\"2018-01-04T06:53:20Z\" data-local=\"time-ago\">January  4, 2018  6:53am</time>",
         "user_name": "leonel_kertzmann31",
         "user_slug": "leonel_kertzmann31",
@@ -210,7 +276,7 @@
       },
       {
         "id": 29981,
-        "body": "Comment",
+        "body": "Comment 18",
         "created_at": "<time datetime=\"2018-01-01T19:59:24Z\" data-local=\"time-ago\">January  1, 2018  7:59pm</time>",
         "user_name": "rollin50",
         "user_slug": "rollin50",
@@ -218,7 +284,7 @@
       },
       {
         "id": 30010,
-        "body": "Comment",
+        "body": "Comment 19",
         "created_at": "<time datetime=\"2017-12-27T19:28:39Z\" data-local=\"time-ago\">December 27, 2017  7:28pm</time>",
         "user_name": "arvel_ko76",
         "user_slug": "arvel_ko76",
@@ -226,7 +292,7 @@
       },
       {
         "id": 29989,
-        "body": "Comment",
+        "body": "Comment 20",
         "created_at": "<time datetime=\"2017-12-03T00:09:56Z\" data-local=\"time-ago\">December  3, 2017 12:09am</time>",
         "user_name": "jennifer28",
         "user_slug": "jennifer28",
@@ -234,7 +300,7 @@
       },
       {
         "id": 29979,
-        "body": "Comment",
+        "body": "Comment 21",
         "created_at": "<time datetime=\"2017-12-02T10:28:32Z\" data-local=\"time-ago\">December  2, 2017 10:28am</time>",
         "user_name": "iva83",
         "user_slug": "iva83",
@@ -242,7 +308,7 @@
       },
       {
         "id": 29988,
-        "body": "Comment",
+        "body": "Comment 22",
         "created_at": "<time datetime=\"2017-11-23T07:57:12Z\" data-local=\"time-ago\">November 23, 2017  7:57am</time>",
         "user_name": "winfield1",
         "user_slug": "winfield1",
@@ -250,7 +316,7 @@
       },
       {
         "id": 30002,
-        "body": "Comment",
+        "body": "Comment 23",
         "created_at": "<time datetime=\"2017-11-17T18:19:48Z\" data-local=\"time-ago\">November 17, 2017  6:19pm</time>",
         "user_name": "claria_klein19",
         "user_slug": "claria_klein19",
@@ -258,7 +324,7 @@
       },
       {
         "id": 29998,
-        "body": "Comment",
+        "body": "Comment 24",
         "created_at": "<time datetime=\"2017-11-04T04:31:56Z\" data-local=\"time-ago\">November  4, 2017  4:31am</time>",
         "user_name": "leonel_kertzmann31",
         "user_slug": "leonel_kertzmann31",
@@ -266,7 +332,7 @@
       },
       {
         "id": 30003,
-        "body": "Last Comment",
+        "body": "Last Comment 25",
         "created_at": "<time datetime=\"2017-11-01T12:26:44Z\" data-local=\"time-ago\">November  1, 2017 12:26pm</time>",
         "user_name": "simeon59",
         "user_slug": "simeon59",

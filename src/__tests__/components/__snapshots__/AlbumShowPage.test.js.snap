@@ -50,11 +50,11 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
       md={6}
     >
       <h2>
-        10
+        21
          Tracks 
         <small>
           (Time 
-          45:55
+          91:56
           )
         </small>
       </h2>
@@ -112,7 +112,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               .
             </td>
             <td>
-              First
+              Track 1
             </td>
             <td>
               4:22
@@ -127,7 +127,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               .
             </td>
             <td>
-              Second
+              Track 2
             </td>
             <td>
               4:34
@@ -142,7 +142,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               .
             </td>
             <td>
-              Third
+              Track 3
             </td>
             <td>
               3:53
@@ -157,7 +157,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               .
             </td>
             <td>
-              Fourth
+              Track 4
             </td>
             <td>
               3:52
@@ -172,7 +172,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               .
             </td>
             <td>
-              Fifth
+              Track 5
             </td>
             <td>
               6:22
@@ -187,7 +187,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               .
             </td>
             <td>
-              Sixth
+              Track 6
             </td>
             <td>
               4:06
@@ -202,7 +202,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               .
             </td>
             <td>
-              Seventh
+              Track 7
             </td>
             <td>
               5:39
@@ -217,7 +217,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               .
             </td>
             <td>
-              Eighth
+              Track 8
             </td>
             <td>
               4:44
@@ -232,7 +232,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               .
             </td>
             <td>
-              Ninth
+              Track 9
             </td>
             <td>
               4:19
@@ -247,14 +247,196 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               .
             </td>
             <td>
-              Tenth
+              Track 10
             </td>
             <td>
               4:04
             </td>
           </tr>
+          <tr
+            className="visible"
+            key="11"
+          >
+            <td>
+              11
+              .
+            </td>
+            <td>
+              Track 11
+            </td>
+            <td>
+              4:22
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="12"
+          >
+            <td>
+              12
+              .
+            </td>
+            <td>
+              Track 12
+            </td>
+            <td>
+              4:34
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="13"
+          >
+            <td>
+              13
+              .
+            </td>
+            <td>
+              Track 13
+            </td>
+            <td>
+              3:53
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="14"
+          >
+            <td>
+              14
+              .
+            </td>
+            <td>
+              Track 14
+            </td>
+            <td>
+              3:52
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="15"
+          >
+            <td>
+              15
+              .
+            </td>
+            <td>
+              Track 15
+            </td>
+            <td>
+              6:22
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="16"
+          >
+            <td>
+              16
+              .
+            </td>
+            <td>
+              Track 16
+            </td>
+            <td>
+              4:06
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="17"
+          >
+            <td>
+              17
+              .
+            </td>
+            <td>
+              Track 17
+            </td>
+            <td>
+              5:39
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="18"
+          >
+            <td>
+              18
+              .
+            </td>
+            <td>
+              Track 18
+            </td>
+            <td>
+              4:44
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="19"
+          >
+            <td>
+              19
+              .
+            </td>
+            <td>
+              Track 19
+            </td>
+            <td>
+              4:19
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="20"
+          >
+            <td>
+              20
+              .
+            </td>
+            <td>
+              Track 20
+            </td>
+            <td>
+              4:04
+            </td>
+          </tr>
+          <tr
+            className="invisible"
+            key="21"
+          >
+            <td>
+              21
+              .
+            </td>
+            <td>
+              Track 21
+            </td>
+            <td>
+              0:06
+            </td>
+          </tr>
         </tbody>
       </Table>
+      <div>
+        <div
+          className="tracks-gradient"
+        />
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsSize="small"
+          bsStyle="default"
+          className="tracks-more"
+          disabled={false}
+          onClick={[Function]}
+        >
+          Show all tracks
+        </Button>
+      </div>
     </Col>
     <Col
       bsClass="col"
@@ -282,7 +464,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
         comments={
           Array [
             Object {
-              "body": "First comment",
+              "body": "Comment 1",
               "created_at": "<time datetime=\\"2018-06-28T08:56:53Z\\" data-local=\\"time-ago\\">June 28, 2018  8:56am</time>",
               "gravatar_url": "https://gravatar.com/avatar/e16475b708a5b231b5fdf71ab3577761?s=80&r=pg&d=identicon",
               "id": 29995,
@@ -290,7 +472,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "fermin_gottlieb83",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 2",
               "created_at": "<time datetime=\\"2018-06-23T09:25:36Z\\" data-local=\\"time-ago\\">June 23, 2018  9:25am</time>",
               "gravatar_url": "https://gravatar.com/avatar/61ac49478ea8c40129c5abc30153880d?s=80&r=pg&d=identicon",
               "id": 29991,
@@ -298,7 +480,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "anahi26",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 3",
               "created_at": "<time datetime=\\"2018-05-28T08:27:27Z\\" data-local=\\"time-ago\\">May 28, 2018  8:27am</time>",
               "gravatar_url": "https://gravatar.com/avatar/06ecce7fb50e191bcdfe06e324882fe0?s=80&r=pg&d=identicon",
               "id": 29984,
@@ -306,7 +488,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "rosalind_mante11",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 4",
               "created_at": "<time datetime=\\"2018-05-10T12:10:03Z\\" data-local=\\"time-ago\\">May 10, 2018 12:10pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/22d70f1821be0b4669a186e4ab18ff51?s=80&r=pg&d=identicon",
               "id": 30013,
@@ -314,7 +496,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "devin16",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 5",
               "created_at": "<time datetime=\\"2018-04-30T02:03:15Z\\" data-local=\\"time-ago\\">April 30, 2018  2:03am</time>",
               "gravatar_url": "https://gravatar.com/avatar/9a8ad7cda90d364b0024667ecdf773d6?s=80&r=pg&d=identicon",
               "id": 29980,
@@ -322,7 +504,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "lexi_jones94",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 6",
               "created_at": "<time datetime=\\"2018-04-26T08:45:34Z\\" data-local=\\"time-ago\\">April 26, 2018  8:45am</time>",
               "gravatar_url": "https://gravatar.com/avatar/22d70f1821be0b4669a186e4ab18ff51?s=80&r=pg&d=identicon",
               "id": 29985,
@@ -330,7 +512,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "devin16",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 7",
               "created_at": "<time datetime=\\"2018-04-09T20:05:33Z\\" data-local=\\"time-ago\\">April  9, 2018  8:05pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/d2ab58d215ee0d4bb9121f757e483944?s=80&r=pg&d=identicon",
               "id": 30012,
@@ -338,7 +520,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "ernesto31",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 8",
               "created_at": "<time datetime=\\"2018-03-27T00:27:27Z\\" data-local=\\"time-ago\\">March 27, 2018 12:27am</time>",
               "gravatar_url": "https://gravatar.com/avatar/503710afd68777eeb329e1be844c140e?s=80&r=pg&d=identicon",
               "id": 30000,
@@ -346,7 +528,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "rollin50",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 9",
               "created_at": "<time datetime=\\"2018-03-15T05:38:12Z\\" data-local=\\"time-ago\\">March 15, 2018  5:38am</time>",
               "gravatar_url": "https://gravatar.com/avatar/3fff9f36bf92b24cd899eeb6cea05ff6?s=80&r=pg&d=identicon",
               "id": 29993,
@@ -354,7 +536,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "dawn_parker79",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 10",
               "created_at": "<time datetime=\\"2018-03-14T19:37:15Z\\" data-local=\\"time-ago\\">March 14, 2018  7:37pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/48c30a3c1f69a8ebba162afbcaab7c67?s=80&r=pg&d=identicon",
               "id": 30006,
@@ -362,7 +544,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "kennith_rolfson66",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 11",
               "created_at": "<time datetime=\\"2018-03-13T14:42:54Z\\" data-local=\\"time-ago\\">March 13, 2018  2:42pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/ba14e202ce8ffea35bcf9971bf0d6e85?s=80&r=pg&d=identicon",
               "id": 29992,
@@ -370,7 +552,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "elmore16",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 12",
               "created_at": "<time datetime=\\"2018-02-28T21:42:35Z\\" data-local=\\"time-ago\\">February 28, 2018  9:42pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/62279fdb4a74d49ae14c5bdbfbbef55f?s=80&r=pg&d=identicon",
               "id": 30007,
@@ -378,7 +560,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "bettie54",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 13",
               "created_at": "<time datetime=\\"2018-02-24T14:00:09Z\\" data-local=\\"time-ago\\">February 24, 2018  2:00pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/d7de8c9ee403ef8d8403429ba3c4ba11?s=80&r=pg&d=identicon",
               "id": 30001,
@@ -386,7 +568,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "jennifer28",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 14",
               "created_at": "<time datetime=\\"2018-02-19T19:11:12Z\\" data-local=\\"time-ago\\">February 19, 2018  7:11pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/f5a520fe87dae7dbf7ce8869eda7af0f?s=80&r=pg&d=identicon",
               "id": 29994,
@@ -394,7 +576,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "ally_shields57",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 15",
               "created_at": "<time datetime=\\"2018-02-02T21:59:06Z\\" data-local=\\"time-ago\\">February  2, 2018  9:59pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/55629d25652543219eabe63afb23be16?s=80&r=pg&d=identicon",
               "id": 29978,
@@ -402,7 +584,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "orlando36",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 16",
               "created_at": "<time datetime=\\"2018-01-23T17:46:36Z\\" data-local=\\"time-ago\\">January 23, 2018  5:46pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/d7de8c9ee403ef8d8403429ba3c4ba11?s=80&r=pg&d=identicon",
               "id": 30004,
@@ -410,7 +592,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "jennifer28",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 17",
               "created_at": "<time datetime=\\"2018-01-04T06:53:20Z\\" data-local=\\"time-ago\\">January  4, 2018  6:53am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7623bc3892c4bf9c2571447e23ec565f?s=80&r=pg&d=identicon",
               "id": 30008,
@@ -418,7 +600,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "leonel_kertzmann31",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 18",
               "created_at": "<time datetime=\\"2018-01-01T19:59:24Z\\" data-local=\\"time-ago\\">January  1, 2018  7:59pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/503710afd68777eeb329e1be844c140e?s=80&r=pg&d=identicon",
               "id": 29981,
@@ -426,7 +608,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "rollin50",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 19",
               "created_at": "<time datetime=\\"2017-12-27T19:28:39Z\\" data-local=\\"time-ago\\">December 27, 2017  7:28pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/0dd9e5ca83217d75bc53ae4fe0d76e06?s=80&r=pg&d=identicon",
               "id": 30010,
@@ -434,7 +616,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "arvel_ko76",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 20",
               "created_at": "<time datetime=\\"2017-12-03T00:09:56Z\\" data-local=\\"time-ago\\">December  3, 2017 12:09am</time>",
               "gravatar_url": "https://gravatar.com/avatar/d7de8c9ee403ef8d8403429ba3c4ba11?s=80&r=pg&d=identicon",
               "id": 29989,
@@ -442,7 +624,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "jennifer28",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 21",
               "created_at": "<time datetime=\\"2017-12-02T10:28:32Z\\" data-local=\\"time-ago\\">December  2, 2017 10:28am</time>",
               "gravatar_url": "https://gravatar.com/avatar/3ab954c11fb693fc8f966e9b5ab9f205?s=80&r=pg&d=identicon",
               "id": 29979,
@@ -450,7 +632,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "iva83",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 22",
               "created_at": "<time datetime=\\"2017-11-23T07:57:12Z\\" data-local=\\"time-ago\\">November 23, 2017  7:57am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7f9f0846a96f762c757db392bd6a1588?s=80&r=pg&d=identicon",
               "id": 29988,
@@ -458,7 +640,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "winfield1",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 23",
               "created_at": "<time datetime=\\"2017-11-17T18:19:48Z\\" data-local=\\"time-ago\\">November 17, 2017  6:19pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/975cff4dfaf3813a2c8803e751353808?s=80&r=pg&d=identicon",
               "id": 30002,
@@ -466,7 +648,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "claria_klein19",
             },
             Object {
-              "body": "Comment",
+              "body": "Comment 24",
               "created_at": "<time datetime=\\"2017-11-04T04:31:56Z\\" data-local=\\"time-ago\\">November  4, 2017  4:31am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7623bc3892c4bf9c2571447e23ec565f?s=80&r=pg&d=identicon",
               "id": 29998,
@@ -474,7 +656,676 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
               "user_slug": "leonel_kertzmann31",
             },
             Object {
-              "body": "Last Comment",
+              "body": "Last Comment 25",
+              "created_at": "<time datetime=\\"2017-11-01T12:26:44Z\\" data-local=\\"time-ago\\">November  1, 2017 12:26pm</time>",
+              "gravatar_url": "https://gravatar.com/avatar/188deba48d739c0287b061713d2c16be?s=80&r=pg&d=identicon",
+              "id": 30003,
+              "user_name": "simeon59",
+              "user_slug": "simeon59",
+            },
+          ]
+        }
+        shortHeader={true}
+      />
+    </Col>
+  </div>
+</Row>
+`;
+
+exports[`<AlbumShowPage /> renders all tracks when show all is clicked 1`] = `
+<Row
+  bsClass="row"
+  componentClass="div"
+>
+  <div
+    className="AlbumShow"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={10}
+      mdOffset={1}
+    >
+      <PageHeader
+        bsClass="page-header"
+      >
+        DEF
+         
+        <small>
+          by 
+          <Link
+            replace={false}
+            to="/artist/abc"
+          >
+            ABC
+          </Link>
+        </small>
+      </PageHeader>
+    </Col>
+    <Col
+      bsClass="col"
+      className="large-cover"
+      componentClass="div"
+      md={4}
+      mdOffset={1}
+    >
+      <img
+        alt="DEF"
+        className="img-responsive center-block"
+        src="http://localhost:3000/uploads/album/cover/1/ABC--DEF.jpg"
+      />
+    </Col>
+    <Col
+      bsClass="col"
+      className="album-data"
+      componentClass="div"
+      md={6}
+    >
+      <h2>
+        21
+         Tracks 
+        <small>
+          (Time 
+          91:56
+          )
+        </small>
+      </h2>
+      <span
+        className="icon"
+      >
+        <a
+          onClick={[Function]}
+        >
+          <FontAwesome
+            name="calendar"
+          />
+           
+          2002
+        </a>
+        <a
+          onClick={[Function]}
+        >
+          <FontAwesome
+            className="spacer-left-xs"
+            name="tag"
+          />
+           
+          Rock
+        </a>
+      </span>
+      <Table
+        bordered={false}
+        bsClass="table"
+        condensed={false}
+        hover={false}
+        responsive={false}
+        striped={true}
+      >
+        <thead>
+          <tr>
+            <th>
+              No.
+            </th>
+            <th>
+              Title
+            </th>
+            <th>
+              Duration
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            className="visible"
+            key="1"
+          >
+            <td>
+              1
+              .
+            </td>
+            <td>
+              Track 1
+            </td>
+            <td>
+              4:22
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="2"
+          >
+            <td>
+              2
+              .
+            </td>
+            <td>
+              Track 2
+            </td>
+            <td>
+              4:34
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="3"
+          >
+            <td>
+              3
+              .
+            </td>
+            <td>
+              Track 3
+            </td>
+            <td>
+              3:53
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="4"
+          >
+            <td>
+              4
+              .
+            </td>
+            <td>
+              Track 4
+            </td>
+            <td>
+              3:52
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="5"
+          >
+            <td>
+              5
+              .
+            </td>
+            <td>
+              Track 5
+            </td>
+            <td>
+              6:22
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="6"
+          >
+            <td>
+              6
+              .
+            </td>
+            <td>
+              Track 6
+            </td>
+            <td>
+              4:06
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="7"
+          >
+            <td>
+              7
+              .
+            </td>
+            <td>
+              Track 7
+            </td>
+            <td>
+              5:39
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="8"
+          >
+            <td>
+              8
+              .
+            </td>
+            <td>
+              Track 8
+            </td>
+            <td>
+              4:44
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="9"
+          >
+            <td>
+              9
+              .
+            </td>
+            <td>
+              Track 9
+            </td>
+            <td>
+              4:19
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="10"
+          >
+            <td>
+              10
+              .
+            </td>
+            <td>
+              Track 10
+            </td>
+            <td>
+              4:04
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="11"
+          >
+            <td>
+              11
+              .
+            </td>
+            <td>
+              Track 11
+            </td>
+            <td>
+              4:22
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="12"
+          >
+            <td>
+              12
+              .
+            </td>
+            <td>
+              Track 12
+            </td>
+            <td>
+              4:34
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="13"
+          >
+            <td>
+              13
+              .
+            </td>
+            <td>
+              Track 13
+            </td>
+            <td>
+              3:53
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="14"
+          >
+            <td>
+              14
+              .
+            </td>
+            <td>
+              Track 14
+            </td>
+            <td>
+              3:52
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="15"
+          >
+            <td>
+              15
+              .
+            </td>
+            <td>
+              Track 15
+            </td>
+            <td>
+              6:22
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="16"
+          >
+            <td>
+              16
+              .
+            </td>
+            <td>
+              Track 16
+            </td>
+            <td>
+              4:06
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="17"
+          >
+            <td>
+              17
+              .
+            </td>
+            <td>
+              Track 17
+            </td>
+            <td>
+              5:39
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="18"
+          >
+            <td>
+              18
+              .
+            </td>
+            <td>
+              Track 18
+            </td>
+            <td>
+              4:44
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="19"
+          >
+            <td>
+              19
+              .
+            </td>
+            <td>
+              Track 19
+            </td>
+            <td>
+              4:19
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="20"
+          >
+            <td>
+              20
+              .
+            </td>
+            <td>
+              Track 20
+            </td>
+            <td>
+              4:04
+            </td>
+          </tr>
+          <tr
+            className="visible"
+            key="21"
+          >
+            <td>
+              21
+              .
+            </td>
+            <td>
+              Track 21
+            </td>
+            <td>
+              0:06
+            </td>
+          </tr>
+        </tbody>
+      </Table>
+      <div>
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsSize="small"
+          bsStyle="default"
+          className="tracks-less"
+          disabled={false}
+          onClick={[Function]}
+        >
+          Show less tracks
+        </Button>
+      </div>
+    </Col>
+    <Col
+      bsClass="col"
+      className="album-comments"
+      componentClass="div"
+      id="comments"
+      md={10}
+      mdOffset={1}
+    >
+      <div>
+        <PageHeader
+          bsClass="page-header"
+        >
+          Comments 
+          <small>
+            (
+            36
+             
+            Comments
+            )
+          </small>
+        </PageHeader>
+      </div>
+      <CommentsList
+        comments={
+          Array [
+            Object {
+              "body": "Comment 1",
+              "created_at": "<time datetime=\\"2018-06-28T08:56:53Z\\" data-local=\\"time-ago\\">June 28, 2018  8:56am</time>",
+              "gravatar_url": "https://gravatar.com/avatar/e16475b708a5b231b5fdf71ab3577761?s=80&r=pg&d=identicon",
+              "id": 29995,
+              "user_name": "fermin_gottlieb83",
+              "user_slug": "fermin_gottlieb83",
+            },
+            Object {
+              "body": "Comment 2",
+              "created_at": "<time datetime=\\"2018-06-23T09:25:36Z\\" data-local=\\"time-ago\\">June 23, 2018  9:25am</time>",
+              "gravatar_url": "https://gravatar.com/avatar/61ac49478ea8c40129c5abc30153880d?s=80&r=pg&d=identicon",
+              "id": 29991,
+              "user_name": "anahi26",
+              "user_slug": "anahi26",
+            },
+            Object {
+              "body": "Comment 3",
+              "created_at": "<time datetime=\\"2018-05-28T08:27:27Z\\" data-local=\\"time-ago\\">May 28, 2018  8:27am</time>",
+              "gravatar_url": "https://gravatar.com/avatar/06ecce7fb50e191bcdfe06e324882fe0?s=80&r=pg&d=identicon",
+              "id": 29984,
+              "user_name": "rosalind_mante11",
+              "user_slug": "rosalind_mante11",
+            },
+            Object {
+              "body": "Comment 4",
+              "created_at": "<time datetime=\\"2018-05-10T12:10:03Z\\" data-local=\\"time-ago\\">May 10, 2018 12:10pm</time>",
+              "gravatar_url": "https://gravatar.com/avatar/22d70f1821be0b4669a186e4ab18ff51?s=80&r=pg&d=identicon",
+              "id": 30013,
+              "user_name": "devin16",
+              "user_slug": "devin16",
+            },
+            Object {
+              "body": "Comment 5",
+              "created_at": "<time datetime=\\"2018-04-30T02:03:15Z\\" data-local=\\"time-ago\\">April 30, 2018  2:03am</time>",
+              "gravatar_url": "https://gravatar.com/avatar/9a8ad7cda90d364b0024667ecdf773d6?s=80&r=pg&d=identicon",
+              "id": 29980,
+              "user_name": "lexi_jones94",
+              "user_slug": "lexi_jones94",
+            },
+            Object {
+              "body": "Comment 6",
+              "created_at": "<time datetime=\\"2018-04-26T08:45:34Z\\" data-local=\\"time-ago\\">April 26, 2018  8:45am</time>",
+              "gravatar_url": "https://gravatar.com/avatar/22d70f1821be0b4669a186e4ab18ff51?s=80&r=pg&d=identicon",
+              "id": 29985,
+              "user_name": "devin16",
+              "user_slug": "devin16",
+            },
+            Object {
+              "body": "Comment 7",
+              "created_at": "<time datetime=\\"2018-04-09T20:05:33Z\\" data-local=\\"time-ago\\">April  9, 2018  8:05pm</time>",
+              "gravatar_url": "https://gravatar.com/avatar/d2ab58d215ee0d4bb9121f757e483944?s=80&r=pg&d=identicon",
+              "id": 30012,
+              "user_name": "ernesto31",
+              "user_slug": "ernesto31",
+            },
+            Object {
+              "body": "Comment 8",
+              "created_at": "<time datetime=\\"2018-03-27T00:27:27Z\\" data-local=\\"time-ago\\">March 27, 2018 12:27am</time>",
+              "gravatar_url": "https://gravatar.com/avatar/503710afd68777eeb329e1be844c140e?s=80&r=pg&d=identicon",
+              "id": 30000,
+              "user_name": "rollin50",
+              "user_slug": "rollin50",
+            },
+            Object {
+              "body": "Comment 9",
+              "created_at": "<time datetime=\\"2018-03-15T05:38:12Z\\" data-local=\\"time-ago\\">March 15, 2018  5:38am</time>",
+              "gravatar_url": "https://gravatar.com/avatar/3fff9f36bf92b24cd899eeb6cea05ff6?s=80&r=pg&d=identicon",
+              "id": 29993,
+              "user_name": "dawn_parker79",
+              "user_slug": "dawn_parker79",
+            },
+            Object {
+              "body": "Comment 10",
+              "created_at": "<time datetime=\\"2018-03-14T19:37:15Z\\" data-local=\\"time-ago\\">March 14, 2018  7:37pm</time>",
+              "gravatar_url": "https://gravatar.com/avatar/48c30a3c1f69a8ebba162afbcaab7c67?s=80&r=pg&d=identicon",
+              "id": 30006,
+              "user_name": "kennith_rolfson66",
+              "user_slug": "kennith_rolfson66",
+            },
+            Object {
+              "body": "Comment 11",
+              "created_at": "<time datetime=\\"2018-03-13T14:42:54Z\\" data-local=\\"time-ago\\">March 13, 2018  2:42pm</time>",
+              "gravatar_url": "https://gravatar.com/avatar/ba14e202ce8ffea35bcf9971bf0d6e85?s=80&r=pg&d=identicon",
+              "id": 29992,
+              "user_name": "elmore16",
+              "user_slug": "elmore16",
+            },
+            Object {
+              "body": "Comment 12",
+              "created_at": "<time datetime=\\"2018-02-28T21:42:35Z\\" data-local=\\"time-ago\\">February 28, 2018  9:42pm</time>",
+              "gravatar_url": "https://gravatar.com/avatar/62279fdb4a74d49ae14c5bdbfbbef55f?s=80&r=pg&d=identicon",
+              "id": 30007,
+              "user_name": "bettie54",
+              "user_slug": "bettie54",
+            },
+            Object {
+              "body": "Comment 13",
+              "created_at": "<time datetime=\\"2018-02-24T14:00:09Z\\" data-local=\\"time-ago\\">February 24, 2018  2:00pm</time>",
+              "gravatar_url": "https://gravatar.com/avatar/d7de8c9ee403ef8d8403429ba3c4ba11?s=80&r=pg&d=identicon",
+              "id": 30001,
+              "user_name": "jennifer28",
+              "user_slug": "jennifer28",
+            },
+            Object {
+              "body": "Comment 14",
+              "created_at": "<time datetime=\\"2018-02-19T19:11:12Z\\" data-local=\\"time-ago\\">February 19, 2018  7:11pm</time>",
+              "gravatar_url": "https://gravatar.com/avatar/f5a520fe87dae7dbf7ce8869eda7af0f?s=80&r=pg&d=identicon",
+              "id": 29994,
+              "user_name": "ally_shields57",
+              "user_slug": "ally_shields57",
+            },
+            Object {
+              "body": "Comment 15",
+              "created_at": "<time datetime=\\"2018-02-02T21:59:06Z\\" data-local=\\"time-ago\\">February  2, 2018  9:59pm</time>",
+              "gravatar_url": "https://gravatar.com/avatar/55629d25652543219eabe63afb23be16?s=80&r=pg&d=identicon",
+              "id": 29978,
+              "user_name": "orlando36",
+              "user_slug": "orlando36",
+            },
+            Object {
+              "body": "Comment 16",
+              "created_at": "<time datetime=\\"2018-01-23T17:46:36Z\\" data-local=\\"time-ago\\">January 23, 2018  5:46pm</time>",
+              "gravatar_url": "https://gravatar.com/avatar/d7de8c9ee403ef8d8403429ba3c4ba11?s=80&r=pg&d=identicon",
+              "id": 30004,
+              "user_name": "jennifer28",
+              "user_slug": "jennifer28",
+            },
+            Object {
+              "body": "Comment 17",
+              "created_at": "<time datetime=\\"2018-01-04T06:53:20Z\\" data-local=\\"time-ago\\">January  4, 2018  6:53am</time>",
+              "gravatar_url": "https://gravatar.com/avatar/7623bc3892c4bf9c2571447e23ec565f?s=80&r=pg&d=identicon",
+              "id": 30008,
+              "user_name": "leonel_kertzmann31",
+              "user_slug": "leonel_kertzmann31",
+            },
+            Object {
+              "body": "Comment 18",
+              "created_at": "<time datetime=\\"2018-01-01T19:59:24Z\\" data-local=\\"time-ago\\">January  1, 2018  7:59pm</time>",
+              "gravatar_url": "https://gravatar.com/avatar/503710afd68777eeb329e1be844c140e?s=80&r=pg&d=identicon",
+              "id": 29981,
+              "user_name": "rollin50",
+              "user_slug": "rollin50",
+            },
+            Object {
+              "body": "Comment 19",
+              "created_at": "<time datetime=\\"2017-12-27T19:28:39Z\\" data-local=\\"time-ago\\">December 27, 2017  7:28pm</time>",
+              "gravatar_url": "https://gravatar.com/avatar/0dd9e5ca83217d75bc53ae4fe0d76e06?s=80&r=pg&d=identicon",
+              "id": 30010,
+              "user_name": "arvel_ko76",
+              "user_slug": "arvel_ko76",
+            },
+            Object {
+              "body": "Comment 20",
+              "created_at": "<time datetime=\\"2017-12-03T00:09:56Z\\" data-local=\\"time-ago\\">December  3, 2017 12:09am</time>",
+              "gravatar_url": "https://gravatar.com/avatar/d7de8c9ee403ef8d8403429ba3c4ba11?s=80&r=pg&d=identicon",
+              "id": 29989,
+              "user_name": "jennifer28",
+              "user_slug": "jennifer28",
+            },
+            Object {
+              "body": "Comment 21",
+              "created_at": "<time datetime=\\"2017-12-02T10:28:32Z\\" data-local=\\"time-ago\\">December  2, 2017 10:28am</time>",
+              "gravatar_url": "https://gravatar.com/avatar/3ab954c11fb693fc8f966e9b5ab9f205?s=80&r=pg&d=identicon",
+              "id": 29979,
+              "user_name": "iva83",
+              "user_slug": "iva83",
+            },
+            Object {
+              "body": "Comment 22",
+              "created_at": "<time datetime=\\"2017-11-23T07:57:12Z\\" data-local=\\"time-ago\\">November 23, 2017  7:57am</time>",
+              "gravatar_url": "https://gravatar.com/avatar/7f9f0846a96f762c757db392bd6a1588?s=80&r=pg&d=identicon",
+              "id": 29988,
+              "user_name": "winfield1",
+              "user_slug": "winfield1",
+            },
+            Object {
+              "body": "Comment 23",
+              "created_at": "<time datetime=\\"2017-11-17T18:19:48Z\\" data-local=\\"time-ago\\">November 17, 2017  6:19pm</time>",
+              "gravatar_url": "https://gravatar.com/avatar/975cff4dfaf3813a2c8803e751353808?s=80&r=pg&d=identicon",
+              "id": 30002,
+              "user_name": "claria_klein19",
+              "user_slug": "claria_klein19",
+            },
+            Object {
+              "body": "Comment 24",
+              "created_at": "<time datetime=\\"2017-11-04T04:31:56Z\\" data-local=\\"time-ago\\">November  4, 2017  4:31am</time>",
+              "gravatar_url": "https://gravatar.com/avatar/7623bc3892c4bf9c2571447e23ec565f?s=80&r=pg&d=identicon",
+              "id": 29998,
+              "user_name": "leonel_kertzmann31",
+              "user_slug": "leonel_kertzmann31",
+            },
+            Object {
+              "body": "Last Comment 25",
               "created_at": "<time datetime=\\"2017-11-01T12:26:44Z\\" data-local=\\"time-ago\\">November  1, 2017 12:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/188deba48d739c0287b061713d2c16be?s=80&r=pg&d=identicon",
               "id": 30003,

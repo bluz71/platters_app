@@ -15,4 +15,14 @@ describe('<AlbumShowPage />', () => {
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('renders all tracks when show all is clicked', async () => {
+    const match = { params: { artist_id: 'abc', album_id: 'def' } };
+    const wrapper = shallow(<AlbumShowPage match={match} location />);
+    await flushPromises();
+    wrapper.instance().handleTracksVisibility();
+    await flushPromises();
+    wrapper.update();
+    expect(wrapper).toMatchSnapshot();
+  });
 });
