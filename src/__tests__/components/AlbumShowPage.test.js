@@ -21,7 +21,16 @@ describe('<AlbumShowPage />', () => {
     const wrapper = shallow(<AlbumShowPage match={match} location />);
     await flushPromises();
     wrapper.instance().handleTracksVisibility();
+    wrapper.update();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders less tracks when show less is clicked', async () => {
+    const match = { params: { artist_id: 'abc', album_id: 'def' } };
+    const wrapper = shallow(<AlbumShowPage match={match} location />);
     await flushPromises();
+    wrapper.instance().handleTracksVisibility();
+    wrapper.instance().handleTracksVisibility();
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
   });
