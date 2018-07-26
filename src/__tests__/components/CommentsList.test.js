@@ -40,4 +40,9 @@ describe('<CommentsList />', () => {
     const wrapper = shallow(<CommentsList comments={comments()} />);
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('renders a list of comments with shortHeader', () => {
+    const wrapper = shallow(<CommentsList comments={comments()} shortHeader />);
+    expect(wrapper).toMatchSnapshot();
+  });
 });
