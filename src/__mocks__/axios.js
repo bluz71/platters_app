@@ -96,6 +96,12 @@ module.exports = {
         return Promise.resolve({
           data: albumCommentsPage2
         });
+      case `${API_HOST}/abc/null.json`:
+        return Promise.reject({
+          response: {
+            status: 404
+          }
+        });
     }
   })
 };

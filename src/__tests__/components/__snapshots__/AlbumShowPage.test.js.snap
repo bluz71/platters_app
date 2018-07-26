@@ -1,5 +1,110 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<AlbumShowPage /> handles invalid album 1`] = `
+<Row
+  bsClass="row"
+  componentClass="div"
+>
+  <div
+    className="AlbumShow"
+  >
+    <Redirect
+      push={false}
+      to="/albums"
+    />
+    <Col
+      bsClass="col"
+      className="large-cover"
+      componentClass="div"
+      md={4}
+      mdOffset={1}
+    >
+      <img
+        className="img-responsive center-block"
+      />
+    </Col>
+    <Col
+      bsClass="col"
+      className="album-data"
+      componentClass="div"
+      md={6}
+    >
+      <h2>
+         Tracks 
+        <small>
+          (Time 
+          )
+        </small>
+      </h2>
+      <span
+        className="icon"
+      >
+        <a
+          onClick={[Function]}
+        >
+          <FontAwesome
+            name="calendar"
+          />
+           
+        </a>
+        <a
+          onClick={[Function]}
+        >
+          <FontAwesome
+            className="spacer-left-xs"
+            name="tag"
+          />
+           
+        </a>
+      </span>
+      <Table
+        bordered={false}
+        bsClass="table"
+        condensed={false}
+        hover={false}
+        responsive={false}
+        striped={true}
+      >
+        <thead>
+          <tr>
+            <th>
+              No.
+            </th>
+            <th>
+              Title
+            </th>
+            <th>
+              Duration
+            </th>
+          </tr>
+        </thead>
+        <tbody />
+      </Table>
+    </Col>
+    <Col
+      bsClass="col"
+      className="album-comments"
+      componentClass="div"
+      id="comments"
+      md={10}
+      mdOffset={1}
+    >
+      <div>
+        <PageHeader
+          bsClass="page-header"
+        >
+          Comments 
+        </PageHeader>
+      </div>
+      <CommentsList
+        comments={Array []}
+        shortHeader={true}
+      />
+    </Col>
+  </div>
+</Row>
+`;
+
 exports[`<AlbumShowPage /> renders album show page 1`] = `
 <Row
   bsClass="row"

@@ -44,4 +44,12 @@ describe('<AlbumShowPage />', () => {
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('handles invalid album', async () => {
+    const match = { params: { artist_id: 'abc', album_id: 'null' } };
+    const wrapper = shallow(<AlbumShowPage match={match} location />);
+    await flushPromises();
+    wrapper.update();
+    expect(wrapper).toMatchSnapshot();
+  });
 });
