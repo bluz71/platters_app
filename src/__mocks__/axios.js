@@ -13,6 +13,7 @@ import { data as home } from './home.json';
 import { data as userComments } from './user_comments.json';
 import { data as userCommentsPage2 } from './user_comments_page2.json';
 import { data as albumShow } from './album_show.json';
+import { data as albumCommentsPage2 } from './album_comments_page2.json';
 
 
 // Details:
@@ -90,6 +91,10 @@ module.exports = {
       case `${API_HOST}/abc/def.json`:
         return Promise.resolve({
           data: albumShow
+        });
+      case `${API_HOST}/abc/def/comments.json?page=2`:
+        return Promise.resolve({
+          data: albumCommentsPage2
         });
     }
   })

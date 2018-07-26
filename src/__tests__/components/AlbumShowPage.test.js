@@ -34,4 +34,14 @@ describe('<AlbumShowPage />', () => {
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('renders all album comments when scrolled', async () => {
+    const match = { params: { artist_id: 'abc', album_id: 'def' } };
+    const wrapper = shallow(<AlbumShowPage match={match} location />);
+    await flushPromises();
+    wrapper.instance().handlePageEnd();
+    await flushPromises();
+    wrapper.update();
+    expect(wrapper).toMatchSnapshot();
+  });
 });
