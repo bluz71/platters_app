@@ -1,9 +1,8 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { shallow, mount } from 'enzyme';
+import flushPromises from '../../helpers/flushPromises';
 import AlbumsPage from '../../components/AlbumsPage';
-
-const flushPromises = () => new Promise(resolve => setImmediate(resolve));
 
 describe('<AlbumsPage />', () => {
   it('renders without crashing', () => {

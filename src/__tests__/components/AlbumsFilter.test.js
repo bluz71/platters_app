@@ -1,11 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import flushPromises from '../../helpers/flushPromises';
 import AlbumsFilter from '../../components/AlbumsFilter';
-
-// Details:
-//   https://blog.rescale.com/testing-promise-side-effects-with-asyncawait
-//   https://github.com/facebook/jest/issues/2157#issuecomment-279171856
-const flushPromises = () => new Promise(resolve => setImmediate(resolve));
 
 describe('<AlbumsFilter />', () => {
   it('renders without crashing', async () => {

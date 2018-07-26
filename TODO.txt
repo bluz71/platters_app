@@ -1,3 +1,1 @@
-- move flushPromises into its own file.
-
 - Create Git 'pre-push' hook that validates with eslint
