@@ -4,7 +4,7 @@ class ArtistShowPage extends Component {
   constructor(props) {
     super(props);
 
-    this.artistSlug = props.match.params.id
+    this.artistSlug = props.match.params.id;
   }
 
   render() {
