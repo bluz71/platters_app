@@ -251,7 +251,7 @@ class AlbumShowPage extends Component {
     return (
       <Col md={6} className="album-data">
         <h2>
-          {album.track_count} Tracks <small>(Time {album.total_duration})</small>
+          {album.tracks_count} Tracks <small>(Time {album.total_duration})</small>
         </h2>
         <span className="icon">
           <a onClick={() => this.handleYear(album.year)}>
