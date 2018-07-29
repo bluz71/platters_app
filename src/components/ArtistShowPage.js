@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const ArtistShowPage = (props) => {
-  const { id } = props.match.params;
+class ArtistShowPage extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <h1>Artist Show Page for {id}</h1>
-  );
-};
+    this.artistSlug = props.match.params.id
+  }
+
+  render() {
+    return (
+      <h1>Artist Show Page for {this.artistSlug}</h1>
+    );
+  }
+}
 
 export default ArtistShowPage;
