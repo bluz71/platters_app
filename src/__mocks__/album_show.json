@@ -3,7 +3,7 @@
     "album": {
       "title": "DEF",
       "artist_name": "ABC",
-      "track_count": 21,
+      "tracks_count": 21,
       "total_duration": "91:56",
       "genre": "Rock",
       "year": 2002,
