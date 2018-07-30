@@ -62,8 +62,8 @@ const ArtistsSidebar = ({ mostRecentAlbums, mostRecentComments }) => {
             {renderComments(mostRecentComments)}
           </ListGroup>
         </section>
-    </Col>
-  </aside>
+      </Col>
+    </aside>
   );
 };
 

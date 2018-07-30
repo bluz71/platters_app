@@ -179,7 +179,7 @@ class AlbumShowPage extends Component {
       <Col md={10} mdOffset={1}>
         <PageHeader>
           {albumTitle} <small>by <Link 
-              to={`/artist/${this.artistSlug}`}>{artistName}</Link></small>
+            to={`/artist/${this.artistSlug}`}>{artistName}</Link></small>
         </PageHeader>
       </Col>
     );
