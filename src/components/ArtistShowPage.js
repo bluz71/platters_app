@@ -85,6 +85,29 @@ class ArtistShowPage extends Component {
     );
   }
 
+  renderWikipedia(wikipedia) {
+    if (!wikipedia) {
+      return;
+    }
+
+    const wikipediaLink = `https://www.wikipedia.org/wiki/${wikipedia}`;
+
+    return (
+      <a href={wikipediaLink} target="_blank" rel="noopener noreferrer">Wikipedia</a>
+    );
+  }
+
+  renderArtist() {
+    const { description, wikipedia, website } = this.state.artist;
+
+    return (
+      <div className="description">
+        <p>{description} </p>
+        {this.renderWikipedia(wikipedia)}
+      </div>
+    );
+  }
+
   render() {
     if (!this.loaded) {
       NProgress.start();
@@ -94,6 +117,7 @@ class ArtistShowPage extends Component {
       <Row>
         <Col md={10} mdOffset={1} className="ArtistShow">
           {this.renderHeader()}
+          {this.renderArtist()}
         </Col>
       </Row>
     );

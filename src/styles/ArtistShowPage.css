@@ -1,15 +1,13 @@
+.ArtistShow a {
+  text-decoration: none;
+}
+
+.ArtistShow .description p {
+  display: inline;
+  color: #515151;
+}
+
 /* #artist { */
-/*   a { */
-/*     text-decoration: none; */
-/*   } */
-
-/*   .description { */
-/*     p { */
-/*       display: inline; */
-/*       color: $grey-dark; */
-/*     } */
-/*   } */
-
 /*   .website { */
 /*     margin-top: 1em; */
 /*     margin-bottom: 1em; */
