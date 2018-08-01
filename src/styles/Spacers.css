@@ -66,6 +66,11 @@
 .spacer-left-xl {
   margin-left: 3em;
 }
+
+.spacer-right-xxs {
+  margin-right: 0.25em;
+}
+
 .spacer-right-xs {
   margin-right: 0.5em;
 }

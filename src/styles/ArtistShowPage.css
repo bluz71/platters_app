@@ -7,11 +7,12 @@
   color: #515151;
 }
 
+.ArtistShow .website {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
 /* #artist { */
-/*   .website { */
-/*     margin-top: 1em; */
-/*     margin-bottom: 1em; */
-/*   } */
 
 /*   .albums-order { */
 /*     text-align: center; */

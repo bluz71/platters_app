@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import FontAwesome from 'react-fontawesome';
 import { Row, Col, PageHeader } from 'react-bootstrap';
 import NProgress from 'nprogress';
 import { toast } from 'react-toastify';
@@ -90,20 +91,37 @@ class ArtistShowPage extends Component {
       return;
     }
 
-    const wikipediaLink = `https://www.wikipedia.org/wiki/${wikipedia}`;
+    const wikipediaURL = `https://www.wikipedia.org/wiki/${wikipedia}`;
 
     return (
-      <a href={wikipediaLink} target="_blank" rel="noopener noreferrer">Wikipedia</a>
+      <a href={wikipediaURL} target="_blank" rel="noopener noreferrer">Wikipedia</a>
+    );
+  }
+
+  renderWebsite(website, websiteLink) {
+    if (!website) {
+      return <div className="spacer-bottom-sm"></div>;
+    }
+
+    return (
+      <div className="website">
+        <span className="icon spacer-right-xxs"><FontAwesome name="globe" /></span>
+        <a href={website} target="_blank" rel="noopener noreferrer">
+          {websiteLink}
+        </a>
+      </div>
     );
   }
 
   renderArtist() {
     const { description, wikipedia, website } = this.state.artist;
+    const websiteLink = this.state.artist.website_link;
 
     return (
       <div className="description">
         <p>{description} </p>
         {this.renderWikipedia(wikipedia)}
+        {this.renderWebsite(website, websiteLink)}
       </div>
     );
   }
