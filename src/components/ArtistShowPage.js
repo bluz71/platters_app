@@ -14,7 +14,7 @@ class ArtistShowPage extends Component {
 
     this.artistSlug     = props.match.params.id;
     this.artistEndPoint = `${API_HOST}/${this.artistSlug}.json`;
-    this.loaded          = false;
+    this.loaded         = false;
 
     this.state = {
       artist: {},
