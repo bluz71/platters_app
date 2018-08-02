@@ -15,6 +15,7 @@ const HOME_ENDPOINT = `${API_HOST}/home.json`;
 class HomePage extends Component {
   constructor(props) {
     super(props);
+    window.scrollTo(0, 0);
 
     this.state = {
       albumOfTheDay: {},
