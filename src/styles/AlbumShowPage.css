@@ -81,14 +81,14 @@
   content: "\f103";
 }
 
-.AlbumShow .album-comments .page-header h1 {
+.AlbumShow .comments .page-header h1 {
   font-size: 26px;
 }
 
-.AlbumShow .album-comments .page-header h1 small {
+.AlbumShow .comments .page-header h1 small {
   font-size: 65%;
 }
 
-.AlbumShow .album-comments h4 {
+.AlbumShow .comments h4 {
   margin-bottom: 1em;
 }

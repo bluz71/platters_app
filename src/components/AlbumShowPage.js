@@ -299,7 +299,7 @@ class AlbumShowPage extends Component {
     const commentsCount = numeral(count).format('0,0');
 
     return (
-      <Col md={10} mdOffset={1} className="album-comments">
+      <Col md={10} mdOffset={1} className="comments">
         <div ref={commentsAnchor => this.commentsAnchor = commentsAnchor}>
           <PageHeader>
             Comments {this.albumRetrieved()

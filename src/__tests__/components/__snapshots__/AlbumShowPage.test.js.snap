@@ -83,7 +83,7 @@ exports[`<AlbumShowPage /> handles invalid album 1`] = `
     </Col>
     <Col
       bsClass="col"
-      className="album-comments"
+      className="comments"
       componentClass="div"
       md={10}
       mdOffset={1}
@@ -544,7 +544,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
     </Col>
     <Col
       bsClass="col"
-      className="album-comments"
+      className="comments"
       componentClass="div"
       md={10}
       mdOffset={1}
@@ -1215,7 +1215,7 @@ exports[`<AlbumShowPage /> renders all album comments when scrolled 1`] = `
     </Col>
     <Col
       bsClass="col"
-      className="album-comments"
+      className="comments"
       componentClass="div"
       md={10}
       mdOffset={1}
@@ -1971,7 +1971,7 @@ exports[`<AlbumShowPage /> renders all tracks when show all is clicked 1`] = `
     </Col>
     <Col
       bsClass="col"
-      className="album-comments"
+      className="comments"
       componentClass="div"
       md={10}
       mdOffset={1}
@@ -2642,7 +2642,7 @@ exports[`<AlbumShowPage /> renders less tracks when show less is clicked 1`] = `
     </Col>
     <Col
       bsClass="col"
-      className="album-comments"
+      className="comments"
       componentClass="div"
       md={10}
       mdOffset={1}

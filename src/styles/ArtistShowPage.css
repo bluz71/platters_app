@@ -12,31 +12,38 @@
   margin-bottom: 1em;
 }
 
+.ArtistShow .albums .page-header h1 {
+  font-size: 2em;
+}
+
+.ArtistShow .albums .page-header h1 small {
+  font-size: 0.45em;
+}
+
+.ArtistShow .albums .albums-order {
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.ArtistShow .albums .albums-order li {
+  display: inline;
+  color: #515151;
+  margin: 0 1em;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+.ArtistShow .albums .albums-order .active {
+  color: #3c9a5f;
+  font-weight: bold;
+}
+
+.ArtistShow .albums .albums-order li:hover {
+  color: #3c9a5f;
+}
+
 /* #artist { */
 
-/*   .albums-order { */
-/*     text-align: center; */
-/*     font-size: 0.9em; */
-
-/*     li { */
-/*       display: inline; */
-/*       margin: 0 1em; */
-/*       font-weight: lighter; */
-
-/*       a { */
-/*         color: $grey-dark; */
-
-/*         &.active { */
-/*           color: $green-yeti; */
-/*           font-weight: bold; */
-/*         } */
-
-/*         &:hover { */
-/*           color: $green-yeti; */
-/*         } */
-/*       } */
-/*     } */
-/*   } */
 
 /*   .album { */
 /*     border-bottom: 1px solid $grey-mid-light; */

@@ -4,6 +4,7 @@ import FontAwesome from 'react-fontawesome';
 import { Row, Col, PageHeader } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import pluralize from 'pluralize';
 import { API_HOST } from '../config';
 import pageProgress from '../helpers/pageProgress';
 import '../styles/ArtistShowPage.css';
@@ -54,6 +55,15 @@ class ArtistShowPage extends Component {
           this.setState({ error: error });
         }
       });
+  }
+
+  artistRetrieved() {
+    if (!this.loaded || this.state.notFound || this.state.error) {
+      return false;
+    }
+    else {
+      return true;
+    }
   }
 
   renderHeader() {
@@ -119,6 +129,35 @@ class ArtistShowPage extends Component {
     );
   }
 
+  renderAlbumsList(albumsCount) {
+    if (albumsCount === 0) {
+      return;
+    }
+
+    return (
+      <ul class="albums-order">
+        <li className="active">Newest</li>
+        <li>Oldest</li>
+        <li>Longest</li>
+        <li>Name</li>
+      </ul>
+    );
+  }
+
+  renderAlbums() {
+    const albumsCount = this.state.albums.length;
+
+    return (
+      <div className="albums">
+        <PageHeader>
+          Albums {this.artistRetrieved()
+              && <small>({albumsCount} {pluralize('Album', albumsCount)})</small>}
+        </PageHeader>
+        {this.renderAlbumsList()}
+      </div>
+    );
+  }
+
   render() {
     this.pageProgress.start();
 
@@ -127,6 +166,7 @@ class ArtistShowPage extends Component {
         <Col md={10} mdOffset={1} className="ArtistShow">
           {this.renderHeader()}
           {this.renderArtist()}
+          {this.renderAlbums()}
         </Col>
       </Row>
     );
