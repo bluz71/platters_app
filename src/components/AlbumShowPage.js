@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { Row, Col, PageHeader, Table, Button } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
-import NProgress from 'nprogress';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import numeral from 'numeral';
 import pluralize from 'pluralize';
 import { API_HOST } from '../config';
+import pageProgress from '../helpers/pageProgress';
 import infiniteScroll from '../helpers/infiniteScroll';
 import CommentsList from './CommentsList';
 import '../styles/AlbumShowPage.css';
@@ -26,6 +26,7 @@ class AlbumShowPage extends Component {
     this.waiting          = false; // For comments when infinite-scrolling.
     this.scrollToComments =
       (props.location.state && props.location.state.scrollToComments) || false;
+    this.pageProgress     = new pageProgress();
 
     this.state = {
       album: {},
@@ -93,17 +94,10 @@ class AlbumShowPage extends Component {
     this.forceUpdate();
   }
 
-  progressDone() {
-    if (!this.loaded) {
-      this.loaded = true;
-      NProgress.done();
-    }
-  }
-
   getAlbum(scrollToTop = false) {
     axios.get(this.albumEndPoint)
       .then(response => {
-        this.progressDone();
+        this.loaded = this.pageProgress.done();
         document.title = response.data.album.title;
         this.setState({
           album: response.data.album,
@@ -119,7 +113,7 @@ class AlbumShowPage extends Component {
           window.scrollTo(0, 0);
         }
       }).catch(error => {
-        this.progressDone();
+        this.pageProgress.done();
         if (error.response && error.response.status === 404) {
           this.setState({ notFound: true });
         }
@@ -319,9 +313,7 @@ class AlbumShowPage extends Component {
   }
 
   render() {
-    if (!this.loaded) {
-      NProgress.start();
-    }
+    this.pageProgress.start();
 
     return (
       <Row>

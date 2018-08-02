@@ -8,10 +8,10 @@ import numeral from 'numeral';
 import queryString from 'query-string';
 import _ from 'lodash';
 import { VelocityTransitionGroup } from 'velocity-react';
-import NProgress from 'nprogress';
 import { toast } from 'react-toastify';
 import '../styles/ArtistsPage.css';
 import { API_HOST } from '../config';
+import pageProgress from '../helpers/pageProgress';
 import Search from './Search';
 import Paginator from './Paginator';
 import ArtistsSidebar from './ArtistsSidebar';
@@ -24,9 +24,10 @@ class ArtistsPage extends Component {
 
     // params is not React state since we do not want to re-render when it
     // changes; just use an instance variable instead.
-    this.params    = {};
-    this.loaded    = false;
-    this.searching = false;
+    this.params       = {};
+    this.loaded       = false;
+    this.searching    = false;
+    this.pageProgress = new pageProgress();
 
     this.state = {
       artists: [],
@@ -139,17 +140,10 @@ class ArtistsPage extends Component {
     return params.length > 0 ? `${ARTISTS_ENDPOINT}?${params}` : ARTISTS_ENDPOINT;
   }
 
-  progressDone() {
-    if (!this.loaded) {
-      this.loaded = true;
-      NProgress.done();
-    }
-  }
-
   getArtists(scrollToTop = true) {
     axios.get(this.artistsURL())
       .then(response => {
-        this.progressDone();
+        this.loaded = this.pageProgress.done();
         this.setState({
           artists: response.data.artists,
           mostRecentAlbums: response.data.most_recent.albums,
@@ -162,7 +156,7 @@ class ArtistsPage extends Component {
         }
       })
       .catch(error => {
-        this.progressDone();
+        this.pageProgress.done();
         this.setState({ error: error });
       });
   }
@@ -237,9 +231,7 @@ class ArtistsPage extends Component {
   }
 
   renderArtists() {
-    if (!this.loaded) {
-      NProgress.start();
-    }
+    this.pageProgress.start();
 
     if (this.state.error) {
       toast.error('Connection failure, please retry again later', { className: 'ToastAlert' });

@@ -7,10 +7,10 @@ import numeral from 'numeral';
 import queryString from 'query-string';
 import _ from 'lodash';
 import { VelocityTransitionGroup } from 'velocity-react';
-import NProgress from 'nprogress';
 import { toast } from 'react-toastify';
 import '../styles/AlbumsPage.css';
 import { API_HOST } from '../config';
+import pageProgress from '../helpers/pageProgress';
 import AlbumsFilter from './AlbumsFilter';
 import Search from './Search';
 import AlbumsList from './AlbumsList';
@@ -24,10 +24,11 @@ class AlbumsPage extends Component {
 
     // params is not React state since we do not want to re-render when it
     // changes; just use an instance variable instead.
-    this.params    = {};
-    this.loaded    = false;
-    this.filtering = false;
-    this.searching = false;
+    this.params       = {};
+    this.loaded       = false;
+    this.filtering    = false;
+    this.searching    = false;
+    this.pageProgress = new pageProgress();
 
     this.state = {
       albums: [],
@@ -196,17 +197,10 @@ class AlbumsPage extends Component {
     return params.length > 0 ? `${ALBUMS_ENDPOINT}?${params}` : ALBUMS_ENDPOINT;
   }
 
-  progressDone() {
-    if (!this.loaded) {
-      this.loaded = true;
-      NProgress.done();
-    }
-  }
-
   getAlbums(scrollToTop = true) {
     axios.get(this.albumsURL())
       .then(response => {
-        this.progressDone();
+        this.loaded = this.pageProgress.done();
         this.filtering && this.albumsFilter && this.albumsFilter.selected();
         this.setState({
           albums: response.data.albums,
@@ -218,7 +212,7 @@ class AlbumsPage extends Component {
         }
       })
       .catch(error => {
-        this.progressDone();
+        this.pageProgress.done();
         this.setState({ error: error });
       });
   }
@@ -324,9 +318,7 @@ class AlbumsPage extends Component {
   }
 
   renderAlbums() {
-    if (!this.loaded) {
-      NProgress.start();
-    }
+    this.pageProgress.start();
 
     if (this.state.error) {
       toast.error('Connection failure, please retry again later', { className: 'ToastAlert' });
@@ -349,7 +341,10 @@ class AlbumsPage extends Component {
     if (this.state.pagination.total_pages > 1) {
       return (
         <Col md={8}>
-          <Paginator pagination={this.state.pagination} onPageChange={this.handlePageChange} />
+          <Paginator
+            pagination={this.state.pagination}
+            onPageChange={this.handlePageChange}
+          />
         </Col>
       );
     }

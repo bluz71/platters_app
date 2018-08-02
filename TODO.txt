@@ -1,1 +1,5 @@
+- Fix HomePage scroll behaviour
+
+- UserCommentsPage slow scrolling issue when many comments are displayed
+
 - Do ArtistShowPage

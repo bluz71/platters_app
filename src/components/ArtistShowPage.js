@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import { Row, Col, PageHeader } from 'react-bootstrap';
-import NProgress from 'nprogress';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import { API_HOST } from '../config';
+import pageProgress from '../helpers/pageProgress';
 import '../styles/ArtistShowPage.css';
 
 class ArtistShowPage extends Component {
@@ -15,6 +15,7 @@ class ArtistShowPage extends Component {
     this.artistSlug     = props.match.params.id;
     this.artistEndPoint = `${API_HOST}/${this.artistSlug}.json`;
     this.loaded         = false;
+    this.pageProgress   = new pageProgress();
 
     this.state = {
       artist: {},
@@ -30,17 +31,10 @@ class ArtistShowPage extends Component {
     this.getArtist(true);
   }
 
-  progressDone() {
-    if (!this.loaded) {
-      this.loaded = true;
-      NProgress.done();
-    }
-  }
-
   getArtist(scrollToTop = false) {
     axios.get(this.artistEndPoint)
       .then(response => {
-        this.progressDone();
+        this.loaded = this.pageProgress.done();
         document.title = response.data.artist.name;
         this.setState({
           artist: response.data.artist,
@@ -52,8 +46,7 @@ class ArtistShowPage extends Component {
           window.scrollTo(0, 0);
         }
       }).catch(error => {
-        console.log('In error');
-        this.progressDone();
+        this.pageProgress.done();
         if (error.response && error.response.status === 404) {
           this.setState({ notFound: true });
         }
@@ -127,9 +120,7 @@ class ArtistShowPage extends Component {
   }
 
   render() {
-    if (!this.loaded) {
-      NProgress.start();
-    }
+    this.pageProgress.start();
 
     return (
       <Row>

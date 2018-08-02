@@ -3,11 +3,11 @@ import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import pluralize from 'pluralize';
 import numeral from 'numeral';
-import NProgress from 'nprogress';
 import { toast } from 'react-toastify';
 import { Row, Col, PageHeader } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 import { API_HOST } from '../config';
+import pageProgress from '../helpers/pageProgress';
 import infiniteScroll from '../helpers/infiniteScroll';
 import CommentsList from './CommentsList';
 import '../styles/UserCommentsPage.css';
@@ -20,6 +20,7 @@ class UserCommentsPage extends Component {
     this.commentsEndPoint = `${API_HOST}/comments/${this.userSlug}.json`;
     this.loaded           = false;
     this.waiting          = false;
+    this.pageProgress     = new pageProgress();
 
     this.state = {
       comments: [],
@@ -59,17 +60,10 @@ class UserCommentsPage extends Component {
     this.getComments(commentsPageEndPoint);
   }
 
-  progressDone() {
-    if (!this.loaded) {
-      this.loaded = true;
-      NProgress.done();
-    }
-  }
-
   getComments(commentsEndPoint) {
     axios.get(commentsEndPoint)
       .then(response => {
-        this.progressDone();
+        this.loaded = this.pageProgress.done();
         this.waiting = false;
         if (!window.onscroll) {
           // Re-enable scroll handling now that the records have been
@@ -82,7 +76,7 @@ class UserCommentsPage extends Component {
           pagination: response.data.pagination,
         });
       }).catch(error => {
-        this.progressDone();
+        this.pageProgress.done();
         if (error.response && error.response.status === 404) {
           this.setState({ notFound: true });
         }
@@ -145,9 +139,7 @@ class UserCommentsPage extends Component {
   }
 
   render() {
-    if (!this.loaded) {
-      NProgress.start();
-    }
+    this.pageProgress.start();
 
     return (
       <Row>
