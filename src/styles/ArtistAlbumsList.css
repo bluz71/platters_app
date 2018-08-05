@@ -1,0 +1,75 @@
+.ArtistAlbums .album {
+  border-bottom: 1px solid #eee;
+}
+
+.ArtistAlbums .album img {
+  height: 80px;
+  width: 80px;
+  float: left;
+  border: 1px solid #777;
+  border-radius: 50%;
+  margin-right: 1em;
+}
+
+.ArtistAlbums .album img:hover {
+  border: 1px solid #3c9a5f;
+}
+
+.ArtistAlbums .album .title {
+  height: 2.1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 1em 0 0;
+}
+
+.ArtistAlbums .album .title h2 {
+  display: inline;
+  font-size: 1.8em;
+}
+
+.ArtistAlbums .album .title a h2 {
+  color: #515151;
+  text-decoration: none;
+}
+
+.ArtistAlbums .album .title a h2:hover {
+  color: #3c9a5f;
+}
+
+.ArtistAlbums .album .album-details {
+  margin-top: 0;
+}
+
+.ArtistAlbums .album .album-details small {
+  font-size: 0.45em;
+}
+.ArtistAlbums .album ul {
+  font-size: 0.8em;
+  color: #515151;
+  padding-left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ArtistAlbums .album ul li {
+  display: inline;
+  list-style-type: none;
+}
+
+/*       @media (max-width: $screen-sm-max) { */
+/*         .icon { */
+/*           display: none; */
+/*         } */
+/*       } */
+
+/*       @media (min-width: $screen-md-min) { */
+/*         .icon { */
+/*           margin-top: 1em; */
+/*           float: right; */
+/*           font-size: 0.8em; */
+/*           color: $grey-dark; */
+/*         } */
+/*       } */
+/*     } */

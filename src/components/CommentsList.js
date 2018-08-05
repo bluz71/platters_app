@@ -36,13 +36,11 @@ const renderComments = (comments, shortHeader) => (
   )
 );
 
-const CommentsList = ({ comments, shortHeader }) => {
-  return (
-    <div className="CommentsList">
-      {renderComments(comments, shortHeader)}
-    </div>
-  );
-};
+const CommentsList = ({ comments, shortHeader }) => (
+  <div className="CommentsList">
+    {renderComments(comments, shortHeader)}
+  </div>
+);
 
 CommentsList.defaultTypes = {
   shortHeader: false

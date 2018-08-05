@@ -7,6 +7,7 @@ import pluralize from 'pluralize';
 import { API_HOST } from '../config';
 import pageProgress from '../helpers/pageProgress';
 import toastAlert from '../helpers/toastAlert';
+import ArtistAlbumsList from './ArtistAlbumsList';
 import '../styles/ArtistShowPage.css';
 
 class ArtistShowPage extends Component {
@@ -128,13 +129,18 @@ class ArtistShowPage extends Component {
       return;
     }
 
+    const artistSlug = this.state.artist.slug;
+
     return (
-      <ul class="albums-order">
-        <li className="active">Newest</li>
-        <li>Oldest</li>
-        <li>Longest</li>
-        <li>Name</li>
-      </ul>
+      <div>
+        <ul className="albums-order">
+          <li className="active">Newest</li>
+          <li>Oldest</li>
+          <li>Longest</li>
+          <li>Name</li>
+        </ul>
+        <ArtistAlbumsList albums={this.state.albums} artistSlug={artistSlug} />
+      </div>
     );
   }
 
