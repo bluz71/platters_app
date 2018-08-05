@@ -3,10 +3,10 @@ import axios from 'axios';
 import { Row, Col, Jumbotron } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
-import { toast } from 'react-toastify';
 import { API_HOST } from '../config';
 import  '../styles/HomePage.css';
 import logo from '../images/platters-black.svg';
+import toastAlert from '../helpers/toastAlert';
 import AlbumsList from './AlbumsList';
 import CommentsList from './CommentsList';
 
@@ -110,7 +110,7 @@ class HomePage extends Component {
 
   renderAlbumOfTheDay() {
     if (this.state.error) {
-      toast.error('Connection failure, please retry again later', { className: 'ToastAlert' });
+      toastAlert('Connection failure, please retry again later');
       return;
     }
 

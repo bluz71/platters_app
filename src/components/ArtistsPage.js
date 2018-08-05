@@ -8,10 +8,10 @@ import numeral from 'numeral';
 import queryString from 'query-string';
 import _ from 'lodash';
 import { VelocityTransitionGroup } from 'velocity-react';
-import { toast } from 'react-toastify';
 import '../styles/ArtistsPage.css';
 import { API_HOST } from '../config';
 import pageProgress from '../helpers/pageProgress';
+import toastAlert from '../helpers/toastAlert';
 import Search from './Search';
 import Paginator from './Paginator';
 import ArtistsSidebar from './ArtistsSidebar';
@@ -234,7 +234,7 @@ class ArtistsPage extends Component {
     this.pageProgress.start();
 
     if (this.state.error) {
-      toast.error('Connection failure, please retry again later', { className: 'ToastAlert' });
+      toastAlert('Connection failure, please retry again later');
     }
 
     if (!this.state.error && this.loaded && this.state.artists.length === 0) {

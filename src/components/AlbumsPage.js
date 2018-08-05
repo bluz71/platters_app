@@ -7,10 +7,10 @@ import numeral from 'numeral';
 import queryString from 'query-string';
 import _ from 'lodash';
 import { VelocityTransitionGroup } from 'velocity-react';
-import { toast } from 'react-toastify';
 import '../styles/AlbumsPage.css';
 import { API_HOST } from '../config';
 import pageProgress from '../helpers/pageProgress';
+import toastAlert from '../helpers/toastAlert';
 import AlbumsFilter from './AlbumsFilter';
 import Search from './Search';
 import AlbumsList from './AlbumsList';
@@ -321,7 +321,7 @@ class AlbumsPage extends Component {
     this.pageProgress.start();
 
     if (this.state.error) {
-      toast.error('Connection failure, please retry again later', { className: 'ToastAlert' });
+      toastAlert('Connection failure, please retry again later');
     }
 
     if (!this.state.error && this.loaded && this.state.albums.length === 0) {

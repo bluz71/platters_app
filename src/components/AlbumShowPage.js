@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { Row, Col, PageHeader, Table, Button } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
-import { toast } from 'react-toastify';
 import axios from 'axios';
 import numeral from 'numeral';
 import pluralize from 'pluralize';
 import { API_HOST } from '../config';
 import pageProgress from '../helpers/pageProgress';
 import infiniteScroll from '../helpers/infiniteScroll';
+import toastAlert from '../helpers/toastAlert';
 import CommentsList from './CommentsList';
 import '../styles/AlbumShowPage.css';
 
@@ -152,17 +152,11 @@ class AlbumShowPage extends Component {
 
   renderHeader() {
     if (this.state.notFound) {
-      toast.error(
-        `The album ${this.albumSlug} does not exist`,
-        { className: 'ToastAlert' }
-      );
+      toastAlert(`The album ${this.albumSlug} does not exist`);
       return <Redirect to="/albums" />;
     }
     if (this.state.error) {
-      toast.error(
-        'Connection failure, please retry again soon',
-        { className: 'ToastAlert' }
-      );
+      toastAlert('Connection failure, please retry again soon');
       return <Redirect to="/" />;
     }
 

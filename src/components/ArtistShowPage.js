@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import { Row, Col, PageHeader } from 'react-bootstrap';
-import { toast } from 'react-toastify';
 import axios from 'axios';
 import pluralize from 'pluralize';
 import { API_HOST } from '../config';
 import pageProgress from '../helpers/pageProgress';
+import toastAlert from '../helpers/toastAlert';
 import '../styles/ArtistShowPage.css';
 
 class ArtistShowPage extends Component {
@@ -68,17 +68,11 @@ class ArtistShowPage extends Component {
 
   renderHeader() {
     if (this.state.notFound) {
-      toast.error(
-        `The artist ${this.artistSlug} does not exist`,
-        { className: 'ToastAlert' }
-      );
+      toastAlert(`The artist ${this.artistSlug} does not exist`);
       return <Redirect to="/artists" />;
     }
     if (this.state.error) {
-      toast.error(
-        'Connection failure, please retry again soon',
-        { className: 'ToastAlert' }
-      );
+      toastAlert('Connection failure, please retry again soon');
       return <Redirect to="/" />;
     }
 

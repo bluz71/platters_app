@@ -3,12 +3,12 @@ import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import pluralize from 'pluralize';
 import numeral from 'numeral';
-import { toast } from 'react-toastify';
 import { Row, Col, PageHeader } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 import { API_HOST } from '../config';
 import pageProgress from '../helpers/pageProgress';
 import infiniteScroll from '../helpers/infiniteScroll';
+import toastAlert from '../helpers/toastAlert';
 import CommentsList from './CommentsList';
 import '../styles/UserCommentsPage.css';
 
@@ -97,17 +97,11 @@ class UserCommentsPage extends Component {
 
   renderHeader() {
     if (this.state.notFound) {
-      toast.error(
-        `User ${this.userSlug} does not exist`,
-        { className: 'ToastAlert' }
-      );
+      toastAlert(`User ${this.userSlug} does not exist`);
       return <Redirect to="/" />;
     }
     if (this.state.error) {
-      toast.error(
-        'Connection failure, please retry again soon',
-        { className: 'ToastAlert' }
-      );
+      toastAlert('Connection failure, please retry again soon');
       return <Redirect to="/" />;
     }
 
