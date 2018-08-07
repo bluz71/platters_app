@@ -1,3 +1,3 @@
 - UserCommentsPage slow scrolling issue when many comments are displayed
 
-- Do ArtistShowPage
+- Fix slow UserCommentsPage scrolling issue
