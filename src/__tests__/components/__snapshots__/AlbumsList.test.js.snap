@@ -142,12 +142,12 @@ exports[`<AlbumsList /> renders a list of albums 1`] = `
                   onClick={[Function]}
                 >
                   <FontAwesome
-                    className="spacer-left-xs"
+                    className="spacer-left-xsm"
                     name="tag"
                   >
                     <span
                       aria-hidden={true}
-                      className="fa fa-tag spacer-left-xs"
+                      className="fa fa-tag spacer-left-xsm"
                     />
                   </FontAwesome>
                    
@@ -168,12 +168,12 @@ exports[`<AlbumsList /> renders a list of albums 1`] = `
                     onClick={[Function]}
                   >
                     <FontAwesome
-                      className="spacer-left-xs"
+                      className="spacer-left-xsm"
                       name="comment-o"
                     >
                       <span
                         aria-hidden={true}
-                        className="fa fa-comment-o spacer-left-xs"
+                        className="fa fa-comment-o spacer-left-xsm"
                       />
                     </FontAwesome>
                      
@@ -276,12 +276,12 @@ exports[`<AlbumsList /> renders a list of albums 1`] = `
                   onClick={[Function]}
                 >
                   <FontAwesome
-                    className="spacer-left-xs"
+                    className="spacer-left-xsm"
                     name="tag"
                   >
                     <span
                       aria-hidden={true}
-                      className="fa fa-tag spacer-left-xs"
+                      className="fa fa-tag spacer-left-xsm"
                     />
                   </FontAwesome>
                    
@@ -302,12 +302,12 @@ exports[`<AlbumsList /> renders a list of albums 1`] = `
                     onClick={[Function]}
                   >
                     <FontAwesome
-                      className="spacer-left-xs"
+                      className="spacer-left-xsm"
                       name="comment-o"
                     >
                       <span
                         aria-hidden={true}
-                        className="fa fa-comment-o spacer-left-xs"
+                        className="fa fa-comment-o spacer-left-xsm"
                       />
                     </FontAwesome>
                      

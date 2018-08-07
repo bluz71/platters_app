@@ -10,6 +10,13 @@ import toastAlert from '../helpers/toastAlert';
 import ArtistAlbumsList from './ArtistAlbumsList';
 import '../styles/ArtistShowPage.css';
 
+const ARTIST_ALBUMS_SORT_BY = {
+  newest: 'newest',
+  oldest: 'oldest',
+  longest: 'longest',
+  name: 'name'
+};
+
 class ArtistShowPage extends Component {
   constructor(props) {
     super(props);
@@ -18,6 +25,7 @@ class ArtistShowPage extends Component {
     this.artistEndPoint = `${API_HOST}/${this.artistSlug}.json`;
     this.loaded         = false;
     this.pageProgress   = new pageProgress();
+    this.albumsSortBy   = ARTIST_ALBUMS_SORT_BY.newest;
 
     this.state = {
       artist: {},
@@ -27,6 +35,19 @@ class ArtistShowPage extends Component {
       notFound: false,
       error: null
     };
+
+    this.handleYear  = this.handleYear.bind(this);
+    this.handleGenre = this.handleGenre.bind(this);
+  }
+
+  handleYear(year) {
+    const params = { year };
+    this.props.history.push('/albums', params);
+  }
+
+  handleGenre(genre) {
+    const params = { genre };
+    this.props.history.push('/albums', params);
   }
 
   componentDidMount() {
@@ -124,6 +145,12 @@ class ArtistShowPage extends Component {
     );
   }
 
+  albumsSortByActivity(sortBy) {
+    if (this.albumsSortBy === sortBy) {
+      return 'active';
+    }
+  }
+
   renderAlbumsList(albumsCount) {
     if (albumsCount === 0) {
       return;
@@ -134,12 +161,25 @@ class ArtistShowPage extends Component {
     return (
       <div>
         <ul className="albums-order">
-          <li className="active">Newest</li>
-          <li>Oldest</li>
-          <li>Longest</li>
-          <li>Name</li>
+          <li className={this.albumsSortByActivity(ARTIST_ALBUMS_SORT_BY.newest)}>
+            Newest
+          </li>
+          <li className={this.albumsSortByActivity(ARTIST_ALBUMS_SORT_BY.oldest)}>
+            Oldest
+          </li>
+          <li className={this.albumsSortByActivity(ARTIST_ALBUMS_SORT_BY.longest)}>
+            Longest
+          </li>
+          <li className={this.albumsSortByActivity(ARTIST_ALBUMS_SORT_BY.name)}>
+            Name
+          </li>
         </ul>
-        <ArtistAlbumsList albums={this.state.albums} artistSlug={artistSlug} />
+        <ArtistAlbumsList 
+          albums={this.state.albums}
+          artistSlug={artistSlug}
+          onYear={this.handleYear}
+          onGenre={this.handleGenre}
+        />
       </div>
     );
   }

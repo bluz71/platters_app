@@ -25,13 +25,13 @@ const renderAlbums = (albums, onYear, onGenre) => (
             <FontAwesome name="calendar" /> {album.year}
           </a>
           <a onClick={() => onGenre(album.genre)}>
-            <FontAwesome name="tag" className="spacer-left-xs" /> {album.genre}
+            <FontAwesome name="tag" className="spacer-left-xsm" /> {album.genre}
           </a>
           <Link to={{
             pathname: `/artist/${album.artist_slug}/album/${album.album_slug}`,
             state: { scrollToComments: true }
           }}>
-            <FontAwesome name="comment-o" className="spacer-left-xs" /> {album.comments_count}
+            <FontAwesome name="comment-o" className="spacer-left-xsm" /> {album.comments_count}
           </Link>
         </div>
         <Link to={`/artist/${album.artist_slug}/album/${album.album_slug}`}>

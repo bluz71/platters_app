@@ -499,12 +499,12 @@ exports[`<AlbumsPage /> renders 2006 albums 1`] = `
                       onClick={[Function]}
                     >
                       <FontAwesome
-                        className="spacer-left-xs"
+                        className="spacer-left-xsm"
                         name="tag"
                       >
                         <span
                           aria-hidden={true}
-                          className="fa fa-tag spacer-left-xs"
+                          className="fa fa-tag spacer-left-xsm"
                         />
                       </FontAwesome>
                        
@@ -526,12 +526,12 @@ exports[`<AlbumsPage /> renders 2006 albums 1`] = `
                         onClick={[Function]}
                       >
                         <FontAwesome
-                          className="spacer-left-xs"
+                          className="spacer-left-xsm"
                           name="comment-o"
                         >
                           <span
                             aria-hidden={true}
-                            className="fa fa-comment-o spacer-left-xs"
+                            className="fa fa-comment-o spacer-left-xsm"
                           />
                         </FontAwesome>
                          
@@ -1093,12 +1093,12 @@ exports[`<AlbumsPage /> renders A albums 1`] = `
                       onClick={[Function]}
                     >
                       <FontAwesome
-                        className="spacer-left-xs"
+                        className="spacer-left-xsm"
                         name="tag"
                       >
                         <span
                           aria-hidden={true}
-                          className="fa fa-tag spacer-left-xs"
+                          className="fa fa-tag spacer-left-xsm"
                         />
                       </FontAwesome>
                        
@@ -1120,12 +1120,12 @@ exports[`<AlbumsPage /> renders A albums 1`] = `
                         onClick={[Function]}
                       >
                         <FontAwesome
-                          className="spacer-left-xs"
+                          className="spacer-left-xsm"
                           name="comment-o"
                         >
                           <span
                             aria-hidden={true}
-                            className="fa fa-comment-o spacer-left-xs"
+                            className="fa fa-comment-o spacer-left-xsm"
                           />
                         </FontAwesome>
                          
@@ -1696,12 +1696,12 @@ exports[`<AlbumsPage /> renders ABC search match 1`] = `
                       onClick={[Function]}
                     >
                       <FontAwesome
-                        className="spacer-left-xs"
+                        className="spacer-left-xsm"
                         name="tag"
                       >
                         <span
                           aria-hidden={true}
-                          className="fa fa-tag spacer-left-xs"
+                          className="fa fa-tag spacer-left-xsm"
                         />
                       </FontAwesome>
                        
@@ -1723,12 +1723,12 @@ exports[`<AlbumsPage /> renders ABC search match 1`] = `
                         onClick={[Function]}
                       >
                         <FontAwesome
-                          className="spacer-left-xs"
+                          className="spacer-left-xsm"
                           name="comment-o"
                         >
                           <span
                             aria-hidden={true}
-                            className="fa fa-comment-o spacer-left-xs"
+                            className="fa fa-comment-o spacer-left-xsm"
                           />
                         </FontAwesome>
                          
@@ -2294,12 +2294,12 @@ exports[`<AlbumsPage /> renders Pop albums 1`] = `
                       onClick={[Function]}
                     >
                       <FontAwesome
-                        className="spacer-left-xs"
+                        className="spacer-left-xsm"
                         name="tag"
                       >
                         <span
                           aria-hidden={true}
-                          className="fa fa-tag spacer-left-xs"
+                          className="fa fa-tag spacer-left-xsm"
                         />
                       </FontAwesome>
                        
@@ -2321,12 +2321,12 @@ exports[`<AlbumsPage /> renders Pop albums 1`] = `
                         onClick={[Function]}
                       >
                         <FontAwesome
-                          className="spacer-left-xs"
+                          className="spacer-left-xsm"
                           name="comment-o"
                         >
                           <span
                             aria-hidden={true}
-                            className="fa fa-comment-o spacer-left-xs"
+                            className="fa fa-comment-o spacer-left-xsm"
                           />
                         </FontAwesome>
                          
@@ -2874,12 +2874,12 @@ exports[`<AlbumsPage /> renders first page 1`] = `
                       onClick={[Function]}
                     >
                       <FontAwesome
-                        className="spacer-left-xs"
+                        className="spacer-left-xsm"
                         name="tag"
                       >
                         <span
                           aria-hidden={true}
-                          className="fa fa-tag spacer-left-xs"
+                          className="fa fa-tag spacer-left-xsm"
                         />
                       </FontAwesome>
                        
@@ -2901,12 +2901,12 @@ exports[`<AlbumsPage /> renders first page 1`] = `
                         onClick={[Function]}
                       >
                         <FontAwesome
-                          className="spacer-left-xs"
+                          className="spacer-left-xsm"
                           name="comment-o"
                         >
                           <span
                             aria-hidden={true}
-                            className="fa fa-comment-o spacer-left-xs"
+                            className="fa fa-comment-o spacer-left-xsm"
                           />
                         </FontAwesome>
                          
@@ -3037,12 +3037,12 @@ exports[`<AlbumsPage /> renders first page 1`] = `
                       onClick={[Function]}
                     >
                       <FontAwesome
-                        className="spacer-left-xs"
+                        className="spacer-left-xsm"
                         name="tag"
                       >
                         <span
                           aria-hidden={true}
-                          className="fa fa-tag spacer-left-xs"
+                          className="fa fa-tag spacer-left-xsm"
                         />
                       </FontAwesome>
                        
@@ -3064,12 +3064,12 @@ exports[`<AlbumsPage /> renders first page 1`] = `
                         onClick={[Function]}
                       >
                         <FontAwesome
-                          className="spacer-left-xs"
+                          className="spacer-left-xsm"
                           name="comment-o"
                         >
                           <span
                             aria-hidden={true}
-                            className="fa fa-comment-o spacer-left-xs"
+                            className="fa fa-comment-o spacer-left-xsm"
                           />
                         </FontAwesome>
                          
@@ -3578,12 +3578,12 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
                       onClick={[Function]}
                     >
                       <FontAwesome
-                        className="spacer-left-xs"
+                        className="spacer-left-xsm"
                         name="tag"
                       >
                         <span
                           aria-hidden={true}
-                          className="fa fa-tag spacer-left-xs"
+                          className="fa fa-tag spacer-left-xsm"
                         />
                       </FontAwesome>
                        
@@ -3605,12 +3605,12 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
                         onClick={[Function]}
                       >
                         <FontAwesome
-                          className="spacer-left-xs"
+                          className="spacer-left-xsm"
                           name="comment-o"
                         >
                           <span
                             aria-hidden={true}
-                            className="fa fa-comment-o spacer-left-xs"
+                            className="fa fa-comment-o spacer-left-xsm"
                           />
                         </FontAwesome>
                          
@@ -3716,12 +3716,12 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
                       onClick={[Function]}
                     >
                       <FontAwesome
-                        className="spacer-left-xs"
+                        className="spacer-left-xsm"
                         name="tag"
                       >
                         <span
                           aria-hidden={true}
-                          className="fa fa-tag spacer-left-xs"
+                          className="fa fa-tag spacer-left-xsm"
                         />
                       </FontAwesome>
                        
@@ -3743,12 +3743,12 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
                         onClick={[Function]}
                       >
                         <FontAwesome
-                          className="spacer-left-xs"
+                          className="spacer-left-xsm"
                           name="comment-o"
                         >
                           <span
                             aria-hidden={true}
-                            className="fa fa-comment-o spacer-left-xs"
+                            className="fa fa-comment-o spacer-left-xsm"
                           />
                         </FontAwesome>
                          
@@ -4315,12 +4315,12 @@ exports[`<AlbumsPage /> renders second page 1`] = `
                       onClick={[Function]}
                     >
                       <FontAwesome
-                        className="spacer-left-xs"
+                        className="spacer-left-xsm"
                         name="tag"
                       >
                         <span
                           aria-hidden={true}
-                          className="fa fa-tag spacer-left-xs"
+                          className="fa fa-tag spacer-left-xsm"
                         />
                       </FontAwesome>
                        
@@ -4342,12 +4342,12 @@ exports[`<AlbumsPage /> renders second page 1`] = `
                         onClick={[Function]}
                       >
                         <FontAwesome
-                          className="spacer-left-xs"
+                          className="spacer-left-xsm"
                           name="comment-o"
                         >
                           <span
                             aria-hidden={true}
-                            className="fa fa-comment-o spacer-left-xs"
+                            className="fa fa-comment-o spacer-left-xsm"
                           />
                         </FontAwesome>
                          

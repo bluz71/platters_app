@@ -37,6 +37,29 @@
   color: #3c9a5f;
 }
 
+@media screen and (max-width: 992px) {
+  .ArtistAlbums .album .title .icon {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .ArtistAlbums .album .title .icon {
+    margin-top: 1em;
+    float: right;
+    font-size: 0.8em;
+  }
+
+  .ArtistAlbums .album .title a {
+    cursor: pointer;
+    color: #515151;
+  }
+
+  .ArtistAlbums .album .title a:hover {
+    color: #3c9a5f;
+  }
+}
+
 .ArtistAlbums .album .album-details {
   margin-top: 0;
 }
@@ -57,19 +80,3 @@
   display: inline;
   list-style-type: none;
 }
-
-/*       @media (max-width: $screen-sm-max) { */
-/*         .icon { */
-/*           display: none; */
-/*         } */
-/*       } */
-
-/*       @media (min-width: $screen-md-min) { */
-/*         .icon { */
-/*           margin-top: 1em; */
-/*           float: right; */
-/*           font-size: 0.8em; */
-/*           color: $grey-dark; */
-/*         } */
-/*       } */
-/*     } */
