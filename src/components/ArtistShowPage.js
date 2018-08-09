@@ -3,11 +3,14 @@ import { Redirect } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import { Row, Col, PageHeader } from 'react-bootstrap';
 import axios from 'axios';
+import numeral from 'numeral';
 import pluralize from 'pluralize';
 import { API_HOST } from '../config';
 import pageProgress from '../helpers/pageProgress';
+import infiniteScroll from '../helpers/infiniteScroll';
 import toastAlert from '../helpers/toastAlert';
 import ArtistAlbumsList from './ArtistAlbumsList';
+import CommentsList from './CommentsList';
 import '../styles/ArtistShowPage.css';
 
 const ARTIST_ALBUMS_SORT_BY = {
@@ -21,12 +24,14 @@ class ArtistShowPage extends Component {
   constructor(props) {
     super(props);
 
-    this.artistSlug     = props.match.params.id;
-    this.artistEndPoint = `${API_HOST}/${this.artistSlug}.json`;
-    this.loaded         = false;
-    this.pageProgress   = new pageProgress();
-    this.albumsSortBy   = ARTIST_ALBUMS_SORT_BY.newest;
-    this.albumsEndPoint = `${API_HOST}/artists/${this.artistSlug}/albums.json`;
+    this.artistSlug       = props.match.params.id;
+    this.artistEndPoint   = `${API_HOST}/${this.artistSlug}.json`;
+    this.loaded           = false;
+    this.pageProgress     = new pageProgress();
+    this.albumsSortBy     = ARTIST_ALBUMS_SORT_BY.newest;
+    this.albumsEndPoint   = `${API_HOST}/artists/${this.artistSlug}/albums.json`;
+    this.commentsEndPoint = `${API_HOST}/${this.artistSlug}/comments.json`;
+    this.waiting          = false; // For comments when infinite-scrolling.
 
     this.state = {
       artist: {},
@@ -41,10 +46,17 @@ class ArtistShowPage extends Component {
     this.handleYear        = this.handleYear.bind(this);
     this.handleGenre       = this.handleGenre.bind(this);
     this.handleAlbumsOrder = this.handleAlbumsOrder.bind(this);
+    this.handleScroll      = this.handleScroll.bind(this);
+    this.handlePageEnd     = this.handlePageEnd.bind(this);
   }
 
   componentDidMount() {
+    window.onscroll = this.handleScroll;
     this.getArtist(true);
+  }
+
+  componentWillUnmount() {
+    window.onscroll = null;
   }
 
   handleYear(year) {
@@ -58,10 +70,26 @@ class ArtistShowPage extends Component {
   }
 
   handleAlbumsOrder(order) {
-    const albumsEndPoint
-      = `${this.albumsEndPoint}?${order}=true`;
+    const albumsEndPoint = `${this.albumsEndPoint}?${order}=true`;
     this.albumsSortBy = order;
     this.getAlbums(albumsEndPoint);
+  }
+
+  handleScroll() {
+    infiniteScroll(this.state.commentsPagination, this.handlePageEnd);
+  }
+
+  handlePageEnd() {
+    // Page has been scrolled to the end, hence retrieve the next set of
+    // comments.
+
+    // Disable scroll handling whilst records are being retrieved.
+    window.onscroll = null;
+    const commentsPageEndPoint
+      = `${this.commentsEndPoint}?page=${this.state.commentsPagination.next_page}`;
+    this.waiting = true;
+    this.forceUpdate(); // Render spinner
+    this.getComments(commentsPageEndPoint);
   }
 
   getArtist(scrollToTop = false) {
@@ -93,6 +121,24 @@ class ArtistShowPage extends Component {
     axios.get(albumsEndPoint)
       .then(response => {
         this.setState({ albums: response.data.albums });
+      }).catch(error => {
+        this.setState({ error: error });
+      });
+  }
+
+  getComments(commentsEndPoint) {
+    axios.get(commentsEndPoint)
+      .then(response => {
+        this.waiting = false;
+        if (!window.onscroll) {
+          // Re-enable scroll handling now that the records have been
+          // retrieved.
+          window.onscroll = this.handleScroll;
+        }
+        this.setState({
+          comments: [...this.state.comments, ...response.data.comments],
+          commentsPagination: response.data.pagination,
+        });
       }).catch(error => {
         this.setState({ error: error });
       });
@@ -225,10 +271,51 @@ class ArtistShowPage extends Component {
               && <small>({albumsCount} {pluralize('Album', albumsCount)})</small>}
         </PageHeader>
         {this.renderAlbumsList()}
+        <div className="spacer-bottom-lg" />
       </div>
     );
   }
 
+  renderCommentsList(count) {
+    if (count === 0) {
+      return (
+        <h4>No comments have been posted for this artist</h4>
+      );
+    }
+
+    return (
+      <CommentsList comments={this.state.comments} shortHeader />
+    );
+  }
+
+  renderSpinner() {
+    if (this.waiting) {
+      return (
+        <div className="WaitingSpinner">
+          <FontAwesome name="spinner" spin pulse />
+        </div>
+      );
+    }
+  }
+
+  renderComments() {
+    const count = this.state.commentsPagination.total_count;
+    const commentsCount = numeral(count).format('0,0');
+
+    return (
+      <div
+        className="comments"
+        ref={commentsAnchor => this.commentsAnchor = commentsAnchor}
+      >
+        <PageHeader>
+          Comments {this.artistRetrieved()
+              && <small>({commentsCount} {pluralize('Comment', count)})</small>}
+        </PageHeader>
+        {this.renderCommentsList(count)}
+        {this.renderSpinner()}
+      </div>
+    );
+  }
   render() {
     this.pageProgress.start();
 
@@ -238,6 +325,7 @@ class ArtistShowPage extends Component {
           {this.renderHeader()}
           {this.renderArtist()}
           {this.renderAlbums()}
+          {this.renderComments()}
         </Col>
       </Row>
     );
