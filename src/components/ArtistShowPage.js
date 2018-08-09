@@ -26,6 +26,7 @@ class ArtistShowPage extends Component {
     this.loaded         = false;
     this.pageProgress   = new pageProgress();
     this.albumsSortBy   = ARTIST_ALBUMS_SORT_BY.newest;
+    this.albumsEndPoint = `${API_HOST}/artists/${this.artistSlug}/albums.json`;
 
     this.state = {
       artist: {},
@@ -36,8 +37,14 @@ class ArtistShowPage extends Component {
       error: null
     };
 
-    this.handleYear  = this.handleYear.bind(this);
-    this.handleGenre = this.handleGenre.bind(this);
+    // Bind 'this' for callback functions.
+    this.handleYear        = this.handleYear.bind(this);
+    this.handleGenre       = this.handleGenre.bind(this);
+    this.handleAlbumsOrder = this.handleAlbumsOrder.bind(this);
+  }
+
+  componentDidMount() {
+    this.getArtist(true);
   }
 
   handleYear(year) {
@@ -50,8 +57,11 @@ class ArtistShowPage extends Component {
     this.props.history.push('/albums', params);
   }
 
-  componentDidMount() {
-    this.getArtist(true);
+  handleAlbumsOrder(order) {
+    const albumsEndPoint
+      = `${this.albumsEndPoint}?${order}=true`;
+    this.albumsSortBy = order;
+    this.getAlbums(albumsEndPoint);
   }
 
   getArtist(scrollToTop = false) {
@@ -76,6 +86,15 @@ class ArtistShowPage extends Component {
         else {
           this.setState({ error: error });
         }
+      });
+  }
+
+  getAlbums(albumsEndPoint) {
+    axios.get(albumsEndPoint)
+      .then(response => {
+        this.setState({ albums: response.data.albums });
+      }).catch(error => {
+        this.setState({ error: error });
       });
   }
 
@@ -161,16 +180,28 @@ class ArtistShowPage extends Component {
     return (
       <div>
         <ul className="albums-order">
-          <li className={this.albumsSortByActivity(ARTIST_ALBUMS_SORT_BY.newest)}>
+          <li
+            className={this.albumsSortByActivity(ARTIST_ALBUMS_SORT_BY.newest)}
+            onClick={() => this.handleAlbumsOrder(ARTIST_ALBUMS_SORT_BY.newest)}
+          >
             Newest
           </li>
-          <li className={this.albumsSortByActivity(ARTIST_ALBUMS_SORT_BY.oldest)}>
+          <li
+            className={this.albumsSortByActivity(ARTIST_ALBUMS_SORT_BY.oldest)}
+            onClick={() => this.handleAlbumsOrder(ARTIST_ALBUMS_SORT_BY.oldest)}
+          >
             Oldest
           </li>
-          <li className={this.albumsSortByActivity(ARTIST_ALBUMS_SORT_BY.longest)}>
+          <li
+            className={this.albumsSortByActivity(ARTIST_ALBUMS_SORT_BY.longest)}
+            onClick={() => this.handleAlbumsOrder(ARTIST_ALBUMS_SORT_BY.longest)}
+          >
             Longest
           </li>
-          <li className={this.albumsSortByActivity(ARTIST_ALBUMS_SORT_BY.name)}>
+          <li
+            className={this.albumsSortByActivity(ARTIST_ALBUMS_SORT_BY.name)}
+            onClick={() => this.handleAlbumsOrder(ARTIST_ALBUMS_SORT_BY.name)}
+          >
             Name
           </li>
         </ul>
