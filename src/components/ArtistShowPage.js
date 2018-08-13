@@ -27,11 +27,13 @@ class ArtistShowPage extends Component {
     this.artistSlug       = props.match.params.id;
     this.artistEndPoint   = `${API_HOST}/${this.artistSlug}.json`;
     this.loaded           = false;
-    this.pageProgress     = new pageProgress();
     this.albumsSortBy     = ARTIST_ALBUMS_SORT_BY.newest;
     this.albumsEndPoint   = `${API_HOST}/artists/${this.artistSlug}/albums.json`;
     this.commentsEndPoint = `${API_HOST}/${this.artistSlug}/comments.json`;
     this.waiting          = false; // For comments when infinite-scrolling.
+    this.scrollToComments =
+      (props.location.state && props.location.state.scrollToComments) || false;
+    this.pageProgress     = new pageProgress();
 
     this.state = {
       artist: {},
@@ -103,7 +105,11 @@ class ArtistShowPage extends Component {
           comments: response.data.comments,
           commentsPagination: response.data.comments_pagination
         });
-        if (scrollToTop) {
+        if (this.scrollToComments) {
+          this.scrollToComments = false;
+          this.commentsAnchor.scrollIntoView();
+        }
+        else if (scrollToTop) {
           window.scrollTo(0, 0);
         }
       }).catch(error => {

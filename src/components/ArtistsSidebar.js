@@ -32,7 +32,10 @@ const renderComments = (comments) => (
         <img className="img-responsive center-block" src={comment.gravatar_url} alt={comment.user_name} />
       </Link>
       <h5>
-        in <Link to={comment.path}>{comment.name}</Link>
+        in <Link to={{
+          pathname: comment.path,
+          state: { scrollToComments: true }
+        }}>{comment.name}</Link>
       </h5>
     </ListGroupItem>
   )

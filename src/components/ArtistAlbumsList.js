@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import '../styles/ArtistAlbumsList.css';
@@ -51,7 +51,11 @@ const ArtistAlbumsList = ({ albums, artistSlug, onYear, onGenre }) => {
   );
 };
 
-//ArtistAlbumsList.propTypes = {
-//};
+ArtistAlbumsList.propTypes = {
+  albums:     PropTypes.array,
+  artistSlug: PropTypes.string,
+  onYear:     PropTypes.func,
+  onGenre:    PropTypes.func
+};
 
 export default ArtistAlbumsList;
