@@ -29,7 +29,14 @@ exports[`<CommentsList /> renders a list of comments 1`] = `
          posted in ABC / 
         <Link
           replace={false}
-          to="/artist/abc/album/abc"
+          to={
+            Object {
+              "pathname": "/artist/abc/album/abc",
+              "state": Object {
+                "scrollToComments": true,
+              },
+            }
+          }
         >
           ABC
         </Link>
@@ -75,7 +82,14 @@ exports[`<CommentsList /> renders a list of comments 1`] = `
          posted in DEF / 
         <Link
           replace={false}
-          to="/artist/def/album/def"
+          to={
+            Object {
+              "pathname": "/artist/def/album/def",
+              "state": Object {
+                "scrollToComments": true,
+              },
+            }
+          }
         >
           DEF
         </Link>

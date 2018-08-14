@@ -144,7 +144,14 @@ exports[`<ArtistsSidebar /> renders a sidebar 1`] = `
             in 
             <Link
               replace={false}
-              to="artist/abc"
+              to={
+                Object {
+                  "pathname": "artist/abc",
+                  "state": Object {
+                    "scrollToComments": true,
+                  },
+                }
+              }
             >
               abc
             </Link>
@@ -185,7 +192,14 @@ exports[`<ArtistsSidebar /> renders a sidebar 1`] = `
             in 
             <Link
               replace={false}
-              to="artist/def/album/def"
+              to={
+                Object {
+                  "pathname": "artist/def/album/def",
+                  "state": Object {
+                    "scrollToComments": true,
+                  },
+                }
+              }
             >
               def
             </Link>

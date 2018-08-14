@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArtistAlbumsList /> renders of a list of artist albums 1`] = `
+<div
+  className="ArtistAlbums"
+>
+  <div
+    className="album"
+    key="1"
+  >
+    <Link
+      replace={false}
+      to="/artist/xyz/album/abc"
+    >
+      <img
+        alt="ABC"
+        className="img-responsive"
+        src="http://localhost:3000/small_XYZ--ABC.jpg"
+      />
+    </Link>
+    <div
+      className="title"
+    >
+      <Link
+        replace={false}
+        to="/artist/xyz/album/abc"
+      >
+        <h2>
+          ABC
+        </h2>
+      </Link>
+      <span
+        className="icon"
+      >
+        <a
+          onClick={[Function]}
+        >
+          <FontAwesome
+            name="calendar"
+          />
+           
+          2008
+        </a>
+        <a
+          onClick={[Function]}
+        >
+          <FontAwesome
+            className="spacer-left-xsm"
+            name="tag"
+          />
+           
+          Rock
+        </a>
+        <Link
+          replace={false}
+          to={
+            Object {
+              "pathname": "/artist/xyz/album/abc",
+              "state": Object {
+                "scrollToComments": true,
+              },
+            }
+          }
+        >
+          <FontAwesome
+            className="spacer-left-xsm"
+            name="comment-o"
+          />
+           
+          40
+        </Link>
+      </span>
+    </div>
+    <h3
+      className="album-details"
+    >
+      <small>
+        (2 Tracks, Time 15:31)
+      </small>
+    </h3>
+    <ul>
+      <li
+        key="0"
+      >
+        1. First
+         
+      </li>
+      <li
+        key="1"
+      >
+        2. Second
+         
+      </li>
+    </ul>
+  </div>
+  <div
+    className="album"
+    key="2"
+  >
+    <Link
+      replace={false}
+      to="/artist/xyz/album/def"
+    >
+      <img
+        alt="DEF"
+        className="img-responsive"
+        src="http://localhost:3000//small_XYZ--DEF.jpg"
+      />
+    </Link>
+    <div
+      className="title"
+    >
+      <Link
+        replace={false}
+        to="/artist/xyz/album/def"
+      >
+        <h2>
+          DEF
+        </h2>
+      </Link>
+      <span
+        className="icon"
+      >
+        <a
+          onClick={[Function]}
+        >
+          <FontAwesome
+            name="calendar"
+          />
+           
+          2014
+        </a>
+        <a
+          onClick={[Function]}
+        >
+          <FontAwesome
+            className="spacer-left-xsm"
+            name="tag"
+          />
+           
+          Rock
+        </a>
+        <Link
+          replace={false}
+          to={
+            Object {
+              "pathname": "/artist/xyz/album/def",
+              "state": Object {
+                "scrollToComments": true,
+              },
+            }
+          }
+        >
+          <FontAwesome
+            className="spacer-left-xsm"
+            name="comment-o"
+          />
+           
+          26
+        </Link>
+      </span>
+    </div>
+    <h3
+      className="album-details"
+    >
+      <small>
+        (3 Tracks, Time 14:54)
+      </small>
+    </h3>
+    <ul>
+      <li
+        key="0"
+      >
+        1. First
+         
+      </li>
+      <li
+        key="1"
+      >
+        2. Second
+         
+      </li>
+      <li
+        key="2"
+      >
+        3. Third
+         
+      </li>
+    </ul>
+  </div>
+</div>
+`;
