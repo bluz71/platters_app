@@ -14,6 +14,7 @@ import { data as userComments } from './user_comments.json';
 import { data as userCommentsPage2 } from './user_comments_page2.json';
 import { data as albumShow } from './album_show.json';
 import { data as albumCommentsPage2 } from './album_comments_page2.json';
+import { data as artistShow } from './artist_show.json';
 
 
 // Details:
@@ -101,6 +102,10 @@ module.exports = {
           response: {
             status: 404
           }
+        });
+      case `${API_HOST}/abc.json`:
+        return Promise.resolve({
+          data: artistShow
         });
     }
   })

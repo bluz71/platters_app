@@ -1,0 +1,263 @@
+{
+  "data": {
+    "artist": {
+      "name": "ABC",
+      "description": "ABC Band",
+      "wikipedia": "abc_band",
+      "website": "https://abc_band.com",
+      "website_link": "abc_band.com",
+      "slug": "abc"
+    },
+    "albums": [
+      {
+        "id": 1,
+        "title": "DEF",
+        "tracks_count": 10,
+        "comments_count": 20,
+        "total_duration": "45:23",
+        "slug": "def",
+        "cover_url": "http://localhost:3000/uploads/album/cover/1/small_ABC--DEF.jpg",
+        "year": 2000,
+        "genre": "Rock",
+        "tracks_summary": [
+          "1. First",
+          "2. Second",
+          "3. Third",
+          "4. Fourth",
+          "5. Fifth",
+          "6. Sixth",
+          "..."
+        ]
+      },
+      {
+        "id": 2,
+        "title": "XYZ",
+        "tracks_count": 10,
+        "comments_count": 9,
+        "total_duration": "50:23",
+        "slug": "xyz",
+        "cover_url": "http://localhost:3000/uploads/album/cover/2/small_ABC--XYZ.jpg",
+        "year": 1995,
+        "genre": "Rock",
+        "tracks_summary": [
+          "1. First",
+          "2. Second",
+          "3. Third",
+          "4. Fourth",
+          "5. Fifth",
+          "6. Sixth",
+          "..."
+        ]
+      }
+    ],
+    "comments": [
+      {
+        "id": 14,
+        "body": "Comment 1",
+        "created_at": "<time datetime=\"2018-08-10T05:04:07Z\" data-local=\"time-ago\">August 10, 2018  5:04am</time>",
+        "user_name": "bluz71",
+        "user_slug": "bluz71",
+        "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 10,
+        "body": "Comment 2",
+        "created_at": "<time datetime=\"2018-08-04T01:14:51Z\" data-local=\"time-ago\">August  4, 2018  1:14am</time>",
+        "user_name": "jaron_barton50",
+        "user_slug": "jaron_barton50",
+        "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 12,
+        "body": "Comment 3",
+        "created_at": "<time datetime=\"2018-07-19T14:29:55Z\" data-local=\"time-ago\">July 19, 2018  2:29pm</time>",
+        "user_name": "elise2",
+        "user_slug": "elise2",
+        "gravatar_url": "https://gravatar.com/avatar/69625f37b2fd5343d3d3439911d4e10f?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 8,
+        "body": "Comment 4",
+        "created_at": "<time datetime=\"2018-07-16T19:29:24Z\" data-local=\"time-ago\">July 16, 2018  7:29pm</time>",
+        "user_name": "charley12",
+        "user_slug": "charley12",
+        "gravatar_url": "https://gravatar.com/avatar/a38ce926222e8aee3f02999d435df4c4?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 11,
+        "body": "Comment 5",
+        "created_at": "<time datetime=\"2018-06-15T01:54:55Z\" data-local=\"time-ago\">June 15, 2018  1:54am</time>",
+        "user_name": "austyn47",
+        "user_slug": "austyn47",
+        "gravatar_url": "https://gravatar.com/avatar/7f14bdf8047c0883f230002a4bd2eff3?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 6,
+        "body": "Comment 6",
+        "created_at": "<time datetime=\"2018-06-13T08:13:57Z\" data-local=\"time-ago\">June 13, 2018  8:13am</time>",
+        "user_name": "ila_lebsack50",
+        "user_slug": "ila_lebsack50",
+        "gravatar_url": "https://gravatar.com/avatar/c4181331d29753fdc2d34d1995de937e?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 4,
+        "body": "Comment 7",
+        "created_at": "<time datetime=\"2018-05-28T22:58:43Z\" data-local=\"time-ago\">May 28, 2018 10:58pm</time>",
+        "user_name": "santos29",
+        "user_slug": "santos29",
+        "gravatar_url": "https://gravatar.com/avatar/693c529d5a6dc14404d15bd94944ab9d?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 1,
+        "body": "Comment 8",
+        "created_at": "<time datetime=\"2018-04-19T10:55:23Z\" data-local=\"time-ago\">April 19, 2018 10:55am</time>",
+        "user_name": "jaron_barton50",
+        "user_slug": "jaron_barton50",
+        "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 5,
+        "body": "Comment 9",
+        "created_at": "<time datetime=\"2018-03-08T21:26:37Z\" data-local=\"time-ago\">March  8, 2018  9:26pm</time>",
+        "user_name": "yasmeen91",
+        "user_slug": "yasmeen91",
+        "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 13,
+        "body": "Comment 10",
+        "created_at": "<time datetime=\"2018-02-06T15:58:36Z\" data-local=\"time-ago\">February  6, 2018  3:58pm</time>",
+        "user_name": "abbie35",
+        "user_slug": "abbie35",
+        "gravatar_url": "https://gravatar.com/avatar/ecd56b04440922d9d4227b80b360f1a6?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 2,
+        "body": "Comment 11",
+        "created_at": "<time datetime=\"2018-01-18T21:28:48Z\" data-local=\"time-ago\">January 18, 2018  9:28pm</time>",
+        "user_name": "yasmeen91",
+        "user_slug": "yasmeen91",
+        "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 3,
+        "body": "Comment 12",
+        "created_at": "<time datetime=\"2018-01-06T18:46:18Z\" data-local=\"time-ago\">January  6, 2018  6:46pm</time>",
+        "user_name": "michele_douglas54",
+        "user_slug": "michele_douglas54",
+        "gravatar_url": "https://gravatar.com/avatar/9c882241f6804414432bcb7c6fbb0dce?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 9,
+        "body": "Comment 13",
+        "created_at": "<time datetime=\"2017-12-24T10:59:43Z\" data-local=\"time-ago\">December 24, 2017 10:59am</time>",
+        "user_name": "roberto_zboncak62",
+        "user_slug": "roberto_zboncak62",
+        "gravatar_url": "https://gravatar.com/avatar/2d42930970262a4d6da8a839ef4cbed5?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 7,
+        "body": "Comment 14",
+        "created_at": "<time datetime=\"2017-12-22T16:18:14Z\" data-local=\"time-ago\">December 22, 2017  4:18pm</time>",
+        "user_name": "emily_spencer92",
+        "user_slug": "emily_spencer92",
+        "gravatar_url": "https://gravatar.com/avatar/4ecef4e31dc7b2bf3ac0117f3df7d1fb?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 14,
+        "body": "Comment 15",
+        "created_at": "<time datetime=\"2018-08-10T05:04:07Z\" data-local=\"time-ago\">August 10, 2018  5:04am</time>",
+        "user_name": "bluz71",
+        "user_slug": "bluz71",
+        "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 10,
+        "body": "Comment 16",
+        "created_at": "<time datetime=\"2018-08-04T01:14:51Z\" data-local=\"time-ago\">August  4, 2018  1:14am</time>",
+        "user_name": "jaron_barton50",
+        "user_slug": "jaron_barton50",
+        "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 12,
+        "body": "Comment 17",
+        "created_at": "<time datetime=\"2018-07-19T14:29:55Z\" data-local=\"time-ago\">July 19, 2018  2:29pm</time>",
+        "user_name": "elise2",
+        "user_slug": "elise2",
+        "gravatar_url": "https://gravatar.com/avatar/69625f37b2fd5343d3d3439911d4e10f?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 8,
+        "body": "Comment 18",
+        "created_at": "<time datetime=\"2018-07-16T19:29:24Z\" data-local=\"time-ago\">July 16, 2018  7:29pm</time>",
+        "user_name": "charley12",
+        "user_slug": "charley12",
+        "gravatar_url": "https://gravatar.com/avatar/a38ce926222e8aee3f02999d435df4c4?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 11,
+        "body": "Comment 19",
+        "created_at": "<time datetime=\"2018-06-15T01:54:55Z\" data-local=\"time-ago\">June 15, 2018  1:54am</time>",
+        "user_name": "austyn47",
+        "user_slug": "austyn47",
+        "gravatar_url": "https://gravatar.com/avatar/7f14bdf8047c0883f230002a4bd2eff3?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 6,
+        "body": "Comment 20",
+        "created_at": "<time datetime=\"2018-06-13T08:13:57Z\" data-local=\"time-ago\">June 13, 2018  8:13am</time>",
+        "user_name": "ila_lebsack50",
+        "user_slug": "ila_lebsack50",
+        "gravatar_url": "https://gravatar.com/avatar/c4181331d29753fdc2d34d1995de937e?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 4,
+        "body": "Comment 21",
+        "created_at": "<time datetime=\"2018-05-28T22:58:43Z\" data-local=\"time-ago\">May 28, 2018 10:58pm</time>",
+        "user_name": "santos29",
+        "user_slug": "santos29",
+        "gravatar_url": "https://gravatar.com/avatar/693c529d5a6dc14404d15bd94944ab9d?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 1,
+        "body": "Comment 22",
+        "created_at": "<time datetime=\"2018-04-19T10:55:23Z\" data-local=\"time-ago\">April 19, 2018 10:55am</time>",
+        "user_name": "jaron_barton50",
+        "user_slug": "jaron_barton50",
+        "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 5,
+        "body": "Comment 23",
+        "created_at": "<time datetime=\"2018-03-08T21:26:37Z\" data-local=\"time-ago\">March  8, 2018  9:26pm</time>",
+        "user_name": "yasmeen91",
+        "user_slug": "yasmeen91",
+        "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 29998,
+        "body": "Comment 24",
+        "created_at": "<time datetime=\"2017-11-04T04:31:56Z\" data-local=\"time-ago\">November  4, 2017  4:31am</time>",
+        "user_name": "leonel_kertzmann31",
+        "user_slug": "leonel_kertzmann31",
+        "gravatar_url": "https://gravatar.com/avatar/7623bc3892c4bf9c2571447e23ec565f?s=80&r=pg&d=identicon"
+      },
+      {
+        "id": 30003,
+        "body": "Last Comment 25",
+        "created_at": "<time datetime=\"2017-11-01T12:26:44Z\" data-local=\"time-ago\">November  1, 2017 12:26pm</time>",
+        "user_name": "simeon59",
+        "user_slug": "simeon59",
+        "gravatar_url": "https://gravatar.com/avatar/188deba48d739c0287b061713d2c16be?s=80&r=pg&d=identicon"
+      }
+    ],
+    "comments_pagination": {
+      "current_page": 1,
+      "next_page": 2,
+      "prev_page": null,
+      "total_pages": 2,
+      "total_count": 36
+    }
+  }
+}
