@@ -1,0 +1,46 @@
+{
+  "data": {
+    "albums": [
+      {
+        "id": 2,
+        "title": "XYZ",
+        "tracks_count": 10,
+        "comments_count": 9,
+        "total_duration": "50:23",
+        "slug": "xyz",
+        "cover_url": "http://localhost:3000/uploads/album/cover/2/small_ABC--XYZ.jpg",
+        "year": 1995,
+        "genre": "Rock",
+        "tracks_summary": [
+          "1. First",
+          "2. Second",
+          "3. Third",
+          "4. Fourth",
+          "5. Fifth",
+          "6. Sixth",
+          "..."
+        ]
+      },
+      {
+        "id": 1,
+        "title": "DEF",
+        "tracks_count": 10,
+        "comments_count": 20,
+        "total_duration": "45:23",
+        "slug": "def",
+        "cover_url": "http://localhost:3000/uploads/album/cover/1/small_ABC--DEF.jpg",
+        "year": 2000,
+        "genre": "Rock",
+        "tracks_summary": [
+          "1. First",
+          "2. Second",
+          "3. Third",
+          "4. Fourth",
+          "5. Fifth",
+          "6. Sixth",
+          "..."
+        ]
+      }
+    ]
+  }
+}

@@ -13,8 +13,13 @@ import { data as home } from './home.json';
 import { data as userComments } from './user_comments.json';
 import { data as userCommentsPage2 } from './user_comments_page2.json';
 import { data as albumShow } from './album_show.json';
-import { data as albumCommentsPage2 } from './album_comments_page2.json';
+import { data as albumCommentsPage2 } from './commentable_page2.json';
 import { data as artistShow } from './artist_show.json';
+import { data as artistAlbumsNewest } from './artist_albums_newest.json';
+import { data as artistAlbumsOldest } from './artist_albums_oldest.json';
+import { data as artistAlbumsLongest } from './artist_albums_longest.json';
+import { data as artistAlbumsName } from './artist_albums_name.json';
+import { data as artistCommentsPage2 } from './commentable_page2.json';
 
 
 // Details:
@@ -106,6 +111,33 @@ module.exports = {
       case `${API_HOST}/abc.json`:
         return Promise.resolve({
           data: artistShow
+        });
+      case `${API_HOST}/artists/abc/albums.json?newest=true`:
+        return Promise.resolve({
+          data: artistAlbumsNewest
+        });
+      case `${API_HOST}/artists/abc/albums.json?oldest=true`:
+        // console.log(JSON.stringify(artistAlbumsOldest, null, 2));
+        return Promise.resolve({
+          data: artistAlbumsOldest
+        });
+      case `${API_HOST}/artists/abc/albums.json?longest=true`:
+        return Promise.resolve({
+          data: artistAlbumsLongest
+        });
+      case `${API_HOST}/artists/abc/albums.json?name=true`:
+        return Promise.resolve({
+          data: artistAlbumsName
+        });
+      case `${API_HOST}/abc/comments.json?page=2`:
+        return Promise.resolve({
+          data: artistCommentsPage2
+        });
+      case `${API_HOST}/null.json`:
+        return Promise.reject({
+          response: {
+            status: 404
+          }
         });
     }
   })

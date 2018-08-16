@@ -339,3 +339,4 @@ class ArtistShowPage extends Component {
 }
 
 export default ArtistShowPage;
+export { ARTIST_ALBUMS_SORT_BY };

@@ -1,3 +1,0 @@
-- UserCommentsPage slow scrolling issue when many comments are displayed
-
-- Fix slow UserCommentsPage scrolling issue
