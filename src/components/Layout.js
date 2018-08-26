@@ -13,7 +13,7 @@ import ArtistShowPage from './ArtistShowPage';
 import AlbumsPage from './AlbumsPage';
 import AlbumShowPage from './AlbumShowPage';
 import UserCommentsPage from './UserCommentsPage';
-import LoginPage from './LoginPage'
+import LoginPage from './LoginPage';
 import AboutPage from './AboutPage';
 import DetailsPage from './DetailsPage';
 import NotFound from './NotFound';
