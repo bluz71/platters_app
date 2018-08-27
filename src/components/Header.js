@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { IndexLinkContainer } from 'react-router-bootstrap';
-import FontAwesome from 'react-fontawesome'
+import FontAwesome from 'react-fontawesome';
 import { appAuth } from '../lib/appAuth';
 import '../styles/Header.css';
 import logo from '../images/platters-white.svg';
