@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Row, Col, PageHeader, Well, Form, FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
+import { appAuth } from '../lib/appAuth';
 import { API_HOST } from '../config';
 
 const LOGIN_ENDPOINT = `${API_HOST}/api/log_in`;
@@ -29,8 +30,8 @@ class LoginPage extends Component {
   postUser(authUser) {
     axios.post(LOGIN_ENDPOINT, authUser)
       .then(response => {
-        // console.log(response.data.auth_token);
-        // XXX, save jwt and redirect to home page
+        appAuth.logIn(response.data.auth_token);
+        this.props.history.push('/');
       })
       .catch(error => {
         if (error.response && error.response.status === 404) {

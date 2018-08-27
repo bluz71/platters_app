@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.17.0",
+    "jwt-decode": "^2.2.0",
     "linkify-lite": "^1.0.0",
     "local-time": "^2.0.0",
     "moment": "^2.19.2",
