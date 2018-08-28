@@ -268,13 +268,15 @@ class ArtistShowPage extends Component {
   }
 
   renderAlbums() {
+    if (!this.artistRetrieved()) {
+      return;
+    }
     const albumsCount = this.state.albums.length;
 
     return (
       <div className="albums">
         <PageHeader>
-          Albums {this.artistRetrieved()
-              && <small>({albumsCount} {pluralize('Album', albumsCount)})</small>}
+          Albums <small>({albumsCount} {pluralize('Album', albumsCount)})</small>
         </PageHeader>
         {this.renderAlbumsList()}
         <div className="spacer-bottom-lg" />
@@ -305,6 +307,9 @@ class ArtistShowPage extends Component {
   }
 
   renderComments() {
+    if (!this.artistRetrieved()) {
+      return;
+    }
     const count = this.state.commentsPagination.total_count;
     const commentsCount = numeral(count).format('0,0');
 

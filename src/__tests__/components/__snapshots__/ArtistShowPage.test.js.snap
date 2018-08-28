@@ -26,63 +26,6 @@ exports[`<ArtistShowPage /> handles invalid artist 1`] = `
         className="spacer-bottom-sm"
       />
     </div>
-    <div
-      className="albums"
-    >
-      <PageHeader
-        bsClass="page-header"
-      >
-        Albums 
-      </PageHeader>
-      <div>
-        <ul
-          className="albums-order"
-        >
-          <li
-            className="active"
-            onClick={[Function]}
-          >
-            Newest
-          </li>
-          <li
-            onClick={[Function]}
-          >
-            Oldest
-          </li>
-          <li
-            onClick={[Function]}
-          >
-            Longest
-          </li>
-          <li
-            onClick={[Function]}
-          >
-            Name
-          </li>
-        </ul>
-        <ArtistAlbumsList
-          albums={Array []}
-          onGenre={[Function]}
-          onYear={[Function]}
-        />
-      </div>
-      <div
-        className="spacer-bottom-lg"
-      />
-    </div>
-    <div
-      className="comments"
-    >
-      <PageHeader
-        bsClass="page-header"
-      >
-        Comments 
-      </PageHeader>
-      <CommentsList
-        comments={Array []}
-        shortHeader={true}
-      />
-    </div>
   </Col>
 </Row>
 `;
