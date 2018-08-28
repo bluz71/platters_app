@@ -34,6 +34,7 @@ const renderSessionMenu = () => {
             <FontAwesome className="fa-fw" name="user" />&nbsp;{username}
           </span>
         }
+        id="nav-dropdown"
       >
         <IndexLinkContainer to={`/comments/${username}`} activeClassName='selected'>
           <MenuItem eventKey="1.1">
@@ -43,9 +44,11 @@ const renderSessionMenu = () => {
         <MenuItem eventKey="1.2">
           <FontAwesome className="fa-fw" name="gear" />&nbsp; Account
         </MenuItem>
-        <MenuItem eventKey="1.3">
-          <FontAwesome className="fa-fw" name="sign-out" />&nbsp; Log out
-        </MenuItem>
+        <IndexLinkContainer to="/log_out" activeClassName='selected'>
+          <MenuItem eventKey="1.3">
+            <FontAwesome className="fa-fw" name="sign-out" />&nbsp; Log out
+          </MenuItem>
+        </IndexLinkContainer>
       </NavDropdown>
     </Nav>
   );

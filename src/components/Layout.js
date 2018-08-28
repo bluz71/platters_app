@@ -14,6 +14,7 @@ import AlbumsPage from './AlbumsPage';
 import AlbumShowPage from './AlbumShowPage';
 import UserCommentsPage from './UserCommentsPage';
 import LoginPage from './LoginPage';
+import Logout from './Logout';
 import AboutPage from './AboutPage';
 import DetailsPage from './DetailsPage';
 import NotFound from './NotFound';
@@ -32,6 +33,7 @@ const Layout = () => (
           <Route path="/artist/:id" component={ArtistShowPage}  />
           <Route path="/comments/:id" component={UserCommentsPage}  />
           <Route path="/log_in" component={LoginPage} />
+          <Route path="/log_out" component={Logout} />
           <Route path="/about" component={AboutPage} />
           <Route path="/details" component={DetailsPage} />
           <Route component={NotFound} />

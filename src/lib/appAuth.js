@@ -4,40 +4,66 @@ const AUTH_TOKEN_KEY = 'auth_token';
 
 class AppAuth {
   constructor() {
+    // The encoded authenication token, in JWT format, as provided by the
+    // server and stored by the browser.
+    this.authToken = null;
+    // The decoded user identification token.
     this.idToken = null;
   }
 
   logIn(authToken) {
+    this.idToken   = decode(authToken);
+    this.authToken = authToken;
     localStorage.setItem(AUTH_TOKEN_KEY, authToken);
-    this.idToken = decode(authToken);
-    console.log(this.idToken);
   }
 
   logOut() {
     localStorage.removeItem(AUTH_TOKEN_KEY);
-    this.idToken = null;
-  }
-
-  isLoggedIn() {
-    this.getToken();
-
-    return !!this.idToken;
+    this.authToken = null;
+    this.idToken   = null;
   }
 
   currentUser() {
-    this.getToken();
+    this._getToken();
 
     return this.idToken;
   }
 
-  getToken() {
+  isLoggedIn() {
+    this._getToken();
+
+    return !!this.idToken && this._isValid();
+  }
+
+  // Private functions.
+
+  _getToken() {
     if (this.idToken) {
       return;
     }
 
     const authToken = localStorage.getItem(AUTH_TOKEN_KEY);
     if (authToken) {
+      this.authToken = authToken;
       this.idToken = decode(authToken);
+    }
+  }
+
+  _isValid() {
+    if (!this.idToken) {
+      return false;
+    }
+
+    // Validates the payload for expiration and claims.
+    if (
+      this.idToken.exp < Date.now() / 1000 ||
+      this.idToken.iss !== 'platters' ||
+      this.idToken.aud !== 'platters_app'
+    ) {
+      return false;
+    }
+    else {
+      return true;
     }
   }
 }

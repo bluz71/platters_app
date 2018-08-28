@@ -4,6 +4,7 @@ import { Row, Col, Jumbotron } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import { API_HOST } from '../config';
+import { appAuth } from '../lib/appAuth';
 import  '../styles/HomePage.css';
 import logo from '../images/platters-black.svg';
 import toastAlert from '../helpers/toastAlert';
@@ -59,6 +60,10 @@ class HomePage extends Component {
   }
 
   renderIntroduction() {
+    if (appAuth.isLoggedIn()) {
+      return;
+    }
+
     return (
       <div>
         <Row className="first">
