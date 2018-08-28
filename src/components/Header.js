@@ -31,20 +31,20 @@ const renderSessionMenu = () => {
         eventKey="1"
         title={
           <span>
-            <FontAwesome name="user" />&nbsp;&nbsp;{username}
+            <FontAwesome className="fa-fw" name="user" />&nbsp;{username}
           </span>
         }
       >
         <IndexLinkContainer to={`/comments/${username}`} activeClassName='selected'>
           <MenuItem eventKey="1.1">
-            <FontAwesome name="comment-o" />&nbsp;&nbsp;Comments
+            <FontAwesome className="fa-fw" name="comment-o" />&nbsp; Comments
           </MenuItem>
         </IndexLinkContainer>
         <MenuItem eventKey="1.2">
-          <FontAwesome name="gear" />&nbsp;&nbsp;Account
+          <FontAwesome className="fa-fw" name="gear" />&nbsp; Account
         </MenuItem>
         <MenuItem eventKey="1.3">
-          <FontAwesome name="sign-out" />&nbsp;&nbsp;Logout
+          <FontAwesome className="fa-fw" name="sign-out" />&nbsp; Log out
         </MenuItem>
       </NavDropdown>
     </Nav>
