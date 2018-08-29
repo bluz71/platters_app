@@ -35,6 +35,20 @@ class AppAuth {
     return !!this.idToken && this._isValid();
   }
 
+  headers() {
+    this._getToken();
+
+    if (!this.idToken || !this._isValid()) {
+      return;
+    }
+
+    return {
+      headers: {
+        Authorization: `Bearer ${this.authToken}`
+      }
+    };
+  }
+
   // Private functions.
 
   _getToken() {
