@@ -1,6 +1,6 @@
 import decode from 'jwt-decode';
 
-const AUTH_TOKEN_KEY = 'auth_token';
+const AUTH_TOKEN_KEY = 'platters_auth_token';
 
 class AppAuth {
   constructor() {

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Row, Col, PageHeader, Well, Form, FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
 import { appAuth } from '../lib/appAuth';
 import { API_HOST } from '../config';
+import toastAlert from '../helpers/toastAlert';
 
 const LOGIN_ENDPOINT = `${API_HOST}/api/log_in`;
 
@@ -34,11 +35,17 @@ class LoginPage extends Component {
         this.props.history.push('/');
       })
       .catch(error => {
-        if (error.response && error.response.status === 404) {
-          // toast error
+        if (error.response && error.response.status === 401) {
+          toastAlert(`Incorrect log in credentials, ${error.response.data.error}`);
+        }
+        else if (error.response && error.response.status === 404) {
+          toastAlert(`Incorrect log in credentials, user not found`);
+        }
+        else if (error.response && error.response.status === 403) {
+          toastAlert(`User account has not been confirmed`);
         }
         else {
-          // toast error
+          toastAlert(`Server error, please try again later`);
         }
       });
   }
