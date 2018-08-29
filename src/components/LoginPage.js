@@ -39,13 +39,13 @@ class LoginPage extends Component {
           toastAlert(`Incorrect log in credentials, ${error.response.data.error}`);
         }
         else if (error.response && error.response.status === 404) {
-          toastAlert(`Incorrect log in credentials, user not found`);
+          toastAlert('Incorrect log in credentials, user not found');
         }
         else if (error.response && error.response.status === 403) {
-          toastAlert(`User account has not been confirmed`);
+          toastAlert('User account has not been confirmed');
         }
         else {
-          toastAlert(`Server error, please try again later`);
+          toastAlert('Server error, please try again later');
         }
       });
   }
