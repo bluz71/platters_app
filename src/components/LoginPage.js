@@ -44,6 +44,9 @@ class LoginPage extends Component {
         else if (error.response && error.response.status === 403) {
           toastAlert('User account has not been confirmed');
         }
+        else if (error.tokenMessage) {
+          toastAlert(error.tokenMessage);
+        }
         else {
           toastAlert('Server error, please try again later');
         }

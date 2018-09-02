@@ -12,7 +12,13 @@ class AppAuth {
   }
 
   logIn(authToken) {
-    this.idToken   = decode(authToken);
+    try {
+      this.idToken = decode(authToken);
+    }
+    catch (err) {
+      err.tokenMessage = 'Invalid server authentication token';
+      throw err;
+    }
     this.authToken = authToken;
     localStorage.setItem(AUTH_TOKEN_KEY, authToken);
   }
