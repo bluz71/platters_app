@@ -288,3 +288,175 @@ exports[`<HomePage /> renders home page 1`] = `
   </Row>
 </div>
 `;
+
+exports[`<HomePage /> renders home page when logged in 1`] = `
+<div
+  className="Home"
+>
+  <div
+    className="album-of-the-day"
+  >
+    <Row
+      bsClass="row"
+      componentClass="div"
+    >
+      <Col
+        bsClass="col"
+        componentClass="div"
+        md={12}
+      >
+        <h2
+          className="page-header"
+        >
+          Album of the day - 
+          <Link
+            replace={false}
+            to="/artist/xyz/album/album_of_the_day"
+          >
+            Album of the Day
+          </Link>
+           
+          <small>
+            by 
+            <Link
+              replace={false}
+              to="/artist/xyz"
+            >
+              XYZ
+            </Link>
+          </small>
+        </h2>
+        <Jumbotron
+          bsClass="jumbotron"
+          componentClass="div"
+        >
+          <img
+            alt="Album of the Day"
+            className="img-responsive center-block"
+            src="http://localhost:3000/uploads/album/cover/832/XYZ--Album_of_the_Day.jpg"
+          />
+        </Jumbotron>
+      </Col>
+    </Row>
+  </div>
+  <Row
+    bsClass="row"
+    componentClass="div"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={12}
+    >
+      <h2
+        className="page-header"
+      >
+        New Albums
+      </h2>
+      <AlbumsList
+        albums={
+          Array [
+            Object {
+              "album_slug": "abc",
+              "artist": "ABC-Artist",
+              "artist_slug": "abc_artist",
+              "comments_count": 41,
+              "cover_url": "http://localhost:3000/uploads/album/cover/1/small_abc--abc.jpg",
+              "genre": "Rock",
+              "id": 1,
+              "title": "ABB",
+              "tracks": Array [
+                "1. First",
+                "2. Second",
+                "3. Third",
+                "4. Fourth",
+                "5. Fifth",
+                "6. Sixth",
+                "...",
+              ],
+              "tracks_count": 11,
+              "year": 2008,
+            },
+            Object {
+              "album_slug": "def",
+              "artist": "DEF-Artist",
+              "artist_slug": "def_artist",
+              "comments_count": 44,
+              "cover_url": "http://localhost:3000/uploads/album/cover/978/small_def--def.jpg",
+              "genre": "Classical",
+              "id": 2,
+              "title": "DEF",
+              "tracks": Array [
+                "1. One",
+                "2. Two",
+              ],
+              "tracks_count": 27,
+              "year": 2015,
+            },
+          ]
+        }
+        onGenre={[Function]}
+        onYear={[Function]}
+      />
+    </Col>
+  </Row>
+  <Row
+    bsClass="row"
+    componentClass="div"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={12}
+    >
+      <h2
+        className="page-header"
+      >
+        New Comments
+      </h2>
+      <CommentsList
+        comments={
+          Array [
+            Object {
+              "artist": "ABC-Artist",
+              "body": "A comment",
+              "created_at": "<time datetime=\\"2018-04-22T05:50:26Z\\" data-local=\\"time-ago\\">April 22, 2018  5:50am</time>",
+              "for": "Artist",
+              "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
+              "id": 20,
+              "name": "ABC-Artist",
+              "path": "artist/abc_artist",
+              "user_name": "user1",
+              "user_slug": "user1",
+            },
+            Object {
+              "artist": "ABC-Artist",
+              "body": "Another comment",
+              "created_at": "<time datetime=\\"2018-04-22T05:12:25Z\\" data-local=\\"time-ago\\">April 22, 2018  5:12am</time>",
+              "for": "Artist",
+              "gravatar_url": "https://gravatar.com/avatar/699b7e1dd13a6638d847f2d7acf94843?s=80&r=pg&d=identicon",
+              "id": 21,
+              "name": "ABC-Artist",
+              "path": "artist/abc_artist",
+              "user_name": "admin",
+              "user_slug": "admin",
+            },
+            Object {
+              "artist": "ABC",
+              "body": "A final comment",
+              "created_at": "<time datetime=\\"2018-04-14T04:29:39Z\\" data-local=\\"time-ago\\">April 14, 2018  4:29am</time>",
+              "for": "Album",
+              "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
+              "id": 22,
+              "name": "ABC",
+              "path": "artist/abc_artist/album/abc",
+              "user_name": "user1",
+              "user_slug": "user1",
+            },
+          ]
+        }
+      />
+    </Col>
+  </Row>
+</div>
+`;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { shallow, mount } from 'enzyme';
-import flushPromises from '../../helpers/flushPromises';
+import { flushPromises } from '../../helpers/testUtils';
 import AlbumsPage from '../../components/AlbumsPage';
 
 describe('<AlbumsPage />', () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import flushPromises from '../../helpers/flushPromises';
+import { flushPromises } from '../../helpers/testUtils';
 import AlbumsFilter from '../../components/AlbumsFilter';
 
 describe('<AlbumsFilter />', () => {

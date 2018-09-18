@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import flushPromises from '../../helpers/flushPromises';
+import { flushPromises } from '../../helpers/testUtils';
 import ArtistShowPage, { ARTIST_ALBUMS_SORT_BY } from '../../components/ArtistShowPage';
 
 describe('<ArtistShowPage />', () => {
