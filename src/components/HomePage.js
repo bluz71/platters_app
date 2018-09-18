@@ -8,6 +8,7 @@ import { appAuth } from '../lib/appAuth';
 import  '../styles/HomePage.css';
 import logo from '../images/platters-black.svg';
 import toastAlert from '../helpers/toastAlert';
+import pageProgress from '../helpers/pageProgress';
 import AlbumsList from './AlbumsList';
 import CommentsList from './CommentsList';
 
@@ -17,6 +18,9 @@ class HomePage extends Component {
   constructor(props) {
     super(props);
     window.scrollTo(0, 0);
+
+    this.loaded       = false;
+    this.pageProgress = new pageProgress();
 
     this.state = {
       albumOfTheDay: {},
@@ -47,6 +51,7 @@ class HomePage extends Component {
   getHome() {
     axios.get(HOME_ENDPOINT)
       .then(response => {
+        this.loaded = this.pageProgress.done();
         this.setState({
           albumOfTheDay: response.data.album_of_the_day,
           mostRecentAlbums: response.data.most_recent.albums,
@@ -55,8 +60,18 @@ class HomePage extends Component {
         });
       })
       .catch(error => {
+        this.pageProgress.done();
         this.setState({ error: error });
       });
+  }
+
+  homeRetrieved() {
+    if (!this.loaded || this.state.error) {
+      return false;
+    }
+    else {
+      return true;
+    }
   }
 
   renderIntroduction() {
@@ -118,6 +133,9 @@ class HomePage extends Component {
       toastAlert('Connection failure, please retry again later');
       return;
     }
+    if (!this.homeRetrieved()) {
+      return;
+    }
 
     const { title, artist, artist_slug, album_slug, cover_url } = this.state.albumOfTheDay;
     return (
@@ -137,7 +155,7 @@ class HomePage extends Component {
   }
 
   renderMostRecentAlbums() {
-    if (this.state.error) {
+    if (!this.homeRetrieved()) {
       return;
     }
 
@@ -156,7 +174,7 @@ class HomePage extends Component {
   }
 
   renderMostRecentComments() {
-    if (this.state.error) {
+    if (!this.homeRetrieved()) {
       return;
     }
 
@@ -171,6 +189,8 @@ class HomePage extends Component {
   }
 
   render() {
+    this.pageProgress.start();
+
     return (
       <div className="Home">
         {this.renderIntroduction()}
