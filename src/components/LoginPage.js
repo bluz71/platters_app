@@ -67,6 +67,7 @@ class LoginPage extends Component {
             <Col md={9}>
               <FormControl
                 type="email"
+                className="email"
                 inputRef={(input) => this.emailInput = input}
               />
             </Col>
@@ -79,6 +80,7 @@ class LoginPage extends Component {
             <Col md={9}>
               <FormControl
                 type="password"
+                className="password"
                 inputRef={(input) => this.passwordInput = input}
               />
             </Col>

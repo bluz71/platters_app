@@ -20,6 +20,7 @@ import { data as artistAlbumsOldest } from './artist_albums_oldest.json';
 import { data as artistAlbumsLongest } from './artist_albums_longest.json';
 import { data as artistAlbumsName } from './artist_albums_name.json';
 import { data as artistCommentsPage2 } from './commentable_page2.json';
+import { data as logIn } from './log_in.json';
 
 
 // Details:
@@ -139,6 +140,21 @@ module.exports = {
             status: 404
           }
         });
+    }
+  }),
+  post: jest.fn((url, param) => {
+    switch (url) {
+      case `${API_HOST}/api/log_in`: {
+        const { email, password } = param.auth_user;
+        if (
+          email === 'fred@example.com' &&
+          password === 'password1'
+        ) {
+          return Promise.resolve({
+            data: logIn
+          });
+        }
+      }
     }
   })
 };
