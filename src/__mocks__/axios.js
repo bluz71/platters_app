@@ -154,6 +154,26 @@ module.exports = {
             data: logIn
           });
         }
+        if (
+          email === 'fred@example.com' &&
+          password === 'password2'
+        ) {
+          return Promise.reject({
+            response: {
+              status: 401,
+              data: {
+                error: 'invalid password'
+              }
+            }
+          });
+        }
+        if (email === 'peter@example.com') {
+          return Promise.reject({
+            response: {
+              status: 404
+            }
+          });
+        }
       }
     }
   })

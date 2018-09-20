@@ -11,4 +11,8 @@ sImFkbWluIjpmYWxzZSwiZXhwIjoxNTM3ODQ4NDA0LCJpc3MiOiJwbGF0dGVycyIsImF1ZCI6InBs\
 YXR0ZXJzX2FwcCJ9.ZUV69wWVXfiiMtQ2ZFPvgqvhZWwQ4WC1bI15Q9DpFCU')
 );
 
-export { flushPromises, logInUser };
+const logOutUser = () => (
+  appAuth.logOut()
+);
+
+export { flushPromises, logInUser, logOutUser };
