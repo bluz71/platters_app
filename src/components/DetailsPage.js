@@ -70,6 +70,12 @@ const DetailsPage = () => {
             </li>
             <li>
               <h3>
+                <a href="https://github.com/auth0/jwt-decode" target="_blank" rel="noopener noreferrer">jwt-decode</a>
+              </h3>
+              <p>A library that decodes JSON Web Tokens (JWTs).</p>
+            </li>
+            <li>
+              <h3>
                 <a href="https://github.com/google-fabric/velocity-react" target="_blank" rel="noopener noreferrer">velocity-react</a>
               </h3>
               <p>
