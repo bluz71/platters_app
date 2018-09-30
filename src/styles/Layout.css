@@ -17,6 +17,13 @@ html {
   margin-bottom: 3em;
 }
 
+::selection {
+  background: #9bd8b2;
+}
+::-moz-selection {
+  background: #9bd8b2;
+}
+
 .ToastAlert {
   background-color: rgba(240, 65, 36, 0.95);
   border-radius: 3px;
