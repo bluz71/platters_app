@@ -41,3 +41,14 @@
   white-space: pre-wrap;
   word-wrap: break-word;
 }
+
+.Comment .icon {
+  float: right;
+  font-size: 0.95em;
+  color: #515151;
+  cursor: pointer;
+}
+
+.Comment .icon:hover {
+  color: #3c9a5f;
+}

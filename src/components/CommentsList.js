@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import linkify from 'linkify-lite';
 import simpleFormat from '../helpers/simpleFormat';
+import FontAwesome from 'react-fontawesome';
 import '../styles/CommentsList.css';
+import { appAuth } from '../lib/appAuth';
+import { API_HOST } from '../config';
 
 const postedIn = (comment) => {
   if (comment.for === 'Album') {
@@ -11,6 +15,36 @@ const postedIn = (comment) => {
   }
   else {
     return ' posted in ';
+  }
+};
+
+const handleDelete = (comment) => {
+  if (!window.confirm('Are you sure you want to remove this comment?')) {
+    return;
+  }
+
+  const deleteCommentEndPoint = `${API_HOST}${comment.delete_path}.json`;
+  axios.delete(deleteCommentEndPoint, appAuth.headers())
+    .then(response => {
+      // XXX implement
+      console.log('Delete succeeded');
+    })
+    .catch(error => {
+      // XXX implement
+      console.log('Error');
+    });
+};
+
+const renderDeleteComment = (comment) => {
+  if (
+    appAuth.isLoggedIn() &&
+    (appAuth.currentUser().name === comment.user_name ||
+      appAuth.currentUser().admin)) {
+    return (
+      <span onClick={() => handleDelete(comment)} className="icon">
+        <FontAwesome name="trash" />
+      </span>
+    );
   }
 };
 
@@ -33,6 +67,7 @@ const renderComments = (comments, shortHeader) => (
               }}>{comment.name}</Link>
             </small>}
       </h2>
+      {renderDeleteComment(comment, comments)}
       <h3 dangerouslySetInnerHTML={{ __html: comment.created_at }} />
       <div dangerouslySetInnerHTML={{ __html: linkify(simpleFormat(comment.body)) }} />
     </div>
