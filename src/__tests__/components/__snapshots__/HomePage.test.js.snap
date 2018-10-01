@@ -244,8 +244,8 @@ exports[`<HomePage /> renders home page 1`] = `
       </h2>
       <CommentsList
         comments={
-          Array [
-            Object {
+          Map {
+            20 => Object {
               "artist": "ABC-Artist",
               "body": "A comment",
               "created_at": "<time datetime=\\"2018-04-22T05:50:26Z\\" data-local=\\"time-ago\\">April 22, 2018  5:50am</time>",
@@ -257,7 +257,7 @@ exports[`<HomePage /> renders home page 1`] = `
               "user_name": "user1",
               "user_slug": "user1",
             },
-            Object {
+            21 => Object {
               "artist": "ABC-Artist",
               "body": "Another comment",
               "created_at": "<time datetime=\\"2018-04-22T05:12:25Z\\" data-local=\\"time-ago\\">April 22, 2018  5:12am</time>",
@@ -269,7 +269,7 @@ exports[`<HomePage /> renders home page 1`] = `
               "user_name": "admin",
               "user_slug": "admin",
             },
-            Object {
+            22 => Object {
               "artist": "ABC",
               "body": "A final comment",
               "created_at": "<time datetime=\\"2018-04-14T04:29:39Z\\" data-local=\\"time-ago\\">April 14, 2018  4:29am</time>",
@@ -281,7 +281,7 @@ exports[`<HomePage /> renders home page 1`] = `
               "user_name": "user1",
               "user_slug": "user1",
             },
-          ]
+          }
         }
       />
     </Col>
@@ -416,8 +416,8 @@ exports[`<HomePage /> renders home page when logged in 1`] = `
       </h2>
       <CommentsList
         comments={
-          Array [
-            Object {
+          Map {
+            20 => Object {
               "artist": "ABC-Artist",
               "body": "A comment",
               "created_at": "<time datetime=\\"2018-04-22T05:50:26Z\\" data-local=\\"time-ago\\">April 22, 2018  5:50am</time>",
@@ -429,7 +429,7 @@ exports[`<HomePage /> renders home page when logged in 1`] = `
               "user_name": "user1",
               "user_slug": "user1",
             },
-            Object {
+            21 => Object {
               "artist": "ABC-Artist",
               "body": "Another comment",
               "created_at": "<time datetime=\\"2018-04-22T05:12:25Z\\" data-local=\\"time-ago\\">April 22, 2018  5:12am</time>",
@@ -441,7 +441,7 @@ exports[`<HomePage /> renders home page when logged in 1`] = `
               "user_name": "admin",
               "user_slug": "admin",
             },
-            Object {
+            22 => Object {
               "artist": "ABC",
               "body": "A final comment",
               "created_at": "<time datetime=\\"2018-04-14T04:29:39Z\\" data-local=\\"time-ago\\">April 14, 2018  4:29am</time>",
@@ -453,7 +453,7 @@ exports[`<HomePage /> renders home page when logged in 1`] = `
               "user_name": "user1",
               "user_slug": "user1",
             },
-          ]
+          }
         }
       />
     </Col>

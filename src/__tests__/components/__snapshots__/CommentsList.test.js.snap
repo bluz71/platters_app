@@ -59,7 +59,7 @@ exports[`<CommentsList /> renders a list of comments 1`] = `
   </div>
   <div
     className="Comment"
-    key="1"
+    key="2"
   >
     <Link
       replace={false}
@@ -156,7 +156,7 @@ exports[`<CommentsList /> renders a list of comments with shortHeader 1`] = `
   </div>
   <div
     className="Comment"
-    key="1"
+    key="2"
   >
     <Link
       replace={false}

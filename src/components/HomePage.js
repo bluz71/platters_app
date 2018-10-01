@@ -25,7 +25,7 @@ class HomePage extends Component {
     this.state = {
       albumOfTheDay: {},
       mostRecentAlbums: [],
-      mostRecentComments: [],
+      mostRecentComments: new Map(),
       error: null
     };
 
@@ -55,7 +55,9 @@ class HomePage extends Component {
         this.setState({
           albumOfTheDay: response.data.album_of_the_day,
           mostRecentAlbums: response.data.most_recent.albums,
-          mostRecentComments: response.data.most_recent.comments,
+          mostRecentComments: new Map(
+            response.data.most_recent.comments.map(c => [c.id, c])
+          ),
           error: null
         });
       })

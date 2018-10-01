@@ -31,7 +31,7 @@ class AlbumShowPage extends Component {
     this.state = {
       album: {},
       tracks: [],
-      comments: [],
+      comments: new Map(),
       commentsPagination: {},
       notFound: false,
       error: null
@@ -102,7 +102,9 @@ class AlbumShowPage extends Component {
         this.setState({
           album: response.data.album,
           tracks: response.data.tracks,
-          comments: response.data.comments,
+          comments: new Map(
+            response.data.comments.map(c => [c.id, c])
+          ),
           commentsPagination: response.data.comments_pagination
         });
         if (this.scrollToComments) {
@@ -133,7 +135,10 @@ class AlbumShowPage extends Component {
           window.onscroll = this.handleScroll;
         }
         this.setState({
-          comments: [...this.state.comments, ...response.data.comments],
+          comments: new Map([
+            ...this.state.comments,
+            ...response.data.comments.map(c => [c.id, c])
+          ]),
           commentsPagination: response.data.pagination,
         });
       }).catch(error => {

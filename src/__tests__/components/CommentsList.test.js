@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import CommentsList from '../../components/CommentsList';
 
 const comments = () => {
-  return [
+  const comments = [
     {
       'id': 1,
       'body': 'First comment',
@@ -17,7 +17,7 @@ const comments = () => {
       'path': 'artist/abc/album/abc'
     },
     {
-      'id': 1,
+      'id': 2,
       'body': 'Second comment',
       'created_at': '<time datetime="2018-05-05T05:34:56Z" data-local="time-ago">May  5, 2018  5:34am</time>',
       'user_name': 'joe',
@@ -29,11 +29,13 @@ const comments = () => {
       'path': 'artist/def/album/def'
     }
   ];
+
+  return new Map(comments.map(c => [c.id, c]));
 };
 
 describe('<CommentsList />', () => {
   it('renders without crashing', () => {
-    shallow(<CommentsList comments={[]} />);
+    shallow(<CommentsList comments={new Map()} />);
   });
 
   it('renders a list of comments', () => {

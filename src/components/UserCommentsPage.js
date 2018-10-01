@@ -23,7 +23,7 @@ class UserCommentsPage extends Component {
     this.pageProgress     = new pageProgress();
 
     this.state = {
-      comments: [],
+      comments: new Map(),
       pagination: {},
       notFound: false,
       error: null
@@ -72,7 +72,10 @@ class UserCommentsPage extends Component {
         }
         // console.log(`UserCommentsPage data: ${JSON.stringify(response, null, 2)}`)
         this.setState({
-          comments: [...this.state.comments, ...response.data.comments],
+          comments: new Map([
+            ...this.state.comments,
+            ...response.data.comments.map(c => [c.id, c])
+          ]),
           pagination: response.data.pagination,
         });
       }).catch(error => {

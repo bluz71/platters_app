@@ -19,7 +19,7 @@ exports[`<UserCommentsPage /> handles invalid user 1`] = `
         to="/"
       />
       <CommentsList
-        comments={Array []}
+        comments={Map {}}
       />
     </div>
   </Col>
@@ -54,8 +54,8 @@ exports[`<UserCommentsPage /> renders all user comments when scrolled 1`] = `
       </PageHeader>
       <CommentsList
         comments={
-          Array [
-            Object {
+          Map {
+            1 => Object {
               "artist": "ABC",
               "body": "First comment",
               "created_at": "<time datetime=\\"2018-05-09T04:05:00Z\\" data-local=\\"time-ago\\">May  9, 2018  4:05am</time>",
@@ -67,19 +67,19 @@ exports[`<UserCommentsPage /> renders all user comments when scrolled 1`] = `
               "user_name": "joe",
               "user_slug": "joe",
             },
-            Object {
+            2 => Object {
               "artist": "DEF",
               "body": "Second comment",
               "created_at": "<time datetime=\\"2018-05-05T05:34:56Z\\" data-local=\\"time-ago\\">May  5, 2018  5:34am</time>",
               "for": "Album",
               "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
-              "id": 1,
+              "id": 2,
               "name": "DEF",
               "path": "artist/def/album/def",
               "user_name": "joe",
               "user_slug": "joe",
             },
-            Object {
+            3 => Object {
               "artist": "XYZ",
               "body": "Third comment",
               "created_at": "<time datetime=\\"2018-05-02T08:15:00Z\\" data-local=\\"time-ago\\">May  2, 2018  8:15am</time>",
@@ -91,7 +91,7 @@ exports[`<UserCommentsPage /> renders all user comments when scrolled 1`] = `
               "user_name": "joe",
               "user_slug": "joe",
             },
-          ]
+          }
         }
       />
     </div>
@@ -127,8 +127,8 @@ exports[`<UserCommentsPage /> renders user comments page 1`] = `
       </PageHeader>
       <CommentsList
         comments={
-          Array [
-            Object {
+          Map {
+            1 => Object {
               "artist": "ABC",
               "body": "First comment",
               "created_at": "<time datetime=\\"2018-05-09T04:05:00Z\\" data-local=\\"time-ago\\">May  9, 2018  4:05am</time>",
@@ -140,19 +140,19 @@ exports[`<UserCommentsPage /> renders user comments page 1`] = `
               "user_name": "joe",
               "user_slug": "joe",
             },
-            Object {
+            2 => Object {
               "artist": "DEF",
               "body": "Second comment",
               "created_at": "<time datetime=\\"2018-05-05T05:34:56Z\\" data-local=\\"time-ago\\">May  5, 2018  5:34am</time>",
               "for": "Album",
               "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
-              "id": 1,
+              "id": 2,
               "name": "DEF",
               "path": "artist/def/album/def",
               "user_name": "joe",
               "user_slug": "joe",
             },
-          ]
+          }
         }
       />
     </div>

@@ -76,7 +76,7 @@ const renderComments = (comments, shortHeader) => (
 
 const CommentsList = ({ comments, shortHeader }) => (
   <div className="CommentsList">
-    {renderComments(comments, shortHeader)}
+    {renderComments([...comments.values()], shortHeader)}
   </div>
 );
 
@@ -85,7 +85,7 @@ CommentsList.defaultTypes = {
 };
 
 CommentsList.propTypes = {
-  comments:    PropTypes.array,
+  comments:    PropTypes.instanceOf(Map),
   shortHeader: PropTypes.bool
 };
 

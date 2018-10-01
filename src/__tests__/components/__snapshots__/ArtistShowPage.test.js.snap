@@ -192,48 +192,48 @@ exports[`<ArtistShowPage /> renders all artist comments when scrolled 1`] = `
       </PageHeader>
       <CommentsList
         comments={
-          Array [
-            Object {
+          Map {
+            1 => Object {
               "body": "Comment 1",
               "created_at": "<time datetime=\\"2018-08-10T05:04:07Z\\" data-local=\\"time-ago\\">August 10, 2018  5:04am</time>",
               "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
-              "id": 14,
+              "id": 1,
               "user_name": "bluz71",
               "user_slug": "bluz71",
             },
-            Object {
+            2 => Object {
               "body": "Comment 2",
               "created_at": "<time datetime=\\"2018-08-04T01:14:51Z\\" data-local=\\"time-ago\\">August  4, 2018  1:14am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 10,
+              "id": 2,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            3 => Object {
               "body": "Comment 3",
               "created_at": "<time datetime=\\"2018-07-19T14:29:55Z\\" data-local=\\"time-ago\\">July 19, 2018  2:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/69625f37b2fd5343d3d3439911d4e10f?s=80&r=pg&d=identicon",
-              "id": 12,
+              "id": 3,
               "user_name": "elise2",
               "user_slug": "elise2",
             },
-            Object {
+            4 => Object {
               "body": "Comment 4",
               "created_at": "<time datetime=\\"2018-07-16T19:29:24Z\\" data-local=\\"time-ago\\">July 16, 2018  7:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/a38ce926222e8aee3f02999d435df4c4?s=80&r=pg&d=identicon",
-              "id": 8,
+              "id": 4,
               "user_name": "charley12",
               "user_slug": "charley12",
             },
-            Object {
+            5 => Object {
               "body": "Comment 5",
               "created_at": "<time datetime=\\"2018-06-15T01:54:55Z\\" data-local=\\"time-ago\\">June 15, 2018  1:54am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7f14bdf8047c0883f230002a4bd2eff3?s=80&r=pg&d=identicon",
-              "id": 11,
+              "id": 5,
               "user_name": "austyn47",
               "user_slug": "austyn47",
             },
-            Object {
+            6 => Object {
               "body": "Comment 6",
               "created_at": "<time datetime=\\"2018-06-13T08:13:57Z\\" data-local=\\"time-ago\\">June 13, 2018  8:13am</time>",
               "gravatar_url": "https://gravatar.com/avatar/c4181331d29753fdc2d34d1995de937e?s=80&r=pg&d=identicon",
@@ -241,247 +241,247 @@ exports[`<ArtistShowPage /> renders all artist comments when scrolled 1`] = `
               "user_name": "ila_lebsack50",
               "user_slug": "ila_lebsack50",
             },
-            Object {
+            7 => Object {
               "body": "Comment 7",
               "created_at": "<time datetime=\\"2018-05-28T22:58:43Z\\" data-local=\\"time-ago\\">May 28, 2018 10:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/693c529d5a6dc14404d15bd94944ab9d?s=80&r=pg&d=identicon",
-              "id": 4,
+              "id": 7,
               "user_name": "santos29",
               "user_slug": "santos29",
             },
-            Object {
+            8 => Object {
               "body": "Comment 8",
               "created_at": "<time datetime=\\"2018-04-19T10:55:23Z\\" data-local=\\"time-ago\\">April 19, 2018 10:55am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 1,
+              "id": 8,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            9 => Object {
               "body": "Comment 9",
               "created_at": "<time datetime=\\"2018-03-08T21:26:37Z\\" data-local=\\"time-ago\\">March  8, 2018  9:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 5,
+              "id": 9,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            10 => Object {
               "body": "Comment 10",
               "created_at": "<time datetime=\\"2018-02-06T15:58:36Z\\" data-local=\\"time-ago\\">February  6, 2018  3:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/ecd56b04440922d9d4227b80b360f1a6?s=80&r=pg&d=identicon",
-              "id": 13,
+              "id": 10,
               "user_name": "abbie35",
               "user_slug": "abbie35",
             },
-            Object {
+            11 => Object {
               "body": "Comment 11",
               "created_at": "<time datetime=\\"2018-01-18T21:28:48Z\\" data-local=\\"time-ago\\">January 18, 2018  9:28pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 2,
+              "id": 11,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            12 => Object {
               "body": "Comment 12",
               "created_at": "<time datetime=\\"2018-01-06T18:46:18Z\\" data-local=\\"time-ago\\">January  6, 2018  6:46pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/9c882241f6804414432bcb7c6fbb0dce?s=80&r=pg&d=identicon",
-              "id": 3,
+              "id": 12,
               "user_name": "michele_douglas54",
               "user_slug": "michele_douglas54",
             },
-            Object {
+            13 => Object {
               "body": "Comment 13",
               "created_at": "<time datetime=\\"2017-12-24T10:59:43Z\\" data-local=\\"time-ago\\">December 24, 2017 10:59am</time>",
               "gravatar_url": "https://gravatar.com/avatar/2d42930970262a4d6da8a839ef4cbed5?s=80&r=pg&d=identicon",
-              "id": 9,
+              "id": 13,
               "user_name": "roberto_zboncak62",
               "user_slug": "roberto_zboncak62",
             },
-            Object {
+            14 => Object {
               "body": "Comment 14",
               "created_at": "<time datetime=\\"2017-12-22T16:18:14Z\\" data-local=\\"time-ago\\">December 22, 2017  4:18pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/4ecef4e31dc7b2bf3ac0117f3df7d1fb?s=80&r=pg&d=identicon",
-              "id": 7,
+              "id": 14,
               "user_name": "emily_spencer92",
               "user_slug": "emily_spencer92",
             },
-            Object {
+            15 => Object {
               "body": "Comment 15",
               "created_at": "<time datetime=\\"2018-08-10T05:04:07Z\\" data-local=\\"time-ago\\">August 10, 2018  5:04am</time>",
               "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
-              "id": 14,
+              "id": 15,
               "user_name": "bluz71",
               "user_slug": "bluz71",
             },
-            Object {
+            16 => Object {
               "body": "Comment 16",
               "created_at": "<time datetime=\\"2018-08-04T01:14:51Z\\" data-local=\\"time-ago\\">August  4, 2018  1:14am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 10,
+              "id": 16,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            17 => Object {
               "body": "Comment 17",
               "created_at": "<time datetime=\\"2018-07-19T14:29:55Z\\" data-local=\\"time-ago\\">July 19, 2018  2:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/69625f37b2fd5343d3d3439911d4e10f?s=80&r=pg&d=identicon",
-              "id": 12,
+              "id": 17,
               "user_name": "elise2",
               "user_slug": "elise2",
             },
-            Object {
+            18 => Object {
               "body": "Comment 18",
               "created_at": "<time datetime=\\"2018-07-16T19:29:24Z\\" data-local=\\"time-ago\\">July 16, 2018  7:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/a38ce926222e8aee3f02999d435df4c4?s=80&r=pg&d=identicon",
-              "id": 8,
+              "id": 18,
               "user_name": "charley12",
               "user_slug": "charley12",
             },
-            Object {
+            19 => Object {
               "body": "Comment 19",
               "created_at": "<time datetime=\\"2018-06-15T01:54:55Z\\" data-local=\\"time-ago\\">June 15, 2018  1:54am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7f14bdf8047c0883f230002a4bd2eff3?s=80&r=pg&d=identicon",
-              "id": 11,
+              "id": 19,
               "user_name": "austyn47",
               "user_slug": "austyn47",
             },
-            Object {
+            20 => Object {
               "body": "Comment 20",
               "created_at": "<time datetime=\\"2018-06-13T08:13:57Z\\" data-local=\\"time-ago\\">June 13, 2018  8:13am</time>",
               "gravatar_url": "https://gravatar.com/avatar/c4181331d29753fdc2d34d1995de937e?s=80&r=pg&d=identicon",
-              "id": 6,
+              "id": 20,
               "user_name": "ila_lebsack50",
               "user_slug": "ila_lebsack50",
             },
-            Object {
+            21 => Object {
               "body": "Comment 21",
               "created_at": "<time datetime=\\"2018-05-28T22:58:43Z\\" data-local=\\"time-ago\\">May 28, 2018 10:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/693c529d5a6dc14404d15bd94944ab9d?s=80&r=pg&d=identicon",
-              "id": 4,
+              "id": 21,
               "user_name": "santos29",
               "user_slug": "santos29",
             },
-            Object {
+            22 => Object {
               "body": "Comment 22",
               "created_at": "<time datetime=\\"2018-04-19T10:55:23Z\\" data-local=\\"time-ago\\">April 19, 2018 10:55am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 1,
+              "id": 22,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            23 => Object {
               "body": "Comment 23",
               "created_at": "<time datetime=\\"2018-03-08T21:26:37Z\\" data-local=\\"time-ago\\">March  8, 2018  9:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 5,
+              "id": 23,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            24 => Object {
               "body": "Comment 24",
               "created_at": "<time datetime=\\"2017-11-04T04:31:56Z\\" data-local=\\"time-ago\\">November  4, 2017  4:31am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7623bc3892c4bf9c2571447e23ec565f?s=80&r=pg&d=identicon",
-              "id": 29998,
+              "id": 24,
               "user_name": "leonel_kertzmann31",
               "user_slug": "leonel_kertzmann31",
             },
-            Object {
+            25 => Object {
               "body": "Last Comment 25",
               "created_at": "<time datetime=\\"2017-11-01T12:26:44Z\\" data-local=\\"time-ago\\">November  1, 2017 12:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/188deba48d739c0287b061713d2c16be?s=80&r=pg&d=identicon",
-              "id": 30003,
+              "id": 25,
               "user_name": "simeon59",
               "user_slug": "simeon59",
             },
-            Object {
+            26 => Object {
               "body": "Comment 26",
               "created_at": "<time datetime=\\"2017-10-23T05:15:52Z\\" data-local=\\"time-ago\\">October 23, 2017  5:15am</time>",
               "gravatar_url": "https://gravatar.com/avatar/3fff9f36bf92b24cd899eeb6cea05ff6?s=80&r=pg&d=identicon",
-              "id": 29996,
+              "id": 26,
               "user_name": "dawn_parker79",
               "user_slug": "dawn_parker79",
             },
-            Object {
+            27 => Object {
               "body": "Comment 27",
               "created_at": "<time datetime=\\"2017-10-23T04:49:41Z\\" data-local=\\"time-ago\\">October 23, 2017  4:49am</time>",
               "gravatar_url": "https://gravatar.com/avatar/3fff9f36bf92b24cd899eeb6cea05ff6?s=80&r=pg&d=identicon",
-              "id": 29990,
+              "id": 27,
               "user_name": "dawn_parker79",
               "user_slug": "dawn_parker79",
             },
-            Object {
+            28 => Object {
               "body": "Comment 28",
               "created_at": "<time datetime=\\"2017-10-19T16:36:48Z\\" data-local=\\"time-ago\\">October 19, 2017  4:36pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/48c30a3c1f69a8ebba162afbcaab7c67?s=80&r=pg&d=identicon",
-              "id": 29982,
+              "id": 28,
               "user_name": "kennith_rolfson66",
               "user_slug": "kennith_rolfson66",
             },
-            Object {
+            29 => Object {
               "body": "Comment 29",
               "created_at": "<time datetime=\\"2017-10-12T11:18:41Z\\" data-local=\\"time-ago\\">October 12, 2017 11:18am</time>",
               "gravatar_url": "https://gravatar.com/avatar/c23e6a3d510914c71aec87caf9351be3?s=80&r=pg&d=identicon",
-              "id": 29999,
+              "id": 29,
               "user_name": "dovie12",
               "user_slug": "dovie12",
             },
-            Object {
+            30 => Object {
               "body": "Comment 30",
               "created_at": "<time datetime=\\"2017-10-05T04:03:04Z\\" data-local=\\"time-ago\\">October  5, 2017  4:03am</time>",
               "gravatar_url": "https://gravatar.com/avatar/2ef194dea74fdb64a5fe9943f77ee856?s=80&r=pg&d=identicon",
-              "id": 30005,
+              "id": 30,
               "user_name": "georgette77",
               "user_slug": "georgette77",
             },
-            Object {
+            31 => Object {
               "body": "Comment 31",
               "created_at": "<time datetime=\\"2017-10-04T19:11:08Z\\" data-local=\\"time-ago\\">October  4, 2017  7:11pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/62279fdb4a74d49ae14c5bdbfbbef55f?s=80&r=pg&d=identicon",
-              "id": 29986,
+              "id": 31,
               "user_name": "bettie54",
               "user_slug": "bettie54",
             },
-            Object {
+            32 => Object {
               "body": "Comment 32",
               "created_at": "<time datetime=\\"2017-09-28T11:20:18Z\\" data-local=\\"time-ago\\">September 28, 2017 11:20am</time>",
               "gravatar_url": "https://gravatar.com/avatar/c23e6a3d510914c71aec87caf9351be3?s=80&r=pg&d=identicon",
-              "id": 30011,
+              "id": 32,
               "user_name": "dovie12",
               "user_slug": "dovie12",
             },
-            Object {
+            33 => Object {
               "body": "Comment 33",
               "created_at": "<time datetime=\\"2017-09-26T08:06:25Z\\" data-local=\\"time-ago\\">September 26, 2017  8:06am</time>",
               "gravatar_url": "https://gravatar.com/avatar/d86b00380f9299057150f4af1f59b69c?s=80&r=pg&d=identicon",
-              "id": 29987,
+              "id": 33,
               "user_name": "tomasa5",
               "user_slug": "tomasa5",
             },
-            Object {
+            34 => Object {
               "body": "Comment 34",
               "created_at": "<time datetime=\\"2017-09-25T03:54:26Z\\" data-local=\\"time-ago\\">September 25, 2017  3:54am</time>",
               "gravatar_url": "https://gravatar.com/avatar/b96403bfd9865199a24a955e602c938d?s=80&r=pg&d=identicon",
-              "id": 29983,
+              "id": 34,
               "user_name": "katlynn33",
               "user_slug": "katlynn33",
             },
-            Object {
+            35 => Object {
               "body": "Comment 35",
               "created_at": "<time datetime=\\"2017-09-21T23:41:38Z\\" data-local=\\"time-ago\\">September 21, 2017 11:41pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/d86b00380f9299057150f4af1f59b69c?s=80&r=pg&d=identicon",
-              "id": 29997,
+              "id": 35,
               "user_name": "tomasa5",
               "user_slug": "tomasa5",
             },
-            Object {
+            36 => Object {
               "body": "Comment 36",
               "created_at": "<time datetime=\\"2017-09-12T01:47:55Z\\" data-local=\\"time-ago\\">September 12, 2017  1:47am</time>",
               "gravatar_url": "https://gravatar.com/avatar/3ab954c11fb693fc8f966e9b5ab9f205?s=80&r=pg&d=identicon",
-              "id": 30009,
+              "id": 36,
               "user_name": "iva83",
               "user_slug": "iva83",
             },
-          ]
+          }
         }
         shortHeader={true}
       />
@@ -652,48 +652,48 @@ exports[`<ArtistShowPage /> renders artist show page 1`] = `
       </PageHeader>
       <CommentsList
         comments={
-          Array [
-            Object {
+          Map {
+            1 => Object {
               "body": "Comment 1",
               "created_at": "<time datetime=\\"2018-08-10T05:04:07Z\\" data-local=\\"time-ago\\">August 10, 2018  5:04am</time>",
               "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
-              "id": 14,
+              "id": 1,
               "user_name": "bluz71",
               "user_slug": "bluz71",
             },
-            Object {
+            2 => Object {
               "body": "Comment 2",
               "created_at": "<time datetime=\\"2018-08-04T01:14:51Z\\" data-local=\\"time-ago\\">August  4, 2018  1:14am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 10,
+              "id": 2,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            3 => Object {
               "body": "Comment 3",
               "created_at": "<time datetime=\\"2018-07-19T14:29:55Z\\" data-local=\\"time-ago\\">July 19, 2018  2:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/69625f37b2fd5343d3d3439911d4e10f?s=80&r=pg&d=identicon",
-              "id": 12,
+              "id": 3,
               "user_name": "elise2",
               "user_slug": "elise2",
             },
-            Object {
+            4 => Object {
               "body": "Comment 4",
               "created_at": "<time datetime=\\"2018-07-16T19:29:24Z\\" data-local=\\"time-ago\\">July 16, 2018  7:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/a38ce926222e8aee3f02999d435df4c4?s=80&r=pg&d=identicon",
-              "id": 8,
+              "id": 4,
               "user_name": "charley12",
               "user_slug": "charley12",
             },
-            Object {
+            5 => Object {
               "body": "Comment 5",
               "created_at": "<time datetime=\\"2018-06-15T01:54:55Z\\" data-local=\\"time-ago\\">June 15, 2018  1:54am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7f14bdf8047c0883f230002a4bd2eff3?s=80&r=pg&d=identicon",
-              "id": 11,
+              "id": 5,
               "user_name": "austyn47",
               "user_slug": "austyn47",
             },
-            Object {
+            6 => Object {
               "body": "Comment 6",
               "created_at": "<time datetime=\\"2018-06-13T08:13:57Z\\" data-local=\\"time-ago\\">June 13, 2018  8:13am</time>",
               "gravatar_url": "https://gravatar.com/avatar/c4181331d29753fdc2d34d1995de937e?s=80&r=pg&d=identicon",
@@ -701,159 +701,159 @@ exports[`<ArtistShowPage /> renders artist show page 1`] = `
               "user_name": "ila_lebsack50",
               "user_slug": "ila_lebsack50",
             },
-            Object {
+            7 => Object {
               "body": "Comment 7",
               "created_at": "<time datetime=\\"2018-05-28T22:58:43Z\\" data-local=\\"time-ago\\">May 28, 2018 10:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/693c529d5a6dc14404d15bd94944ab9d?s=80&r=pg&d=identicon",
-              "id": 4,
+              "id": 7,
               "user_name": "santos29",
               "user_slug": "santos29",
             },
-            Object {
+            8 => Object {
               "body": "Comment 8",
               "created_at": "<time datetime=\\"2018-04-19T10:55:23Z\\" data-local=\\"time-ago\\">April 19, 2018 10:55am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 1,
+              "id": 8,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            9 => Object {
               "body": "Comment 9",
               "created_at": "<time datetime=\\"2018-03-08T21:26:37Z\\" data-local=\\"time-ago\\">March  8, 2018  9:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 5,
+              "id": 9,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            10 => Object {
               "body": "Comment 10",
               "created_at": "<time datetime=\\"2018-02-06T15:58:36Z\\" data-local=\\"time-ago\\">February  6, 2018  3:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/ecd56b04440922d9d4227b80b360f1a6?s=80&r=pg&d=identicon",
-              "id": 13,
+              "id": 10,
               "user_name": "abbie35",
               "user_slug": "abbie35",
             },
-            Object {
+            11 => Object {
               "body": "Comment 11",
               "created_at": "<time datetime=\\"2018-01-18T21:28:48Z\\" data-local=\\"time-ago\\">January 18, 2018  9:28pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 2,
+              "id": 11,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            12 => Object {
               "body": "Comment 12",
               "created_at": "<time datetime=\\"2018-01-06T18:46:18Z\\" data-local=\\"time-ago\\">January  6, 2018  6:46pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/9c882241f6804414432bcb7c6fbb0dce?s=80&r=pg&d=identicon",
-              "id": 3,
+              "id": 12,
               "user_name": "michele_douglas54",
               "user_slug": "michele_douglas54",
             },
-            Object {
+            13 => Object {
               "body": "Comment 13",
               "created_at": "<time datetime=\\"2017-12-24T10:59:43Z\\" data-local=\\"time-ago\\">December 24, 2017 10:59am</time>",
               "gravatar_url": "https://gravatar.com/avatar/2d42930970262a4d6da8a839ef4cbed5?s=80&r=pg&d=identicon",
-              "id": 9,
+              "id": 13,
               "user_name": "roberto_zboncak62",
               "user_slug": "roberto_zboncak62",
             },
-            Object {
+            14 => Object {
               "body": "Comment 14",
               "created_at": "<time datetime=\\"2017-12-22T16:18:14Z\\" data-local=\\"time-ago\\">December 22, 2017  4:18pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/4ecef4e31dc7b2bf3ac0117f3df7d1fb?s=80&r=pg&d=identicon",
-              "id": 7,
+              "id": 14,
               "user_name": "emily_spencer92",
               "user_slug": "emily_spencer92",
             },
-            Object {
+            15 => Object {
               "body": "Comment 15",
               "created_at": "<time datetime=\\"2018-08-10T05:04:07Z\\" data-local=\\"time-ago\\">August 10, 2018  5:04am</time>",
               "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
-              "id": 14,
+              "id": 15,
               "user_name": "bluz71",
               "user_slug": "bluz71",
             },
-            Object {
+            16 => Object {
               "body": "Comment 16",
               "created_at": "<time datetime=\\"2018-08-04T01:14:51Z\\" data-local=\\"time-ago\\">August  4, 2018  1:14am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 10,
+              "id": 16,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            17 => Object {
               "body": "Comment 17",
               "created_at": "<time datetime=\\"2018-07-19T14:29:55Z\\" data-local=\\"time-ago\\">July 19, 2018  2:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/69625f37b2fd5343d3d3439911d4e10f?s=80&r=pg&d=identicon",
-              "id": 12,
+              "id": 17,
               "user_name": "elise2",
               "user_slug": "elise2",
             },
-            Object {
+            18 => Object {
               "body": "Comment 18",
               "created_at": "<time datetime=\\"2018-07-16T19:29:24Z\\" data-local=\\"time-ago\\">July 16, 2018  7:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/a38ce926222e8aee3f02999d435df4c4?s=80&r=pg&d=identicon",
-              "id": 8,
+              "id": 18,
               "user_name": "charley12",
               "user_slug": "charley12",
             },
-            Object {
+            19 => Object {
               "body": "Comment 19",
               "created_at": "<time datetime=\\"2018-06-15T01:54:55Z\\" data-local=\\"time-ago\\">June 15, 2018  1:54am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7f14bdf8047c0883f230002a4bd2eff3?s=80&r=pg&d=identicon",
-              "id": 11,
+              "id": 19,
               "user_name": "austyn47",
               "user_slug": "austyn47",
             },
-            Object {
+            20 => Object {
               "body": "Comment 20",
               "created_at": "<time datetime=\\"2018-06-13T08:13:57Z\\" data-local=\\"time-ago\\">June 13, 2018  8:13am</time>",
               "gravatar_url": "https://gravatar.com/avatar/c4181331d29753fdc2d34d1995de937e?s=80&r=pg&d=identicon",
-              "id": 6,
+              "id": 20,
               "user_name": "ila_lebsack50",
               "user_slug": "ila_lebsack50",
             },
-            Object {
+            21 => Object {
               "body": "Comment 21",
               "created_at": "<time datetime=\\"2018-05-28T22:58:43Z\\" data-local=\\"time-ago\\">May 28, 2018 10:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/693c529d5a6dc14404d15bd94944ab9d?s=80&r=pg&d=identicon",
-              "id": 4,
+              "id": 21,
               "user_name": "santos29",
               "user_slug": "santos29",
             },
-            Object {
+            22 => Object {
               "body": "Comment 22",
               "created_at": "<time datetime=\\"2018-04-19T10:55:23Z\\" data-local=\\"time-ago\\">April 19, 2018 10:55am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 1,
+              "id": 22,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            23 => Object {
               "body": "Comment 23",
               "created_at": "<time datetime=\\"2018-03-08T21:26:37Z\\" data-local=\\"time-ago\\">March  8, 2018  9:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 5,
+              "id": 23,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            24 => Object {
               "body": "Comment 24",
               "created_at": "<time datetime=\\"2017-11-04T04:31:56Z\\" data-local=\\"time-ago\\">November  4, 2017  4:31am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7623bc3892c4bf9c2571447e23ec565f?s=80&r=pg&d=identicon",
-              "id": 29998,
+              "id": 24,
               "user_name": "leonel_kertzmann31",
               "user_slug": "leonel_kertzmann31",
             },
-            Object {
+            25 => Object {
               "body": "Last Comment 25",
               "created_at": "<time datetime=\\"2017-11-01T12:26:44Z\\" data-local=\\"time-ago\\">November  1, 2017 12:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/188deba48d739c0287b061713d2c16be?s=80&r=pg&d=identicon",
-              "id": 30003,
+              "id": 25,
               "user_name": "simeon59",
               "user_slug": "simeon59",
             },
-          ]
+          }
         }
         shortHeader={true}
       />
@@ -1024,48 +1024,48 @@ exports[`<ArtistShowPage /> renders sorted albums when longest is clicked 1`] = 
       </PageHeader>
       <CommentsList
         comments={
-          Array [
-            Object {
+          Map {
+            1 => Object {
               "body": "Comment 1",
               "created_at": "<time datetime=\\"2018-08-10T05:04:07Z\\" data-local=\\"time-ago\\">August 10, 2018  5:04am</time>",
               "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
-              "id": 14,
+              "id": 1,
               "user_name": "bluz71",
               "user_slug": "bluz71",
             },
-            Object {
+            2 => Object {
               "body": "Comment 2",
               "created_at": "<time datetime=\\"2018-08-04T01:14:51Z\\" data-local=\\"time-ago\\">August  4, 2018  1:14am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 10,
+              "id": 2,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            3 => Object {
               "body": "Comment 3",
               "created_at": "<time datetime=\\"2018-07-19T14:29:55Z\\" data-local=\\"time-ago\\">July 19, 2018  2:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/69625f37b2fd5343d3d3439911d4e10f?s=80&r=pg&d=identicon",
-              "id": 12,
+              "id": 3,
               "user_name": "elise2",
               "user_slug": "elise2",
             },
-            Object {
+            4 => Object {
               "body": "Comment 4",
               "created_at": "<time datetime=\\"2018-07-16T19:29:24Z\\" data-local=\\"time-ago\\">July 16, 2018  7:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/a38ce926222e8aee3f02999d435df4c4?s=80&r=pg&d=identicon",
-              "id": 8,
+              "id": 4,
               "user_name": "charley12",
               "user_slug": "charley12",
             },
-            Object {
+            5 => Object {
               "body": "Comment 5",
               "created_at": "<time datetime=\\"2018-06-15T01:54:55Z\\" data-local=\\"time-ago\\">June 15, 2018  1:54am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7f14bdf8047c0883f230002a4bd2eff3?s=80&r=pg&d=identicon",
-              "id": 11,
+              "id": 5,
               "user_name": "austyn47",
               "user_slug": "austyn47",
             },
-            Object {
+            6 => Object {
               "body": "Comment 6",
               "created_at": "<time datetime=\\"2018-06-13T08:13:57Z\\" data-local=\\"time-ago\\">June 13, 2018  8:13am</time>",
               "gravatar_url": "https://gravatar.com/avatar/c4181331d29753fdc2d34d1995de937e?s=80&r=pg&d=identicon",
@@ -1073,159 +1073,159 @@ exports[`<ArtistShowPage /> renders sorted albums when longest is clicked 1`] = 
               "user_name": "ila_lebsack50",
               "user_slug": "ila_lebsack50",
             },
-            Object {
+            7 => Object {
               "body": "Comment 7",
               "created_at": "<time datetime=\\"2018-05-28T22:58:43Z\\" data-local=\\"time-ago\\">May 28, 2018 10:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/693c529d5a6dc14404d15bd94944ab9d?s=80&r=pg&d=identicon",
-              "id": 4,
+              "id": 7,
               "user_name": "santos29",
               "user_slug": "santos29",
             },
-            Object {
+            8 => Object {
               "body": "Comment 8",
               "created_at": "<time datetime=\\"2018-04-19T10:55:23Z\\" data-local=\\"time-ago\\">April 19, 2018 10:55am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 1,
+              "id": 8,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            9 => Object {
               "body": "Comment 9",
               "created_at": "<time datetime=\\"2018-03-08T21:26:37Z\\" data-local=\\"time-ago\\">March  8, 2018  9:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 5,
+              "id": 9,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            10 => Object {
               "body": "Comment 10",
               "created_at": "<time datetime=\\"2018-02-06T15:58:36Z\\" data-local=\\"time-ago\\">February  6, 2018  3:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/ecd56b04440922d9d4227b80b360f1a6?s=80&r=pg&d=identicon",
-              "id": 13,
+              "id": 10,
               "user_name": "abbie35",
               "user_slug": "abbie35",
             },
-            Object {
+            11 => Object {
               "body": "Comment 11",
               "created_at": "<time datetime=\\"2018-01-18T21:28:48Z\\" data-local=\\"time-ago\\">January 18, 2018  9:28pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 2,
+              "id": 11,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            12 => Object {
               "body": "Comment 12",
               "created_at": "<time datetime=\\"2018-01-06T18:46:18Z\\" data-local=\\"time-ago\\">January  6, 2018  6:46pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/9c882241f6804414432bcb7c6fbb0dce?s=80&r=pg&d=identicon",
-              "id": 3,
+              "id": 12,
               "user_name": "michele_douglas54",
               "user_slug": "michele_douglas54",
             },
-            Object {
+            13 => Object {
               "body": "Comment 13",
               "created_at": "<time datetime=\\"2017-12-24T10:59:43Z\\" data-local=\\"time-ago\\">December 24, 2017 10:59am</time>",
               "gravatar_url": "https://gravatar.com/avatar/2d42930970262a4d6da8a839ef4cbed5?s=80&r=pg&d=identicon",
-              "id": 9,
+              "id": 13,
               "user_name": "roberto_zboncak62",
               "user_slug": "roberto_zboncak62",
             },
-            Object {
+            14 => Object {
               "body": "Comment 14",
               "created_at": "<time datetime=\\"2017-12-22T16:18:14Z\\" data-local=\\"time-ago\\">December 22, 2017  4:18pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/4ecef4e31dc7b2bf3ac0117f3df7d1fb?s=80&r=pg&d=identicon",
-              "id": 7,
+              "id": 14,
               "user_name": "emily_spencer92",
               "user_slug": "emily_spencer92",
             },
-            Object {
+            15 => Object {
               "body": "Comment 15",
               "created_at": "<time datetime=\\"2018-08-10T05:04:07Z\\" data-local=\\"time-ago\\">August 10, 2018  5:04am</time>",
               "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
-              "id": 14,
+              "id": 15,
               "user_name": "bluz71",
               "user_slug": "bluz71",
             },
-            Object {
+            16 => Object {
               "body": "Comment 16",
               "created_at": "<time datetime=\\"2018-08-04T01:14:51Z\\" data-local=\\"time-ago\\">August  4, 2018  1:14am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 10,
+              "id": 16,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            17 => Object {
               "body": "Comment 17",
               "created_at": "<time datetime=\\"2018-07-19T14:29:55Z\\" data-local=\\"time-ago\\">July 19, 2018  2:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/69625f37b2fd5343d3d3439911d4e10f?s=80&r=pg&d=identicon",
-              "id": 12,
+              "id": 17,
               "user_name": "elise2",
               "user_slug": "elise2",
             },
-            Object {
+            18 => Object {
               "body": "Comment 18",
               "created_at": "<time datetime=\\"2018-07-16T19:29:24Z\\" data-local=\\"time-ago\\">July 16, 2018  7:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/a38ce926222e8aee3f02999d435df4c4?s=80&r=pg&d=identicon",
-              "id": 8,
+              "id": 18,
               "user_name": "charley12",
               "user_slug": "charley12",
             },
-            Object {
+            19 => Object {
               "body": "Comment 19",
               "created_at": "<time datetime=\\"2018-06-15T01:54:55Z\\" data-local=\\"time-ago\\">June 15, 2018  1:54am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7f14bdf8047c0883f230002a4bd2eff3?s=80&r=pg&d=identicon",
-              "id": 11,
+              "id": 19,
               "user_name": "austyn47",
               "user_slug": "austyn47",
             },
-            Object {
+            20 => Object {
               "body": "Comment 20",
               "created_at": "<time datetime=\\"2018-06-13T08:13:57Z\\" data-local=\\"time-ago\\">June 13, 2018  8:13am</time>",
               "gravatar_url": "https://gravatar.com/avatar/c4181331d29753fdc2d34d1995de937e?s=80&r=pg&d=identicon",
-              "id": 6,
+              "id": 20,
               "user_name": "ila_lebsack50",
               "user_slug": "ila_lebsack50",
             },
-            Object {
+            21 => Object {
               "body": "Comment 21",
               "created_at": "<time datetime=\\"2018-05-28T22:58:43Z\\" data-local=\\"time-ago\\">May 28, 2018 10:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/693c529d5a6dc14404d15bd94944ab9d?s=80&r=pg&d=identicon",
-              "id": 4,
+              "id": 21,
               "user_name": "santos29",
               "user_slug": "santos29",
             },
-            Object {
+            22 => Object {
               "body": "Comment 22",
               "created_at": "<time datetime=\\"2018-04-19T10:55:23Z\\" data-local=\\"time-ago\\">April 19, 2018 10:55am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 1,
+              "id": 22,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            23 => Object {
               "body": "Comment 23",
               "created_at": "<time datetime=\\"2018-03-08T21:26:37Z\\" data-local=\\"time-ago\\">March  8, 2018  9:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 5,
+              "id": 23,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            24 => Object {
               "body": "Comment 24",
               "created_at": "<time datetime=\\"2017-11-04T04:31:56Z\\" data-local=\\"time-ago\\">November  4, 2017  4:31am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7623bc3892c4bf9c2571447e23ec565f?s=80&r=pg&d=identicon",
-              "id": 29998,
+              "id": 24,
               "user_name": "leonel_kertzmann31",
               "user_slug": "leonel_kertzmann31",
             },
-            Object {
+            25 => Object {
               "body": "Last Comment 25",
               "created_at": "<time datetime=\\"2017-11-01T12:26:44Z\\" data-local=\\"time-ago\\">November  1, 2017 12:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/188deba48d739c0287b061713d2c16be?s=80&r=pg&d=identicon",
-              "id": 30003,
+              "id": 25,
               "user_name": "simeon59",
               "user_slug": "simeon59",
             },
-          ]
+          }
         }
         shortHeader={true}
       />
@@ -1396,48 +1396,48 @@ exports[`<ArtistShowPage /> renders sorted albums when name is clicked 1`] = `
       </PageHeader>
       <CommentsList
         comments={
-          Array [
-            Object {
+          Map {
+            1 => Object {
               "body": "Comment 1",
               "created_at": "<time datetime=\\"2018-08-10T05:04:07Z\\" data-local=\\"time-ago\\">August 10, 2018  5:04am</time>",
               "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
-              "id": 14,
+              "id": 1,
               "user_name": "bluz71",
               "user_slug": "bluz71",
             },
-            Object {
+            2 => Object {
               "body": "Comment 2",
               "created_at": "<time datetime=\\"2018-08-04T01:14:51Z\\" data-local=\\"time-ago\\">August  4, 2018  1:14am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 10,
+              "id": 2,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            3 => Object {
               "body": "Comment 3",
               "created_at": "<time datetime=\\"2018-07-19T14:29:55Z\\" data-local=\\"time-ago\\">July 19, 2018  2:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/69625f37b2fd5343d3d3439911d4e10f?s=80&r=pg&d=identicon",
-              "id": 12,
+              "id": 3,
               "user_name": "elise2",
               "user_slug": "elise2",
             },
-            Object {
+            4 => Object {
               "body": "Comment 4",
               "created_at": "<time datetime=\\"2018-07-16T19:29:24Z\\" data-local=\\"time-ago\\">July 16, 2018  7:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/a38ce926222e8aee3f02999d435df4c4?s=80&r=pg&d=identicon",
-              "id": 8,
+              "id": 4,
               "user_name": "charley12",
               "user_slug": "charley12",
             },
-            Object {
+            5 => Object {
               "body": "Comment 5",
               "created_at": "<time datetime=\\"2018-06-15T01:54:55Z\\" data-local=\\"time-ago\\">June 15, 2018  1:54am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7f14bdf8047c0883f230002a4bd2eff3?s=80&r=pg&d=identicon",
-              "id": 11,
+              "id": 5,
               "user_name": "austyn47",
               "user_slug": "austyn47",
             },
-            Object {
+            6 => Object {
               "body": "Comment 6",
               "created_at": "<time datetime=\\"2018-06-13T08:13:57Z\\" data-local=\\"time-ago\\">June 13, 2018  8:13am</time>",
               "gravatar_url": "https://gravatar.com/avatar/c4181331d29753fdc2d34d1995de937e?s=80&r=pg&d=identicon",
@@ -1445,159 +1445,159 @@ exports[`<ArtistShowPage /> renders sorted albums when name is clicked 1`] = `
               "user_name": "ila_lebsack50",
               "user_slug": "ila_lebsack50",
             },
-            Object {
+            7 => Object {
               "body": "Comment 7",
               "created_at": "<time datetime=\\"2018-05-28T22:58:43Z\\" data-local=\\"time-ago\\">May 28, 2018 10:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/693c529d5a6dc14404d15bd94944ab9d?s=80&r=pg&d=identicon",
-              "id": 4,
+              "id": 7,
               "user_name": "santos29",
               "user_slug": "santos29",
             },
-            Object {
+            8 => Object {
               "body": "Comment 8",
               "created_at": "<time datetime=\\"2018-04-19T10:55:23Z\\" data-local=\\"time-ago\\">April 19, 2018 10:55am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 1,
+              "id": 8,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            9 => Object {
               "body": "Comment 9",
               "created_at": "<time datetime=\\"2018-03-08T21:26:37Z\\" data-local=\\"time-ago\\">March  8, 2018  9:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 5,
+              "id": 9,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            10 => Object {
               "body": "Comment 10",
               "created_at": "<time datetime=\\"2018-02-06T15:58:36Z\\" data-local=\\"time-ago\\">February  6, 2018  3:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/ecd56b04440922d9d4227b80b360f1a6?s=80&r=pg&d=identicon",
-              "id": 13,
+              "id": 10,
               "user_name": "abbie35",
               "user_slug": "abbie35",
             },
-            Object {
+            11 => Object {
               "body": "Comment 11",
               "created_at": "<time datetime=\\"2018-01-18T21:28:48Z\\" data-local=\\"time-ago\\">January 18, 2018  9:28pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 2,
+              "id": 11,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            12 => Object {
               "body": "Comment 12",
               "created_at": "<time datetime=\\"2018-01-06T18:46:18Z\\" data-local=\\"time-ago\\">January  6, 2018  6:46pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/9c882241f6804414432bcb7c6fbb0dce?s=80&r=pg&d=identicon",
-              "id": 3,
+              "id": 12,
               "user_name": "michele_douglas54",
               "user_slug": "michele_douglas54",
             },
-            Object {
+            13 => Object {
               "body": "Comment 13",
               "created_at": "<time datetime=\\"2017-12-24T10:59:43Z\\" data-local=\\"time-ago\\">December 24, 2017 10:59am</time>",
               "gravatar_url": "https://gravatar.com/avatar/2d42930970262a4d6da8a839ef4cbed5?s=80&r=pg&d=identicon",
-              "id": 9,
+              "id": 13,
               "user_name": "roberto_zboncak62",
               "user_slug": "roberto_zboncak62",
             },
-            Object {
+            14 => Object {
               "body": "Comment 14",
               "created_at": "<time datetime=\\"2017-12-22T16:18:14Z\\" data-local=\\"time-ago\\">December 22, 2017  4:18pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/4ecef4e31dc7b2bf3ac0117f3df7d1fb?s=80&r=pg&d=identicon",
-              "id": 7,
+              "id": 14,
               "user_name": "emily_spencer92",
               "user_slug": "emily_spencer92",
             },
-            Object {
+            15 => Object {
               "body": "Comment 15",
               "created_at": "<time datetime=\\"2018-08-10T05:04:07Z\\" data-local=\\"time-ago\\">August 10, 2018  5:04am</time>",
               "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
-              "id": 14,
+              "id": 15,
               "user_name": "bluz71",
               "user_slug": "bluz71",
             },
-            Object {
+            16 => Object {
               "body": "Comment 16",
               "created_at": "<time datetime=\\"2018-08-04T01:14:51Z\\" data-local=\\"time-ago\\">August  4, 2018  1:14am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 10,
+              "id": 16,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            17 => Object {
               "body": "Comment 17",
               "created_at": "<time datetime=\\"2018-07-19T14:29:55Z\\" data-local=\\"time-ago\\">July 19, 2018  2:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/69625f37b2fd5343d3d3439911d4e10f?s=80&r=pg&d=identicon",
-              "id": 12,
+              "id": 17,
               "user_name": "elise2",
               "user_slug": "elise2",
             },
-            Object {
+            18 => Object {
               "body": "Comment 18",
               "created_at": "<time datetime=\\"2018-07-16T19:29:24Z\\" data-local=\\"time-ago\\">July 16, 2018  7:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/a38ce926222e8aee3f02999d435df4c4?s=80&r=pg&d=identicon",
-              "id": 8,
+              "id": 18,
               "user_name": "charley12",
               "user_slug": "charley12",
             },
-            Object {
+            19 => Object {
               "body": "Comment 19",
               "created_at": "<time datetime=\\"2018-06-15T01:54:55Z\\" data-local=\\"time-ago\\">June 15, 2018  1:54am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7f14bdf8047c0883f230002a4bd2eff3?s=80&r=pg&d=identicon",
-              "id": 11,
+              "id": 19,
               "user_name": "austyn47",
               "user_slug": "austyn47",
             },
-            Object {
+            20 => Object {
               "body": "Comment 20",
               "created_at": "<time datetime=\\"2018-06-13T08:13:57Z\\" data-local=\\"time-ago\\">June 13, 2018  8:13am</time>",
               "gravatar_url": "https://gravatar.com/avatar/c4181331d29753fdc2d34d1995de937e?s=80&r=pg&d=identicon",
-              "id": 6,
+              "id": 20,
               "user_name": "ila_lebsack50",
               "user_slug": "ila_lebsack50",
             },
-            Object {
+            21 => Object {
               "body": "Comment 21",
               "created_at": "<time datetime=\\"2018-05-28T22:58:43Z\\" data-local=\\"time-ago\\">May 28, 2018 10:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/693c529d5a6dc14404d15bd94944ab9d?s=80&r=pg&d=identicon",
-              "id": 4,
+              "id": 21,
               "user_name": "santos29",
               "user_slug": "santos29",
             },
-            Object {
+            22 => Object {
               "body": "Comment 22",
               "created_at": "<time datetime=\\"2018-04-19T10:55:23Z\\" data-local=\\"time-ago\\">April 19, 2018 10:55am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 1,
+              "id": 22,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            23 => Object {
               "body": "Comment 23",
               "created_at": "<time datetime=\\"2018-03-08T21:26:37Z\\" data-local=\\"time-ago\\">March  8, 2018  9:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 5,
+              "id": 23,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            24 => Object {
               "body": "Comment 24",
               "created_at": "<time datetime=\\"2017-11-04T04:31:56Z\\" data-local=\\"time-ago\\">November  4, 2017  4:31am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7623bc3892c4bf9c2571447e23ec565f?s=80&r=pg&d=identicon",
-              "id": 29998,
+              "id": 24,
               "user_name": "leonel_kertzmann31",
               "user_slug": "leonel_kertzmann31",
             },
-            Object {
+            25 => Object {
               "body": "Last Comment 25",
               "created_at": "<time datetime=\\"2017-11-01T12:26:44Z\\" data-local=\\"time-ago\\">November  1, 2017 12:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/188deba48d739c0287b061713d2c16be?s=80&r=pg&d=identicon",
-              "id": 30003,
+              "id": 25,
               "user_name": "simeon59",
               "user_slug": "simeon59",
             },
-          ]
+          }
         }
         shortHeader={true}
       />
@@ -1768,48 +1768,48 @@ exports[`<ArtistShowPage /> renders sorted albums when newest is clicked 1`] = `
       </PageHeader>
       <CommentsList
         comments={
-          Array [
-            Object {
+          Map {
+            1 => Object {
               "body": "Comment 1",
               "created_at": "<time datetime=\\"2018-08-10T05:04:07Z\\" data-local=\\"time-ago\\">August 10, 2018  5:04am</time>",
               "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
-              "id": 14,
+              "id": 1,
               "user_name": "bluz71",
               "user_slug": "bluz71",
             },
-            Object {
+            2 => Object {
               "body": "Comment 2",
               "created_at": "<time datetime=\\"2018-08-04T01:14:51Z\\" data-local=\\"time-ago\\">August  4, 2018  1:14am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 10,
+              "id": 2,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            3 => Object {
               "body": "Comment 3",
               "created_at": "<time datetime=\\"2018-07-19T14:29:55Z\\" data-local=\\"time-ago\\">July 19, 2018  2:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/69625f37b2fd5343d3d3439911d4e10f?s=80&r=pg&d=identicon",
-              "id": 12,
+              "id": 3,
               "user_name": "elise2",
               "user_slug": "elise2",
             },
-            Object {
+            4 => Object {
               "body": "Comment 4",
               "created_at": "<time datetime=\\"2018-07-16T19:29:24Z\\" data-local=\\"time-ago\\">July 16, 2018  7:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/a38ce926222e8aee3f02999d435df4c4?s=80&r=pg&d=identicon",
-              "id": 8,
+              "id": 4,
               "user_name": "charley12",
               "user_slug": "charley12",
             },
-            Object {
+            5 => Object {
               "body": "Comment 5",
               "created_at": "<time datetime=\\"2018-06-15T01:54:55Z\\" data-local=\\"time-ago\\">June 15, 2018  1:54am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7f14bdf8047c0883f230002a4bd2eff3?s=80&r=pg&d=identicon",
-              "id": 11,
+              "id": 5,
               "user_name": "austyn47",
               "user_slug": "austyn47",
             },
-            Object {
+            6 => Object {
               "body": "Comment 6",
               "created_at": "<time datetime=\\"2018-06-13T08:13:57Z\\" data-local=\\"time-ago\\">June 13, 2018  8:13am</time>",
               "gravatar_url": "https://gravatar.com/avatar/c4181331d29753fdc2d34d1995de937e?s=80&r=pg&d=identicon",
@@ -1817,159 +1817,159 @@ exports[`<ArtistShowPage /> renders sorted albums when newest is clicked 1`] = `
               "user_name": "ila_lebsack50",
               "user_slug": "ila_lebsack50",
             },
-            Object {
+            7 => Object {
               "body": "Comment 7",
               "created_at": "<time datetime=\\"2018-05-28T22:58:43Z\\" data-local=\\"time-ago\\">May 28, 2018 10:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/693c529d5a6dc14404d15bd94944ab9d?s=80&r=pg&d=identicon",
-              "id": 4,
+              "id": 7,
               "user_name": "santos29",
               "user_slug": "santos29",
             },
-            Object {
+            8 => Object {
               "body": "Comment 8",
               "created_at": "<time datetime=\\"2018-04-19T10:55:23Z\\" data-local=\\"time-ago\\">April 19, 2018 10:55am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 1,
+              "id": 8,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            9 => Object {
               "body": "Comment 9",
               "created_at": "<time datetime=\\"2018-03-08T21:26:37Z\\" data-local=\\"time-ago\\">March  8, 2018  9:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 5,
+              "id": 9,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            10 => Object {
               "body": "Comment 10",
               "created_at": "<time datetime=\\"2018-02-06T15:58:36Z\\" data-local=\\"time-ago\\">February  6, 2018  3:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/ecd56b04440922d9d4227b80b360f1a6?s=80&r=pg&d=identicon",
-              "id": 13,
+              "id": 10,
               "user_name": "abbie35",
               "user_slug": "abbie35",
             },
-            Object {
+            11 => Object {
               "body": "Comment 11",
               "created_at": "<time datetime=\\"2018-01-18T21:28:48Z\\" data-local=\\"time-ago\\">January 18, 2018  9:28pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 2,
+              "id": 11,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            12 => Object {
               "body": "Comment 12",
               "created_at": "<time datetime=\\"2018-01-06T18:46:18Z\\" data-local=\\"time-ago\\">January  6, 2018  6:46pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/9c882241f6804414432bcb7c6fbb0dce?s=80&r=pg&d=identicon",
-              "id": 3,
+              "id": 12,
               "user_name": "michele_douglas54",
               "user_slug": "michele_douglas54",
             },
-            Object {
+            13 => Object {
               "body": "Comment 13",
               "created_at": "<time datetime=\\"2017-12-24T10:59:43Z\\" data-local=\\"time-ago\\">December 24, 2017 10:59am</time>",
               "gravatar_url": "https://gravatar.com/avatar/2d42930970262a4d6da8a839ef4cbed5?s=80&r=pg&d=identicon",
-              "id": 9,
+              "id": 13,
               "user_name": "roberto_zboncak62",
               "user_slug": "roberto_zboncak62",
             },
-            Object {
+            14 => Object {
               "body": "Comment 14",
               "created_at": "<time datetime=\\"2017-12-22T16:18:14Z\\" data-local=\\"time-ago\\">December 22, 2017  4:18pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/4ecef4e31dc7b2bf3ac0117f3df7d1fb?s=80&r=pg&d=identicon",
-              "id": 7,
+              "id": 14,
               "user_name": "emily_spencer92",
               "user_slug": "emily_spencer92",
             },
-            Object {
+            15 => Object {
               "body": "Comment 15",
               "created_at": "<time datetime=\\"2018-08-10T05:04:07Z\\" data-local=\\"time-ago\\">August 10, 2018  5:04am</time>",
               "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
-              "id": 14,
+              "id": 15,
               "user_name": "bluz71",
               "user_slug": "bluz71",
             },
-            Object {
+            16 => Object {
               "body": "Comment 16",
               "created_at": "<time datetime=\\"2018-08-04T01:14:51Z\\" data-local=\\"time-ago\\">August  4, 2018  1:14am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 10,
+              "id": 16,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            17 => Object {
               "body": "Comment 17",
               "created_at": "<time datetime=\\"2018-07-19T14:29:55Z\\" data-local=\\"time-ago\\">July 19, 2018  2:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/69625f37b2fd5343d3d3439911d4e10f?s=80&r=pg&d=identicon",
-              "id": 12,
+              "id": 17,
               "user_name": "elise2",
               "user_slug": "elise2",
             },
-            Object {
+            18 => Object {
               "body": "Comment 18",
               "created_at": "<time datetime=\\"2018-07-16T19:29:24Z\\" data-local=\\"time-ago\\">July 16, 2018  7:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/a38ce926222e8aee3f02999d435df4c4?s=80&r=pg&d=identicon",
-              "id": 8,
+              "id": 18,
               "user_name": "charley12",
               "user_slug": "charley12",
             },
-            Object {
+            19 => Object {
               "body": "Comment 19",
               "created_at": "<time datetime=\\"2018-06-15T01:54:55Z\\" data-local=\\"time-ago\\">June 15, 2018  1:54am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7f14bdf8047c0883f230002a4bd2eff3?s=80&r=pg&d=identicon",
-              "id": 11,
+              "id": 19,
               "user_name": "austyn47",
               "user_slug": "austyn47",
             },
-            Object {
+            20 => Object {
               "body": "Comment 20",
               "created_at": "<time datetime=\\"2018-06-13T08:13:57Z\\" data-local=\\"time-ago\\">June 13, 2018  8:13am</time>",
               "gravatar_url": "https://gravatar.com/avatar/c4181331d29753fdc2d34d1995de937e?s=80&r=pg&d=identicon",
-              "id": 6,
+              "id": 20,
               "user_name": "ila_lebsack50",
               "user_slug": "ila_lebsack50",
             },
-            Object {
+            21 => Object {
               "body": "Comment 21",
               "created_at": "<time datetime=\\"2018-05-28T22:58:43Z\\" data-local=\\"time-ago\\">May 28, 2018 10:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/693c529d5a6dc14404d15bd94944ab9d?s=80&r=pg&d=identicon",
-              "id": 4,
+              "id": 21,
               "user_name": "santos29",
               "user_slug": "santos29",
             },
-            Object {
+            22 => Object {
               "body": "Comment 22",
               "created_at": "<time datetime=\\"2018-04-19T10:55:23Z\\" data-local=\\"time-ago\\">April 19, 2018 10:55am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 1,
+              "id": 22,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            23 => Object {
               "body": "Comment 23",
               "created_at": "<time datetime=\\"2018-03-08T21:26:37Z\\" data-local=\\"time-ago\\">March  8, 2018  9:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 5,
+              "id": 23,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            24 => Object {
               "body": "Comment 24",
               "created_at": "<time datetime=\\"2017-11-04T04:31:56Z\\" data-local=\\"time-ago\\">November  4, 2017  4:31am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7623bc3892c4bf9c2571447e23ec565f?s=80&r=pg&d=identicon",
-              "id": 29998,
+              "id": 24,
               "user_name": "leonel_kertzmann31",
               "user_slug": "leonel_kertzmann31",
             },
-            Object {
+            25 => Object {
               "body": "Last Comment 25",
               "created_at": "<time datetime=\\"2017-11-01T12:26:44Z\\" data-local=\\"time-ago\\">November  1, 2017 12:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/188deba48d739c0287b061713d2c16be?s=80&r=pg&d=identicon",
-              "id": 30003,
+              "id": 25,
               "user_name": "simeon59",
               "user_slug": "simeon59",
             },
-          ]
+          }
         }
         shortHeader={true}
       />
@@ -2140,48 +2140,48 @@ exports[`<ArtistShowPage /> renders sorted albums when oldest is clicked 1`] = `
       </PageHeader>
       <CommentsList
         comments={
-          Array [
-            Object {
+          Map {
+            1 => Object {
               "body": "Comment 1",
               "created_at": "<time datetime=\\"2018-08-10T05:04:07Z\\" data-local=\\"time-ago\\">August 10, 2018  5:04am</time>",
               "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
-              "id": 14,
+              "id": 1,
               "user_name": "bluz71",
               "user_slug": "bluz71",
             },
-            Object {
+            2 => Object {
               "body": "Comment 2",
               "created_at": "<time datetime=\\"2018-08-04T01:14:51Z\\" data-local=\\"time-ago\\">August  4, 2018  1:14am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 10,
+              "id": 2,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            3 => Object {
               "body": "Comment 3",
               "created_at": "<time datetime=\\"2018-07-19T14:29:55Z\\" data-local=\\"time-ago\\">July 19, 2018  2:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/69625f37b2fd5343d3d3439911d4e10f?s=80&r=pg&d=identicon",
-              "id": 12,
+              "id": 3,
               "user_name": "elise2",
               "user_slug": "elise2",
             },
-            Object {
+            4 => Object {
               "body": "Comment 4",
               "created_at": "<time datetime=\\"2018-07-16T19:29:24Z\\" data-local=\\"time-ago\\">July 16, 2018  7:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/a38ce926222e8aee3f02999d435df4c4?s=80&r=pg&d=identicon",
-              "id": 8,
+              "id": 4,
               "user_name": "charley12",
               "user_slug": "charley12",
             },
-            Object {
+            5 => Object {
               "body": "Comment 5",
               "created_at": "<time datetime=\\"2018-06-15T01:54:55Z\\" data-local=\\"time-ago\\">June 15, 2018  1:54am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7f14bdf8047c0883f230002a4bd2eff3?s=80&r=pg&d=identicon",
-              "id": 11,
+              "id": 5,
               "user_name": "austyn47",
               "user_slug": "austyn47",
             },
-            Object {
+            6 => Object {
               "body": "Comment 6",
               "created_at": "<time datetime=\\"2018-06-13T08:13:57Z\\" data-local=\\"time-ago\\">June 13, 2018  8:13am</time>",
               "gravatar_url": "https://gravatar.com/avatar/c4181331d29753fdc2d34d1995de937e?s=80&r=pg&d=identicon",
@@ -2189,159 +2189,159 @@ exports[`<ArtistShowPage /> renders sorted albums when oldest is clicked 1`] = `
               "user_name": "ila_lebsack50",
               "user_slug": "ila_lebsack50",
             },
-            Object {
+            7 => Object {
               "body": "Comment 7",
               "created_at": "<time datetime=\\"2018-05-28T22:58:43Z\\" data-local=\\"time-ago\\">May 28, 2018 10:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/693c529d5a6dc14404d15bd94944ab9d?s=80&r=pg&d=identicon",
-              "id": 4,
+              "id": 7,
               "user_name": "santos29",
               "user_slug": "santos29",
             },
-            Object {
+            8 => Object {
               "body": "Comment 8",
               "created_at": "<time datetime=\\"2018-04-19T10:55:23Z\\" data-local=\\"time-ago\\">April 19, 2018 10:55am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 1,
+              "id": 8,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            9 => Object {
               "body": "Comment 9",
               "created_at": "<time datetime=\\"2018-03-08T21:26:37Z\\" data-local=\\"time-ago\\">March  8, 2018  9:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 5,
+              "id": 9,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            10 => Object {
               "body": "Comment 10",
               "created_at": "<time datetime=\\"2018-02-06T15:58:36Z\\" data-local=\\"time-ago\\">February  6, 2018  3:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/ecd56b04440922d9d4227b80b360f1a6?s=80&r=pg&d=identicon",
-              "id": 13,
+              "id": 10,
               "user_name": "abbie35",
               "user_slug": "abbie35",
             },
-            Object {
+            11 => Object {
               "body": "Comment 11",
               "created_at": "<time datetime=\\"2018-01-18T21:28:48Z\\" data-local=\\"time-ago\\">January 18, 2018  9:28pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 2,
+              "id": 11,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            12 => Object {
               "body": "Comment 12",
               "created_at": "<time datetime=\\"2018-01-06T18:46:18Z\\" data-local=\\"time-ago\\">January  6, 2018  6:46pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/9c882241f6804414432bcb7c6fbb0dce?s=80&r=pg&d=identicon",
-              "id": 3,
+              "id": 12,
               "user_name": "michele_douglas54",
               "user_slug": "michele_douglas54",
             },
-            Object {
+            13 => Object {
               "body": "Comment 13",
               "created_at": "<time datetime=\\"2017-12-24T10:59:43Z\\" data-local=\\"time-ago\\">December 24, 2017 10:59am</time>",
               "gravatar_url": "https://gravatar.com/avatar/2d42930970262a4d6da8a839ef4cbed5?s=80&r=pg&d=identicon",
-              "id": 9,
+              "id": 13,
               "user_name": "roberto_zboncak62",
               "user_slug": "roberto_zboncak62",
             },
-            Object {
+            14 => Object {
               "body": "Comment 14",
               "created_at": "<time datetime=\\"2017-12-22T16:18:14Z\\" data-local=\\"time-ago\\">December 22, 2017  4:18pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/4ecef4e31dc7b2bf3ac0117f3df7d1fb?s=80&r=pg&d=identicon",
-              "id": 7,
+              "id": 14,
               "user_name": "emily_spencer92",
               "user_slug": "emily_spencer92",
             },
-            Object {
+            15 => Object {
               "body": "Comment 15",
               "created_at": "<time datetime=\\"2018-08-10T05:04:07Z\\" data-local=\\"time-ago\\">August 10, 2018  5:04am</time>",
               "gravatar_url": "https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon",
-              "id": 14,
+              "id": 15,
               "user_name": "bluz71",
               "user_slug": "bluz71",
             },
-            Object {
+            16 => Object {
               "body": "Comment 16",
               "created_at": "<time datetime=\\"2018-08-04T01:14:51Z\\" data-local=\\"time-ago\\">August  4, 2018  1:14am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 10,
+              "id": 16,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            17 => Object {
               "body": "Comment 17",
               "created_at": "<time datetime=\\"2018-07-19T14:29:55Z\\" data-local=\\"time-ago\\">July 19, 2018  2:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/69625f37b2fd5343d3d3439911d4e10f?s=80&r=pg&d=identicon",
-              "id": 12,
+              "id": 17,
               "user_name": "elise2",
               "user_slug": "elise2",
             },
-            Object {
+            18 => Object {
               "body": "Comment 18",
               "created_at": "<time datetime=\\"2018-07-16T19:29:24Z\\" data-local=\\"time-ago\\">July 16, 2018  7:29pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/a38ce926222e8aee3f02999d435df4c4?s=80&r=pg&d=identicon",
-              "id": 8,
+              "id": 18,
               "user_name": "charley12",
               "user_slug": "charley12",
             },
-            Object {
+            19 => Object {
               "body": "Comment 19",
               "created_at": "<time datetime=\\"2018-06-15T01:54:55Z\\" data-local=\\"time-ago\\">June 15, 2018  1:54am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7f14bdf8047c0883f230002a4bd2eff3?s=80&r=pg&d=identicon",
-              "id": 11,
+              "id": 19,
               "user_name": "austyn47",
               "user_slug": "austyn47",
             },
-            Object {
+            20 => Object {
               "body": "Comment 20",
               "created_at": "<time datetime=\\"2018-06-13T08:13:57Z\\" data-local=\\"time-ago\\">June 13, 2018  8:13am</time>",
               "gravatar_url": "https://gravatar.com/avatar/c4181331d29753fdc2d34d1995de937e?s=80&r=pg&d=identicon",
-              "id": 6,
+              "id": 20,
               "user_name": "ila_lebsack50",
               "user_slug": "ila_lebsack50",
             },
-            Object {
+            21 => Object {
               "body": "Comment 21",
               "created_at": "<time datetime=\\"2018-05-28T22:58:43Z\\" data-local=\\"time-ago\\">May 28, 2018 10:58pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/693c529d5a6dc14404d15bd94944ab9d?s=80&r=pg&d=identicon",
-              "id": 4,
+              "id": 21,
               "user_name": "santos29",
               "user_slug": "santos29",
             },
-            Object {
+            22 => Object {
               "body": "Comment 22",
               "created_at": "<time datetime=\\"2018-04-19T10:55:23Z\\" data-local=\\"time-ago\\">April 19, 2018 10:55am</time>",
               "gravatar_url": "https://gravatar.com/avatar/5680ecac049040ce9f0a29c88b00df85?s=80&r=pg&d=identicon",
-              "id": 1,
+              "id": 22,
               "user_name": "jaron_barton50",
               "user_slug": "jaron_barton50",
             },
-            Object {
+            23 => Object {
               "body": "Comment 23",
               "created_at": "<time datetime=\\"2018-03-08T21:26:37Z\\" data-local=\\"time-ago\\">March  8, 2018  9:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/6020481dd560c0383f9ef2b2ae8a0e0d?s=80&r=pg&d=identicon",
-              "id": 5,
+              "id": 23,
               "user_name": "yasmeen91",
               "user_slug": "yasmeen91",
             },
-            Object {
+            24 => Object {
               "body": "Comment 24",
               "created_at": "<time datetime=\\"2017-11-04T04:31:56Z\\" data-local=\\"time-ago\\">November  4, 2017  4:31am</time>",
               "gravatar_url": "https://gravatar.com/avatar/7623bc3892c4bf9c2571447e23ec565f?s=80&r=pg&d=identicon",
-              "id": 29998,
+              "id": 24,
               "user_name": "leonel_kertzmann31",
               "user_slug": "leonel_kertzmann31",
             },
-            Object {
+            25 => Object {
               "body": "Last Comment 25",
               "created_at": "<time datetime=\\"2017-11-01T12:26:44Z\\" data-local=\\"time-ago\\">November  1, 2017 12:26pm</time>",
               "gravatar_url": "https://gravatar.com/avatar/188deba48d739c0287b061713d2c16be?s=80&r=pg&d=identicon",
-              "id": 30003,
+              "id": 25,
               "user_name": "simeon59",
               "user_slug": "simeon59",
             },
-          ]
+          }
         }
         shortHeader={true}
       />
