@@ -18,7 +18,7 @@ const postedIn = (comment) => {
   }
 };
 
-const handleDelete = (comment) => {
+const handleDelete = (comment, onDeleteComment) => {
   if (!window.confirm('Are you sure you want to remove this comment?')) {
     return;
   }
@@ -26,8 +26,7 @@ const handleDelete = (comment) => {
   const deleteCommentEndPoint = `${API_HOST}${comment.delete_path}.json`;
   axios.delete(deleteCommentEndPoint, appAuth.headers())
     .then(response => {
-      // XXX implement
-      console.log('Delete succeeded');
+      onDeleteComment(comment.id);
     })
     .catch(error => {
       // XXX implement
@@ -35,20 +34,23 @@ const handleDelete = (comment) => {
     });
 };
 
-const renderDeleteComment = (comment) => {
+const renderDeleteComment = (comment, onDeleteComment) => {
   if (
     appAuth.isLoggedIn() &&
     (appAuth.currentUser().name === comment.user_name ||
       appAuth.currentUser().admin)) {
     return (
-      <span onClick={() => handleDelete(comment)} className="icon">
+      <span
+        onClick={() => handleDelete(comment, onDeleteComment)}
+        className="icon"
+      >
         <FontAwesome name="trash" />
       </span>
     );
   }
 };
 
-const renderComments = (comments, shortHeader) => (
+const renderComments = (comments, onDeleteComment, shortHeader) => (
   comments.map(comment =>
     <div key={comment.id} className="Comment">
       <Link to={`/comments/${comment.user_slug}`}>
@@ -67,16 +69,16 @@ const renderComments = (comments, shortHeader) => (
               }}>{comment.name}</Link>
             </small>}
       </h2>
-      {renderDeleteComment(comment, comments)}
+      {renderDeleteComment(comment, onDeleteComment)}
       <h3 dangerouslySetInnerHTML={{ __html: comment.created_at }} />
       <div dangerouslySetInnerHTML={{ __html: linkify(simpleFormat(comment.body)) }} />
     </div>
   )
 );
 
-const CommentsList = ({ comments, shortHeader }) => (
+const CommentsList = ({ comments, onDeleteComment, shortHeader }) => (
   <div className="CommentsList">
-    {renderComments([...comments.values()], shortHeader)}
+    {renderComments([...comments.values()], onDeleteComment, shortHeader)}
   </div>
 );
 

@@ -45,11 +45,12 @@ class ArtistShowPage extends Component {
     };
 
     // Bind 'this' for callback functions.
-    this.handleYear        = this.handleYear.bind(this);
-    this.handleGenre       = this.handleGenre.bind(this);
-    this.handleAlbumsOrder = this.handleAlbumsOrder.bind(this);
-    this.handleScroll      = this.handleScroll.bind(this);
-    this.handlePageEnd     = this.handlePageEnd.bind(this);
+    this.handleYear          = this.handleYear.bind(this);
+    this.handleGenre         = this.handleGenre.bind(this);
+    this.handleAlbumsOrder   = this.handleAlbumsOrder.bind(this);
+    this.handleScroll        = this.handleScroll.bind(this);
+    this.handlePageEnd       = this.handlePageEnd.bind(this);
+    this.handleDeleteComment = this.handleDeleteComment.bind(this);
   }
 
   componentDidMount() {
@@ -92,6 +93,16 @@ class ArtistShowPage extends Component {
     this.waiting = true;
     this.forceUpdate(); // Render spinner
     this.getComments(commentsPageEndPoint);
+  }
+
+  handleDeleteComment(commentId) {
+    // Note, we need to copy the comments hash map since we must not mutate
+    // React state directly.
+    const comments = new Map([...this.state.comments]);
+    // Delete the comment of interest.
+    comments.delete(commentId);
+    // Apply the updated state.
+    this.setState({comments});
   }
 
   getArtist(scrollToTop = false) {
@@ -297,7 +308,11 @@ class ArtistShowPage extends Component {
     }
 
     return (
-      <CommentsList comments={this.state.comments} shortHeader />
+      <CommentsList
+        comments={this.state.comments}
+        onDeleteComment={this.handleDeleteComment}
+        shortHeader
+      />
     );
   }
 

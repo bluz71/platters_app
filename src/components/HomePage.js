@@ -30,8 +30,9 @@ class HomePage extends Component {
     };
 
     // Bind 'this' for callback functions.
-    this.handleYear  = this.handleYear.bind(this);
-    this.handleGenre = this.handleGenre.bind(this);
+    this.handleYear          = this.handleYear.bind(this);
+    this.handleGenre         = this.handleGenre.bind(this);
+    this.handleDeleteComment = this.handleDeleteComment.bind(this);
   }
 
   componentDidMount() {
@@ -46,6 +47,16 @@ class HomePage extends Component {
   handleGenre(genre) {
     const params = { genre };
     this.props.history.push('/albums', params);
+  }
+
+  handleDeleteComment(commentId) {
+    // Note, we need to copy the comments hash map since we must not mutate
+    // React state directly.
+    const mostRecentComments = new Map([...this.state.mostRecentComments]);
+    // Delete the comment of interest.
+    mostRecentComments.delete(commentId);
+    // Apply the updated state.
+    this.setState({mostRecentComments});
   }
 
   getHome() {
@@ -184,7 +195,10 @@ class HomePage extends Component {
       <Row>
         <Col md={12}>
           <h2 className="page-header">New Comments</h2>
-          <CommentsList comments={this.state.mostRecentComments} />
+          <CommentsList
+            comments={this.state.mostRecentComments}
+            onDeleteComment={this.handleDeleteComment}
+          />
         </Col>
       </Row>
     );

@@ -41,6 +41,7 @@ class AlbumShowPage extends Component {
     this.handleTracksVisibility = this.handleTracksVisibility.bind(this);
     this.handleScroll           = this.handleScroll.bind(this);
     this.handlePageEnd          = this.handlePageEnd.bind(this);
+    this.handleDeleteComment    = this.handleDeleteComment.bind(this);
   }
 
   componentDidMount() {
@@ -92,6 +93,16 @@ class AlbumShowPage extends Component {
       this.scrollLessTracks = true;
     }
     this.forceUpdate();
+  }
+
+  handleDeleteComment(commentId) {
+    // Note, we need to copy the comments hash map since we must not mutate
+    // React state directly.
+    const comments = new Map([...this.state.comments]);
+    // Delete the comment of interest.
+    comments.delete(commentId);
+    // Apply the updated state.
+    this.setState({comments});
   }
 
   getAlbum(scrollToTop = false) {
@@ -279,7 +290,11 @@ class AlbumShowPage extends Component {
     }
 
     return (
-      <CommentsList comments={this.state.comments} shortHeader />
+      <CommentsList
+        comments={this.state.comments}
+        onDeleteComment={this.handleDeleteComment}
+        shortHeader
+      />
     );
   }
 
