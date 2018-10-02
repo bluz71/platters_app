@@ -97,6 +97,7 @@ exports[`<AlbumShowPage /> handles invalid album 1`] = `
       </div>
       <CommentsList
         comments={Map {}}
+        onDeleteComment={[Function]}
         shortHeader={true}
       />
     </Col>
@@ -768,6 +769,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
             },
           }
         }
+        onDeleteComment={[Function]}
         shortHeader={true}
       />
     </Col>
@@ -1527,6 +1529,7 @@ exports[`<AlbumShowPage /> renders all album comments when scrolled 1`] = `
             },
           }
         }
+        onDeleteComment={[Function]}
         shortHeader={true}
       />
     </Col>
@@ -2195,6 +2198,7 @@ exports[`<AlbumShowPage /> renders all tracks when show all is clicked 1`] = `
             },
           }
         }
+        onDeleteComment={[Function]}
         shortHeader={true}
       />
     </Col>
@@ -2866,6 +2870,7 @@ exports[`<AlbumShowPage /> renders less tracks when show less is clicked 1`] = `
             },
           }
         }
+        onDeleteComment={[Function]}
         shortHeader={true}
       />
     </Col>

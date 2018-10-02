@@ -20,6 +20,7 @@ exports[`<UserCommentsPage /> handles invalid user 1`] = `
       />
       <CommentsList
         comments={Map {}}
+        onDeleteComment={[Function]}
       />
     </div>
   </Col>
@@ -93,6 +94,7 @@ exports[`<UserCommentsPage /> renders all user comments when scrolled 1`] = `
             },
           }
         }
+        onDeleteComment={[Function]}
       />
     </div>
   </Col>
@@ -154,6 +156,7 @@ exports[`<UserCommentsPage /> renders user comments page 1`] = `
             },
           }
         }
+        onDeleteComment={[Function]}
       />
     </div>
   </Col>

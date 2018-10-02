@@ -283,6 +283,7 @@ exports[`<HomePage /> renders home page 1`] = `
             },
           }
         }
+        onDeleteComment={[Function]}
       />
     </Col>
   </Row>
@@ -455,6 +456,7 @@ exports[`<HomePage /> renders home page when logged in 1`] = `
             },
           }
         }
+        onDeleteComment={[Function]}
       />
     </Col>
   </Row>

@@ -483,6 +483,7 @@ exports[`<ArtistShowPage /> renders all artist comments when scrolled 1`] = `
             },
           }
         }
+        onDeleteComment={[Function]}
         shortHeader={true}
       />
     </div>
@@ -855,6 +856,7 @@ exports[`<ArtistShowPage /> renders artist show page 1`] = `
             },
           }
         }
+        onDeleteComment={[Function]}
         shortHeader={true}
       />
     </div>
@@ -1227,6 +1229,7 @@ exports[`<ArtistShowPage /> renders sorted albums when longest is clicked 1`] = 
             },
           }
         }
+        onDeleteComment={[Function]}
         shortHeader={true}
       />
     </div>
@@ -1599,6 +1602,7 @@ exports[`<ArtistShowPage /> renders sorted albums when name is clicked 1`] = `
             },
           }
         }
+        onDeleteComment={[Function]}
         shortHeader={true}
       />
     </div>
@@ -1971,6 +1975,7 @@ exports[`<ArtistShowPage /> renders sorted albums when newest is clicked 1`] = `
             },
           }
         }
+        onDeleteComment={[Function]}
         shortHeader={true}
       />
     </div>
@@ -2343,6 +2348,7 @@ exports[`<ArtistShowPage /> renders sorted albums when oldest is clicked 1`] = `
             },
           }
         }
+        onDeleteComment={[Function]}
         shortHeader={true}
       />
     </div>
