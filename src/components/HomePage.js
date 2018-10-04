@@ -22,6 +22,8 @@ class HomePage extends Component {
     this.loaded       = false;
     this.pageProgress = new pageProgress();
 
+    // Note, use a Map for comments since it preserves insertion order whilst
+    // allowing O(1) comment deletion.
     this.state = {
       albumOfTheDay: {},
       mostRecentAlbums: [],

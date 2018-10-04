@@ -22,6 +22,8 @@ class UserCommentsPage extends Component {
     this.waiting          = false;
     this.pageProgress     = new pageProgress();
 
+    // Note, use a Map for comments since it preserves insertion order whilst
+    // allowing O(1) comment deletion.
     this.state = {
       comments: new Map(),
       pagination: {},

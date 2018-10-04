@@ -35,6 +35,8 @@ class ArtistShowPage extends Component {
       (props.location.state && props.location.state.scrollToComments) || false;
     this.pageProgress     = new pageProgress();
 
+    // Note, use a Map for comments since it preserves insertion order whilst
+    // allowing O(1) comment deletion.
     this.state = {
       artist: {},
       albums: [],
