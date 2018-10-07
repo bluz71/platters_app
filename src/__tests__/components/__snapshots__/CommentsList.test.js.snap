@@ -4,112 +4,133 @@ exports[`<CommentsList /> renders a list of comments 1`] = `
 <div
   className="CommentsList"
 >
-  <div
-    className="Comment"
-    key="1"
+  <VelocityTransitionGroup
+    enter={null}
+    enterHideStyle={
+      Object {
+        "display": "none",
+      }
+    }
+    enterShowStyle={
+      Object {
+        "display": "",
+      }
+    }
+    leave={
+      Object {
+        "animation": "fadeOut",
+        "duration": 500,
+      }
+    }
+    runOnMount={false}
   >
-    <Link
-      replace={false}
-      to="/comments/joe"
+    <div
+      className="Comment"
+      key="1"
     >
-      <img
-        alt="joe"
-        className="img-responsive center-block"
-        src="https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon"
-      />
-    </Link>
-    <h2>
       <Link
         replace={false}
         to="/comments/joe"
       >
-        joe
+        <img
+          alt="joe"
+          className="img-responsive center-block"
+          src="https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon"
+        />
       </Link>
-      <small>
-         posted in ABC / 
+      <h2>
         <Link
           replace={false}
-          to={
-            Object {
-              "pathname": "/artist/abc/album/abc",
-              "state": Object {
-                "scrollToComments": true,
-              },
-            }
-          }
+          to="/comments/joe"
         >
-          ABC
+          joe
         </Link>
-      </small>
-    </h2>
-    <h3
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "<time datetime=\\"2018-05-09T04:05:00Z\\" data-local=\\"time-ago\\">May  9, 2018  4:05am</time>",
+        <small>
+           posted in ABC / 
+          <Link
+            replace={false}
+            to={
+              Object {
+                "pathname": "/artist/abc/album/abc",
+                "state": Object {
+                  "scrollToComments": true,
+                },
+              }
+            }
+          >
+            ABC
+          </Link>
+        </small>
+      </h2>
+      <h3
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<time datetime=\\"2018-05-09T04:05:00Z\\" data-local=\\"time-ago\\">May  9, 2018  4:05am</time>",
+          }
         }
-      }
-    />
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "<p>First comment</p>",
-        }
-      }
-    />
-  </div>
-  <div
-    className="Comment"
-    key="2"
-  >
-    <Link
-      replace={false}
-      to="/comments/joe"
-    >
-      <img
-        alt="joe"
-        className="img-responsive center-block"
-        src="https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon"
       />
-    </Link>
-    <h2>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<p>First comment</p>",
+          }
+        }
+      />
+    </div>
+    <div
+      className="Comment"
+      key="2"
+    >
       <Link
         replace={false}
         to="/comments/joe"
       >
-        joe
+        <img
+          alt="joe"
+          className="img-responsive center-block"
+          src="https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon"
+        />
       </Link>
-      <small>
-         posted in DEF / 
+      <h2>
         <Link
           replace={false}
-          to={
-            Object {
-              "pathname": "/artist/def/album/def",
-              "state": Object {
-                "scrollToComments": true,
-              },
-            }
-          }
+          to="/comments/joe"
         >
-          DEF
+          joe
         </Link>
-      </small>
-    </h2>
-    <h3
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "<time datetime=\\"2018-05-05T05:34:56Z\\" data-local=\\"time-ago\\">May  5, 2018  5:34am</time>",
+        <small>
+           posted in DEF / 
+          <Link
+            replace={false}
+            to={
+              Object {
+                "pathname": "/artist/def/album/def",
+                "state": Object {
+                  "scrollToComments": true,
+                },
+              }
+            }
+          >
+            DEF
+          </Link>
+        </small>
+      </h2>
+      <h3
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<time datetime=\\"2018-05-05T05:34:56Z\\" data-local=\\"time-ago\\">May  5, 2018  5:34am</time>",
+          }
         }
-      }
-    />
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "<p>Second comment</p>",
+      />
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<p>Second comment</p>",
+          }
         }
-      }
-    />
-  </div>
+      />
+    </div>
+  </VelocityTransitionGroup>
 </div>
 `;
 
@@ -117,79 +138,100 @@ exports[`<CommentsList /> renders a list of comments with shortHeader 1`] = `
 <div
   className="CommentsList"
 >
-  <div
-    className="Comment"
-    key="1"
+  <VelocityTransitionGroup
+    enter={null}
+    enterHideStyle={
+      Object {
+        "display": "none",
+      }
+    }
+    enterShowStyle={
+      Object {
+        "display": "",
+      }
+    }
+    leave={
+      Object {
+        "animation": "fadeOut",
+        "duration": 500,
+      }
+    }
+    runOnMount={false}
   >
-    <Link
-      replace={false}
-      to="/comments/joe"
+    <div
+      className="Comment"
+      key="1"
     >
-      <img
-        alt="joe"
-        className="img-responsive center-block"
-        src="https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon"
-      />
-    </Link>
-    <h2>
       <Link
         replace={false}
         to="/comments/joe"
       >
-        joe
+        <img
+          alt="joe"
+          className="img-responsive center-block"
+          src="https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon"
+        />
       </Link>
-    </h2>
-    <h3
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "<time datetime=\\"2018-05-09T04:05:00Z\\" data-local=\\"time-ago\\">May  9, 2018  4:05am</time>",
+      <h2>
+        <Link
+          replace={false}
+          to="/comments/joe"
+        >
+          joe
+        </Link>
+      </h2>
+      <h3
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<time datetime=\\"2018-05-09T04:05:00Z\\" data-local=\\"time-ago\\">May  9, 2018  4:05am</time>",
+          }
         }
-      }
-    />
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "<p>First comment</p>",
-        }
-      }
-    />
-  </div>
-  <div
-    className="Comment"
-    key="2"
-  >
-    <Link
-      replace={false}
-      to="/comments/joe"
-    >
-      <img
-        alt="joe"
-        className="img-responsive center-block"
-        src="https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon"
       />
-    </Link>
-    <h2>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<p>First comment</p>",
+          }
+        }
+      />
+    </div>
+    <div
+      className="Comment"
+      key="2"
+    >
       <Link
         replace={false}
         to="/comments/joe"
       >
-        joe
+        <img
+          alt="joe"
+          className="img-responsive center-block"
+          src="https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon"
+        />
       </Link>
-    </h2>
-    <h3
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "<time datetime=\\"2018-05-05T05:34:56Z\\" data-local=\\"time-ago\\">May  5, 2018  5:34am</time>",
+      <h2>
+        <Link
+          replace={false}
+          to="/comments/joe"
+        >
+          joe
+        </Link>
+      </h2>
+      <h3
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<time datetime=\\"2018-05-05T05:34:56Z\\" data-local=\\"time-ago\\">May  5, 2018  5:34am</time>",
+          }
         }
-      }
-    />
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "<p>Second comment</p>",
+      />
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<p>Second comment</p>",
+          }
         }
-      }
-    />
-  </div>
+      />
+    </div>
+  </VelocityTransitionGroup>
 </div>
 `;
