@@ -5,6 +5,7 @@ import axios from 'axios';
 import linkify from 'linkify-lite';
 import simpleFormat from '../helpers/simpleFormat';
 import FontAwesome from 'react-fontawesome';
+import toastAlert from '../helpers/toastAlert';
 import { VelocityTransitionGroup } from 'velocity-react';
 import '../styles/CommentsList.css';
 import { appAuth } from '../lib/appAuth';
@@ -30,8 +31,15 @@ const handleDelete = (comment, onDeleteComment) => {
       onDeleteComment(comment.id);
     })
     .catch(error => {
-      // XXX implement
-      console.log('Error');
+      if (error.response && error.response.status === 404) {
+        toastAlert('Comment deletion failed due to permission or not found issue');
+      }
+      else if (error.tokenMessage) {
+        toastAlert(error.tokenMessage);
+      }
+      else {
+        toastAlert('Server error, please try again later');
+      }
     });
 };
 
