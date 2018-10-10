@@ -4,6 +4,7 @@ import { Row, Col, PageHeader, Well, Form, FormGroup, ControlLabel, FormControl,
 import { appAuth } from '../lib/appAuth';
 import { API_HOST } from '../config';
 import toastAlert from '../helpers/toastAlert';
+import FontAwesome from 'react-fontawesome';
 
 const LOGIN_ENDPOINT = `${API_HOST}/api/log_in`;
 
@@ -11,12 +12,23 @@ class LoginPage extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      logInButtonText: 'Sign In'
+    };
+
     // Bind 'this' for callback functions.
     this.handleUserSubmit = this.handleUserSubmit.bind(this);
   }
 
   handleUserSubmit(event) {
     event.preventDefault();
+
+    this.setState({
+      logInButtonText:
+      <div>
+        <FontAwesome name="spinner" spin pulse /> Signing In
+      </div>
+    });
 
     const authUser = {
       auth_user: {
@@ -94,7 +106,7 @@ class LoginPage extends Component {
                 bsSize="small"
                 className="submit"
               >
-                Sign in
+                {this.state.logInButtonText}
               </Button>
             </Col>
           </FormGroup>
