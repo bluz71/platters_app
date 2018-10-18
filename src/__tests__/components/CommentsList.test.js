@@ -62,7 +62,7 @@ describe('<CommentsList />', () => {
         <CommentsList comments={comments()} onDeleteComment={spyCommentDelete} />
       </MemoryRouter>
     );
-    wrapper.find('span.icon').at(0).simulate('click')
+    wrapper.find('span.icon').at(0).simulate('click');
     await flushPromises();
     wrapper.update();
     expect(spyCommentDelete).toHaveBeenCalled();
