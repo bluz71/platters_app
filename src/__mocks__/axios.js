@@ -176,5 +176,11 @@ module.exports = {
         }
       }
     }
+  }),
+  delete: jest.fn((url) => {
+    switch (url) {
+      case `${API_HOST}/abc/abc/comments/1.json`:
+        return Promise.resolve({});
+    }
   })
 };
