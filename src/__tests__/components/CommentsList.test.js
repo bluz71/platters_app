@@ -23,8 +23,8 @@ const comments = () => {
       'id': 2,
       'body': 'Second comment',
       'created_at': '<time datetime="2018-05-05T05:34:56Z" data-local="time-ago">May  5, 2018  5:34am</time>',
-      'user_name': 'joe',
-      'user_slug': 'joe',
+      'user_name': 'fred',
+      'user_slug': 'fred',
       'gravatar_url': 'https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon',
       'for': 'Album',
       'artist': 'ABC',
@@ -62,9 +62,25 @@ describe('<CommentsList />', () => {
         <CommentsList comments={comments()} onDeleteComment={spyCommentDelete} />
       </MemoryRouter>
     );
-    wrapper.find('span.icon').at(0).simulate('click');
+    wrapper.find('span.icon').first().simulate('click');
     await flushPromises();
     wrapper.update();
     expect(spyCommentDelete).toHaveBeenCalled();
+  });
+
+  it('will not delete a comment if the server refuses', async () => {
+    logInUser();
+    // Mock window.confirm which will be invoked when deleting a comment.
+    window.confirm = jest.fn(() => true);
+    const spyCommentDelete = jest.fn();
+    const wrapper = mount(
+      <MemoryRouter initialEntries={[ { key: 'testKey' } ]}>
+        <CommentsList comments={comments()} onDeleteComment={spyCommentDelete} />
+      </MemoryRouter>
+    );
+    wrapper.find('span.icon').last().simulate('click');
+    await flushPromises();
+    wrapper.update();
+    expect(spyCommentDelete).not.toHaveBeenCalled();
   });
 });

@@ -83,10 +83,10 @@ exports[`<CommentsList /> renders a list of comments 1`] = `
     >
       <Link
         replace={false}
-        to="/comments/joe"
+        to="/comments/fred"
       >
         <img
-          alt="joe"
+          alt="fred"
           className="img-responsive center-block"
           src="https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon"
         />
@@ -94,9 +94,9 @@ exports[`<CommentsList /> renders a list of comments 1`] = `
       <h2>
         <Link
           replace={false}
-          to="/comments/joe"
+          to="/comments/fred"
         >
-          joe
+          fred
         </Link>
         <small>
            posted in ABC / 
@@ -201,10 +201,10 @@ exports[`<CommentsList /> renders a list of comments with shortHeader 1`] = `
     >
       <Link
         replace={false}
-        to="/comments/joe"
+        to="/comments/fred"
       >
         <img
-          alt="joe"
+          alt="fred"
           className="img-responsive center-block"
           src="https://gravatar.com/avatar/88884e5cb90c02031f031bc4760fcf69?s=80&r=pg&d=identicon"
         />
@@ -212,9 +212,9 @@ exports[`<CommentsList /> renders a list of comments with shortHeader 1`] = `
       <h2>
         <Link
           replace={false}
-          to="/comments/joe"
+          to="/comments/fred"
         >
-          joe
+          fred
         </Link>
       </h2>
       <h3

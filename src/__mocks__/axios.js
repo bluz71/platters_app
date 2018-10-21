@@ -181,6 +181,12 @@ module.exports = {
     switch (url) {
       case `${API_HOST}/abc/abc/comments/1.json`:
         return Promise.resolve({});
+      case `${API_HOST}/abc/abc/comments/2.json`:
+        return Promise.reject({
+          response: {
+            status: 404
+          }
+        });
     }
   })
 };
