@@ -13,12 +13,13 @@ describe('<Header />', () => {
 
   it('contains a brand', () => {
     const wrapper = shallow(<Header />);
-    const brand =
+    const brand = (
       <Navbar.Brand>
-        <Link to='/' className='PlattersBrand'>
+        <Link to="/" className="PlattersBrand">
           <img src={logo} alt="Platters" /> platters
         </Link>
-      </Navbar.Brand>;
+      </Navbar.Brand>
+    );
     expect(wrapper).toContainReact(brand);
   });
 });

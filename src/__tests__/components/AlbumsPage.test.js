@@ -18,7 +18,7 @@ describe('<AlbumsPage />', () => {
     // Note: https://reacttraining.com/react-router/core/guides/testing/
     //       https://github.com/ReactTraining/react-router/issues/5579#issuecomment-333401692
     const wrapper = mount(
-      <MemoryRouter initialEntries={[ { key: 'testKey' } ]}>
+      <MemoryRouter initialEntries={[{ key: 'testKey' }]}>
         <AlbumsPage />
       </MemoryRouter>
     );
@@ -35,7 +35,10 @@ describe('<AlbumsPage />', () => {
     );
     // Manually trigger the callback.
     // Note: https://github.com/airbnb/enzyme/issues/361
-    wrapper.find(AlbumsPage).instance().handlePageChange(2);
+    wrapper
+      .find(AlbumsPage)
+      .instance()
+      .handlePageChange(2);
     await flushPromises();
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
@@ -48,7 +51,10 @@ describe('<AlbumsPage />', () => {
       </MemoryRouter>
     );
     // Manually trigger the callback
-    wrapper.find(AlbumsPage).instance().handleLetter('A');
+    wrapper
+      .find(AlbumsPage)
+      .instance()
+      .handleLetter('A');
     await flushPromises();
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
@@ -61,7 +67,10 @@ describe('<AlbumsPage />', () => {
       </MemoryRouter>
     );
     // Manually trigger the callback
-    wrapper.find(AlbumsPage).instance().handleYear(2006);
+    wrapper
+      .find(AlbumsPage)
+      .instance()
+      .handleYear(2006);
     await flushPromises();
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
@@ -74,7 +83,10 @@ describe('<AlbumsPage />', () => {
       </MemoryRouter>
     );
     // Manually trigger the callback
-    wrapper.find(AlbumsPage).instance().handleGenre('Pop');
+    wrapper
+      .find(AlbumsPage)
+      .instance()
+      .handleGenre('Pop');
     await flushPromises();
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
@@ -87,7 +99,10 @@ describe('<AlbumsPage />', () => {
       </MemoryRouter>
     );
     // Manually trigger the callback
-    wrapper.find(AlbumsPage).instance().handleRandom();
+    wrapper
+      .find(AlbumsPage)
+      .instance()
+      .handleRandom();
     await flushPromises();
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
@@ -100,7 +115,10 @@ describe('<AlbumsPage />', () => {
       </MemoryRouter>
     );
     // Manually trigger the callback
-    wrapper.find(AlbumsPage).instance().handleSearchChange('ABC');
+    wrapper
+      .find(AlbumsPage)
+      .instance()
+      .handleSearchChange('ABC');
     await flushPromises();
     wrapper.update();
     expect(wrapper).toMatchSnapshot();

@@ -47,4 +47,3 @@ describe('<ArtistsPage />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
-

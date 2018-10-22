@@ -11,7 +11,7 @@ describe('<Footer />', () => {
 
   it('contains a list', () => {
     const wrapper = shallow(<Footer />);
-    const list =
+    const list = (
       <ul className="Footer-list">
         <Link to="/about">
           <li>About</li>
@@ -19,7 +19,8 @@ describe('<Footer />', () => {
         <Link to="/details">
           <li>Details</li>
         </Link>
-      </ul>;
+      </ul>
+    );
     expect(wrapper).toContainReact(list);
   });
 });

@@ -30,7 +30,10 @@ describe('<AlbumsFilter />', () => {
     await flushPromises();
     wrapper.instance().handleSortTitle = spySortTitle;
     wrapper.update();
-    wrapper.find('input').at(1).simulate('change', {target: {checked: true}});
+    wrapper
+      .find('input')
+      .at(1)
+      .simulate('change', { target: { checked: true } });
     expect(spySortTitle).toHaveBeenCalled();
   });
 
@@ -40,27 +43,42 @@ describe('<AlbumsFilter />', () => {
     await flushPromises();
     wrapper.instance().handleSortYear = spySortYear;
     wrapper.update();
-    wrapper.find('input').at(2).simulate('change', {target: {checked: true}});
+    wrapper
+      .find('input')
+      .at(2)
+      .simulate('change', { target: { checked: true } });
     expect(spySortYear).toHaveBeenCalled();
   });
 
   it('selects order forward', async () => {
     const wrapper = mount(<AlbumsFilter />);
-    const spyOrderForward = jest.spyOn(wrapper.instance(), 'handleOrderForward');
+    const spyOrderForward = jest.spyOn(
+      wrapper.instance(),
+      'handleOrderForward'
+    );
     await flushPromises();
     wrapper.instance().handleOrderForward = spyOrderForward;
     wrapper.update();
-    wrapper.find('input').at(3).simulate('change', {target: {checked: true}});
+    wrapper
+      .find('input')
+      .at(3)
+      .simulate('change', { target: { checked: true } });
     expect(spyOrderForward).toHaveBeenCalled();
   });
 
   it('selects order reverse', async () => {
     const wrapper = mount(<AlbumsFilter />);
-    const spyOrderReverse = jest.spyOn(wrapper.instance(), 'handleOrderReverse');
+    const spyOrderReverse = jest.spyOn(
+      wrapper.instance(),
+      'handleOrderReverse'
+    );
     await flushPromises();
     wrapper.instance().handleOrderReverse = spyOrderReverse;
     wrapper.update();
-    wrapper.find('input').at(4).simulate('change', {target: {checked: true}});
+    wrapper
+      .find('input')
+      .at(4)
+      .simulate('change', { target: { checked: true } });
     expect(spyOrderReverse).toHaveBeenCalled();
   });
 

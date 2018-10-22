@@ -22,14 +22,13 @@ import { data as artistAlbumsName } from './artist_albums_name.json';
 import { data as artistCommentsPage2 } from './commentable_page2.json';
 import { data as logIn } from './log_in.json';
 
-
 // Details:
 //   https://stackoverflow.com/questions/45016033/how-do-i-test-axios-in-jest
 //   https://alexjoverm.github.io/2017/09/25/Test-Methods-and-Mock-Dependencies-in-Vue-js-with-Jest
 module.exports = {
   get: jest.fn((url) => {
     switch (url) {
-      case `${API_HOST}/artists.json`: 
+      case `${API_HOST}/artists.json`:
         return Promise.resolve({
           data: artists
         });
@@ -146,18 +145,12 @@ module.exports = {
     switch (url) {
       case `${API_HOST}/api/log_in`: {
         const { email, password } = param.auth_user;
-        if (
-          email === 'fred@example.com' &&
-          password === 'password1'
-        ) {
+        if (email === 'fred@example.com' && password === 'password1') {
           return Promise.resolve({
             data: logIn
           });
         }
-        if (
-          email === 'fred@example.com' &&
-          password === 'password2'
-        ) {
+        if (email === 'fred@example.com' && password === 'password2') {
           return Promise.reject({
             response: {
               status: 401,

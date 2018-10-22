@@ -12,9 +12,12 @@ describe('<Paginator />', () => {
     const pagination = { current_page: 1, total_pages: 2 };
     const spyPageChange = jest.fn();
     const wrapper = mount(
-      <Paginator pagination={pagination} onPageChange={spyPageChange}/>
+      <Paginator pagination={pagination} onPageChange={spyPageChange} />
     );
-    wrapper.find('SafeAnchor').at(0).simulate('click');
+    wrapper
+      .find('SafeAnchor')
+      .at(0)
+      .simulate('click');
     expect(spyPageChange).toHaveBeenCalledWith(1, expect.anything());
   });
 
@@ -22,9 +25,12 @@ describe('<Paginator />', () => {
     const pagination = { current_page: 1, total_pages: 2 };
     const spyPageChange = jest.fn();
     const wrapper = mount(
-      <Paginator pagination={pagination} onPageChange={spyPageChange}/>
+      <Paginator pagination={pagination} onPageChange={spyPageChange} />
     );
-    wrapper.find('SafeAnchor').at(1).simulate('click');
+    wrapper
+      .find('SafeAnchor')
+      .at(1)
+      .simulate('click');
     expect(spyPageChange).toHaveBeenCalledWith(2, expect.anything());
   });
 
@@ -32,9 +38,12 @@ describe('<Paginator />', () => {
     const pagination = { current_page: 1, total_pages: 2 };
     const spyPageChange = jest.fn();
     const wrapper = mount(
-      <Paginator pagination={pagination} onPageChange={spyPageChange}/>
+      <Paginator pagination={pagination} onPageChange={spyPageChange} />
     );
-    wrapper.find('SafeAnchor').at(2).simulate('click');
+    wrapper
+      .find('SafeAnchor')
+      .at(2)
+      .simulate('click');
     expect(spyPageChange).toHaveBeenCalledWith(2, expect.anything());
   });
 
@@ -42,9 +51,12 @@ describe('<Paginator />', () => {
     const pagination = { current_page: 3, total_pages: 3 };
     const spyPageChange = jest.fn();
     const wrapper = mount(
-      <Paginator pagination={pagination} onPageChange={spyPageChange}/>
+      <Paginator pagination={pagination} onPageChange={spyPageChange} />
     );
-    wrapper.find('SafeAnchor').at(0).simulate('click');
+    wrapper
+      .find('SafeAnchor')
+      .at(0)
+      .simulate('click');
     expect(spyPageChange).toHaveBeenCalledWith(1, expect.anything());
   });
 
@@ -52,9 +64,12 @@ describe('<Paginator />', () => {
     const pagination = { current_page: 1, total_pages: 3 };
     const spyPageChange = jest.fn();
     const wrapper = mount(
-      <Paginator pagination={pagination} onPageChange={spyPageChange}/>
+      <Paginator pagination={pagination} onPageChange={spyPageChange} />
     );
-    wrapper.find('SafeAnchor').at(4).simulate('click');
+    wrapper
+      .find('SafeAnchor')
+      .at(4)
+      .simulate('click');
     expect(spyPageChange).toHaveBeenCalledWith(3, expect.anything());
   });
 });
