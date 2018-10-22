@@ -62,7 +62,8 @@ exports[`<AlbumsPage /> renders 2006 albums 1`] = `
             className="page-header"
           >
             <h1>
-              Albums 
+              Albums
+               
               <small>
                 (
                 1
@@ -654,7 +655,8 @@ exports[`<AlbumsPage /> renders A albums 1`] = `
             className="page-header"
           >
             <h1>
-              Albums 
+              Albums
+               
               <small>
                 (
                 1
@@ -1258,7 +1260,8 @@ exports[`<AlbumsPage /> renders ABC search match 1`] = `
             className="page-header"
           >
             <h1>
-              Albums 
+              Albums
+               
               <small>
                 (
                 1
@@ -1861,7 +1864,8 @@ exports[`<AlbumsPage /> renders Pop albums 1`] = `
             className="page-header"
           >
             <h1>
-              Albums 
+              Albums
+               
               <small>
                 (
                 1
@@ -2420,7 +2424,8 @@ exports[`<AlbumsPage /> renders first page 1`] = `
             className="page-header"
           >
             <h1>
-              Albums 
+              Albums
+               
               <small>
                 (
                 3
@@ -3332,7 +3337,8 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
             className="page-header"
           >
             <h1>
-              Albums 
+              Albums
+               
               <small>
                 (
                 2
@@ -3881,7 +3887,8 @@ exports[`<AlbumsPage /> renders second page 1`] = `
             className="page-header"
           >
             <h1>
-              Albums 
+              Albums
+               
               <small>
                 (
                 3

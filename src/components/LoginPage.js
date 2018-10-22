@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Row, Col, PageHeader, Well, Form, FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
+import {
+  Row,
+  Col,
+  PageHeader,
+  Well,
+  Form,
+  FormGroup,
+  ControlLabel,
+  FormControl,
+  Button
+} from 'react-bootstrap';
 import { appAuth } from '../lib/appAuth';
 import { API_HOST } from '../config';
 import toastAlert from '../helpers/toastAlert';
@@ -24,15 +34,16 @@ class LoginPage extends Component {
     event.preventDefault();
 
     this.setState({
-      logInButtonText:
-      <div>
-        <FontAwesome name="spinner" spin pulse /> Signing In
-      </div>
+      logInButtonText: (
+        <div>
+          <FontAwesome name="spinner" spin pulse /> Signing In
+        </div>
+      )
     });
 
     const authUser = {
       auth_user: {
-        email:    this.emailInput.value,
+        email: this.emailInput.value,
         password: this.passwordInput.value
       }
     };
@@ -41,25 +52,24 @@ class LoginPage extends Component {
   }
 
   postUser(authUser) {
-    axios.post(LOGIN_ENDPOINT, authUser)
-      .then(response => {
+    axios
+      .post(LOGIN_ENDPOINT, authUser)
+      .then((response) => {
         appAuth.logIn(response.data.auth_token);
         this.props.history.push('/');
       })
-      .catch(error => {
+      .catch((error) => {
         if (error.response && error.response.status === 401) {
-          toastAlert(`Incorrect log in credentials, ${error.response.data.error}`);
-        }
-        else if (error.response && error.response.status === 404) {
+          toastAlert(
+            `Incorrect log in credentials, ${error.response.data.error}`
+          );
+        } else if (error.response && error.response.status === 404) {
           toastAlert('Incorrect log in credentials, user not found');
-        }
-        else if (error.response && error.response.status === 403) {
+        } else if (error.response && error.response.status === 403) {
           toastAlert('User account has not been confirmed');
-        }
-        else if (error.tokenMessage) {
+        } else if (error.tokenMessage) {
           toastAlert(error.tokenMessage);
-        }
-        else {
+        } else {
           toastAlert('Server error, please try again later');
         }
       });
@@ -69,8 +79,7 @@ class LoginPage extends Component {
     return (
       <Well>
         <Form horizontal onSubmit={this.handleUserSubmit}>
-          <ul className="list-group">
-          </ul>
+          <ul className="list-group" />
 
           <FormGroup>
             <Col componentClass={ControlLabel} md={2}>
@@ -80,7 +89,7 @@ class LoginPage extends Component {
               <FormControl
                 type="email"
                 className="email"
-                inputRef={(input) => this.emailInput = input}
+                inputRef={(input) => (this.emailInput = input)}
               />
             </Col>
           </FormGroup>
@@ -93,7 +102,7 @@ class LoginPage extends Component {
               <FormControl
                 type="password"
                 className="password"
-                inputRef={(input) => this.passwordInput = input}
+                inputRef={(input) => (this.passwordInput = input)}
               />
             </Col>
           </FormGroup>
@@ -126,6 +135,5 @@ class LoginPage extends Component {
     );
   }
 }
-
 
 export default LoginPage;

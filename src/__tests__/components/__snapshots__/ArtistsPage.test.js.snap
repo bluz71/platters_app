@@ -16,7 +16,8 @@ exports[`<ArtistsPage /> renders A artists 1`] = `
       <PageHeader
         bsClass="page-header"
       >
-        Artists 
+        Artists
+         
         <small>
           (
           1
@@ -378,7 +379,8 @@ exports[`<ArtistsPage /> renders ABC search match 1`] = `
       <PageHeader
         bsClass="page-header"
       >
-        Artists 
+        Artists
+         
         <small>
           (
           1
@@ -739,7 +741,8 @@ exports[`<ArtistsPage /> renders first page 1`] = `
       <PageHeader
         bsClass="page-header"
       >
-        Artists 
+        Artists
+         
         <small>
           (
           3
@@ -1141,7 +1144,8 @@ exports[`<ArtistsPage /> renders second page 1`] = `
       <PageHeader
         bsClass="page-header"
       >
-        Artists 
+        Artists
+         
         <small>
           (
           3

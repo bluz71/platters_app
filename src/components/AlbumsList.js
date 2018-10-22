@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import '../styles/AlbumsList.css';
 
-const renderAlbums = (albums, onYear, onGenre) => (
-  albums.map(album =>
+const renderAlbums = (albums, onYear, onGenre) =>
+  albums.map((album) => (
     <Col key={album.id} md={6}>
       <div className="Album">
         <h2>
@@ -16,9 +16,10 @@ const renderAlbums = (albums, onYear, onGenre) => (
           </Link>
         </h2>
         <h3>
-          by <Link to={`/artist/${album.artist_slug}`}>
-            {album.artist}
-          </Link> <small>({album.tracks_count} {pluralize('Track', album.tracks_count)})</small>
+          by <Link to={`/artist/${album.artist_slug}`}>{album.artist}</Link>{' '}
+          <small>
+            ({album.tracks_count} {pluralize('Track', album.tracks_count)})
+          </small>
         </h3>
         <div className="icon">
           <a onClick={() => onYear(album.year)}>
@@ -27,29 +28,37 @@ const renderAlbums = (albums, onYear, onGenre) => (
           <a onClick={() => onGenre(album.genre)}>
             <FontAwesome name="tag" className="spacer-left-xsm" /> {album.genre}
           </a>
-          <Link to={{
-            pathname: `/artist/${album.artist_slug}/album/${album.album_slug}`,
-            state: { scrollToComments: true }
-          }}>
-            <FontAwesome name="comment-o" className="spacer-left-xsm" /> {album.comments_count}
+          <Link
+            to={{
+              pathname: `/artist/${album.artist_slug}/album/${
+                album.album_slug
+              }`,
+              state: { scrollToComments: true }
+            }}
+          >
+            <FontAwesome name="comment-o" className="spacer-left-xsm" />{' '}
+            {album.comments_count}
           </Link>
         </div>
         <Link to={`/artist/${album.artist_slug}/album/${album.album_slug}`}>
-          <img className="img-responsive" src={album.cover_url} alt={album.title} />
+          <img
+            className="img-responsive"
+            src={album.cover_url}
+            alt={album.title}
+          />
         </Link>
         <ul>
-          {album.tracks.map((track, index) => <li key={index}>{track}</li>)}
+          {album.tracks.map((track, index) => (
+            <li key={index}>{track}</li>
+          ))}
         </ul>
       </div>
     </Col>
-  )
-);
+  ));
 
 const AlbumsList = ({ albums, onYear, onGenre }) => {
   return (
-    <div className="AlbumsList">
-      {renderAlbums(albums, onYear, onGenre)}
-    </div>
+    <div className="AlbumsList">{renderAlbums(albums, onYear, onGenre)}</div>
   );
 };
 

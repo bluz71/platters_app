@@ -136,7 +136,8 @@ exports[`<HomePage /> renders home page 1`] = `
         <h2
           className="page-header"
         >
-          Album of the day - 
+          Album of the day -
+           
           <Link
             replace={false}
             to="/artist/xyz/album/album_of_the_day"
@@ -309,7 +310,8 @@ exports[`<HomePage /> renders home page when logged in 1`] = `
         <h2
           className="page-header"
         >
-          Album of the day - 
+          Album of the day -
+           
           <Link
             replace={false}
             to="/artist/xyz/album/album_of_the_day"

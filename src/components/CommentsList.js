@@ -14,8 +14,7 @@ import { API_HOST } from '../config';
 const postedIn = (comment) => {
   if (comment.for === 'Album') {
     return ` posted in ${comment.artist} / `;
-  }
-  else {
+  } else {
     return ' posted in ';
   }
 };
@@ -26,18 +25,19 @@ const handleDelete = (comment, onDeleteComment) => {
   }
 
   const deleteCommentEndPoint = `${API_HOST}${comment.delete_path}.json`;
-  axios.delete(deleteCommentEndPoint, appAuth.headers())
-    .then(response => {
+  axios
+    .delete(deleteCommentEndPoint, appAuth.headers())
+    .then((response) => {
       onDeleteComment(comment.id);
     })
-    .catch(error => {
+    .catch((error) => {
       if (error.response && error.response.status === 404) {
-        toastAlert('Comment deletion failed due to permission or not found issue');
-      }
-      else if (error.tokenMessage) {
+        toastAlert(
+          'Comment deletion failed due to permission or not found issue'
+        );
+      } else if (error.tokenMessage) {
         toastAlert(error.tokenMessage);
-      }
-      else {
+      } else {
         toastAlert('Server error, please try again later');
       }
     });
@@ -47,7 +47,8 @@ const renderDeleteComment = (comment, onDeleteComment) => {
   if (
     appAuth.isLoggedIn() &&
     (appAuth.currentUser().name === comment.user_name ||
-      appAuth.currentUser().admin)) {
+      appAuth.currentUser().admin)
+  ) {
     return (
       <span
         onClick={() => handleDelete(comment, onDeleteComment)}
@@ -59,8 +60,8 @@ const renderDeleteComment = (comment, onDeleteComment) => {
   }
 };
 
-const renderComments = (comments, onDeleteComment, shortHeader) => (
-  comments.map(comment => (
+const renderComments = (comments, onDeleteComment, shortHeader) =>
+  comments.map((comment) => (
     <div key={comment.id} className="Comment">
       <Link to={`/comments/${comment.user_slug}`}>
         <img
@@ -93,8 +94,7 @@ const renderComments = (comments, onDeleteComment, shortHeader) => (
         }}
       />
     </div>
-  ))
-);
+  ));
 
 const CommentsList = ({ comments, onDeleteComment, shortHeader }) => (
   <div className="CommentsList">
@@ -109,7 +109,7 @@ CommentsList.defaultTypes = {
 };
 
 CommentsList.propTypes = {
-  comments:    PropTypes.instanceOf(Map),
+  comments: PropTypes.instanceOf(Map),
   shortHeader: PropTypes.bool
 };
 

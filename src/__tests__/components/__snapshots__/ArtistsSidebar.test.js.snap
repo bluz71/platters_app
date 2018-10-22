@@ -141,7 +141,8 @@ exports[`<ArtistsSidebar /> renders a sidebar 1`] = `
             />
           </Link>
           <h5>
-            in 
+            in
+             
             <Link
               replace={false}
               to={
@@ -189,7 +190,8 @@ exports[`<ArtistsSidebar /> renders a sidebar 1`] = `
             />
           </Link>
           <h5>
-            in 
+            in
+             
             <Link
               replace={false}
               to={

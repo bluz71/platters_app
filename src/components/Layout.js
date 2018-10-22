@@ -23,15 +23,23 @@ const Layout = () => (
   <div>
     <Header />
     <div className="Main">
-      <ToastContainer autoClose={false} draggablePercent={50} position="top-left" transition={Zoom}/>
+      <ToastContainer
+        autoClose={false}
+        draggablePercent={50}
+        position="top-left"
+        transition={Zoom}
+      />
       <Grid>
         <Switch>
           <Route path="/" exact component={HomePage} />
           <Route path="/albums" exact component={AlbumsPage} />
-          <Route path="/artist/:artist_id/album/:album_id" component={AlbumShowPage}  />
+          <Route
+            path="/artist/:artist_id/album/:album_id"
+            component={AlbumShowPage}
+          />
           <Route path="/artists" exact component={ArtistsPage} />
-          <Route path="/artist/:id" component={ArtistShowPage}  />
-          <Route path="/comments/:id" component={UserCommentsPage}  />
+          <Route path="/artist/:id" component={ArtistShowPage} />
+          <Route path="/comments/:id" component={UserCommentsPage} />
           <Route path="/log_in" component={LoginPage} />
           <Route path="/log_out" component={Logout} />
           <Route path="/about" component={AboutPage} />

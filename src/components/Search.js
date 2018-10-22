@@ -8,7 +8,9 @@ class Search extends Component {
   constructor(props) {
     super(props);
 
-    this.debouncedSearch = debounce(term => { this.props.onSearchChange(term); }, 500);
+    this.debouncedSearch = debounce((term) => {
+      this.props.onSearchChange(term);
+    }, 500);
 
     // Bind 'this' for callback functions.
     this.focusSearchInput = this.focusSearchInput.bind(this);
@@ -32,8 +34,8 @@ class Search extends Component {
                 type="text"
                 bsSize="sm"
                 placeholder={this.props.placeholder}
-                onChange={event => this.debouncedSearch(event.target.value)}
-                inputRef={(input) => this.searchInput = input}
+                onChange={(event) => this.debouncedSearch(event.target.value)}
+                inputRef={(input) => (this.searchInput = input)}
               />
             </FormGroup>
           </form>

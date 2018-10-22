@@ -30,7 +30,8 @@ exports[`<AlbumShowPage /> handles invalid album 1`] = `
       md={6}
     >
       <h2>
-         Tracks 
+         Tracks
+         
         <small>
           (Time 
           )
@@ -92,7 +93,8 @@ exports[`<AlbumShowPage /> handles invalid album 1`] = `
         <PageHeader
           bsClass="page-header"
         >
-          Comments 
+          Comments
+           
         </PageHeader>
       </div>
       <CommentsList
@@ -156,7 +158,8 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
     >
       <h2>
         21
-         Tracks 
+         Tracks
+         
         <small>
           (Time 
           91:56
@@ -554,7 +557,8 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
         <PageHeader
           bsClass="page-header"
         >
-          Comments 
+          Comments
+           
           <small>
             (
             36
@@ -828,7 +832,8 @@ exports[`<AlbumShowPage /> renders all album comments when scrolled 1`] = `
     >
       <h2>
         21
-         Tracks 
+         Tracks
+         
         <small>
           (Time 
           91:56
@@ -1226,7 +1231,8 @@ exports[`<AlbumShowPage /> renders all album comments when scrolled 1`] = `
         <PageHeader
           bsClass="page-header"
         >
-          Comments 
+          Comments
+           
           <small>
             (
             36
@@ -1588,7 +1594,8 @@ exports[`<AlbumShowPage /> renders all tracks when show all is clicked 1`] = `
     >
       <h2>
         21
-         Tracks 
+         Tracks
+         
         <small>
           (Time 
           91:56
@@ -1983,7 +1990,8 @@ exports[`<AlbumShowPage /> renders all tracks when show all is clicked 1`] = `
         <PageHeader
           bsClass="page-header"
         >
-          Comments 
+          Comments
+           
           <small>
             (
             36
@@ -2257,7 +2265,8 @@ exports[`<AlbumShowPage /> renders less tracks when show less is clicked 1`] = `
     >
       <h2>
         21
-         Tracks 
+         Tracks
+         
         <small>
           (Time 
           91:56
@@ -2655,7 +2664,8 @@ exports[`<AlbumShowPage /> renders less tracks when show less is clicked 1`] = `
         <PageHeader
           bsClass="page-header"
         >
-          Comments 
+          Comments
+           
           <small>
             (
             36

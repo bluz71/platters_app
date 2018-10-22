@@ -16,17 +16,21 @@ class AlbumShowPage extends Component {
   constructor(props) {
     super(props);
 
-    this.artistSlug       = props.match.params.artist_id;
-    this.albumSlug        = props.match.params.album_id;
-    this.albumEndPoint    = `${API_HOST}/${this.artistSlug}/${this.albumSlug}.json`;
+    this.artistSlug = props.match.params.artist_id;
+    this.albumSlug = props.match.params.album_id;
+    this.albumEndPoint = `${API_HOST}/${this.artistSlug}/${
+      this.albumSlug
+    }.json`;
     this.showingAllTracks = false;
     this.scrollLessTracks = false;
-    this.loaded           = false;
-    this.commentsEndPoint = `${API_HOST}/${this.artistSlug}/${this.albumSlug}/comments.json`;
-    this.waiting          = false; // For comments when infinite-scrolling.
+    this.loaded = false;
+    this.commentsEndPoint = `${API_HOST}/${this.artistSlug}/${
+      this.albumSlug
+    }/comments.json`;
+    this.waiting = false; // For comments when infinite-scrolling.
     this.scrollToComments =
       (props.location.state && props.location.state.scrollToComments) || false;
-    this.pageProgress     = new pageProgress();
+    this.pageProgress = new pageProgress();
 
     // Note, use a Map for comments since it preserves insertion order whilst
     // allowing O(1) comment deletion.
@@ -41,9 +45,9 @@ class AlbumShowPage extends Component {
 
     // Bind 'this' for callback functions.
     this.handleTracksVisibility = this.handleTracksVisibility.bind(this);
-    this.handleScroll           = this.handleScroll.bind(this);
-    this.handlePageEnd          = this.handlePageEnd.bind(this);
-    this.handleDeleteComment    = this.handleDeleteComment.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
+    this.handlePageEnd = this.handlePageEnd.bind(this);
+    this.handleDeleteComment = this.handleDeleteComment.bind(this);
   }
 
   componentDidMount() {
@@ -72,8 +76,9 @@ class AlbumShowPage extends Component {
 
     // Disable scroll handling whilst records are being retrieved.
     window.onscroll = null;
-    const commentsPageEndPoint
-      = `${this.commentsEndPoint}?page=${this.state.commentsPagination.next_page}`;
+    const commentsPageEndPoint = `${this.commentsEndPoint}?page=${
+      this.state.commentsPagination.next_page
+    }`;
     this.waiting = true;
     this.forceUpdate(); // Render spinner
     this.getComments(commentsPageEndPoint);
@@ -104,43 +109,42 @@ class AlbumShowPage extends Component {
     // Delete the comment of interest.
     comments.delete(commentId);
     // Apply the updated state.
-    this.setState({comments});
+    this.setState({ comments });
   }
 
   getAlbum(scrollToTop = false) {
-    axios.get(this.albumEndPoint)
-      .then(response => {
+    axios
+      .get(this.albumEndPoint)
+      .then((response) => {
         this.loaded = this.pageProgress.done();
         document.title = response.data.album.title;
         this.setState({
           album: response.data.album,
           tracks: response.data.tracks,
-          comments: new Map(
-            response.data.comments.map(c => [c.id, c])
-          ),
+          comments: new Map(response.data.comments.map((c) => [c.id, c])),
           commentsPagination: response.data.comments_pagination
         });
         if (this.scrollToComments) {
           this.scrollToComments = false;
           this.commentsAnchor.scrollIntoView();
-        }
-        else if (scrollToTop) {
+        } else if (scrollToTop) {
           window.scrollTo(0, 0);
         }
-      }).catch(error => {
+      })
+      .catch((error) => {
         this.pageProgress.done();
         if (error.response && error.response.status === 404) {
           this.setState({ notFound: true });
-        }
-        else {
+        } else {
           this.setState({ error: error });
         }
       });
   }
 
   getComments(commentsEndPoint) {
-    axios.get(commentsEndPoint)
-      .then(response => {
+    axios
+      .get(commentsEndPoint)
+      .then((response) => {
         this.waiting = false;
         if (!window.onscroll) {
           // Re-enable scroll handling now that the records have been
@@ -150,11 +154,12 @@ class AlbumShowPage extends Component {
         this.setState({
           comments: new Map([
             ...this.state.comments,
-            ...response.data.comments.map(c => [c.id, c])
+            ...response.data.comments.map((c) => [c.id, c])
           ]),
-          commentsPagination: response.data.pagination,
+          commentsPagination: response.data.pagination
         });
-      }).catch(error => {
+      })
+      .catch((error) => {
         this.setState({ error: error });
       });
   }
@@ -162,8 +167,7 @@ class AlbumShowPage extends Component {
   albumRetrieved() {
     if (!this.loaded || this.state.notFound || this.state.error) {
       return false;
-    }
-    else {
+    } else {
       return true;
     }
   }
@@ -184,8 +188,10 @@ class AlbumShowPage extends Component {
     return (
       <Col md={10} mdOffset={1}>
         <PageHeader>
-          {albumTitle} <small>by <Link 
-            to={`/artist/${this.artistSlug}`}>{artistName}</Link></small>
+          {albumTitle}{' '}
+          <small>
+            by <Link to={`/artist/${this.artistSlug}`}>{artistName}</Link>
+          </small>
         </PageHeader>
       </Col>
     );
@@ -196,9 +202,9 @@ class AlbumShowPage extends Component {
 
     return (
       <Col md={4} mdOffset={1} className="large-cover">
-        <img 
-          className="img-responsive center-block" 
-          src={album.cover_url} 
+        <img
+          className="img-responsive center-block"
+          src={album.cover_url}
           alt={album.title}
         />
       </Col>
@@ -208,24 +214,21 @@ class AlbumShowPage extends Component {
   trackVisibilityVal(track) {
     if (track.number <= 20 || this.showingAllTracks) {
       return 'visible';
-    }
-    else {
+    } else {
       return 'invisible';
     }
   }
 
   renderTracks(tracks) {
-    return (
-      tracks.map(track => {
-        return (
-          <tr key={track.id} className={this.trackVisibilityVal(track)}>
-            <td>{track.number}.</td>
-            <td>{track.title}</td>
-            <td>{track.duration}</td>
-          </tr>
-        );
-      })
-    );
+    return tracks.map((track) => {
+      return (
+        <tr key={track.id} className={this.trackVisibilityVal(track)}>
+          <td>{track.number}.</td>
+          <td>{track.title}</td>
+          <td>{track.duration}</td>
+        </tr>
+      );
+    });
   }
 
   renderTracksVisibility() {
@@ -235,10 +238,12 @@ class AlbumShowPage extends Component {
       return;
     }
 
-    const btnText  = this.showingAllTracks ? 'Show less tracks' : 'Show all tracks';
+    const btnText = this.showingAllTracks
+      ? 'Show less tracks'
+      : 'Show all tracks';
 
     return (
-      <div ref={tracksAnchor => this.tracksAnchor = tracksAnchor}>
+      <div ref={(tracksAnchor) => (this.tracksAnchor = tracksAnchor)}>
         {!this.showingAllTracks && <div className="tracks-gradient" />}
         <Button
           bsSize="small"
@@ -257,7 +262,8 @@ class AlbumShowPage extends Component {
     return (
       <Col md={6} className="album-data">
         <h2>
-          {album.tracks_count} Tracks <small>(Time {album.total_duration})</small>
+          {album.tracks_count} Tracks{' '}
+          <small>(Time {album.total_duration})</small>
         </h2>
         <span className="icon">
           <a onClick={() => this.handleYear(album.year)}>
@@ -275,9 +281,7 @@ class AlbumShowPage extends Component {
               <th>Duration</th>
             </tr>
           </thead>
-          <tbody>
-            {this.renderTracks(tracks)}
-          </tbody>
+          <tbody>{this.renderTracks(tracks)}</tbody>
         </Table>
         {this.renderTracksVisibility()}
       </Col>
@@ -286,9 +290,7 @@ class AlbumShowPage extends Component {
 
   renderCommentsList(count) {
     if (count === 0) {
-      return (
-        <h4>No comments have been posted for this album</h4>
-      );
+      return <h4>No comments have been posted for this album</h4>;
     }
 
     return (
@@ -316,10 +318,14 @@ class AlbumShowPage extends Component {
 
     return (
       <Col md={10} mdOffset={1} className="comments">
-        <div ref={commentsAnchor => this.commentsAnchor = commentsAnchor}>
+        <div ref={(commentsAnchor) => (this.commentsAnchor = commentsAnchor)}>
           <PageHeader>
-            Comments {this.albumRetrieved()
-                && <small>({commentsCount} {pluralize('Comment', count)})</small>}
+            Comments{' '}
+            {this.albumRetrieved() && (
+              <small>
+                ({commentsCount} {pluralize('Comment', count)})
+              </small>
+            )}
           </PageHeader>
         </div>
         {this.renderCommentsList(count)}

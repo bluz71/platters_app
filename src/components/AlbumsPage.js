@@ -24,10 +24,10 @@ class AlbumsPage extends Component {
 
     // params is not React state since we do not want to re-render when it
     // changes; just use an instance variable instead.
-    this.params       = {};
-    this.loaded       = false;
-    this.filtering    = false;
-    this.searching    = false;
+    this.params = {};
+    this.loaded = false;
+    this.filtering = false;
+    this.searching = false;
     this.pageProgress = new pageProgress();
 
     this.state = {
@@ -37,18 +37,18 @@ class AlbumsPage extends Component {
     };
 
     // Bind 'this' for callback functions.
-    this.handlePopState         = this.handlePopState.bind(this);
-    this.handlePageChange       = this.handlePageChange.bind(this);
-    this.handleAll              = this.handleAll.bind(this);
-    this.handleYear             = this.handleYear.bind(this);
-    this.handleGenre            = this.handleGenre.bind(this);
-    this.handleLetter           = this.handleLetter.bind(this);
-    this.handleRandom           = this.handleRandom.bind(this);
+    this.handlePopState = this.handlePopState.bind(this);
+    this.handlePageChange = this.handlePageChange.bind(this);
+    this.handleAll = this.handleAll.bind(this);
+    this.handleYear = this.handleYear.bind(this);
+    this.handleGenre = this.handleGenre.bind(this);
+    this.handleLetter = this.handleLetter.bind(this);
+    this.handleRandom = this.handleRandom.bind(this);
     this.handleFilterVisibility = this.handleFilterVisibility.bind(this);
-    this.handleFilterSubmit     = this.handleFilterSubmit.bind(this);
+    this.handleFilterSubmit = this.handleFilterSubmit.bind(this);
     this.handleSearchVisibility = this.handleSearchVisibility.bind(this);
-    this.handleSearchChange     = this.handleSearchChange.bind(this);
-    this.handleSearchSubmit     = this.handleSearchSubmit.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -128,7 +128,7 @@ class AlbumsPage extends Component {
     }
 
     const year = this.albumsFilter.yearValue();
-    if (year.length > 0 ) {
+    if (year.length > 0) {
       newParams.year = year;
     }
 
@@ -168,8 +168,7 @@ class AlbumsPage extends Component {
   applyState() {
     if (this.props.location) {
       this.params = this.props.location.state || {};
-    }
-    else {
+    } else {
       this.params = {};
     }
     this.getAlbums(false);
@@ -177,7 +176,10 @@ class AlbumsPage extends Component {
 
   // Apply paramaters and update resources only if they are changed.
   applyParams(newParams) {
-    if (_.isEqual(this.params, newParams) && !newParams.hasOwnProperty('random')) {
+    if (
+      _.isEqual(this.params, newParams) &&
+      !newParams.hasOwnProperty('random')
+    ) {
       // Nothing to do, new params have not changed, just return.
       // Note, if random is set then ignore this opt-out since it will always
       // generate a new set of albums.
@@ -198,8 +200,9 @@ class AlbumsPage extends Component {
   }
 
   getAlbums(scrollToTop = true) {
-    axios.get(this.albumsURL())
-      .then(response => {
+    axios
+      .get(this.albumsURL())
+      .then((response) => {
         this.loaded = this.pageProgress.done();
         this.filtering && this.albumsFilter && this.albumsFilter.selected();
         this.setState({
@@ -211,7 +214,7 @@ class AlbumsPage extends Component {
           window.scrollTo(0, 0);
         }
       })
-      .catch(error => {
+      .catch((error) => {
         this.pageProgress.done();
         this.setState({ error: error });
       });
@@ -226,8 +229,7 @@ class AlbumsPage extends Component {
   albumsRetrieved() {
     if (!this.loaded || this.state.error) {
       return false;
-    }
-    else {
+    } else {
       return true;
     }
   }
@@ -236,20 +238,31 @@ class AlbumsPage extends Component {
     const count = this.state.pagination.total_count;
     const albumsCount = numeral(count).format('0,0');
     const genre = this.params.hasOwnProperty('genre') ? this.params.genre : '';
-    const year = this.params.hasOwnProperty('year') ? ` from ${this.params.year}` : '';
+    const year = this.params.hasOwnProperty('year')
+      ? ` from ${this.params.year}`
+      : '';
 
     return (
       <PageHeader>
-        Albums {this.albumsRetrieved() && <small>({albumsCount} {genre} {pluralize('Album', count)}{year})</small>}
+        Albums{' '}
+        {this.albumsRetrieved() && (
+          <small>
+            ({albumsCount} {genre} {pluralize('Album', count)}
+            {year})
+          </small>
+        )}
       </PageHeader>
     );
   }
 
   showLettersFilter() {
-    if (this.filtering || this.searching || this.params.hasOwnProperty('random')) {
+    if (
+      this.filtering ||
+      this.searching ||
+      this.params.hasOwnProperty('random')
+    ) {
       return false;
-    }
-    else {
+    } else {
       return true;
     }
   }
@@ -261,12 +274,14 @@ class AlbumsPage extends Component {
           animation: 'slideDown',
           duration: 250
         }}
-        leave={{animation: 'slideUp', duration: 250}}>
-        {this.filtering &&
+        leave={{ animation: 'slideUp', duration: 250 }}
+      >
+        {this.filtering && (
           <AlbumsFilter
             onFilterSubmit={this.handleFilterSubmit}
-            ref={(albumsFilter) => this.albumsFilter = albumsFilter}
-          />}
+            ref={(albumsFilter) => (this.albumsFilter = albumsFilter)}
+          />
+        )}
       </VelocityTransitionGroup>
     );
   }
@@ -281,14 +296,16 @@ class AlbumsPage extends Component {
             this.search.focusSearchInput();
           }
         }}
-        leave={{animation: 'slideUp', duration: 250}}>
-        {this.searching &&
+        leave={{ animation: 'slideUp', duration: 250 }}
+      >
+        {this.searching && (
           <Search
             placeholder="Search Artists..."
             onSearchChange={this.handleSearchChange}
             onSearchSubmit={this.handleSearchSubmit}
-            ref={(search) => this.search = search}
-          />}
+            ref={(search) => (this.search = search)}
+          />
+        )}
       </VelocityTransitionGroup>
     );
   }
@@ -304,11 +321,28 @@ class AlbumsPage extends Component {
       <div>
         <div className="filters">
           <ul className="pagination pagination-sm">
-            <li onClick={this.handleAll}><a>All</a></li>
-            {this.showLettersFilter() && letters.map(letter => <li onClick={() => this.handleLetter(letter)} key={letter} className={this.letterActivity(letter)}><a>{letter}</a></li>)}
-            <li onClick={this.handleRandom}><FontAwesome name="random" /></li>
-            <li onClick={this.handleFilterVisibility}><FontAwesome name="filter" /></li>
-            <li onClick={this.handleSearchVisibility}><FontAwesome name="search" /></li>
+            <li onClick={this.handleAll}>
+              <a>All</a>
+            </li>
+            {this.showLettersFilter() &&
+              letters.map((letter) => (
+                <li
+                  onClick={() => this.handleLetter(letter)}
+                  key={letter}
+                  className={this.letterActivity(letter)}
+                >
+                  <a>{letter}</a>
+                </li>
+              ))}
+            <li onClick={this.handleRandom}>
+              <FontAwesome name="random" />
+            </li>
+            <li onClick={this.handleFilterVisibility}>
+              <FontAwesome name="filter" />
+            </li>
+            <li onClick={this.handleSearchVisibility}>
+              <FontAwesome name="search" />
+            </li>
           </ul>
         </div>
         {this.renderAlbumsFilter()}

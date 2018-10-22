@@ -44,7 +44,8 @@ exports[`<UserCommentsPage /> renders all user comments when scrolled 1`] = `
       <PageHeader
         bsClass="page-header"
       >
-        Comments 
+        Comments
+         
         <small>
           (
           3
@@ -118,7 +119,8 @@ exports[`<UserCommentsPage /> renders user comments page 1`] = `
       <PageHeader
         bsClass="page-header"
       >
-        Comments 
+        Comments
+         
         <small>
           (
           3

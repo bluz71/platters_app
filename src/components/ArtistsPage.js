@@ -24,9 +24,9 @@ class ArtistsPage extends Component {
 
     // params is not React state since we do not want to re-render when it
     // changes; just use an instance variable instead.
-    this.params       = {};
-    this.loaded       = false;
-    this.searching    = false;
+    this.params = {};
+    this.loaded = false;
+    this.searching = false;
     this.pageProgress = new pageProgress();
 
     this.state = {
@@ -38,13 +38,13 @@ class ArtistsPage extends Component {
     };
 
     // Bind 'this' for callback functions.
-    this.handlePopState         = this.handlePopState.bind(this);
-    this.handlePageChange       = this.handlePageChange.bind(this);
-    this.handleAll              = this.handleAll.bind(this);
-    this.handleLetter           = this.handleLetter.bind(this);
+    this.handlePopState = this.handlePopState.bind(this);
+    this.handlePageChange = this.handlePageChange.bind(this);
+    this.handleAll = this.handleAll.bind(this);
+    this.handleLetter = this.handleLetter.bind(this);
     this.handleSearchVisibility = this.handleSearchVisibility.bind(this);
-    this.handleSearchChange     = this.handleSearchChange.bind(this);
-    this.handleSearchSubmit     = this.handleSearchSubmit.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -114,8 +114,7 @@ class ArtistsPage extends Component {
   applyState() {
     if (this.props.location) {
       this.params = this.props.location.state || {};
-    }
-    else {
+    } else {
       this.params = {};
     }
     this.getArtists(false);
@@ -137,12 +136,15 @@ class ArtistsPage extends Component {
   artistsURL() {
     const params = queryString.stringify(this.params);
 
-    return params.length > 0 ? `${ARTISTS_ENDPOINT}?${params}` : ARTISTS_ENDPOINT;
+    return params.length > 0
+      ? `${ARTISTS_ENDPOINT}?${params}`
+      : ARTISTS_ENDPOINT;
   }
 
   getArtists(scrollToTop = true) {
-    axios.get(this.artistsURL())
-      .then(response => {
+    axios
+      .get(this.artistsURL())
+      .then((response) => {
         this.loaded = this.pageProgress.done();
         this.setState({
           artists: response.data.artists,
@@ -155,7 +157,7 @@ class ArtistsPage extends Component {
           window.scrollTo(0, 0);
         }
       })
-      .catch(error => {
+      .catch((error) => {
         this.pageProgress.done();
         this.setState({ error: error });
       });
@@ -170,8 +172,7 @@ class ArtistsPage extends Component {
   artistsRetrieved() {
     if (!this.loaded || this.state.error) {
       return false;
-    }
-    else {
+    } else {
       return true;
     }
   }
@@ -182,7 +183,12 @@ class ArtistsPage extends Component {
 
     return (
       <PageHeader>
-        Artists {this.artistsRetrieved() && <small>({artistsCount} {pluralize('Artist', count)})</small>}
+        Artists{' '}
+        {this.artistsRetrieved() && (
+          <small>
+            ({artistsCount} {pluralize('Artist', count)})
+          </small>
+        )}
       </PageHeader>
     );
   }
@@ -197,14 +203,16 @@ class ArtistsPage extends Component {
             this.search.focusSearchInput();
           }
         }}
-        leave={{animation: 'slideUp', duration: 250}}>
-        {this.searching &&
+        leave={{ animation: 'slideUp', duration: 250 }}
+      >
+        {this.searching && (
           <Search
             placeholder="Search Artists..."
             onSearchChange={this.handleSearchChange}
             onSearchSubmit={this.handleSearchSubmit}
-            ref={(search) => this.search = search}
-          />}
+            ref={(search) => (this.search = search)}
+          />
+        )}
       </VelocityTransitionGroup>
     );
   }
@@ -220,9 +228,22 @@ class ArtistsPage extends Component {
       <div>
         <div className="filters">
           <ul className="pagination pagination-sm">
-            <li onClick={this.handleAll}><a>All</a></li>
-            {!this.searching && letters.map((letter, index) => <li onClick={() => this.handleLetter(letter)} key={index} className={this.letterActivity(letter)}><a>{letter}</a></li>)}
-            <li onClick={this.handleSearchVisibility}><FontAwesome name="search" /></li>
+            <li onClick={this.handleAll}>
+              <a>All</a>
+            </li>
+            {!this.searching &&
+              letters.map((letter, index) => (
+                <li
+                  onClick={() => this.handleLetter(letter)}
+                  key={index}
+                  className={this.letterActivity(letter)}
+                >
+                  <a>{letter}</a>
+                </li>
+              ))}
+            <li onClick={this.handleSearchVisibility}>
+              <FontAwesome name="search" />
+            </li>
           </ul>
         </div>
         {this.renderSearch()}
@@ -241,26 +262,28 @@ class ArtistsPage extends Component {
       return <h4>No matching artists</h4>;
     }
 
-    return (
-      this.state.artists.map(artist =>
-        <div key={artist.id} className="Artist">
-          <Link to={`/artist/${artist.slug}`}>
-            <h2>{artist.name}</h2>
-            <p>{artist.description}</p>
-            <span className="icon">
-              <FontAwesome name="music" /> {artist.albums_count}
-              <FontAwesome name="comment-o" className="spacer-left-xs" /> {artist.comments_count}
-            </span>
-          </Link>
-        </div>
-      )
-    );
+    return this.state.artists.map((artist) => (
+      <div key={artist.id} className="Artist">
+        <Link to={`/artist/${artist.slug}`}>
+          <h2>{artist.name}</h2>
+          <p>{artist.description}</p>
+          <span className="icon">
+            <FontAwesome name="music" /> {artist.albums_count}
+            <FontAwesome name="comment-o" className="spacer-left-xs" />{' '}
+            {artist.comments_count}
+          </span>
+        </Link>
+      </div>
+    ));
   }
 
   renderPaginator() {
     if (!this.state.error && this.state.pagination.total_pages > 1) {
       return (
-        <Paginator pagination={this.state.pagination} onPageChange={this.handlePageChange} />
+        <Paginator
+          pagination={this.state.pagination}
+          onPageChange={this.handlePageChange}
+        />
       );
     }
   }

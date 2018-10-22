@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { Row, Col, FormGroup, FormControl, ControlLabel, Radio, Button } from 'react-bootstrap';
+import {
+  Row,
+  Col,
+  FormGroup,
+  FormControl,
+  ControlLabel,
+  Radio,
+  Button
+} from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 import '../styles/AlbumsFilter.css';
 import { API_HOST } from '../config';
@@ -13,7 +21,7 @@ class AlbumsFilter extends Component {
     super(props);
 
     // The value of the radio controls.
-    this.sort  = 'title';
+    this.sort = 'title';
     this.order = 'forward';
 
     this.state = {
@@ -22,8 +30,8 @@ class AlbumsFilter extends Component {
     };
 
     // Bind 'this' for callback functions.
-    this.handleSortTitle    = this.handleSortTitle.bind(this);
-    this.handleSortYear     = this.handleSortYear.bind(this);
+    this.handleSortTitle = this.handleSortTitle.bind(this);
+    this.handleSortYear = this.handleSortYear.bind(this);
     this.handleOrderForward = this.handleOrderForward.bind(this);
     this.handleOrderReverse = this.handleOrderReverse.bind(this);
   }
@@ -33,12 +41,11 @@ class AlbumsFilter extends Component {
   }
 
   getGenres() {
-    axios.get(GENRES_ENDPOINT)
-      .then(response => {
-        this.setState({
-          genres: response.data.genres,
-        });
+    axios.get(GENRES_ENDPOINT).then((response) => {
+      this.setState({
+        genres: response.data.genres
       });
+    });
   }
 
   genreValue() {
@@ -75,10 +82,11 @@ class AlbumsFilter extends Component {
 
   selecting() {
     this.setState({
-      selectButtonText:
-      <div>
-        <FontAwesome name="spinner" spin pulse /> Selecting
-      </div>
+      selectButtonText: (
+        <div>
+          <FontAwesome name="spinner" spin pulse /> Selecting
+        </div>
+      )
     });
   }
 
@@ -87,11 +95,11 @@ class AlbumsFilter extends Component {
   }
 
   renderGenreOptions() {
-    return (
-      this.state.genres.map(genre =>
-        <option key={genre.id} value={genre.name}>{genre.name}</option>
-      )
-    );
+    return this.state.genres.map((genre) => (
+      <option key={genre.id} value={genre.name}>
+        {genre.name}
+      </option>
+    ));
   }
 
   render() {
@@ -104,7 +112,7 @@ class AlbumsFilter extends Component {
               <FormControl
                 componentClass="select"
                 bsSize="sm"
-                inputRef={(select) => this.genreSelect = select}
+                inputRef={(select) => (this.genreSelect = select)}
               >
                 <option value="Choose">Choose</option>
                 {this.renderGenreOptions()}
@@ -119,7 +127,7 @@ class AlbumsFilter extends Component {
                 placeholder="2000, 2004..2008"
                 className="year"
                 pattern="[0-9., ]+"
-                inputRef={(input) => this.yearInput = input}
+                inputRef={(input) => (this.yearInput = input)}
               />
             </FormGroup>
 

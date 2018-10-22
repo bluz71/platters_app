@@ -8,15 +8,16 @@ const infiniteScoll = (pagination, onPageEnd) => {
   }
 
   const windowHeight = window.innerHeight;
-  const body         = document.body;
-  const html         = document.documentElement;
-  const docHeight    = Math.max(
-    body.scrollHeight,
-    body.offsetHeight,
-    html.clientHeight,
-    html.scrollHeight,
-    html.offsetHeight
-  ) - 20;
+  const body = document.body;
+  const html = document.documentElement;
+  const docHeight =
+    Math.max(
+      body.scrollHeight,
+      body.offsetHeight,
+      html.clientHeight,
+      html.scrollHeight,
+      html.offsetHeight
+    ) - 20;
   const windowBottom = windowHeight + window.pageYOffset;
 
   if (windowBottom >= docHeight) {

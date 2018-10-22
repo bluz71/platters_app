@@ -86,7 +86,8 @@ exports[`<ArtistShowPage /> renders all artist comments when scrolled 1`] = `
       <PageHeader
         bsClass="page-header"
       >
-        Albums 
+        Albums
+         
         <small>
           (
           2
@@ -181,7 +182,8 @@ exports[`<ArtistShowPage /> renders all artist comments when scrolled 1`] = `
       <PageHeader
         bsClass="page-header"
       >
-        Comments 
+        Comments
+         
         <small>
           (
           36
@@ -547,7 +549,8 @@ exports[`<ArtistShowPage /> renders artist show page 1`] = `
       <PageHeader
         bsClass="page-header"
       >
-        Albums 
+        Albums
+         
         <small>
           (
           2
@@ -642,7 +645,8 @@ exports[`<ArtistShowPage /> renders artist show page 1`] = `
       <PageHeader
         bsClass="page-header"
       >
-        Comments 
+        Comments
+         
         <small>
           (
           36
@@ -920,7 +924,8 @@ exports[`<ArtistShowPage /> renders sorted albums when longest is clicked 1`] = 
       <PageHeader
         bsClass="page-header"
       >
-        Albums 
+        Albums
+         
         <small>
           (
           2
@@ -1015,7 +1020,8 @@ exports[`<ArtistShowPage /> renders sorted albums when longest is clicked 1`] = 
       <PageHeader
         bsClass="page-header"
       >
-        Comments 
+        Comments
+         
         <small>
           (
           36
@@ -1293,7 +1299,8 @@ exports[`<ArtistShowPage /> renders sorted albums when name is clicked 1`] = `
       <PageHeader
         bsClass="page-header"
       >
-        Albums 
+        Albums
+         
         <small>
           (
           2
@@ -1388,7 +1395,8 @@ exports[`<ArtistShowPage /> renders sorted albums when name is clicked 1`] = `
       <PageHeader
         bsClass="page-header"
       >
-        Comments 
+        Comments
+         
         <small>
           (
           36
@@ -1666,7 +1674,8 @@ exports[`<ArtistShowPage /> renders sorted albums when newest is clicked 1`] = `
       <PageHeader
         bsClass="page-header"
       >
-        Albums 
+        Albums
+         
         <small>
           (
           2
@@ -1761,7 +1770,8 @@ exports[`<ArtistShowPage /> renders sorted albums when newest is clicked 1`] = `
       <PageHeader
         bsClass="page-header"
       >
-        Comments 
+        Comments
+         
         <small>
           (
           36
@@ -2039,7 +2049,8 @@ exports[`<ArtistShowPage /> renders sorted albums when oldest is clicked 1`] = `
       <PageHeader
         bsClass="page-header"
       >
-        Albums 
+        Albums
+         
         <small>
           (
           2
@@ -2134,7 +2145,8 @@ exports[`<ArtistShowPage /> renders sorted albums when oldest is clicked 1`] = `
       <PageHeader
         bsClass="page-header"
       >
-        Comments 
+        Comments
+         
         <small>
           (
           36

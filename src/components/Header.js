@@ -12,10 +12,10 @@ const renderSessionMenu = () => {
   if (!appAuth.isLoggedIn()) {
     return (
       <Nav pullRight>
-        <IndexLinkContainer to="/log_in" activeClassName='selected'>
+        <IndexLinkContainer to="/log_in" activeClassName="selected">
           <NavItem>Log in</NavItem>
         </IndexLinkContainer>
-        <IndexLinkContainer to="/sign_up" activeClassName='selected'>
+        <IndexLinkContainer to="/sign_up" activeClassName="selected">
           <NavItem>Sign up</NavItem>
         </IndexLinkContainer>
       </Nav>
@@ -31,22 +31,30 @@ const renderSessionMenu = () => {
         eventKey="1"
         title={
           <span>
-            <FontAwesome className="fa-fw" name="user" />&nbsp;{username}
+            <FontAwesome className="fa-fw" name="user" />
+            &nbsp;
+            {username}
           </span>
         }
         id="nav-dropdown"
       >
-        <IndexLinkContainer to={`/comments/${username}`} activeClassName='selected'>
+        <IndexLinkContainer
+          to={`/comments/${username}`}
+          activeClassName="selected"
+        >
           <MenuItem eventKey="1.1">
-            <FontAwesome className="fa-fw" name="comment-o" />&nbsp; Comments
+            <FontAwesome className="fa-fw" name="comment-o" />
+            &nbsp; Comments
           </MenuItem>
         </IndexLinkContainer>
         <MenuItem eventKey="1.2">
-          <FontAwesome className="fa-fw" name="gear" />&nbsp; Account
+          <FontAwesome className="fa-fw" name="gear" />
+          &nbsp; Account
         </MenuItem>
-        <IndexLinkContainer to="/log_out" activeClassName='selected'>
+        <IndexLinkContainer to="/log_out" activeClassName="selected">
           <MenuItem eventKey="1.3">
-            <FontAwesome className="fa-fw" name="sign-out" />&nbsp; Log out
+            <FontAwesome className="fa-fw" name="sign-out" />
+            &nbsp; Log out
           </MenuItem>
         </IndexLinkContainer>
       </NavDropdown>
@@ -59,7 +67,7 @@ const Header = () => (
     <Navbar fixedTop fluid collapseOnSelect>
       <Navbar.Header>
         <Navbar.Brand>
-          <Link to='/' className='PlattersBrand'>
+          <Link to="/" className="PlattersBrand">
             <img src={logo} alt="Platters" /> platters
           </Link>
         </Navbar.Brand>
@@ -67,7 +75,7 @@ const Header = () => (
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav>
-          <IndexLinkContainer to="/artists" activeClassName='selected'>
+          <IndexLinkContainer to="/artists" activeClassName="selected">
             <NavItem>Artists</NavItem>
           </IndexLinkContainer>
           <IndexLinkContainer to="/albums" activeClassName="selected">

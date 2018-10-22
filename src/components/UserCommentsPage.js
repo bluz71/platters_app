@@ -16,11 +16,11 @@ class UserCommentsPage extends Component {
   constructor(props) {
     super(props);
 
-    this.userSlug         = props.match.params.id;
+    this.userSlug = props.match.params.id;
     this.commentsEndPoint = `${API_HOST}/comments/${this.userSlug}.json`;
-    this.loaded           = false;
-    this.waiting          = false;
-    this.pageProgress     = new pageProgress();
+    this.loaded = false;
+    this.waiting = false;
+    this.pageProgress = new pageProgress();
 
     // Note, use a Map for comments since it preserves insertion order whilst
     // allowing O(1) comment deletion.
@@ -32,8 +32,8 @@ class UserCommentsPage extends Component {
     };
 
     // Bind 'this' for callback functions.
-    this.handleScroll        = this.handleScroll.bind(this);
-    this.handlePageEnd       = this.handlePageEnd.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
+    this.handlePageEnd = this.handlePageEnd.bind(this);
     this.handleDeleteComment = this.handleDeleteComment.bind(this);
   }
 
@@ -56,8 +56,9 @@ class UserCommentsPage extends Component {
 
     // Disable scroll handling whilst records are being retrieved.
     window.onscroll = null;
-    const commentsPageEndPoint
-      = `${this.commentsEndPoint}?page=${this.state.pagination.next_page}`;
+    const commentsPageEndPoint = `${this.commentsEndPoint}?page=${
+      this.state.pagination.next_page
+    }`;
     this.waiting = true;
     this.forceUpdate(); // Render spinner
     this.getComments(commentsPageEndPoint);
@@ -70,12 +71,13 @@ class UserCommentsPage extends Component {
     // Delete the comment of interest.
     comments.delete(commentId);
     // Apply the updated state.
-    this.setState({comments});
+    this.setState({ comments });
   }
 
   getComments(commentsEndPoint) {
-    axios.get(commentsEndPoint)
-      .then(response => {
+    axios
+      .get(commentsEndPoint)
+      .then((response) => {
         this.loaded = this.pageProgress.done();
         this.waiting = false;
         if (!window.onscroll) {
@@ -87,16 +89,16 @@ class UserCommentsPage extends Component {
         this.setState({
           comments: new Map([
             ...this.state.comments,
-            ...response.data.comments.map(c => [c.id, c])
+            ...response.data.comments.map((c) => [c.id, c])
           ]),
-          pagination: response.data.pagination,
+          pagination: response.data.pagination
         });
-      }).catch(error => {
+      })
+      .catch((error) => {
         this.pageProgress.done();
         if (error.response && error.response.status === 404) {
           this.setState({ notFound: true });
-        }
-        else {
+        } else {
           this.setState({ error: error });
         }
       });
@@ -105,8 +107,7 @@ class UserCommentsPage extends Component {
   commentsRetrieved() {
     if (!this.loaded || this.state.notFound || this.state.error) {
       return false;
-    }
-    else {
+    } else {
       return true;
     }
   }
@@ -126,8 +127,12 @@ class UserCommentsPage extends Component {
 
     return (
       <PageHeader>
-        Comments {this.commentsRetrieved()
-            && <small>({commentsCount} {pluralize('Comment', count)})</small>}
+        Comments{' '}
+        {this.commentsRetrieved() && (
+          <small>
+            ({commentsCount} {pluralize('Comment', count)})
+          </small>
+        )}
       </PageHeader>
     );
   }

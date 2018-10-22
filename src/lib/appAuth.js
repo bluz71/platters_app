@@ -14,8 +14,7 @@ class AppAuth {
   logIn(authToken) {
     try {
       this.idToken = decode(authToken);
-    }
-    catch (err) {
+    } catch (err) {
       err.tokenMessage = 'Invalid server authentication token';
       throw err;
     }
@@ -26,7 +25,7 @@ class AppAuth {
   logOut() {
     localStorage.removeItem(AUTH_TOKEN_KEY);
     this.authToken = null;
-    this.idToken   = null;
+    this.idToken = null;
   }
 
   currentUser() {
@@ -81,8 +80,7 @@ class AppAuth {
       this.idToken.aud !== 'platters_app'
     ) {
       return false;
-    }
-    else {
+    } else {
       return true;
     }
   }

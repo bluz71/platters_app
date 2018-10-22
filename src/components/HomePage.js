@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import { API_HOST } from '../config';
 import { appAuth } from '../lib/appAuth';
-import  '../styles/HomePage.css';
+import '../styles/HomePage.css';
 import logo from '../images/platters-black.svg';
 import toastAlert from '../helpers/toastAlert';
 import pageProgress from '../helpers/pageProgress';
@@ -19,7 +19,7 @@ class HomePage extends Component {
     super(props);
     window.scrollTo(0, 0);
 
-    this.loaded       = false;
+    this.loaded = false;
     this.pageProgress = new pageProgress();
 
     // Note, use a Map for comments since it preserves insertion order whilst
@@ -32,8 +32,8 @@ class HomePage extends Component {
     };
 
     // Bind 'this' for callback functions.
-    this.handleYear          = this.handleYear.bind(this);
-    this.handleGenre         = this.handleGenre.bind(this);
+    this.handleYear = this.handleYear.bind(this);
+    this.handleGenre = this.handleGenre.bind(this);
     this.handleDeleteComment = this.handleDeleteComment.bind(this);
   }
 
@@ -58,23 +58,24 @@ class HomePage extends Component {
     // Delete the comment of interest.
     mostRecentComments.delete(commentId);
     // Apply the updated state.
-    this.setState({mostRecentComments});
+    this.setState({ mostRecentComments });
   }
 
   getHome() {
-    axios.get(HOME_ENDPOINT)
-      .then(response => {
+    axios
+      .get(HOME_ENDPOINT)
+      .then((response) => {
         this.loaded = this.pageProgress.done();
         this.setState({
           albumOfTheDay: response.data.album_of_the_day,
           mostRecentAlbums: response.data.most_recent.albums,
           mostRecentComments: new Map(
-            response.data.most_recent.comments.map(c => [c.id, c])
+            response.data.most_recent.comments.map((c) => [c.id, c])
           ),
           error: null
         });
       })
-      .catch(error => {
+      .catch((error) => {
         this.pageProgress.done();
         this.setState({ error: error });
       });
@@ -83,8 +84,7 @@ class HomePage extends Component {
   homeRetrieved() {
     if (!this.loaded || this.state.error) {
       return false;
-    }
-    else {
+    } else {
       return true;
     }
   }
@@ -100,12 +100,18 @@ class HomePage extends Component {
           <Col md={7}>
             <Jumbotron>
               <h1>Platters</h1>
-              <p>An album collection web application developed using modern web technologies.</p>
+              <p>
+                An album collection web application developed using modern web
+                technologies.
+              </p>
               <div className="text-center">
                 <Link to="/about" className="btn btn-success btn-lg">
                   About
                 </Link>
-                <Link to="/sign_up" className="btn btn-success btn-lg spacer-left-tiny">
+                <Link
+                  to="/sign_up"
+                  className="btn btn-success btn-lg spacer-left-tiny"
+                >
                   Sign Up
                 </Link>
               </div>
@@ -114,7 +120,11 @@ class HomePage extends Component {
 
           <Col md={5}>
             <div className="logo">
-              <img src={logo} alt="Platters" className="img-responsive center-block" />
+              <img
+                src={logo}
+                alt="Platters"
+                className="img-responsive center-block"
+              />
             </div>
           </Col>
         </Row>
@@ -152,16 +162,32 @@ class HomePage extends Component {
       return;
     }
 
-    const { title, artist, artist_slug, album_slug, cover_url } = this.state.albumOfTheDay;
+    const {
+      title,
+      artist,
+      artist_slug,
+      album_slug,
+      cover_url
+    } = this.state.albumOfTheDay;
     return (
       <div className="album-of-the-day">
         <Row>
           <Col md={12}>
             <h2 className="page-header">
-              Album of the day - <Link to={`/artist/${artist_slug}/album/${album_slug}`}>{title}</Link> <small>by <Link to={`/artist/${artist_slug}`}>{artist}</Link></small>
+              Album of the day -{' '}
+              <Link to={`/artist/${artist_slug}/album/${album_slug}`}>
+                {title}
+              </Link>{' '}
+              <small>
+                by <Link to={`/artist/${artist_slug}`}>{artist}</Link>
+              </small>
             </h2>
             <Jumbotron>
-              <img className="img-responsive center-block" src={cover_url} alt={title} />
+              <img
+                className="img-responsive center-block"
+                src={cover_url}
+                alt={title}
+              />
             </Jumbotron>
           </Col>
         </Row>
