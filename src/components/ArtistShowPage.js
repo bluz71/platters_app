@@ -9,7 +9,9 @@ import { API_HOST } from '../config';
 import pageProgress from '../helpers/pageProgress';
 import infiniteScroll from '../helpers/infiniteScroll';
 import toastAlert from '../helpers/toastAlert';
+import { appAuth } from '../lib/appAuth';
 import ArtistAlbumsList from './ArtistAlbumsList';
+import NewComment from './NewComment';
 import CommentsList from './CommentsList';
 import '../styles/ArtistShowPage.css';
 
@@ -309,6 +311,14 @@ class ArtistShowPage extends Component {
     );
   }
 
+  renderNewComment() {
+    if (!appAuth.isLoggedIn()) {
+      return;
+    }
+
+    return <NewComment />;
+  }
+
   renderCommentsList(count) {
     if (count === 0) {
       return <h4>No comments have been posted for this artist</h4>;
@@ -353,6 +363,7 @@ class ArtistShowPage extends Component {
             </small>
           )}
         </PageHeader>
+        {this.renderNewComment()}
         {this.renderCommentsList(count)}
         {this.renderSpinner()}
       </div>

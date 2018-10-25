@@ -1,0 +1,2 @@
+- When logging in try to redirect to the page the user logged in from (if
+  possible).

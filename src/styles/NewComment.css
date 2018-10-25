@@ -1,0 +1,10 @@
+.NewComment .comment-length {
+  color: #515151;
+  font-size: 0.9em;
+  font-weight: lighter;
+  margin-right: 0.5em;
+}
+
+.NewComment .comment-error {
+  color: #f04124;
+}

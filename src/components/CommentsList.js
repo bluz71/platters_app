@@ -110,6 +110,7 @@ CommentsList.defaultTypes = {
 
 CommentsList.propTypes = {
   comments: PropTypes.instanceOf(Map),
+  onDeleteComment: PropTypes.func,
   shortHeader: PropTypes.bool
 };
 
