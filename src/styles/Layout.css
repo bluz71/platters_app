@@ -8,7 +8,8 @@ html {
 }
 
 .PlattersBrand {
-  font-family: 'Capriola', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Capriola', 'Open Sans', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
   font-size: 1.2em;
 }
 
@@ -34,8 +35,8 @@ html {
 }
 
 .ToastAlert:before {
-  font-family: "FontAwesome";
-  content: "\f071";
+  font-family: 'FontAwesome';
+  content: '\f071';
   padding-top: 1em;
   margin: 0 0.5em;
 }
@@ -50,8 +51,8 @@ html {
 }
 
 .ToastNotice:before {
-  font-family: "FontAwesome";
-  content: "\f05a";
+  font-family: 'FontAwesome';
+  content: '\f05a';
   padding-top: 1em;
   margin: 0 0.5em;
 }
