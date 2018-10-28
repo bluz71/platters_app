@@ -143,7 +143,7 @@ class HomePage extends Component {
             <FontAwesome name="tablet" />
             <p>Bootstrap responsive front-end web framework.</p>
           </Col>
-          <div className="complete-details text-center">
+          <div className="complete-details">
             <Link to="/details" className="btn btn-success">
               Complete Details
             </Link>

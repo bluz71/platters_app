@@ -109,7 +109,7 @@ exports[`<HomePage /> renders home page 1`] = `
         </p>
       </Col>
       <div
-        className="complete-details text-center"
+        className="complete-details"
       >
         <Link
           className="btn btn-success"
