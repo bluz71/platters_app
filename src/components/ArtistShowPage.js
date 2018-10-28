@@ -55,6 +55,7 @@ class ArtistShowPage extends Component {
     this.handleScroll = this.handleScroll.bind(this);
     this.handlePageEnd = this.handlePageEnd.bind(this);
     this.handleDeleteComment = this.handleDeleteComment.bind(this);
+    this.handleNewComment = this.handleNewComment.bind(this);
   }
 
   componentDidMount() {
@@ -106,6 +107,19 @@ class ArtistShowPage extends Component {
     const comments = new Map([...this.state.comments]);
     // Delete the comment of interest.
     comments.delete(commentId);
+    // Apply the updated state.
+    this.setState({ comments });
+  }
+
+  handleNewComment(comment) {
+    // Note, we need to copy the comments hash map since we must not mutate
+    // React state directly.
+    //
+    // Prepend the comment of interest.
+    const comments = new Map([
+      ...[[comment.id, comment]],
+      ...this.state.comments
+    ]);
     // Apply the updated state.
     this.setState({ comments });
   }
@@ -316,7 +330,12 @@ class ArtistShowPage extends Component {
       return;
     }
 
-    return <NewComment />;
+    return (
+      <NewComment
+        resourcePath={this.artistSlug}
+        onNewComment={this.handleNewComment}
+      />
+    );
   }
 
   renderCommentsList(count) {

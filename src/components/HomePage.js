@@ -112,7 +112,7 @@ class HomePage extends Component {
                   to="/sign_up"
                   className="btn btn-success btn-lg spacer-left-tiny"
                 >
-                  Sign Up
+                  Sign up
                 </Link>
               </div>
             </Jumbotron>

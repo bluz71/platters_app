@@ -98,7 +98,10 @@ const renderComments = (comments, onDeleteComment, shortHeader) =>
 
 const CommentsList = ({ comments, onDeleteComment, shortHeader }) => (
   <div className="CommentsList">
-    <VelocityTransitionGroup leave={{ animation: 'fadeOut', duration: 500 }}>
+    <VelocityTransitionGroup
+      enter={{ animation: 'fadeIn', duration: 500 }}
+      leave={{ animation: 'fadeOut', duration: 500 }}
+    >
       {renderComments([...comments.values()], onDeleteComment, shortHeader)}
     </VelocityTransitionGroup>
   </div>

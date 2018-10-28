@@ -1,2 +1,4 @@
+- Comments count is not updating automatically in Artist and Album show pages
+
 - When logging in try to redirect to the page the user logged in from (if
   possible).
