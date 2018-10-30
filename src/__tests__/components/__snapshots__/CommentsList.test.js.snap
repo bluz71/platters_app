@@ -5,7 +5,12 @@ exports[`<CommentsList /> renders a list of comments 1`] = `
   className="CommentsList"
 >
   <VelocityTransitionGroup
-    enter={null}
+    enter={
+      Object {
+        "animation": "fadeIn",
+        "duration": 500,
+      }
+    }
     enterHideStyle={
       Object {
         "display": "none",
@@ -139,7 +144,12 @@ exports[`<CommentsList /> renders a list of comments with shortHeader 1`] = `
   className="CommentsList"
 >
   <VelocityTransitionGroup
-    enter={null}
+    enter={
+      Object {
+        "animation": "fadeIn",
+        "duration": 500,
+      }
+    }
     enterHideStyle={
       Object {
         "display": "none",

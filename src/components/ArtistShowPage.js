@@ -11,8 +11,8 @@ import infiniteScroll from '../helpers/infiniteScroll';
 import toastAlert from '../helpers/toastAlert';
 import { appAuth } from '../lib/appAuth';
 import ArtistAlbumsList from './ArtistAlbumsList';
-import NewComment from './NewComment';
 import CommentsList from './CommentsList';
+import NewComment from './NewComment';
 import '../styles/ArtistShowPage.css';
 
 const ARTIST_ALBUMS_SORT_BY = {
@@ -44,6 +44,7 @@ class ArtistShowPage extends Component {
       albums: [],
       comments: new Map(),
       commentsPagination: {},
+      commentsCount: 0,
       notFound: false,
       error: null
     };
@@ -107,8 +108,10 @@ class ArtistShowPage extends Component {
     const comments = new Map([...this.state.comments]);
     // Delete the comment of interest.
     comments.delete(commentId);
+    // Update the count.
+    const commentsCount = this.state.commentsCount - 1;
     // Apply the updated state.
-    this.setState({ comments });
+    this.setState({ comments, commentsCount });
   }
 
   handleNewComment(comment) {
@@ -120,8 +123,10 @@ class ArtistShowPage extends Component {
       ...[[comment.id, comment]],
       ...this.state.comments
     ]);
+    // Update the count.
+    const commentsCount = this.state.commentsCount + 1;
     // Apply the updated state.
-    this.setState({ comments });
+    this.setState({ comments, commentsCount });
   }
 
   getArtist(scrollToTop = false) {
@@ -134,7 +139,8 @@ class ArtistShowPage extends Component {
           artist: response.data.artist,
           albums: response.data.albums,
           comments: new Map(response.data.comments.map((c) => [c.id, c])),
-          commentsPagination: response.data.comments_pagination
+          commentsPagination: response.data.comments_pagination,
+          commentsCount: response.data.comments_pagination.total_count
         });
         if (this.scrollToComments) {
           this.scrollToComments = false;
@@ -366,7 +372,7 @@ class ArtistShowPage extends Component {
     if (!this.artistRetrieved()) {
       return;
     }
-    const count = this.state.commentsPagination.total_count;
+    const count = this.state.commentsCount;
     const commentsCount = numeral(count).format('0,0');
 
     return (

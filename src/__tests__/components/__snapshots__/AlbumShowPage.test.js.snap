@@ -97,11 +97,9 @@ exports[`<AlbumShowPage /> handles invalid album 1`] = `
            
         </PageHeader>
       </div>
-      <CommentsList
-        comments={Map {}}
-        onDeleteComment={[Function]}
-        shortHeader={true}
-      />
+      <h4>
+        No comments have been posted for this album
+      </h4>
     </Col>
   </div>
 </Row>

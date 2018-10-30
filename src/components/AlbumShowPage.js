@@ -9,7 +9,9 @@ import { API_HOST } from '../config';
 import pageProgress from '../helpers/pageProgress';
 import infiniteScroll from '../helpers/infiniteScroll';
 import toastAlert from '../helpers/toastAlert';
+import { appAuth } from '../lib/appAuth';
 import CommentsList from './CommentsList';
+import NewComment from './NewComment';
 import '../styles/AlbumShowPage.css';
 
 class AlbumShowPage extends Component {
@@ -39,6 +41,7 @@ class AlbumShowPage extends Component {
       tracks: [],
       comments: new Map(),
       commentsPagination: {},
+      commentsCount: 0,
       notFound: false,
       error: null
     };
@@ -48,6 +51,7 @@ class AlbumShowPage extends Component {
     this.handleScroll = this.handleScroll.bind(this);
     this.handlePageEnd = this.handlePageEnd.bind(this);
     this.handleDeleteComment = this.handleDeleteComment.bind(this);
+    this.handleNewComment = this.handleNewComment.bind(this);
   }
 
   componentDidMount() {
@@ -108,8 +112,25 @@ class AlbumShowPage extends Component {
     const comments = new Map([...this.state.comments]);
     // Delete the comment of interest.
     comments.delete(commentId);
+    // Update the count.
+    const commentsCount = this.state.commentsCount - 1;
     // Apply the updated state.
-    this.setState({ comments });
+    this.setState({ comments, commentsCount });
+  }
+
+  handleNewComment(comment) {
+    // Note, we need to copy the comments hash map since we must not mutate
+    // React state directly.
+    //
+    // Prepend the comment of interest.
+    const comments = new Map([
+      ...[[comment.id, comment]],
+      ...this.state.comments
+    ]);
+    // Update the count.
+    const commentsCount = this.state.commentsCount + 1;
+    // Apply the updated state.
+    this.setState({ comments, commentsCount });
   }
 
   getAlbum(scrollToTop = false) {
@@ -122,7 +143,8 @@ class AlbumShowPage extends Component {
           album: response.data.album,
           tracks: response.data.tracks,
           comments: new Map(response.data.comments.map((c) => [c.id, c])),
-          commentsPagination: response.data.comments_pagination
+          commentsPagination: response.data.comments_pagination,
+          commentsCount: response.data.comments_pagination.total_count
         });
         if (this.scrollToComments) {
           this.scrollToComments = false;
@@ -288,6 +310,19 @@ class AlbumShowPage extends Component {
     );
   }
 
+  renderNewComment() {
+    if (!appAuth.isLoggedIn()) {
+      return;
+    }
+
+    return (
+      <NewComment
+        resourcePath={`${this.artistSlug}/${this.albumSlug}`}
+        onNewComment={this.handleNewComment}
+      />
+    );
+  }
+
   renderCommentsList(count) {
     if (count === 0) {
       return <h4>No comments have been posted for this album</h4>;
@@ -313,7 +348,7 @@ class AlbumShowPage extends Component {
   }
 
   renderComments() {
-    const count = this.state.commentsPagination.total_count;
+    const count = this.state.commentsCount;
     const commentsCount = numeral(count).format('0,0');
 
     return (
@@ -328,6 +363,7 @@ class AlbumShowPage extends Component {
             )}
           </PageHeader>
         </div>
+        {this.renderNewComment()}
         {this.renderCommentsList(count)}
         {this.renderSpinner()}
       </Col>
