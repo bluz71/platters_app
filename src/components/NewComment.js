@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
+import toastAlert from '../helpers/toastAlert';
 import { API_HOST } from '../config';
 import { appAuth } from '../lib/appAuth';
 import '../styles/NewComment.css';
@@ -55,20 +56,13 @@ class NewComment extends Component {
         this.props.onNewComment(response.data.comment);
       })
       .catch((error) => {
-        console.log('In error');
-        // if (error.response && error.response.status === 401) {
-        //   toastAlert(
-        //     `Incorrect log in credentials, ${error.response.data.error}`
-        //   );
-        // } else if (error.response && error.response.status === 404) {
-        //   toastAlert('Incorrect log in credentials, user not found');
-        // } else if (error.response && error.response.status === 403) {
-        //   toastAlert('User account has not been confirmed');
-        // } else if (error.tokenMessage) {
-        //   toastAlert(error.tokenMessage);
-        // } else {
-        //   toastAlert('Server error, please try again later');
-        // }
+        if (error.response && error.response.status === 401) {
+          toastAlert('Please log in to comment');
+        } else if (error.response && error.response.status === 403) {
+          toastAlert(error.response.data.error);
+        } else {
+          toastAlert('Server error, please try again later');
+        }
       });
   }
   renderCharactersRemaining() {
@@ -120,5 +114,10 @@ class NewComment extends Component {
     );
   }
 }
+
+NewComment.propTypes = {
+  onNewComment: PropTypes.func,
+  resourcePath: PropTypes.string
+};
 
 export default NewComment;
