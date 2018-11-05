@@ -168,6 +168,7 @@ module.exports = {
             }
           });
         }
+        break;
       }
       case `${API_HOST}/abc/comments.json`:
         return Promise.resolve({
