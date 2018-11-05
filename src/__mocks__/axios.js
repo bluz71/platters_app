@@ -21,6 +21,7 @@ import { data as artistAlbumsLongest } from './artist_albums_longest.json';
 import { data as artistAlbumsName } from './artist_albums_name.json';
 import { data as artistCommentsPage2 } from './commentable_page2.json';
 import { data as logIn } from './log_in.json';
+import { data as newComment } from './new_comment.json';
 
 // Details:
 //   https://stackoverflow.com/questions/45016033/how-do-i-test-axios-in-jest
@@ -168,6 +169,10 @@ module.exports = {
           });
         }
       }
+      case `${API_HOST}/abc/comments.json`:
+        return Promise.resolve({
+          data: newComment
+        });
     }
   }),
   delete: jest.fn((url) => {
