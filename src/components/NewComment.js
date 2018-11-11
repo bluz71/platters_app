@@ -65,6 +65,7 @@ class NewComment extends Component {
         }
       });
   }
+
   renderCharactersRemaining() {
     let charactersRemaining = this.state.charactersRemaining;
     let styles = 'comment-length';

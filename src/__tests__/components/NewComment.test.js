@@ -20,4 +20,23 @@ describe('<NewComment />', () => {
     wrapper.update();
     expect(spyNewComment).toHaveBeenCalled();
   });
+
+  it('disables post it button for empty comments', () => {
+    logInUser();
+    const wrapper = mount(<NewComment resourcePath="abc" />);
+    expect(wrapper.find('button').getDOMNode().disabled).toEqual(true);
+  });
+
+  it('disables post it button for comments greater than 280 characters', () => {
+    logInUser();
+    const wrapper = mount(<NewComment resourcePath="abc" />);
+    // 'Post it' button will be enabled for comments up to 280 characters long.
+    wrapper.find('textarea').instance().value = 'a'.repeat(280);
+    wrapper.instance().handleCommentChange();
+    expect(wrapper.find('button').getDOMNode().disabled).toEqual(false);
+    // 'Post it' button will be disabled for comments exceeding 280 characters.
+    wrapper.find('textarea').instance().value = 'a'.repeat(281);
+    wrapper.instance().handleCommentChange();
+    expect(wrapper.find('button').getDOMNode().disabled).toEqual(true);
+  });
 });
