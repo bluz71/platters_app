@@ -202,15 +202,6 @@ class ArtistShowPage extends Component {
   }
 
   renderHeader() {
-    if (this.state.notFound) {
-      toastAlert(`The artist ${this.artistSlug} does not exist`);
-      return <Redirect to="/artists" />;
-    }
-    if (this.state.error) {
-      toastAlert('Connection failure, please retry again soon');
-      return <Redirect to="/" />;
-    }
-
     return <PageHeader>{this.state.artist.name}</PageHeader>;
   }
 
@@ -312,9 +303,6 @@ class ArtistShowPage extends Component {
   }
 
   renderAlbums() {
-    if (!this.artistRetrieved()) {
-      return;
-    }
     const albumsCount = this.state.albums.length;
 
     return (
@@ -369,9 +357,6 @@ class ArtistShowPage extends Component {
   }
 
   renderComments() {
-    if (!this.artistRetrieved()) {
-      return;
-    }
     const count = this.state.commentsCount;
     const commentsCount = numeral(count).format('0,0');
 
@@ -382,11 +367,9 @@ class ArtistShowPage extends Component {
       >
         <PageHeader>
           Comments{' '}
-          {this.artistRetrieved() && (
-            <small>
-              ({commentsCount} {pluralize('Comment', count)})
-            </small>
-          )}
+          <small>
+            ({commentsCount} {pluralize('Comment', count)})
+          </small>
         </PageHeader>
         {this.renderNewComment()}
         {this.renderCommentsList(count)}
@@ -396,6 +379,19 @@ class ArtistShowPage extends Component {
   }
   render() {
     this.pageProgress.start();
+
+    if (this.state.notFound) {
+      toastAlert(`The artist ${this.artistSlug} does not exist`);
+      return <Redirect to="/artists" />;
+    }
+    if (this.state.error) {
+      toastAlert('Connection failure, please retry again soon');
+      return <Redirect to="/" />;
+    }
+
+    if (!this.artistRetrieved()) {
+      return null;
+    }
 
     return (
       <Row>

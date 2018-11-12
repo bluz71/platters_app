@@ -195,15 +195,6 @@ class AlbumShowPage extends Component {
   }
 
   renderHeader() {
-    if (this.state.notFound) {
-      toastAlert(`The album ${this.albumSlug} does not exist`);
-      return <Redirect to="/albums" />;
-    }
-    if (this.state.error) {
-      toastAlert('Connection failure, please retry again soon');
-      return <Redirect to="/" />;
-    }
-
     const albumTitle = this.state.album.title;
     const artistName = this.state.album.artist_name;
 
@@ -291,7 +282,10 @@ class AlbumShowPage extends Component {
           <span className="filter" onClick={() => this.handleYear(album.year)}>
             <FontAwesome name="calendar" /> {album.year}
           </span>
-          <span className="filter" onClick={() => this.handleGenre(album.genre)}>
+          <span
+            className="filter"
+            onClick={() => this.handleGenre(album.genre)}
+          >
             <FontAwesome name="tag" className="spacer-left-xs" /> {album.genre}
           </span>
         </span>
@@ -356,11 +350,9 @@ class AlbumShowPage extends Component {
         <div ref={(commentsAnchor) => (this.commentsAnchor = commentsAnchor)}>
           <PageHeader>
             Comments{' '}
-            {this.albumRetrieved() && (
-              <small>
-                ({commentsCount} {pluralize('Comment', count)})
-              </small>
-            )}
+            <small>
+              ({commentsCount} {pluralize('Comment', count)})
+            </small>
           </PageHeader>
         </div>
         {this.renderNewComment()}
@@ -372,6 +364,19 @@ class AlbumShowPage extends Component {
 
   render() {
     this.pageProgress.start();
+
+    if (this.state.notFound) {
+      toastAlert(`The album ${this.albumSlug} does not exist`);
+      return <Redirect to="/albums" />;
+    }
+    if (this.state.error) {
+      toastAlert('Connection failure, please retry again soon');
+      return <Redirect to="/" />;
+    }
+
+    if (!this.albumRetrieved()) {
+      return null;
+    }
 
     return (
       <Row>

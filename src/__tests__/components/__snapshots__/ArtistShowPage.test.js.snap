@@ -1,33 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ArtistShowPage /> handles invalid artist 1`] = `
-<Row
-  bsClass="row"
-  componentClass="div"
->
-  <Col
-    bsClass="col"
-    className="ArtistShow"
-    componentClass="div"
-    md={10}
-    mdOffset={1}
-  >
-    <Redirect
-      push={false}
-      to="/artists"
-    />
-    <div
-      className="description"
-    >
-      <p>
-         
-      </p>
-      <div
-        className="spacer-bottom-sm"
-      />
-    </div>
-  </Col>
-</Row>
+<Redirect
+  push={false}
+  to="/artists"
+/>
 `;
 
 exports[`<ArtistShowPage /> renders all artist comments when scrolled 1`] = `
