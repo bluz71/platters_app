@@ -12,3 +12,6 @@ const localStorageMock = {
   clear:      jest.fn()
 };
 global.localStorage = localStorageMock;
+
+// Mock scrollTo in tests since jsdom does not implement it.
+window.scrollTo = jest.fn();

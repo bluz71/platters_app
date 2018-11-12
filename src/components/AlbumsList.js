@@ -22,12 +22,12 @@ const renderAlbums = (albums, onYear, onGenre) =>
           </small>
         </h3>
         <div className="icon">
-          <a onClick={() => onYear(album.year)}>
+          <span onClick={() => onYear(album.year)}>
             <FontAwesome name="calendar" /> {album.year}
-          </a>
-          <a onClick={() => onGenre(album.genre)}>
+          </span>
+          <span onClick={() => onGenre(album.genre)}>
             <FontAwesome name="tag" className="spacer-left-xsm" /> {album.genre}
-          </a>
+          </span>
           <Link
             to={{
               pathname: `/artist/${album.artist_slug}/album/${

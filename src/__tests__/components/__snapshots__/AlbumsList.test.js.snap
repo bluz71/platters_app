@@ -125,7 +125,7 @@ exports[`<AlbumsList /> renders a list of albums 1`] = `
               <div
                 className="icon"
               >
-                <a
+                <span
                   onClick={[Function]}
                 >
                   <FontAwesome
@@ -137,8 +137,8 @@ exports[`<AlbumsList /> renders a list of albums 1`] = `
                     />
                   </FontAwesome>
                    
-                </a>
-                <a
+                </span>
+                <span
                   onClick={[Function]}
                 >
                   <FontAwesome
@@ -151,7 +151,7 @@ exports[`<AlbumsList /> renders a list of albums 1`] = `
                     />
                   </FontAwesome>
                    
-                </a>
+                </span>
                 <Link
                   replace={false}
                   to={
@@ -259,7 +259,7 @@ exports[`<AlbumsList /> renders a list of albums 1`] = `
               <div
                 className="icon"
               >
-                <a
+                <span
                   onClick={[Function]}
                 >
                   <FontAwesome
@@ -271,8 +271,8 @@ exports[`<AlbumsList /> renders a list of albums 1`] = `
                     />
                   </FontAwesome>
                    
-                </a>
-                <a
+                </span>
+                <span
                   onClick={[Function]}
                 >
                   <FontAwesome
@@ -285,7 +285,7 @@ exports[`<AlbumsList /> renders a list of albums 1`] = `
                     />
                   </FontAwesome>
                    
-                </a>
+                </span>
                 <Link
                   replace={false}
                   to={

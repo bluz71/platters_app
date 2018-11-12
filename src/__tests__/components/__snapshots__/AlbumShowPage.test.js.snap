@@ -40,15 +40,17 @@ exports[`<AlbumShowPage /> handles invalid album 1`] = `
       <span
         className="icon"
       >
-        <a
+        <span
+          className="filter"
           onClick={[Function]}
         >
           <FontAwesome
             name="calendar"
           />
            
-        </a>
-        <a
+        </span>
+        <span
+          className="filter"
           onClick={[Function]}
         >
           <FontAwesome
@@ -56,7 +58,7 @@ exports[`<AlbumShowPage /> handles invalid album 1`] = `
             name="tag"
           />
            
-        </a>
+        </span>
       </span>
       <Table
         bordered={false}
@@ -167,7 +169,8 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
       <span
         className="icon"
       >
-        <a
+        <span
+          className="filter"
           onClick={[Function]}
         >
           <FontAwesome
@@ -175,8 +178,9 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
           />
            
           2002
-        </a>
-        <a
+        </span>
+        <span
+          className="filter"
           onClick={[Function]}
         >
           <FontAwesome
@@ -185,7 +189,7 @@ exports[`<AlbumShowPage /> renders album show page 1`] = `
           />
            
           Rock
-        </a>
+        </span>
       </span>
       <Table
         bordered={false}
@@ -841,7 +845,8 @@ exports[`<AlbumShowPage /> renders all album comments when scrolled 1`] = `
       <span
         className="icon"
       >
-        <a
+        <span
+          className="filter"
           onClick={[Function]}
         >
           <FontAwesome
@@ -849,8 +854,9 @@ exports[`<AlbumShowPage /> renders all album comments when scrolled 1`] = `
           />
            
           2002
-        </a>
-        <a
+        </span>
+        <span
+          className="filter"
           onClick={[Function]}
         >
           <FontAwesome
@@ -859,7 +865,7 @@ exports[`<AlbumShowPage /> renders all album comments when scrolled 1`] = `
           />
            
           Rock
-        </a>
+        </span>
       </span>
       <Table
         bordered={false}
@@ -1603,7 +1609,8 @@ exports[`<AlbumShowPage /> renders all tracks when show all is clicked 1`] = `
       <span
         className="icon"
       >
-        <a
+        <span
+          className="filter"
           onClick={[Function]}
         >
           <FontAwesome
@@ -1611,8 +1618,9 @@ exports[`<AlbumShowPage /> renders all tracks when show all is clicked 1`] = `
           />
            
           2002
-        </a>
-        <a
+        </span>
+        <span
+          className="filter"
           onClick={[Function]}
         >
           <FontAwesome
@@ -1621,7 +1629,7 @@ exports[`<AlbumShowPage /> renders all tracks when show all is clicked 1`] = `
           />
            
           Rock
-        </a>
+        </span>
       </span>
       <Table
         bordered={false}
@@ -2274,7 +2282,8 @@ exports[`<AlbumShowPage /> renders less tracks when show less is clicked 1`] = `
       <span
         className="icon"
       >
-        <a
+        <span
+          className="filter"
           onClick={[Function]}
         >
           <FontAwesome
@@ -2282,8 +2291,9 @@ exports[`<AlbumShowPage /> renders less tracks when show less is clicked 1`] = `
           />
            
           2002
-        </a>
-        <a
+        </span>
+        <span
+          className="filter"
           onClick={[Function]}
         >
           <FontAwesome
@@ -2292,7 +2302,7 @@ exports[`<AlbumShowPage /> renders less tracks when show less is clicked 1`] = `
           />
            
           Rock
-        </a>
+        </span>
       </span>
       <Table
         bordered={false}

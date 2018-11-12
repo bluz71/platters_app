@@ -47,8 +47,12 @@
   margin-bottom: 0.5em;
 }
 
-.Album .icon a {
+.Album .icon span {
   cursor: pointer;
+}
+
+.Album .icon span:hover {
+  color: #3c9a5f;
 }
 
 .Album img {

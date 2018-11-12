@@ -32,7 +32,8 @@ exports[`<ArtistAlbumsList /> renders of a list of artist albums 1`] = `
       <span
         className="icon"
       >
-        <a
+        <span
+          className="filter"
           onClick={[Function]}
         >
           <FontAwesome
@@ -40,8 +41,9 @@ exports[`<ArtistAlbumsList /> renders of a list of artist albums 1`] = `
           />
            
           2008
-        </a>
-        <a
+        </span>
+        <span
+          className="filter"
           onClick={[Function]}
         >
           <FontAwesome
@@ -50,7 +52,7 @@ exports[`<ArtistAlbumsList /> renders of a list of artist albums 1`] = `
           />
            
           Rock
-        </a>
+        </span>
         <Link
           replace={false}
           to={
@@ -121,7 +123,8 @@ exports[`<ArtistAlbumsList /> renders of a list of artist albums 1`] = `
       <span
         className="icon"
       >
-        <a
+        <span
+          className="filter"
           onClick={[Function]}
         >
           <FontAwesome
@@ -129,8 +132,9 @@ exports[`<ArtistAlbumsList /> renders of a list of artist albums 1`] = `
           />
            
           2014
-        </a>
-        <a
+        </span>
+        <span
+          className="filter"
           onClick={[Function]}
         >
           <FontAwesome
@@ -139,7 +143,7 @@ exports[`<ArtistAlbumsList /> renders of a list of artist albums 1`] = `
           />
            
           Rock
-        </a>
+        </span>
         <Link
           replace={false}
           to={

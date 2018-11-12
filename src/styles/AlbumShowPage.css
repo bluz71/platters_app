@@ -28,12 +28,12 @@
   margin: 1em 0.5em;
 }
 
-.AlbumShow .album-data .icon a {
+.AlbumShow .album-data .icon .filter {
   color: #515151;
   cursor: pointer;
 }
 
-.AlbumShow .album-data .icon a:hover {
+.AlbumShow .album-data .icon .filter:hover {
   color: #3c9a5f;
 }
 

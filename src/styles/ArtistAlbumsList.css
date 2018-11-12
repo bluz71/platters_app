@@ -50,12 +50,14 @@
     font-size: 0.8em;
   }
 
-  .ArtistAlbums .album .title a {
+  .ArtistAlbums .album .title a,
+  .filter {
     cursor: pointer;
     color: #515151;
   }
 
-  .ArtistAlbums .album .title a:hover {
+  .ArtistAlbums .album .title a:hover,
+  .filter:hover {
     color: #3c9a5f;
   }
 }

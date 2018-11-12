@@ -288,12 +288,12 @@ class AlbumShowPage extends Component {
           <small>(Time {album.total_duration})</small>
         </h2>
         <span className="icon">
-          <a onClick={() => this.handleYear(album.year)}>
+          <span className="filter" onClick={() => this.handleYear(album.year)}>
             <FontAwesome name="calendar" /> {album.year}
-          </a>
-          <a onClick={() => this.handleGenre(album.genre)}>
+          </span>
+          <span className="filter" onClick={() => this.handleGenre(album.genre)}>
             <FontAwesome name="tag" className="spacer-left-xs" /> {album.genre}
-          </a>
+          </span>
         </span>
         <Table striped>
           <thead>

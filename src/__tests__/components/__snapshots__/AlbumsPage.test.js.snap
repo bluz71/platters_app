@@ -86,217 +86,217 @@ exports[`<AlbumsPage /> renders 2006 albums 1`] = `
               <li
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   All
-                </a>
+                </span>
               </li>
               <li
                 key="A"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   A
-                </a>
+                </span>
               </li>
               <li
                 key="B"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   B
-                </a>
+                </span>
               </li>
               <li
                 key="C"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   C
-                </a>
+                </span>
               </li>
               <li
                 key="D"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   D
-                </a>
+                </span>
               </li>
               <li
                 key="E"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   E
-                </a>
+                </span>
               </li>
               <li
                 key="F"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   F
-                </a>
+                </span>
               </li>
               <li
                 key="G"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   G
-                </a>
+                </span>
               </li>
               <li
                 key="H"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   H
-                </a>
+                </span>
               </li>
               <li
                 key="I"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   I
-                </a>
+                </span>
               </li>
               <li
                 key="J"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   J
-                </a>
+                </span>
               </li>
               <li
                 key="K"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   K
-                </a>
+                </span>
               </li>
               <li
                 key="L"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   L
-                </a>
+                </span>
               </li>
               <li
                 key="M"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   M
-                </a>
+                </span>
               </li>
               <li
                 key="N"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   N
-                </a>
+                </span>
               </li>
               <li
                 key="O"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   O
-                </a>
+                </span>
               </li>
               <li
                 key="P"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   P
-                </a>
+                </span>
               </li>
               <li
                 key="Q"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Q
-                </a>
+                </span>
               </li>
               <li
                 key="R"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   R
-                </a>
+                </span>
               </li>
               <li
                 key="S"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   S
-                </a>
+                </span>
               </li>
               <li
                 key="T"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   T
-                </a>
+                </span>
               </li>
               <li
                 key="U"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   U
-                </a>
+                </span>
               </li>
               <li
                 key="V"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   V
-                </a>
+                </span>
               </li>
               <li
                 key="W"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   W
-                </a>
+                </span>
               </li>
               <li
                 key="X"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   X
-                </a>
+                </span>
               </li>
               <li
                 key="Y"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Y
-                </a>
+                </span>
               </li>
               <li
                 key="Z"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Z
-                </a>
+                </span>
               </li>
               <li
                 onClick={[Function]}
@@ -482,7 +482,7 @@ exports[`<AlbumsPage /> renders 2006 albums 1`] = `
                   <div
                     className="icon"
                   >
-                    <a
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -495,8 +495,8 @@ exports[`<AlbumsPage /> renders 2006 albums 1`] = `
                       </FontAwesome>
                        
                       2006
-                    </a>
-                    <a
+                    </span>
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -510,7 +510,7 @@ exports[`<AlbumsPage /> renders 2006 albums 1`] = `
                       </FontAwesome>
                        
                       Rock
-                    </a>
+                    </span>
                     <Link
                       replace={false}
                       to={
@@ -678,218 +678,218 @@ exports[`<AlbumsPage /> renders A albums 1`] = `
               <li
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   All
-                </a>
+                </span>
               </li>
               <li
                 className="active"
                 key="A"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   A
-                </a>
+                </span>
               </li>
               <li
                 key="B"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   B
-                </a>
+                </span>
               </li>
               <li
                 key="C"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   C
-                </a>
+                </span>
               </li>
               <li
                 key="D"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   D
-                </a>
+                </span>
               </li>
               <li
                 key="E"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   E
-                </a>
+                </span>
               </li>
               <li
                 key="F"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   F
-                </a>
+                </span>
               </li>
               <li
                 key="G"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   G
-                </a>
+                </span>
               </li>
               <li
                 key="H"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   H
-                </a>
+                </span>
               </li>
               <li
                 key="I"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   I
-                </a>
+                </span>
               </li>
               <li
                 key="J"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   J
-                </a>
+                </span>
               </li>
               <li
                 key="K"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   K
-                </a>
+                </span>
               </li>
               <li
                 key="L"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   L
-                </a>
+                </span>
               </li>
               <li
                 key="M"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   M
-                </a>
+                </span>
               </li>
               <li
                 key="N"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   N
-                </a>
+                </span>
               </li>
               <li
                 key="O"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   O
-                </a>
+                </span>
               </li>
               <li
                 key="P"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   P
-                </a>
+                </span>
               </li>
               <li
                 key="Q"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Q
-                </a>
+                </span>
               </li>
               <li
                 key="R"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   R
-                </a>
+                </span>
               </li>
               <li
                 key="S"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   S
-                </a>
+                </span>
               </li>
               <li
                 key="T"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   T
-                </a>
+                </span>
               </li>
               <li
                 key="U"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   U
-                </a>
+                </span>
               </li>
               <li
                 key="V"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   V
-                </a>
+                </span>
               </li>
               <li
                 key="W"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   W
-                </a>
+                </span>
               </li>
               <li
                 key="X"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   X
-                </a>
+                </span>
               </li>
               <li
                 key="Y"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Y
-                </a>
+                </span>
               </li>
               <li
                 key="Z"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Z
-                </a>
+                </span>
               </li>
               <li
                 onClick={[Function]}
@@ -1077,7 +1077,7 @@ exports[`<AlbumsPage /> renders A albums 1`] = `
                   <div
                     className="icon"
                   >
-                    <a
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -1090,8 +1090,8 @@ exports[`<AlbumsPage /> renders A albums 1`] = `
                       </FontAwesome>
                        
                       2008
-                    </a>
-                    <a
+                    </span>
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -1105,7 +1105,7 @@ exports[`<AlbumsPage /> renders A albums 1`] = `
                       </FontAwesome>
                        
                       Rock
-                    </a>
+                    </span>
                     <Link
                       replace={false}
                       to={
@@ -1283,217 +1283,217 @@ exports[`<AlbumsPage /> renders ABC search match 1`] = `
               <li
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   All
-                </a>
+                </span>
               </li>
               <li
                 key="A"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   A
-                </a>
+                </span>
               </li>
               <li
                 key="B"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   B
-                </a>
+                </span>
               </li>
               <li
                 key="C"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   C
-                </a>
+                </span>
               </li>
               <li
                 key="D"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   D
-                </a>
+                </span>
               </li>
               <li
                 key="E"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   E
-                </a>
+                </span>
               </li>
               <li
                 key="F"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   F
-                </a>
+                </span>
               </li>
               <li
                 key="G"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   G
-                </a>
+                </span>
               </li>
               <li
                 key="H"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   H
-                </a>
+                </span>
               </li>
               <li
                 key="I"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   I
-                </a>
+                </span>
               </li>
               <li
                 key="J"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   J
-                </a>
+                </span>
               </li>
               <li
                 key="K"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   K
-                </a>
+                </span>
               </li>
               <li
                 key="L"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   L
-                </a>
+                </span>
               </li>
               <li
                 key="M"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   M
-                </a>
+                </span>
               </li>
               <li
                 key="N"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   N
-                </a>
+                </span>
               </li>
               <li
                 key="O"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   O
-                </a>
+                </span>
               </li>
               <li
                 key="P"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   P
-                </a>
+                </span>
               </li>
               <li
                 key="Q"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Q
-                </a>
+                </span>
               </li>
               <li
                 key="R"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   R
-                </a>
+                </span>
               </li>
               <li
                 key="S"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   S
-                </a>
+                </span>
               </li>
               <li
                 key="T"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   T
-                </a>
+                </span>
               </li>
               <li
                 key="U"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   U
-                </a>
+                </span>
               </li>
               <li
                 key="V"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   V
-                </a>
+                </span>
               </li>
               <li
                 key="W"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   W
-                </a>
+                </span>
               </li>
               <li
                 key="X"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   X
-                </a>
+                </span>
               </li>
               <li
                 key="Y"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Y
-                </a>
+                </span>
               </li>
               <li
                 key="Z"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Z
-                </a>
+                </span>
               </li>
               <li
                 onClick={[Function]}
@@ -1681,7 +1681,7 @@ exports[`<AlbumsPage /> renders ABC search match 1`] = `
                   <div
                     className="icon"
                   >
-                    <a
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -1694,8 +1694,8 @@ exports[`<AlbumsPage /> renders ABC search match 1`] = `
                       </FontAwesome>
                        
                       2008
-                    </a>
-                    <a
+                    </span>
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -1709,7 +1709,7 @@ exports[`<AlbumsPage /> renders ABC search match 1`] = `
                       </FontAwesome>
                        
                       Rock
-                    </a>
+                    </span>
                     <Link
                       replace={false}
                       to={
@@ -1888,217 +1888,217 @@ exports[`<AlbumsPage /> renders Pop albums 1`] = `
               <li
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   All
-                </a>
+                </span>
               </li>
               <li
                 key="A"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   A
-                </a>
+                </span>
               </li>
               <li
                 key="B"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   B
-                </a>
+                </span>
               </li>
               <li
                 key="C"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   C
-                </a>
+                </span>
               </li>
               <li
                 key="D"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   D
-                </a>
+                </span>
               </li>
               <li
                 key="E"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   E
-                </a>
+                </span>
               </li>
               <li
                 key="F"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   F
-                </a>
+                </span>
               </li>
               <li
                 key="G"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   G
-                </a>
+                </span>
               </li>
               <li
                 key="H"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   H
-                </a>
+                </span>
               </li>
               <li
                 key="I"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   I
-                </a>
+                </span>
               </li>
               <li
                 key="J"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   J
-                </a>
+                </span>
               </li>
               <li
                 key="K"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   K
-                </a>
+                </span>
               </li>
               <li
                 key="L"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   L
-                </a>
+                </span>
               </li>
               <li
                 key="M"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   M
-                </a>
+                </span>
               </li>
               <li
                 key="N"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   N
-                </a>
+                </span>
               </li>
               <li
                 key="O"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   O
-                </a>
+                </span>
               </li>
               <li
                 key="P"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   P
-                </a>
+                </span>
               </li>
               <li
                 key="Q"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Q
-                </a>
+                </span>
               </li>
               <li
                 key="R"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   R
-                </a>
+                </span>
               </li>
               <li
                 key="S"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   S
-                </a>
+                </span>
               </li>
               <li
                 key="T"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   T
-                </a>
+                </span>
               </li>
               <li
                 key="U"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   U
-                </a>
+                </span>
               </li>
               <li
                 key="V"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   V
-                </a>
+                </span>
               </li>
               <li
                 key="W"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   W
-                </a>
+                </span>
               </li>
               <li
                 key="X"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   X
-                </a>
+                </span>
               </li>
               <li
                 key="Y"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Y
-                </a>
+                </span>
               </li>
               <li
                 key="Z"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Z
-                </a>
+                </span>
               </li>
               <li
                 onClick={[Function]}
@@ -2280,7 +2280,7 @@ exports[`<AlbumsPage /> renders Pop albums 1`] = `
                   <div
                     className="icon"
                   >
-                    <a
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -2293,8 +2293,8 @@ exports[`<AlbumsPage /> renders Pop albums 1`] = `
                       </FontAwesome>
                        
                       2009
-                    </a>
-                    <a
+                    </span>
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -2308,7 +2308,7 @@ exports[`<AlbumsPage /> renders Pop albums 1`] = `
                       </FontAwesome>
                        
                       Pop
-                    </a>
+                    </span>
                     <Link
                       replace={false}
                       to={
@@ -2447,217 +2447,217 @@ exports[`<AlbumsPage /> renders first page 1`] = `
               <li
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   All
-                </a>
+                </span>
               </li>
               <li
                 key="A"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   A
-                </a>
+                </span>
               </li>
               <li
                 key="B"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   B
-                </a>
+                </span>
               </li>
               <li
                 key="C"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   C
-                </a>
+                </span>
               </li>
               <li
                 key="D"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   D
-                </a>
+                </span>
               </li>
               <li
                 key="E"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   E
-                </a>
+                </span>
               </li>
               <li
                 key="F"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   F
-                </a>
+                </span>
               </li>
               <li
                 key="G"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   G
-                </a>
+                </span>
               </li>
               <li
                 key="H"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   H
-                </a>
+                </span>
               </li>
               <li
                 key="I"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   I
-                </a>
+                </span>
               </li>
               <li
                 key="J"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   J
-                </a>
+                </span>
               </li>
               <li
                 key="K"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   K
-                </a>
+                </span>
               </li>
               <li
                 key="L"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   L
-                </a>
+                </span>
               </li>
               <li
                 key="M"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   M
-                </a>
+                </span>
               </li>
               <li
                 key="N"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   N
-                </a>
+                </span>
               </li>
               <li
                 key="O"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   O
-                </a>
+                </span>
               </li>
               <li
                 key="P"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   P
-                </a>
+                </span>
               </li>
               <li
                 key="Q"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Q
-                </a>
+                </span>
               </li>
               <li
                 key="R"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   R
-                </a>
+                </span>
               </li>
               <li
                 key="S"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   S
-                </a>
+                </span>
               </li>
               <li
                 key="T"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   T
-                </a>
+                </span>
               </li>
               <li
                 key="U"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   U
-                </a>
+                </span>
               </li>
               <li
                 key="V"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   V
-                </a>
+                </span>
               </li>
               <li
                 key="W"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   W
-                </a>
+                </span>
               </li>
               <li
                 key="X"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   X
-                </a>
+                </span>
               </li>
               <li
                 key="Y"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Y
-                </a>
+                </span>
               </li>
               <li
                 key="Z"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Z
-                </a>
+                </span>
               </li>
               <li
                 onClick={[Function]}
@@ -2861,7 +2861,7 @@ exports[`<AlbumsPage /> renders first page 1`] = `
                   <div
                     className="icon"
                   >
-                    <a
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -2874,8 +2874,8 @@ exports[`<AlbumsPage /> renders first page 1`] = `
                       </FontAwesome>
                        
                       2008
-                    </a>
-                    <a
+                    </span>
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -2889,7 +2889,7 @@ exports[`<AlbumsPage /> renders first page 1`] = `
                       </FontAwesome>
                        
                       Rock
-                    </a>
+                    </span>
                     <Link
                       replace={false}
                       to={
@@ -3024,7 +3024,7 @@ exports[`<AlbumsPage /> renders first page 1`] = `
                   <div
                     className="icon"
                   >
-                    <a
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -3037,8 +3037,8 @@ exports[`<AlbumsPage /> renders first page 1`] = `
                       </FontAwesome>
                        
                       2015
-                    </a>
-                    <a
+                    </span>
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -3052,7 +3052,7 @@ exports[`<AlbumsPage /> renders first page 1`] = `
                       </FontAwesome>
                        
                       Classical
-                    </a>
+                    </span>
                     <Link
                       replace={false}
                       to={
@@ -3360,9 +3360,9 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
               <li
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   All
-                </a>
+                </span>
               </li>
               <li
                 onClick={[Function]}
@@ -3566,7 +3566,7 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
                   <div
                     className="icon"
                   >
-                    <a
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -3579,8 +3579,8 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
                       </FontAwesome>
                        
                       2015
-                    </a>
-                    <a
+                    </span>
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -3594,7 +3594,7 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
                       </FontAwesome>
                        
                       Classical
-                    </a>
+                    </span>
                     <Link
                       replace={false}
                       to={
@@ -3704,7 +3704,7 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
                   <div
                     className="icon"
                   >
-                    <a
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -3717,8 +3717,8 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
                       </FontAwesome>
                        
                       2008
-                    </a>
-                    <a
+                    </span>
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -3732,7 +3732,7 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
                       </FontAwesome>
                        
                       Rock
-                    </a>
+                    </span>
                     <Link
                       replace={false}
                       to={
@@ -3910,217 +3910,217 @@ exports[`<AlbumsPage /> renders second page 1`] = `
               <li
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   All
-                </a>
+                </span>
               </li>
               <li
                 key="A"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   A
-                </a>
+                </span>
               </li>
               <li
                 key="B"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   B
-                </a>
+                </span>
               </li>
               <li
                 key="C"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   C
-                </a>
+                </span>
               </li>
               <li
                 key="D"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   D
-                </a>
+                </span>
               </li>
               <li
                 key="E"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   E
-                </a>
+                </span>
               </li>
               <li
                 key="F"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   F
-                </a>
+                </span>
               </li>
               <li
                 key="G"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   G
-                </a>
+                </span>
               </li>
               <li
                 key="H"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   H
-                </a>
+                </span>
               </li>
               <li
                 key="I"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   I
-                </a>
+                </span>
               </li>
               <li
                 key="J"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   J
-                </a>
+                </span>
               </li>
               <li
                 key="K"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   K
-                </a>
+                </span>
               </li>
               <li
                 key="L"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   L
-                </a>
+                </span>
               </li>
               <li
                 key="M"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   M
-                </a>
+                </span>
               </li>
               <li
                 key="N"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   N
-                </a>
+                </span>
               </li>
               <li
                 key="O"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   O
-                </a>
+                </span>
               </li>
               <li
                 key="P"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   P
-                </a>
+                </span>
               </li>
               <li
                 key="Q"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Q
-                </a>
+                </span>
               </li>
               <li
                 key="R"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   R
-                </a>
+                </span>
               </li>
               <li
                 key="S"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   S
-                </a>
+                </span>
               </li>
               <li
                 key="T"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   T
-                </a>
+                </span>
               </li>
               <li
                 key="U"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   U
-                </a>
+                </span>
               </li>
               <li
                 key="V"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   V
-                </a>
+                </span>
               </li>
               <li
                 key="W"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   W
-                </a>
+                </span>
               </li>
               <li
                 key="X"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   X
-                </a>
+                </span>
               </li>
               <li
                 key="Y"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Y
-                </a>
+                </span>
               </li>
               <li
                 key="Z"
                 onClick={[Function]}
               >
-                <a>
+                <span>
                   Z
-                </a>
+                </span>
               </li>
               <li
                 onClick={[Function]}
@@ -4304,7 +4304,7 @@ exports[`<AlbumsPage /> renders second page 1`] = `
                   <div
                     className="icon"
                   >
-                    <a
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -4317,8 +4317,8 @@ exports[`<AlbumsPage /> renders second page 1`] = `
                       </FontAwesome>
                        
                       2003
-                    </a>
-                    <a
+                    </span>
+                    <span
                       onClick={[Function]}
                     >
                       <FontAwesome
@@ -4332,7 +4332,7 @@ exports[`<AlbumsPage /> renders second page 1`] = `
                       </FontAwesome>
                        
                       Rock
-                    </a>
+                    </span>
                     <Link
                       replace={false}
                       to={

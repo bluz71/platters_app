@@ -229,7 +229,7 @@ class ArtistsPage extends Component {
         <div className="filters">
           <ul className="pagination pagination-sm">
             <li onClick={this.handleAll}>
-              <a>All</a>
+              <span>All</span>
             </li>
             {!this.searching &&
               letters.map((letter, index) => (
@@ -238,7 +238,7 @@ class ArtistsPage extends Component {
                   key={index}
                   className={this.letterActivity(letter)}
                 >
-                  <a>{letter}</a>
+                  <span>{letter}</span>
                 </li>
               ))}
             <li onClick={this.handleSearchVisibility}>
