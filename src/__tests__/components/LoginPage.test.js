@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import { MemoryRouter } from 'react-router-dom';
 import { flushPromises, logOutUser } from '../../helpers/testUtils';
 import LoginPage from '../../components/LoginPage';
 import { appAuth } from '../../lib/appAuth';
@@ -10,7 +11,11 @@ describe('<LoginPage />', () => {
   });
 
   it('with valid user credentials', async () => {
-    const wrapper = mount(<LoginPage />);
+    const wrapper = mount(
+      <MemoryRouter initialEntries={[{ key: 'testKey' }]}>
+        <LoginPage />
+      </MemoryRouter>
+    );
     expect(appAuth.isLoggedIn()).toEqual(false);
     wrapper.find('input.email').instance().value = 'fred@example.com';
     wrapper.find('input.password').instance().value = 'password1';
@@ -22,7 +27,11 @@ describe('<LoginPage />', () => {
   });
 
   it('with unknown user', async () => {
-    const wrapper = mount(<LoginPage />);
+    const wrapper = mount(
+      <MemoryRouter initialEntries={[{ key: 'testKey' }]}>
+        <LoginPage />
+      </MemoryRouter>
+    );
     wrapper.find('input.email').instance().value = 'peter@example.com';
     wrapper.find('input.password').instance().value = 'password1';
     wrapper.find('button').simulate('submit');
@@ -32,7 +41,11 @@ describe('<LoginPage />', () => {
   });
 
   it('with invalid password', async () => {
-    const wrapper = mount(<LoginPage />);
+    const wrapper = mount(
+      <MemoryRouter initialEntries={[{ key: 'testKey' }]}>
+        <LoginPage />
+      </MemoryRouter>
+    );
     wrapper.find('input.email').instance().value = 'fred@example.com';
     wrapper.find('input.password').instance().value = 'password2';
     wrapper.find('button').simulate('submit');
