@@ -11,10 +11,12 @@ import {
   FormControl,
   Button
 } from 'react-bootstrap';
+import FontAwesome from 'react-fontawesome';
+import { Link } from 'react-router-dom';
+import '../styles/LoginPage.css';
 import { appAuth } from '../lib/appAuth';
 import { API_HOST } from '../config';
 import toastAlert from '../helpers/toastAlert';
-import FontAwesome from 'react-fontawesome';
 
 const LOGIN_ENDPOINT = `${API_HOST}/api/log_in`;
 
@@ -23,7 +25,7 @@ class LoginPage extends Component {
     super(props);
 
     this.state = {
-      logInButtonText: 'Sign In'
+      logInButtonText: 'Sign in'
     };
 
     // Bind 'this' for callback functions.
@@ -36,7 +38,7 @@ class LoginPage extends Component {
     this.setState({
       logInButtonText: (
         <div>
-          <FontAwesome name="spinner" spin pulse /> Signing In
+          <FontAwesome name="spinner" spin pulse /> Signing in...
         </div>
       )
     });
@@ -117,6 +119,9 @@ class LoginPage extends Component {
               >
                 {this.state.logInButtonText}
               </Button>
+              <Link to="password/new" className="spacer-left-xsm">
+                Forgot password?
+              </Link>
             </Col>
           </FormGroup>
         </Form>
