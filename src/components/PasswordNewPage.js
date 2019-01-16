@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import {
   Row,
   Col,
@@ -11,6 +12,11 @@ import {
   Button
 } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
+import { API_HOST, APPLICATION_HOST } from '../config';
+import toastAlert from '../helpers/toastAlert';
+import toastNotice from '../helpers/toastNotice';
+
+const PASSWORD_ENDPOINT = `${API_HOST}/api/passwords`;
 
 class PasswordNew extends Component {
   constructor(props) {
@@ -34,6 +40,36 @@ class PasswordNew extends Component {
         </div>
       )
     });
+
+    const passwordReset = {
+      password_reset: {
+        email_address: this.emailAddressInput.value,
+        application_host: APPLICATION_HOST
+      }
+    };
+
+    this.postPasswordReset(passwordReset);
+  }
+
+  postPasswordReset(passwordReset) {
+    axios
+      .post(PASSWORD_ENDPOINT, passwordReset)
+      .then((response) => {
+        this.setState({ submitButtonText: 'Submit' });
+        toastNotice(
+          'You will receive an email within the next few minutes. It contains instructions for changing your password.'
+        );
+      })
+      .catch((error) => {
+        this.setState({ submitButtonText: 'Submit' });
+        if (error.response && error.response.status === 404) {
+          toastAlert(
+            'Invalid email address, no user with that email address is registered'
+          );
+        } else {
+          toastAlert('Server error, please try again later');
+        }
+      });
   }
 
   renderExplanation() {
@@ -59,7 +95,7 @@ class PasswordNew extends Component {
               <FormControl
                 type="email"
                 className="email"
-                inputRef={(input) => (this.emailInput = input)}
+                inputRef={(input) => (this.emailAddressInput = input)}
               />
             </Col>
           </FormGroup>
