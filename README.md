@@ -14,7 +14,7 @@ Core Technologies
 
 * [React](https://reactjs.org)
 * [Create React App](https://github.com/facebookincubator/create-react-app)
-* [Ruby on Rails API back-end](https://platters.live/details)
+* [Ruby on Rails API back-end](https://platters.cc/details)
 
 Significant JavaScript Libraries
 --------------------------------

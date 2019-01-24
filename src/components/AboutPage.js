@@ -47,7 +47,7 @@ const AboutPage = () => {
             </em>
             application
             <a
-              href="https://platters.live"
+              href="https://platters.cc"
               target="_blank"
               rel="noopener noreferrer"
               className="standout"
@@ -57,7 +57,7 @@ const AboutPage = () => {
             </a>
             . Refer to the Platters{' '}
             <a
-              href="https://platters.live/about"
+              href="https://platters.cc/about"
               target="_blank"
               rel="noopener noreferrer"
               className="standout"

@@ -39,7 +39,7 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="https://platters.live/details"
+                  href="https://platters.cc/details"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -50,7 +50,7 @@ const DetailsPage = () => {
                 Content for this application is delivered in JSON format from a
                 complimentary{' '}
                 <a
-                  href="https://platters.live/details"
+                  href="https://platters.cc/details"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="standout"
