@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
-import toastAlert from '../helpers/toastAlert';
+import { toastAlert } from '../helpers/toastMessage';
 import { API_HOST } from '../config';
 import { appAuth } from '../lib/appAuth';
 import '../styles/NewComment.css';

@@ -170,6 +170,20 @@ module.exports = {
         }
         break;
       }
+      case `${API_HOST}/api/passwords`: {
+        const { email_address, application_host } = param.password_reset;
+        if (email_address === 'fred@example.com') {
+          return Promise.resolve({
+            response: { status: 200 }
+          });
+        }
+        if (email_address === 'peter@example.com') {
+          return Promise.reject({
+            response: { status: 404 }
+          });
+        }
+        break;
+      }
       case `${API_HOST}/abc/comments.json`:
         return Promise.resolve({
           data: newComment

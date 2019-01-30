@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 import '../styles/LoginPage.css';
 import { appAuth } from '../lib/appAuth';
 import { API_HOST } from '../config';
-import toastAlert from '../helpers/toastAlert';
+import { toastAlert } from '../helpers/toastMessage';
 
 const LOGIN_ENDPOINT = `${API_HOST}/api/log_in`;
 

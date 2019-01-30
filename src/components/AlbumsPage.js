@@ -10,7 +10,7 @@ import { VelocityTransitionGroup } from 'velocity-react';
 import '../styles/AlbumsPage.css';
 import { API_HOST } from '../config';
 import pageProgress from '../helpers/pageProgress';
-import toastAlert from '../helpers/toastAlert';
+import { toastAlert } from '../helpers/toastMessage';
 import AlbumsFilter from './AlbumsFilter';
 import Search from './Search';
 import AlbumsList from './AlbumsList';

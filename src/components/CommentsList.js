@@ -5,7 +5,7 @@ import axios from 'axios';
 import linkify from 'linkify-lite';
 import simpleFormat from '../helpers/simpleFormat';
 import FontAwesome from 'react-fontawesome';
-import toastAlert from '../helpers/toastAlert';
+import { toastAlert } from '../helpers/toastMessage';
 import { VelocityTransitionGroup } from 'velocity-react';
 import '../styles/CommentsList.css';
 import { appAuth } from '../lib/appAuth';

@@ -8,7 +8,7 @@ import pluralize from 'pluralize';
 import { API_HOST } from '../config';
 import pageProgress from '../helpers/pageProgress';
 import infiniteScroll from '../helpers/infiniteScroll';
-import toastAlert from '../helpers/toastAlert';
+import { toastAlert } from '../helpers/toastMessage';
 import { appAuth } from '../lib/appAuth';
 import CommentsList from './CommentsList';
 import NewComment from './NewComment';

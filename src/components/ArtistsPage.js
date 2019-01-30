@@ -11,7 +11,7 @@ import { VelocityTransitionGroup } from 'velocity-react';
 import '../styles/ArtistsPage.css';
 import { API_HOST } from '../config';
 import pageProgress from '../helpers/pageProgress';
-import toastAlert from '../helpers/toastAlert';
+import { toastAlert } from '../helpers/toastMessage';
 import Search from './Search';
 import Paginator from './Paginator';
 import ArtistsSidebar from './ArtistsSidebar';

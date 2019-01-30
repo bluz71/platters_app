@@ -7,7 +7,7 @@ import { API_HOST } from '../config';
 import { appAuth } from '../lib/appAuth';
 import '../styles/HomePage.css';
 import logo from '../images/platters-black.svg';
-import toastAlert from '../helpers/toastAlert';
+import { toastAlert } from '../helpers/toastMessage';
 import pageProgress from '../helpers/pageProgress';
 import AlbumsList from './AlbumsList';
 import CommentsList from './CommentsList';

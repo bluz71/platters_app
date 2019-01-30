@@ -13,8 +13,7 @@ import {
 } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 import { API_HOST, APPLICATION_HOST } from '../config';
-import toastAlert from '../helpers/toastAlert';
-import toastNotice from '../helpers/toastNotice';
+import { toastAlert, toastNotice } from '../helpers/toastMessage';
 
 const PASSWORD_ENDPOINT = `${API_HOST}/api/passwords`;
 
