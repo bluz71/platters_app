@@ -1,0 +1,125 @@
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import queryString from 'query-string';
+import {
+  Row,
+  Col,
+  PageHeader,
+  Well,
+  Form,
+  FormGroup,
+  ControlLabel,
+  FormControl,
+  Button
+} from 'react-bootstrap';
+import FontAwesome from 'react-fontawesome';
+import { toastAlert } from '../helpers/toastMessage';
+
+class PasswordEditPage extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      submitButtonText: 'Submit'
+    };
+
+    this.userSlug = props.match.params.user_id;
+    const params = queryString.parse(props.location.search);
+    this.changeToken = Object.prototype.hasOwnProperty.call(params, 'token')
+      ? params.token
+      : '';
+
+    // Strip the token parameter from the URL.
+    const url = `/users/${this.userSlug}/password/edit`;
+    this.props.history.replace(url);
+
+    // Bind 'this' for callback functions.
+    this.handleChangeSubmit = this.handleChangeSubmit.bind(this);
+  }
+
+  handleChangeSubmit(event) {
+    event.preventDefault();
+
+    this.setState({
+      submitButtonText: (
+        <div>
+          <FontAwesome name="spinner" spin pulse /> Submitting...
+        </div>
+      )
+    });
+
+    const passwordChange = {
+      password_change: {
+        password: this.emailPasswordInput.value,
+        token: this.changeToken
+      }
+    };
+
+    this.postPasswordChange(passwordChange);
+  }
+
+  postPasswordChange(passwordChange) {
+    this.setState({ submitButtonText: 'Submit' });
+  }
+
+  renderExplanation() {
+    return <p>Your password will be reset. Choose a new password below.</p>;
+  }
+
+  renderForm() {
+    return (
+      <Well>
+        <Form horizontal onSubmit={this.handleChangeSubmit}>
+          <ul className="list-group" />
+
+          <FormGroup>
+            <Col componentClass={ControlLabel} md={2}>
+              Choose password
+            </Col>
+            <Col md={9}>
+              <FormControl
+                type="password"
+                className="password"
+                inputRef={(input) => (this.passwordInput = input)}
+              />
+            </Col>
+          </FormGroup>
+
+          <FormGroup>
+            <Col mdOffset={2} md={9}>
+              <Button
+                type="submit"
+                bsStyle="success"
+                bsSize="small"
+                className="submit"
+              >
+                {this.state.submitButtonText}
+              </Button>
+            </Col>
+          </FormGroup>
+        </Form>
+      </Well>
+    );
+  }
+
+  render() {
+    if (this.token.length !== 40) {
+      toastAlert(
+        'Invalid password reset token, expecting a 40 character token, please click the email link again'
+      );
+      return <Redirect to="/" />;
+    }
+
+    return (
+      <Row className="PasswordEdit">
+        <Col md={10} mdOffset={1}>
+          <PageHeader>Change your password</PageHeader>
+          {this.renderExplanation()}
+          {this.renderForm()}
+        </Col>
+      </Row>
+    );
+  }
+}
+
+export default PasswordEditPage;

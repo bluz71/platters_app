@@ -16,6 +16,7 @@ import UserCommentsPage from './UserCommentsPage';
 import LoginPage from './LoginPage';
 import Logout from './Logout';
 import PasswordNewPage from './PasswordNewPage';
+import PasswordEditPage from './PasswordEditPage';
 import AboutPage from './AboutPage';
 import DetailsPage from './DetailsPage';
 import NotFound from './NotFound';
@@ -44,6 +45,10 @@ const Layout = () => (
           <Route path="/log_in" component={LoginPage} />
           <Route path="/log_out" component={Logout} />
           <Route path="/password/new" component={PasswordNewPage} />
+          <Route
+            path="/users/:user_id/password/edit"
+            component={PasswordEditPage}
+          />
           <Route path="/about" component={AboutPage} />
           <Route path="/details" component={DetailsPage} />
           <Route component={NotFound} />
