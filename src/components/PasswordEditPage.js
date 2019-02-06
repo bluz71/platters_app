@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import queryString from 'query-string';
 import {
@@ -13,6 +14,8 @@ import {
   Button
 } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
+import { API_HOST } from '../config';
+import { appAuth } from '../lib/appAuth';
 import { toastAlert } from '../helpers/toastMessage';
 
 class PasswordEditPage extends Component {
@@ -24,12 +27,17 @@ class PasswordEditPage extends Component {
     };
 
     this.userSlug = props.match.params.user_id;
+    this.passwordChangeEndPoint = `${API_HOST}/api/users/passwords/${
+      this.userSlug
+    }/password`;
+
     const params = queryString.parse(props.location.search);
     this.changeToken = Object.prototype.hasOwnProperty.call(params, 'token')
       ? params.token
       : '';
 
-    // Strip the token parameter from the URL.
+    // Strip the change token parameter from the URL and redirect to the shortened
+    // URL.
     const url = `/users/${this.userSlug}/password/edit`;
     this.props.history.replace(url);
 
@@ -50,16 +58,38 @@ class PasswordEditPage extends Component {
 
     const passwordChange = {
       password_change: {
-        password: this.emailPasswordInput.value,
+        password: this.passwordInput.value,
         token: this.changeToken
       }
     };
 
-    this.postPasswordChange(passwordChange);
+    this.putPasswordChange(passwordChange);
   }
 
-  postPasswordChange(passwordChange) {
-    this.setState({ submitButtonText: 'Submit' });
+  putPasswordChange(passwordChange) {
+    axios
+      .put(this.passwordChangeEndPoint, passwordChange)
+      .then((response) => {
+        this.setState({ submitButtonText: 'Submit' });
+        appAuth.logIn(response.data.auth_token);
+        this.props.history.push('/');
+      })
+      .catch((error) => {
+        this.setState({ submitButtonText: 'Submit' });
+        if (error.response && error.response.status === 400) {
+          toastAlert(
+            'Incorrect confirmation token, please retry resetting your password again'
+          );
+          this.props.history.push('/password/new');
+        } else if (error.response && error.response.status === 406) {
+          toastAlert(
+            'Password could not be changed, please make sure the new password is at least 9 characters long'
+          );
+          this.passwordInput.value = '';
+        } else {
+          toastAlert('Server error, please try again later');
+        }
+      });
   }
 
   renderExplanation() {
@@ -103,7 +133,7 @@ class PasswordEditPage extends Component {
   }
 
   render() {
-    if (this.token.length !== 40) {
+    if (this.changeToken.length !== 40) {
       toastAlert(
         'Invalid password reset token, expecting a 40 character token, please click the email link again'
       );

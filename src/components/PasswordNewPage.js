@@ -15,7 +15,7 @@ import FontAwesome from 'react-fontawesome';
 import { API_HOST, APPLICATION_HOST } from '../config';
 import { toastAlert, toastNotice } from '../helpers/toastMessage';
 
-const PASSWORD_ENDPOINT = `${API_HOST}/api/passwords`;
+const PASSWORD_CHANGE_ENDPOINT = `${API_HOST}/api/passwords`;
 
 class PasswordNew extends Component {
   constructor(props) {
@@ -52,7 +52,7 @@ class PasswordNew extends Component {
 
   postPasswordReset(passwordReset) {
     axios
-      .post(PASSWORD_ENDPOINT, passwordReset)
+      .post(PASSWORD_CHANGE_ENDPOINT, passwordReset)
       .then((response) => {
         this.setState({ submitButtonText: 'Submit' });
         toastNotice(
