@@ -201,5 +201,25 @@ module.exports = {
           }
         });
     }
+  }),
+  put: jest.fn((url) => {
+    switch (url) {
+      case `${API_HOST}/api/users/passwords/fred/password`:
+        return Promise.resolve({
+          data: logIn
+        });
+      case `${API_HOST}/api/users/passwords/john/password`:
+        return Promise.reject({
+          response: {
+            status: 400
+          }
+        });
+      case `${API_HOST}/api/users/passwords/eric/password`:
+        return Promise.reject({
+          response: {
+            status: 406
+          }
+        });
+    }
   })
 };

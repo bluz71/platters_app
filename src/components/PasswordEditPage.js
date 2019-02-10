@@ -16,7 +16,7 @@ import {
 import FontAwesome from 'react-fontawesome';
 import { API_HOST } from '../config';
 import { appAuth } from '../lib/appAuth';
-import { toastAlert } from '../helpers/toastMessage';
+import { toastAlert, toastNotice } from '../helpers/toastMessage';
 
 class PasswordEditPage extends Component {
   constructor(props) {
@@ -39,7 +39,7 @@ class PasswordEditPage extends Component {
     // Strip the change token parameter from the URL and redirect to the shortened
     // URL.
     const url = `/users/${this.userSlug}/password/edit`;
-    this.props.history.replace(url);
+    props.history.replace(url);
 
     // Bind 'this' for callback functions.
     this.handleChangeSubmit = this.handleChangeSubmit.bind(this);
@@ -72,6 +72,7 @@ class PasswordEditPage extends Component {
       .then((response) => {
         this.setState({ submitButtonText: 'Submit' });
         appAuth.logIn(response.data.auth_token);
+        toastNotice('Your password has been successfully reset')
         this.props.history.push('/');
       })
       .catch((error) => {

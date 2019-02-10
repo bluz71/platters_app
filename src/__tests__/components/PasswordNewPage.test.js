@@ -10,7 +10,7 @@ describe('<PasswordNewPage />', () => {
     shallow(<PasswordNewPage />);
   });
 
-  it('renders password reset form', () => {
+  it('renders password new form', () => {
     const wrapper = shallow(<PasswordNewPage />);
     expect(wrapper).toMatchSnapshot();
   });
