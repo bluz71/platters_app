@@ -10,6 +10,11 @@ describe('<PasswordNewPage />', () => {
     shallow(<PasswordNewPage />);
   });
 
+  it('renders password reset form', () => {
+    const wrapper = shallow(<PasswordNewPage />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('with valid email address', async () => {
     const spyAlert = jest.spyOn(toastModule, 'toastAlert');
     const spyNotice = jest.spyOn(toastModule, 'toastNotice');
