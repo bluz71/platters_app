@@ -72,7 +72,7 @@ class PasswordEditPage extends Component {
       .then((response) => {
         this.setState({ submitButtonText: 'Submit' });
         appAuth.logIn(response.data.auth_token);
-        toastNotice('Your password has been successfully reset')
+        toastNotice('Your password has been successfully reset');
         this.props.history.push('/');
       })
       .catch((error) => {

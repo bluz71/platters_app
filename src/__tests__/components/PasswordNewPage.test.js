@@ -16,7 +16,6 @@ describe('<PasswordNewPage />', () => {
   });
 
   it('with valid email address', async () => {
-    const spyAlert = jest.spyOn(toastModule, 'toastAlert');
     const spyNotice = jest.spyOn(toastModule, 'toastNotice');
     const wrapper = mount(
       <MemoryRouter initialEntries={[{ key: 'testKey' }]}>
@@ -26,15 +25,14 @@ describe('<PasswordNewPage />', () => {
     wrapper.find('input.email').instance().value = 'fred@example.com';
     wrapper.find('button').simulate('submit');
     await flushPromises();
-    expect(spyAlert).not.toHaveBeenCalled();
-    expect(spyNotice).toHaveBeenCalled();
-    spyAlert.mockRestore();
+    expect(spyNotice).toHaveBeenCalledWith(
+      'You will receive an email within the next few minutes. It contains instructions for changing your password.'
+    );
     spyNotice.mockRestore();
   });
 
   it('with invalid email address', async () => {
     const spyAlert = jest.spyOn(toastModule, 'toastAlert');
-    const spyNotice = jest.spyOn(toastModule, 'toastNotice');
     const wrapper = mount(
       <MemoryRouter initialEntries={[{ key: 'testKey' }]}>
         <PasswordNewPage />
@@ -43,9 +41,9 @@ describe('<PasswordNewPage />', () => {
     wrapper.find('input.email').instance().value = 'peter@example.com';
     wrapper.find('button').simulate('submit');
     await flushPromises();
-    expect(spyAlert).toHaveBeenCalled();
-    expect(spyNotice).not.toHaveBeenCalled();
+    expect(spyAlert).toHaveBeenCalledWith(
+      'Invalid email address, no user with that email address is registered'
+    );
     spyAlert.mockRestore();
-    spyNotice.mockRestore();
   });
 });
