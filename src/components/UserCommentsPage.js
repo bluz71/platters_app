@@ -17,6 +17,7 @@ class UserCommentsPage extends Component {
     super(props);
 
     this.userSlug = props.match.params.id;
+    document.title = this.userSlug;
     this.commentsEndPoint = `${API_HOST}/comments/${this.userSlug}.json`;
     this.loaded = false;
     this.waiting = false;

@@ -1,0 +1,14 @@
+.UserAccount .sub-header h1 {
+  font-size: 2em;
+}
+
+.UserAccount .avatar img {
+  height: 125px;
+  width: 125px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.UserAccount .avatar img:hover {
+  border: 1px solid #3c9a5f;
+}

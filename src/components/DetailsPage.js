@@ -3,6 +3,7 @@ import { Row, Col, PageHeader } from 'react-bootstrap';
 import '../styles/MiscPage.css';
 
 const DetailsPage = () => {
+  document.title = 'Platters App';
   window.scrollTo(0, 0);
 
   return (

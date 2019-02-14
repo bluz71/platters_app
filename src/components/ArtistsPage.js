@@ -22,6 +22,8 @@ class ArtistsPage extends Component {
   constructor(props) {
     super(props);
 
+    document.title = 'Platters App - Artists';
+
     // params is not React state since we do not want to re-render when it
     // changes; just use an instance variable instead.
     this.params = {};

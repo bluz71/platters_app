@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import '../styles/MiscPage.css';
 
 const AboutPage = () => {
+  document.title = 'Platters App';
   window.scrollTo(0, 0);
 
   return (

@@ -22,7 +22,7 @@ const renderSessionMenu = () => {
     );
   }
 
-  const username = appAuth.currentUser().name;
+  const user = appAuth.currentUser();
 
   // Active logged in session.
   return (
@@ -33,13 +33,13 @@ const renderSessionMenu = () => {
           <span>
             <FontAwesome className="fa-fw" name="user" />
             &nbsp;
-            {username}
+            {user.name}
           </span>
         }
         id="nav-dropdown"
       >
         <IndexLinkContainer
-          to={`/comments/${username}`}
+          to={`/comments/${user.slug}`}
           activeClassName="selected"
         >
           <MenuItem eventKey="1.1">
@@ -47,10 +47,15 @@ const renderSessionMenu = () => {
             &nbsp; Comments
           </MenuItem>
         </IndexLinkContainer>
-        <MenuItem eventKey="1.2">
-          <FontAwesome className="fa-fw" name="gear" />
-          &nbsp; Account
-        </MenuItem>
+        <IndexLinkContainer
+          to={`/users/${user.slug}`}
+          activeClassName="selected"
+        >
+          <MenuItem eventKey="1.2">
+            <FontAwesome className="fa-fw" name="gear" />
+            &nbsp; Account
+          </MenuItem>
+        </IndexLinkContainer>
         <IndexLinkContainer to="/log_out" activeClassName="selected">
           <MenuItem eventKey="1.3">
             <FontAwesome className="fa-fw" name="sign-out" />

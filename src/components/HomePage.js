@@ -17,6 +17,7 @@ const HOME_ENDPOINT = `${API_HOST}/home.json`;
 class HomePage extends Component {
   constructor(props) {
     super(props);
+    document.title = 'Platters App';
     window.scrollTo(0, 0);
 
     this.loaded = false;

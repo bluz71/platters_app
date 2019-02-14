@@ -24,6 +24,8 @@ class LoginPage extends Component {
   constructor(props) {
     super(props);
 
+    document.title = 'Platters App';
+
     this.state = {
       logInButtonText: 'Sign in'
     };

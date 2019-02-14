@@ -22,6 +22,8 @@ class PasswordEditPage extends Component {
   constructor(props) {
     super(props);
 
+    document.title = 'Platters App';
+
     this.state = {
       submitButtonText: 'Submit'
     };
