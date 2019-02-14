@@ -1,10 +1,12 @@
-- Forgetten password
-
 - Create user
-
-- User account page
-
-- User deletion
 
 - When logging in try to redirect to the page the user logged in from (if
   possible).
+
+- Migrate from Bootstrap 3 to Bootstrap 4:
+    https://getbootstrap.com/docs/4.0/migration/
+    https://medium.com/@lukaszholeczek/migration-from-bootstrap-3-to-bootstrap-4-4ec63a1dd8b1
+    https://react-bootstrap.github.io/migrating/
+    http://upgrade-bootstrap.bootply.com/
+    https://coreui.io/blog/2018/01/31/migration-from-bootstrap-3-to-bootstrap-4/
+    https://ingresso.github.io/ingresso-bootstrap/migration/
