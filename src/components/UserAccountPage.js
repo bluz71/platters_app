@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import {
   Row,
@@ -14,8 +15,9 @@ import {
 } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 import md5 from 'md5';
+import { API_HOST } from '../config';
 import { appAuth } from '../lib/appAuth';
-import { toastAlert } from '../helpers/toastMessage';
+import { toastAlert, toastNotice } from '../helpers/toastMessage';
 import '../styles/UserAccountPage.css';
 
 class UserAccountPage extends Component {
@@ -23,6 +25,8 @@ class UserAccountPage extends Component {
     super(props);
 
     this.userSlug = props.match.params.id;
+    this.userUserEndPoint = `${API_HOST}/api/users/${this.userSlug}`;
+
     this.user = appAuth.currentUser();
     document.title = `Platters App - ${this.userSlug}`;
 
@@ -31,11 +35,11 @@ class UserAccountPage extends Component {
     };
 
     // Bind 'this' for callback functions.
-    this.handleAccountUpdate = this.handleAccountUpdate.bind(this);
+    this.handleUserUpdate = this.handleUserUpdate.bind(this);
     this.handleDeleteAccount = this.handleDeleteAccount.bind(this);
   }
 
-  handleAccountUpdate(event) {
+  handleUserUpdate(event) {
     event.preventDefault();
 
     this.setState({
@@ -46,11 +50,50 @@ class UserAccountPage extends Component {
       )
     });
 
-    window.confirm('Are you sure you want to delete your account?');
+    const userUpdate = {
+      user: {
+        name: this.nameInput.value,
+        password: this.passwordInput.value
+      }
+    };
+
+    this.putUserUpdate(userUpdate);
   }
 
   handleDeleteAccount() {
-    window.confirm('Are you sure you want to delete your account?');
+    if (!window.confirm('Are you sure you want to delete your account?')) {
+      return;
+    }
+
+    this.deleteUser();
+  }
+
+  putUserUpdate(userUpdate) {
+    axios
+      .put(this.userUserEndPoint, userUpdate, appAuth.headers())
+      .then((response) => {
+        this.setState({ updateButtonText: 'Update' });
+        appAuth.logIn(response.data.auth_token);
+        toastNotice('Your account has been successfully updated');
+        this.props.history.push('/');
+      })
+      .catch((error) => {
+        this.setState({ updateButtonText: 'Update' });
+        toastAlert('Server error, please try again later');
+      });
+  }
+
+  deleteUser() {
+    axios
+      .delete(this.userUserEndPoint, appAuth.headers())
+      .then((response) => {
+        appAuth.logOut();
+        toastNotice('Your account has been successfully deleted');
+        this.props.history.push('/');
+      })
+      .catch((error) => {
+        toastAlert('Server error, please try again later');
+      });
   }
 
   gravatarURL() {
@@ -66,7 +109,7 @@ class UserAccountPage extends Component {
           Account <small>{this.user.email}</small>
         </PageHeader>
         <Well>
-          <Form horizontal onSubmit={this.handleAccountUpdate}>
+          <Form horizontal onSubmit={this.handleUserUpdate}>
             <ul className="list-group" />
 
             <FormGroup>
@@ -169,12 +212,8 @@ class UserAccountPage extends Component {
   }
 
   render() {
-    if (this.userSlug !== this.user.slug) {
-      toastAlert(
-        `Can not display user account for ${
-          this.userSlug
-        }, it does not match the current logged in user`
-      );
+    if (!this.user || this.userSlug !== this.user.slug) {
+      toastAlert(`Can not display user account for ${this.userSlug}`);
       return <Redirect to="/" />;
     }
 

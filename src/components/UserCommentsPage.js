@@ -139,6 +139,12 @@ class UserCommentsPage extends Component {
   }
 
   renderComments() {
+    if (this.state.pagination.total_count === 0) {
+      return (
+        <h4>User <em>{this.userSlug}</em> has not yet posted any comments.</h4>
+      );
+    }
+
     return (
       <CommentsList
         comments={this.state.comments}
