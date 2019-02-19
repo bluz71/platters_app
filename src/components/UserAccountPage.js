@@ -31,12 +31,14 @@ class UserAccountPage extends Component {
     document.title = `Platters App - ${this.userSlug}`;
 
     this.state = {
-      updateButtonText: 'Update'
+      updateButtonText: 'Update',
+      nameErrors: []
     };
 
     // Bind 'this' for callback functions.
     this.handleUserUpdate = this.handleUserUpdate.bind(this);
     this.handleDeleteAccount = this.handleDeleteAccount.bind(this);
+    this.handleNameBlur = this.handleNameBlur.bind(this);
   }
 
   handleUserUpdate(event) {
@@ -68,6 +70,17 @@ class UserAccountPage extends Component {
     this.deleteUser();
   }
 
+  handleNameBlur() {
+    const name = this.nameInput.value;
+    if (name.length < 4 || name.length > 20) {
+      this.setState({
+        nameErrors: ['Account name must be between 4 and 20 characters long']
+      });
+    } else {
+      this.setState({ nameErrors: [] });
+    }
+  }
+
   putUserUpdate(userUpdate) {
     axios
       .put(this.userUserEndPoint, userUpdate, appAuth.headers())
@@ -79,7 +92,19 @@ class UserAccountPage extends Component {
       })
       .catch((error) => {
         this.setState({ updateButtonText: 'Update' });
-        toastAlert('Server error, please try again later');
+        if (error.response && error.response.status === 400) {
+          toastAlert('You can only update your own account');
+        } else if (error.response && error.response.status === 406) {
+          toastAlert('Your account could not be updated');
+          this.setState({
+            nameErrors: error.response.data.errors
+          });
+        } else if (error.response && error.response.status === 404) {
+          toastAlert(`The user '${this.userSlug}' does not exist`);
+          this.props.history.push('/password/new');
+        } else {
+          toastAlert('Server error, please try again later');
+        }
       });
   }
 
@@ -92,7 +117,14 @@ class UserAccountPage extends Component {
         this.props.history.push('/');
       })
       .catch((error) => {
-        toastAlert('Server error, please try again later');
+        if (error.response && error.response.status === 400) {
+          toastAlert('You can only delete your own account');
+        } else if (error.response && error.response.status === 404) {
+          toastAlert(`The user '${this.userSlug}' does not exist`);
+          this.props.history.push('/password/new');
+        } else {
+          toastAlert('Server error, please try again later');
+        }
       });
   }
 
@@ -100,6 +132,12 @@ class UserAccountPage extends Component {
     const hash = md5(this.user.email.trim().toLowerCase());
 
     return `https://gravatar.com/avatar/${hash}?s=160&r=pg&d=identicon`;
+  }
+
+  renderNameErrors() {
+    return this.state.nameErrors.map((error) => (
+      <li class="list-group-item list-group-item-danger">{error}</li>
+    ));
   }
 
   renderAccount() {
@@ -110,7 +148,7 @@ class UserAccountPage extends Component {
         </PageHeader>
         <Well>
           <Form horizontal onSubmit={this.handleUserUpdate}>
-            <ul className="list-group" />
+            <ul className="list-group">{this.renderNameErrors()}</ul>
 
             <FormGroup>
               <Col componentClass={ControlLabel} md={2}>
@@ -122,6 +160,7 @@ class UserAccountPage extends Component {
                   defaultValue={this.user.name}
                   className="name"
                   inputRef={(input) => (this.nameInput = input)}
+                  onBlur={this.handleNameBlur}
                 />
               </Col>
             </FormGroup>
@@ -213,7 +252,11 @@ class UserAccountPage extends Component {
 
   render() {
     if (!this.user || this.userSlug !== this.user.slug) {
-      toastAlert(`Can not display user account for ${this.userSlug}`);
+      toastAlert(
+        `Can not display '${
+          this.userSlug
+        }' user account, you may only access your own account`
+      );
       return <Redirect to="/" />;
     }
 
