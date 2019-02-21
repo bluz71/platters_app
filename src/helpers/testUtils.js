@@ -6,10 +6,17 @@ import { appAuth } from '../lib/appAuth';
 const flushPromises = () => new Promise((resolve) => setImmediate(resolve));
 
 const logInUser = () =>
+  // The JWT will expand out to:
+  //   user: 1
+  //   email: fred@example.com
+  //   name: fred
+  //   slug: fred
+  //   admin: false
   appAuth.logIn(
-    'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxLCJuYW1lIjoiZnJlZCIsImFkbW\
-luIjpmYWxzZSwiZXhwIjo3NTg2Mjg2OTU3LCJpc3MiOiJwbGF0dGVycyIsImF1ZCI6InBsYXR0ZX\
-JzX2FwcCJ9.GgXqJen-gKGNoF6b3nUxNGn077jQYoS6aIh1QmagHdk'
+    'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxLCJlbWFpbCI6ImZyZWRAZXhhbXBsZS5jb20iLC\
+JuYW1lIjoiZnJlZCIsInNsdWciOiJmcmVkIiwiYWRtaW4iOmZhbHNlLCJleHAiOjY3MzU1MDY1NT\
+MwNCwiaXNzIjoicGxhdHRlcnMiLCJhdWQiOiJwbGF0dGVyc19hcHAifQ.EHIA-GNJTuCWkoecHmT\
+TROnoFeN8r9TmmmGY9DZiJGU'
   );
 
 const logOutUser = () => appAuth.logOut();

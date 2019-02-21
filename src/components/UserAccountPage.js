@@ -188,7 +188,7 @@ class UserAccountPage extends Component {
                   type="submit"
                   bsStyle="success"
                   bsSize="small"
-                  className="submit"
+                  className="account-update"
                 >
                   {this.state.updateButtonText}
                 </Button>
@@ -241,6 +241,7 @@ class UserAccountPage extends Component {
             type="submit"
             bsStyle="danger"
             bsSize="small"
+            className="account-delete"
             onClick={this.handleDeleteAccount}
           >
             Delete account

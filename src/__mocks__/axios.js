@@ -200,9 +200,11 @@ module.exports = {
             status: 404
           }
         });
+      case `${API_HOST}/api/users/fred`:
+        return Promise.resolve({});
     }
   }),
-  put: jest.fn((url) => {
+  put: jest.fn((url, param) => {
     switch (url) {
       case `${API_HOST}/api/users/passwords/fred/password`:
         return Promise.resolve({
@@ -220,6 +222,24 @@ module.exports = {
             status: 406
           }
         });
+      case `${API_HOST}/api/users/fred`: {
+        const { name, password } = param.user;
+        if (name === 'freddy') {
+          return Promise.resolve({
+            data: logIn
+          });
+        }
+        if (name == 'fre') {
+          return Promise.reject({
+            response: {
+              status: 406,
+              data: {
+                errors: []
+              }
+            }
+          });
+        }
+      }
     }
   })
 };
