@@ -63,6 +63,7 @@ class LoginPage extends Component {
         this.props.history.push('/');
       })
       .catch((error) => {
+        this.setState({ logInButtonText: 'Sign in' });
         if (error.response && error.response.status === 401) {
           toastAlert(
             `Incorrect log in credentials, ${error.response.data.error}`
