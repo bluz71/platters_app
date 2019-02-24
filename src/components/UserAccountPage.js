@@ -135,8 +135,10 @@ class UserAccountPage extends Component {
   }
 
   renderNameErrors() {
-    return this.state.nameErrors.map((error) => (
-      <li class="list-group-item list-group-item-danger">{error}</li>
+    return this.state.nameErrors.map((error, index) => (
+      <li key={index} className="list-group-item list-group-item-danger">
+        {error}
+      </li>
     ));
   }
 

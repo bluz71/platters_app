@@ -18,6 +18,7 @@ import LoginPage from './LoginPage';
 import Logout from './Logout';
 import PasswordNewPage from './PasswordNewPage';
 import PasswordEditPage from './PasswordEditPage';
+import SignupPage from './SignupPage';
 import AboutPage from './AboutPage';
 import DetailsPage from './DetailsPage';
 import NotFound from './NotFound';
@@ -51,6 +52,7 @@ const Layout = () => (
             path="/users/:user_id/password/edit"
             component={PasswordEditPage}
           />
+          <Route path="/sign_up" component={SignupPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/details" component={DetailsPage} />
           <Route component={NotFound} />
