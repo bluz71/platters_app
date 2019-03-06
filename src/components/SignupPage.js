@@ -46,7 +46,7 @@ class SignupPage extends Component {
       )
     });
 
-    const user = {
+    const newUser = {
       user: {
         email: this.emailInput.value,
         password: this.passwordInput.value,
@@ -55,52 +55,43 @@ class SignupPage extends Component {
       }
     };
 
-    this.postUser(user);
+    this.postUser(newUser);
   }
 
   handleNameBlur() {
-    const name = this.nameInput.value;
-    if (name.length < 4 || name.length > 20) {
-      this.setState({
-        errors: ['Account name must be between 4 and 20 characters long']
-      });
-    } else {
-      this.setState({ errors: [] });
-    }
-  }
-
-  postUser(user) {
-    axios
-      .post(USER_NEW_ENDPOINT, user)
-      .then((response) => {
-        this.setState({ submitButtonText: 'Submit' });
-        toastNotice(
-          `Hello ${
-            user.name
-          }, in order to complete your sign up, please follow the instructions in the email that was just sent to you. Please check your junk folder if you can not find the email.`
-        );
-      })
-      .catch((error) => {
-        this.setState({ submitButtonText: 'Submit' });
-        // if (error.response && error.response.status === 404) {
-        //   toastAlert(
-        //     'Invalid email address, no user with that email address is registered'
-        //   );
-        // } else {
-        toastAlert('Server error, please try again later');
-        // }
-      });
+    this.forceUpdate();
   }
 
   handleNameFocus() {
     this.forceUpdate();
   }
 
-  renderNameErrors() {
-    if (this.nameInput === document.activeElement) {
-      return;
-    }
+  postUser(newUser) {
+    axios
+      .post(USER_NEW_ENDPOINT, newUser)
+      .then((response) => {
+        this.setState({ submitButtonText: 'Submit' });
+        toastNotice(
+          `Hello ${
+            newUser.user.name
+          }, in order to complete your sign up, please follow the instructions in the email that was just sent to you. Please check your junk folder if you can not find the email.`
+        );
+        this.props.history.push('/');
+      })
+      .catch((error) => {
+        this.setState({ submitButtonText: 'Submit' });
+        if (error.response && error.response.status === 406) {
+          toastAlert('Account could not be created');
+          this.setState({
+            errors: error.response.data.errors
+          });
+        } else {
+          toastAlert('Server error, please try again later');
+        }
+      });
+  }
 
+  renderNameErrors() {
     return this.state.errors.map((error, index) => (
       <li key={index} className="list-group-item list-group-item-danger">
         {error}
@@ -109,8 +100,13 @@ class SignupPage extends Component {
   }
 
   hasNameErrors() {
+    if (!this.nameInput) {
+      return;
+    }
+
+    const name = this.nameInput.value;
     if (
-      this.state.errors.length > 0 &&
+      (name.length < 4 || name.length > 20) &&
       this.nameInput !== document.activeElement
     ) {
       return 'has-error';

@@ -60,6 +60,7 @@ class PasswordNew extends Component {
         toastNotice(
           'You will receive an email within the next few minutes. It contains instructions for changing your password.'
         );
+        this.props.history.push('/');
       })
       .catch((error) => {
         this.setState({ submitButtonText: 'Submit' });
