@@ -19,6 +19,7 @@ import Logout from './Logout';
 import PasswordNewPage from './PasswordNewPage';
 import PasswordEditPage from './PasswordEditPage';
 import SignupPage from './SignupPage';
+import UserConfirmation from './UserConfirmation';
 import AboutPage from './AboutPage';
 import DetailsPage from './DetailsPage';
 import NotFound from './NotFound';
@@ -53,6 +54,10 @@ const Layout = () => (
             component={PasswordEditPage}
           />
           <Route path="/sign_up" component={SignupPage} />
+          <Route
+            path="/confirm_email/:user/:confirmation_token"
+            component={UserConfirmation}
+          />
           <Route path="/about" component={AboutPage} />
           <Route path="/details" component={DetailsPage} />
           <Route component={NotFound} />
