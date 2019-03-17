@@ -188,6 +188,24 @@ module.exports = {
         return Promise.resolve({
           data: newComment
         });
+      case `${API_HOST}/api/users`: {
+        const { email } = param.user;
+        if (email === 'fred@example.com') {
+          return Promise.resolve({
+            response: { status: 200 }
+          });
+        }
+        if (email === 'peter@example.com') {
+          return Promise.reject({
+            response: {
+              status: 406,
+              data: {
+                errors: []
+              }
+            }
+          });
+        }
+      }
     }
   }),
   delete: jest.fn((url) => {
