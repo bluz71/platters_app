@@ -140,6 +140,14 @@ module.exports = {
             status: 404
           }
         });
+      case `${API_HOST}/api/confirm_email/fred/8e16ec3980f5b1b492a0802fdfe7fcbc91d3260e`:
+        return Promise.resolve({
+          data: logIn
+        });
+      case `${API_HOST}/api/confirm_email/fred/9e16ec3980f5b1b492a0802fdfe7fcbc91d3260e`:
+        return Promise.reject({
+          response: { status: 406 }
+        });
     }
   }),
   post: jest.fn((url, param) => {
