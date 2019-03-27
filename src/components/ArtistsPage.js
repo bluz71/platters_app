@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Row, Col, PageHeader } from 'react-bootstrap';
+import { Row, Col, PageHeader, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import pluralize from 'pluralize';
@@ -244,7 +244,12 @@ class ArtistsPage extends Component {
                 </li>
               ))}
             <li onClick={this.handleSearchVisibility}>
-              <FontAwesome name="search" />
+              <OverlayTrigger
+                overlay={<Tooltip id="search">Search</Tooltip>}
+                placement="top"
+              >
+                <FontAwesome name="search" />
+              </OverlayTrigger>
             </li>
           </ul>
         </div>

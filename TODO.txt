@@ -1,3 +1,6 @@
+- Extend a JWTs expiry? (read carefully):
+    https://gist.github.com/soulmachine/b368ce7292ddd7f91c15accccc02b8df
+
 - Do not store JWT in localStorage, it is vulnerable to XSS, use secure cookie
   instead? (maybe):
     https://dev.to/rdegges/please-stop-using-local-storage-1i04
@@ -5,17 +8,3 @@
     https://stackoverflow.com/questions/27067251/where-to-store-jwt-in-browser-how-to-protect-against-csrf
     https://stackoverflow.com/questions/48712923/where-to-store-a-jwt-token-properly-and-safely-in-a-web-based-application
     https://security.stackexchange.com/questions/179498/is-it-safe-to-store-a-jwt-in-sessionstorage
-
-- Extend a JWTs expiry? (read carefully):
-    https://gist.github.com/soulmachine/b368ce7292ddd7f91c15accccc02b8df
-
-- When logging in try to redirect to the page the user logged in from (if
-  possible).
-
-- Migrate from Bootstrap 3 to Bootstrap 4:
-    https://getbootstrap.com/docs/4.0/migration/
-    https://medium.com/@lukaszholeczek/migration-from-bootstrap-3-to-bootstrap-4-4ec63a1dd8b1
-    https://react-bootstrap.github.io/migrating/
-    http://upgrade-bootstrap.bootply.com/
-    https://coreui.io/blog/2018/01/31/migration-from-bootstrap-3-to-bootstrap-4/
-    https://ingresso.github.io/ingresso-bootstrap/migration/

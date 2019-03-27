@@ -301,38 +301,128 @@ exports[`<AlbumsPage /> renders 2006 albums 1`] = `
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="random"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="random"
+                      placement="right"
+                    >
+                      Random
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-random"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="random"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-random"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="filter"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="filter"
+                      placement="right"
+                    >
+                      Filter
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-filter"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="filter"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-filter"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="search"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="search"
+                      placement="right"
+                    >
+                      Search
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-search"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="search"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-search"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
             </ul>
           </div>
@@ -894,38 +984,128 @@ exports[`<AlbumsPage /> renders A albums 1`] = `
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="random"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="random"
+                      placement="right"
+                    >
+                      Random
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-random"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="random"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-random"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="filter"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="filter"
+                      placement="right"
+                    >
+                      Filter
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-filter"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="filter"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-filter"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="search"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="search"
+                      placement="right"
+                    >
+                      Search
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-search"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="search"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-search"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
             </ul>
           </div>
@@ -1498,38 +1678,128 @@ exports[`<AlbumsPage /> renders ABC search match 1`] = `
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="random"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="random"
+                      placement="right"
+                    >
+                      Random
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-random"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="random"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-random"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="filter"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="filter"
+                      placement="right"
+                    >
+                      Filter
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-filter"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="filter"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-filter"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="search"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="search"
+                      placement="right"
+                    >
+                      Search
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-search"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="search"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-search"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
             </ul>
           </div>
@@ -2103,38 +2373,128 @@ exports[`<AlbumsPage /> renders Pop albums 1`] = `
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="random"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="random"
+                      placement="right"
+                    >
+                      Random
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-random"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="random"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-random"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="filter"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="filter"
+                      placement="right"
+                    >
+                      Filter
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-filter"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="filter"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-filter"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="search"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="search"
+                      placement="right"
+                    >
+                      Search
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-search"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="search"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-search"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
             </ul>
           </div>
@@ -2662,38 +3022,128 @@ exports[`<AlbumsPage /> renders first page 1`] = `
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="random"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="random"
+                      placement="right"
+                    >
+                      Random
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-random"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="random"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-random"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="filter"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="filter"
+                      placement="right"
+                    >
+                      Filter
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-filter"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="filter"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-filter"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="search"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="search"
+                      placement="right"
+                    >
+                      Search
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-search"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="search"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-search"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
             </ul>
           </div>
@@ -3367,38 +3817,128 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="random"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="random"
+                      placement="right"
+                    >
+                      Random
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-random"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="random"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-random"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="filter"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="filter"
+                      placement="right"
+                    >
+                      Filter
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-filter"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="filter"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-filter"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="search"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="search"
+                      placement="right"
+                    >
+                      Search
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-search"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="search"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-search"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
             </ul>
           </div>
@@ -4125,38 +4665,128 @@ exports[`<AlbumsPage /> renders second page 1`] = `
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="random"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="random"
+                      placement="right"
+                    >
+                      Random
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-random"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="random"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-random"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="filter"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="filter"
+                      placement="right"
+                    >
+                      Filter
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-filter"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="filter"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-filter"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
               <li
                 onClick={[Function]}
               >
-                <FontAwesome
-                  name="search"
+                <OverlayTrigger
+                  defaultOverlayShown={false}
+                  overlay={
+                    <Tooltip
+                      bsClass="tooltip"
+                      id="search"
+                      placement="right"
+                    >
+                      Search
+                    </Tooltip>
+                  }
+                  placement="top"
+                  trigger={
+                    Array [
+                      "hover",
+                      "focus",
+                    ]
+                  }
                 >
-                  <span
-                    aria-hidden={true}
-                    className="fa fa-search"
-                  />
-                </FontAwesome>
+                  <FontAwesome
+                    name="search"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    <span
+                      aria-hidden={true}
+                      className="fa fa-search"
+                      onBlur={[Function]}
+                      onClick={null}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                    />
+                  </FontAwesome>
+                </OverlayTrigger>
               </li>
             </ul>
           </div>

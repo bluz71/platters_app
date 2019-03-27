@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Col, PageHeader } from 'react-bootstrap';
+import { Col, PageHeader, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 import pluralize from 'pluralize';
 import numeral from 'numeral';
@@ -337,13 +337,28 @@ class AlbumsPage extends Component {
                 </li>
               ))}
             <li onClick={this.handleRandom}>
-              <FontAwesome name="random" />
+              <OverlayTrigger
+                overlay={<Tooltip id="random">Random</Tooltip>}
+                placement="top"
+              >
+                <FontAwesome name="random" />
+              </OverlayTrigger>
             </li>
             <li onClick={this.handleFilterVisibility}>
-              <FontAwesome name="filter" />
+              <OverlayTrigger
+                overlay={<Tooltip id="filter">Filter</Tooltip>}
+                placement="top"
+              >
+                <FontAwesome name="filter" />
+              </OverlayTrigger>
             </li>
             <li onClick={this.handleSearchVisibility}>
-              <FontAwesome name="search" />
+              <OverlayTrigger
+                overlay={<Tooltip id="search">Search</Tooltip>}
+                placement="top"
+              >
+                <FontAwesome name="search" />
+              </OverlayTrigger>
             </li>
           </ul>
         </div>
