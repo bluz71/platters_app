@@ -1,10 +1,22 @@
 - Extend a JWTs expiry? (read carefully):
     https://gist.github.com/soulmachine/b368ce7292ddd7f91c15accccc02b8df
+    https://stackoverflow.com/questions/26739167/jwt-json-web-token-automatic-prolongation-of-expiration
+    https://security.stackexchange.com/questions/119371/is-refreshing-an-expired-jwt-token-a-good-strategy
+    https://auth0.com/blog/refresh-tokens-what-are-they-and-when-to-use-them/
 
-- Do not store JWT in localStorage, it is vulnerable to XSS, use secure cookie
-  instead? (maybe):
-    https://dev.to/rdegges/please-stop-using-local-storage-1i04
-    https://stormpath.com/blog/where-to-store-your-jwts-cookies-vs-html5-web-storage
-    https://stackoverflow.com/questions/27067251/where-to-store-jwt-in-browser-how-to-protect-against-csrf
-    https://stackoverflow.com/questions/48712923/where-to-store-a-jwt-token-properly-and-safely-in-a-web-based-application
-    https://security.stackexchange.com/questions/179498/is-it-safe-to-store-a-jwt-in-sessionstorage
+Two tokens strategy:
+
+Access Token - short lived (30 mins)
+  - If server responds with 401 (unauthorized) then get a new access token by
+    submitting the existing refresh token to a specific endpoint
+Refresh Token - longer lived (1 week)
+
+Instead of 2 tokens, have 1 token with two fields
+  - exp (long)
+  - lastAuth (short)
+    https://stackoverflow.com/questions/41614259/jwt-authentication-refresh-token-implementation
+
+Or lastAccessTime strategy:
+  https://stackoverflow.com/questions/26739167/jwt-json-web-token-automatic-prolongation-of-expiration
+
+https://docs.microsoft.com/en-us/machine-learning-server/operationalize/how-to-manage-access-tokens
