@@ -397,7 +397,7 @@ const DetailsPage = () => {
                 User session tokens (JWT) created by the server are short-lived
                 (30 minutes), but are unobtrusively refreshed by this
                 application (up to 6 months). Note, resetting a user password
-                via <em>Forgot Password?</em> will revoke all current API tokens
+                via <em>Forgot Password?</em> will revoke all current sessions
                 for that user, useful if the user has had their session hijacked
                 via a lost of stolen machine.
               </p>
