@@ -45,7 +45,6 @@ const Layout = () => (
           <Route path="/artists" exact component={ArtistsPage} />
           <Route path="/artist/:id" component={ArtistShowPage} />
           <Route path="/comments/:id" component={UserCommentsPage} />
-          <Route path="/users/:id" component={UserAccountPage} />
           <Route path="/log_in" component={LoginPage} />
           <Route path="/log_out" component={Logout} />
           <Route path="/password/new" component={PasswordNewPage} />
@@ -58,6 +57,7 @@ const Layout = () => (
             path="/confirm_email/:user/:confirmation_token"
             component={UserConfirmation}
           />
+          <Route path="/users/:id" component={UserAccountPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/details" component={DetailsPage} />
           <Route component={NotFound} />

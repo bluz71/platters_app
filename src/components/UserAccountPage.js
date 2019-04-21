@@ -81,9 +81,9 @@ class UserAccountPage extends Component {
     }
   }
 
-  putUserUpdate(userUpdate) {
+  async putUserUpdate(userUpdate) {
     axios
-      .put(this.userUserEndPoint, userUpdate, appAuth.headers())
+      .put(this.userUserEndPoint, userUpdate, await appAuth.headers())
       .then((response) => {
         this.setState({ updateButtonText: 'Update' });
         appAuth.logIn(response.data.auth_token);
@@ -108,9 +108,9 @@ class UserAccountPage extends Component {
       });
   }
 
-  deleteUser() {
+  async deleteUser() {
     axios
-      .delete(this.userUserEndPoint, appAuth.headers())
+      .delete(this.userUserEndPoint, await appAuth.headers())
       .then((response) => {
         appAuth.logOut();
         toastNotice('Your account has been successfully deleted');

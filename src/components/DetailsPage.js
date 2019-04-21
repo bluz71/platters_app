@@ -391,6 +391,17 @@ const DetailsPage = () => {
                 submitted form is being processed.
               </p>
             </li>
+            <li>
+              <h3>Short-lived API tokens with unobstrusive refreshing</h3>
+              <p>
+                User session tokens (JWT) created by the server are short-lived
+                (30 minutes), but are unobtrusively refreshed by this
+                application (up to 6 months). Note, resetting a user password
+                via <em>Forgot Password?</em> will revoke all current API tokens
+                for that user, useful if the user has had their session hijacked
+                via a lost of stolen machine.
+              </p>
+            </li>
           </ul>
           <br />
 

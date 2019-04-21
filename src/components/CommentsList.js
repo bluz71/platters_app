@@ -19,14 +19,14 @@ const postedIn = (comment) => {
   }
 };
 
-const handleDelete = (comment, onDeleteComment) => {
+const handleDelete = async (comment, onDeleteComment) => {
   if (!window.confirm('Are you sure you want to remove this comment?')) {
     return;
   }
 
   const deleteCommentEndPoint = `${API_HOST}${comment.delete_path}.json`;
   axios
-    .delete(deleteCommentEndPoint, appAuth.headers())
+    .delete(deleteCommentEndPoint, await appAuth.headers())
     .then((response) => {
       onDeleteComment(comment.id);
     })

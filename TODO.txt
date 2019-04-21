@@ -1,3 +1,6 @@
+- Short-lived JWTs:
+    https://x-team.com/blog/my-experience-with-json-web-tokens
+
 - Extend a JWTs expiry? (read carefully):
     https://gist.github.com/soulmachine/b368ce7292ddd7f91c15accccc02b8df
     https://stackoverflow.com/questions/26739167/jwt-json-web-token-automatic-prolongation-of-expiration
@@ -20,3 +23,5 @@ Or lastAccessTime strategy:
   https://stackoverflow.com/questions/26739167/jwt-json-web-token-automatic-prolongation-of-expiration
 
 https://docs.microsoft.com/en-us/machine-learning-server/operationalize/how-to-manage-access-tokens
+
+- Rename pageProgress class to PageProgress

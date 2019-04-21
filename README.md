@@ -64,3 +64,10 @@ are retrieved from the back-end server.
 * #### Busy submission buttons
 Form submission buttons, such as the Albums filter Select button, will display
 a spinner icon whilst the submitted form is being processed.
+
+* #### Short-lived API tokens with unobstrusive refreshing
+User session tokens (JWT) created by the server are short-lived (30 minutes),
+but are unobtrusively refreshed by this application (up to 6 months). Note,
+resetting a user password via Forgot Password? will revoke all current API
+tokens for that user, useful if the user has had their session hijacked via a
+lost of stolen machine.

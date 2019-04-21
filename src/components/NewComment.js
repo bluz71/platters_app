@@ -49,9 +49,9 @@ class NewComment extends Component {
     });
   }
 
-  postComment(newComment) {
+  async postComment(newComment) {
     axios
-      .post(this.newCommentEndPoint, newComment, appAuth.headers())
+      .post(this.newCommentEndPoint, newComment, await appAuth.headers())
       .then((response) => {
         this.props.onNewComment(response.data.comment);
       })
