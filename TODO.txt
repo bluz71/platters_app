@@ -1,0 +1,4 @@
+- Test API token feature:
+    AppAuth tokenRefresh
+
+- Rename pageProgress class to PageProgress
