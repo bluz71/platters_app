@@ -392,6 +392,21 @@ const DetailsPage = () => {
               </p>
             </li>
             <li>
+              <h3>
+                <a
+                  href="https://dev.to/felipperegazio/how-to-create-a-simple-honeypot-to-protect-your-web-forms-from-spammers--25n8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Honeypot field protection against Bots
+                </a>
+              </h3>
+              <p>
+                User sign-up incorporates simple honeypot field protection
+                against internet bots.
+              </p>
+            </li>
+            <li>
               <h3>Short-lived API tokens with unobstrusive refreshing</h3>
               <p>
                 User session tokens (JWT) created by the server are short-lived

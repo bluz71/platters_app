@@ -65,6 +65,10 @@ are retrieved from the back-end server.
 Form submission buttons, such as the Albums filter Select button, will display
 a spinner icon whilst the submitted form is being processed.
 
+* #### [Honeypot field protection against Bots](https://dev.to/felipperegazio/how-to-create-a-simple-honeypot-to-protect-your-web-forms-from-spammers--25n8)
+User sign-up incorporates simple honeypot field protection against internet
+bots.
+
 * #### Short-lived API tokens with unobstrusive refreshing
 User session tokens (JWT) created by the server are short-lived (30 minutes),
 but are unobtrusively refreshed by this application (up to 6 months). Note,

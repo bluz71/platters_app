@@ -15,6 +15,7 @@ import {
 import FontAwesome from 'react-fontawesome';
 import { API_HOST, APPLICATION_HOST } from '../config';
 import { toastAlert, toastNotice } from '../helpers/toastMessage';
+import '../styles/SignupPage.css';
 
 const USER_NEW_ENDPOINT = `${API_HOST}/api/users`;
 
@@ -55,6 +56,10 @@ class SignupPage extends Component {
       }
     };
 
+    if (this.usernameInput.value.length > 0) {
+      newUser.user.username = this.usernameInput.value;
+    }
+
     this.postUser(newUser);
   }
 
@@ -85,6 +90,9 @@ class SignupPage extends Component {
           this.setState({
             errors: error.response.data.errors
           });
+        } else if (error.response && error.response.status === 403) {
+          toastAlert('Bot detected');
+          this.props.history.push('/');
         } else {
           toastAlert('Server error, please try again later');
         }
@@ -161,6 +169,19 @@ class SignupPage extends Component {
                 An account name needs to be between 4 to 20 characters made up
                 only of letters, digits and hyphens.
               </HelpBlock>
+            </Col>
+          </FormGroup>
+
+          <FormGroup className="username">
+            <Col componentClass={ControlLabel} md={2}>
+              Username
+            </Col>
+            <Col md={9}>
+              <FormControl
+                type="text"
+                className="username"
+                inputRef={(input) => (this.usernameInput = input)}
+              />
             </Col>
           </FormGroup>
 
