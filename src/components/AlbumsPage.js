@@ -9,7 +9,7 @@ import _ from 'lodash';
 import { VelocityTransitionGroup } from 'velocity-react';
 import '../styles/AlbumsPage.css';
 import { API_HOST } from '../config';
-import pageProgress from '../helpers/pageProgress';
+import PageProgress from '../helpers/PageProgress';
 import { toastAlert } from '../helpers/toastMessage';
 import AlbumsFilter from './AlbumsFilter';
 import Search from './Search';
@@ -30,7 +30,7 @@ class AlbumsPage extends Component {
     this.loaded = false;
     this.filtering = false;
     this.searching = false;
-    this.pageProgress = new pageProgress();
+    this.pageProgress = new PageProgress();
 
     this.state = {
       albums: [],

@@ -8,7 +8,7 @@ import { appAuth } from '../lib/appAuth';
 import '../styles/HomePage.css';
 import logo from '../images/platters-black.svg';
 import { toastAlert } from '../helpers/toastMessage';
-import pageProgress from '../helpers/pageProgress';
+import PageProgress from '../helpers/PageProgress';
 import AlbumsList from './AlbumsList';
 import CommentsList from './CommentsList';
 
@@ -21,7 +21,7 @@ class HomePage extends Component {
     window.scrollTo(0, 0);
 
     this.loaded = false;
-    this.pageProgress = new pageProgress();
+    this.pageProgress = new PageProgress();
 
     // Note, use a Map for comments since it preserves insertion order whilst
     // allowing O(1) comment deletion.

@@ -10,7 +10,7 @@ import _ from 'lodash';
 import { VelocityTransitionGroup } from 'velocity-react';
 import '../styles/ArtistsPage.css';
 import { API_HOST } from '../config';
-import pageProgress from '../helpers/pageProgress';
+import PageProgress from '../helpers/PageProgress';
 import { toastAlert } from '../helpers/toastMessage';
 import Search from './Search';
 import Paginator from './Paginator';
@@ -29,7 +29,7 @@ class ArtistsPage extends Component {
     this.params = {};
     this.loaded = false;
     this.searching = false;
-    this.pageProgress = new pageProgress();
+    this.pageProgress = new PageProgress();
 
     this.state = {
       artists: [],

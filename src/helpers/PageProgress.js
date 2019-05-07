@@ -1,6 +1,6 @@
 import NProgress from 'nprogress';
 
-class pageProgress {
+class PageProgress {
   constructor() {
     this.loaded = false;
   }
@@ -21,4 +21,4 @@ class pageProgress {
   }
 }
 
-export default pageProgress;
+export default PageProgress;

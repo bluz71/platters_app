@@ -6,7 +6,7 @@ import numeral from 'numeral';
 import { Row, Col, PageHeader } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 import { API_HOST } from '../config';
-import pageProgress from '../helpers/pageProgress';
+import PageProgress from '../helpers/PageProgress';
 import infiniteScroll from '../helpers/infiniteScroll';
 import { toastAlert } from '../helpers/toastMessage';
 import CommentsList from './CommentsList';
@@ -21,7 +21,7 @@ class UserCommentsPage extends Component {
     this.commentsEndPoint = `${API_HOST}/comments/${this.userSlug}.json`;
     this.loaded = false;
     this.waiting = false;
-    this.pageProgress = new pageProgress();
+    this.pageProgress = new PageProgress();
 
     // Note, use a Map for comments since it preserves insertion order whilst
     // allowing O(1) comment deletion.

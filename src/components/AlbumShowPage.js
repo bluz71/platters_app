@@ -6,7 +6,7 @@ import axios from 'axios';
 import numeral from 'numeral';
 import pluralize from 'pluralize';
 import { API_HOST } from '../config';
-import pageProgress from '../helpers/pageProgress';
+import PageProgress from '../helpers/PageProgress';
 import infiniteScroll from '../helpers/infiniteScroll';
 import { toastAlert } from '../helpers/toastMessage';
 import { appAuth } from '../lib/appAuth';
@@ -32,7 +32,7 @@ class AlbumShowPage extends Component {
     this.waiting = false; // For comments when infinite-scrolling.
     this.scrollToComments =
       (props.location.state && props.location.state.scrollToComments) || false;
-    this.pageProgress = new pageProgress();
+    this.pageProgress = new PageProgress();
 
     // Note, use a Map for comments since it preserves insertion order whilst
     // allowing O(1) comment deletion.
