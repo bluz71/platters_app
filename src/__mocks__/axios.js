@@ -148,6 +148,10 @@ module.exports = {
         return Promise.reject({
           response: { status: 406 }
         });
+      case `${API_HOST}/api/tokens/new`:
+        return Promise.resolve({
+          data: logIn
+        });
     }
   }),
   post: jest.fn((url, param) => {
