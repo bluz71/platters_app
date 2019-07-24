@@ -2,14 +2,14 @@
 //   http://blog.sodhanalibrary.com/2016/08/detect-when-user-scrolls-to-bottom-of.html
 //
 const infiniteScoll = (pagination, onPageEnd) => {
-  const moreToScroll = pagination && pagination.next_page;
+  const moreToScroll = pagination && pagination.next_page
   if (!moreToScroll) {
-    return;
+    return
   }
 
-  const windowHeight = window.innerHeight;
-  const body = document.body;
-  const html = document.documentElement;
+  const windowHeight = window.innerHeight
+  const body = document.body
+  const html = document.documentElement
   const docHeight =
     Math.max(
       body.scrollHeight,
@@ -17,12 +17,12 @@ const infiniteScoll = (pagination, onPageEnd) => {
       html.clientHeight,
       html.scrollHeight,
       html.offsetHeight
-    ) - 20;
-  const windowBottom = windowHeight + window.pageYOffset;
+    ) - 20
+  const windowBottom = windowHeight + window.pageYOffset
 
   if (windowBottom >= docHeight) {
-    onPageEnd();
+    onPageEnd()
   }
-};
+}
 
-export default infiniteScoll;
+export default infiniteScoll

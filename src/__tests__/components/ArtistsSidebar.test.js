@@ -1,6 +1,6 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import ArtistsSidebar from '../../components/ArtistsSidebar';
+import React from 'react'
+import { shallow } from 'enzyme'
+import ArtistsSidebar from '../../components/ArtistsSidebar'
 
 const mostRecentAlbums = () => {
   return [
@@ -20,8 +20,8 @@ const mostRecentAlbums = () => {
       album_slug: 'def',
       cover_url: 'http://localhost:3000/small_DEF--DEF.jpg'
     }
-  ];
-};
+  ]
+}
 
 const mostRecentComments = () => {
   return [
@@ -43,13 +43,13 @@ const mostRecentComments = () => {
       name: 'def',
       path: 'artist/def/album/def'
     }
-  ];
-};
+  ]
+}
 
 describe('<ArtistsSidebar />', () => {
   it('renders without crashing', () => {
-    shallow(<ArtistsSidebar mostRecentAlbums={[]} mostRecentComments={[]} />);
-  });
+    shallow(<ArtistsSidebar mostRecentAlbums={[]} mostRecentComments={[]} />)
+  })
 
   it('renders a sidebar', () => {
     const wrapper = shallow(
@@ -57,8 +57,8 @@ describe('<ArtistsSidebar />', () => {
         mostRecentAlbums={mostRecentAlbums()}
         mostRecentComments={mostRecentComments()}
       />
-    );
+    )
 
-    expect(wrapper).toMatchSnapshot();
-  });
-});
+    expect(wrapper).toMatchSnapshot()
+  })
+})

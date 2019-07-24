@@ -1,41 +1,41 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
-import FontAwesome from 'react-fontawesome';
-import { Row, Col, PageHeader } from 'react-bootstrap';
-import axios from 'axios';
-import numeral from 'numeral';
-import pluralize from 'pluralize';
-import { API_HOST } from '../config';
-import PageProgress from '../helpers/PageProgress';
-import infiniteScroll from '../helpers/infiniteScroll';
-import { toastAlert } from '../helpers/toastMessage';
-import { appAuth } from '../lib/appAuth';
-import ArtistAlbumsList from './ArtistAlbumsList';
-import CommentsList from './CommentsList';
-import NewComment from './NewComment';
-import '../styles/ArtistShowPage.css';
+import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
+import FontAwesome from 'react-fontawesome'
+import { Row, Col, PageHeader } from 'react-bootstrap'
+import axios from 'axios'
+import numeral from 'numeral'
+import pluralize from 'pluralize'
+import { API_HOST } from '../config'
+import PageProgress from '../helpers/PageProgress'
+import infiniteScroll from '../helpers/infiniteScroll'
+import { toastAlert } from '../helpers/toastMessage'
+import { appAuth } from '../lib/appAuth'
+import ArtistAlbumsList from './ArtistAlbumsList'
+import CommentsList from './CommentsList'
+import NewComment from './NewComment'
+import '../styles/ArtistShowPage.css'
 
 const ARTIST_ALBUMS_SORT_BY = {
   newest: 'newest',
   oldest: 'oldest',
   longest: 'longest',
   name: 'name'
-};
+}
 
 class ArtistShowPage extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
 
-    this.artistSlug = props.match.params.id;
-    this.artistEndPoint = `${API_HOST}/${this.artistSlug}.json`;
-    this.loaded = false;
-    this.albumsSortBy = ARTIST_ALBUMS_SORT_BY.newest;
-    this.albumsEndPoint = `${API_HOST}/artists/${this.artistSlug}/albums.json`;
-    this.commentsEndPoint = `${API_HOST}/${this.artistSlug}/comments.json`;
-    this.waiting = false; // For comments when infinite-scrolling.
+    this.artistSlug = props.match.params.id
+    this.artistEndPoint = `${API_HOST}/${this.artistSlug}.json`
+    this.loaded = false
+    this.albumsSortBy = ARTIST_ALBUMS_SORT_BY.newest
+    this.albumsEndPoint = `${API_HOST}/artists/${this.artistSlug}/albums.json`
+    this.commentsEndPoint = `${API_HOST}/${this.artistSlug}/comments.json`
+    this.waiting = false // For comments when infinite-scrolling.
     this.scrollToComments =
-      (props.location.state && props.location.state.scrollToComments) || false;
-    this.pageProgress = new PageProgress();
+      (props.location.state && props.location.state.scrollToComments) || false
+    this.pageProgress = new PageProgress()
 
     // Note, use a Map for comments since it preserves insertion order whilst
     // allowing O(1) comment deletion.
@@ -47,74 +47,74 @@ class ArtistShowPage extends Component {
       commentsCount: 0,
       notFound: false,
       error: null
-    };
+    }
 
     // Bind 'this' for callback functions.
-    this.handleYear = this.handleYear.bind(this);
-    this.handleGenre = this.handleGenre.bind(this);
-    this.handleAlbumsOrder = this.handleAlbumsOrder.bind(this);
-    this.handleScroll = this.handleScroll.bind(this);
-    this.handlePageEnd = this.handlePageEnd.bind(this);
-    this.handleDeleteComment = this.handleDeleteComment.bind(this);
-    this.handleNewComment = this.handleNewComment.bind(this);
+    this.handleYear = this.handleYear.bind(this)
+    this.handleGenre = this.handleGenre.bind(this)
+    this.handleAlbumsOrder = this.handleAlbumsOrder.bind(this)
+    this.handleScroll = this.handleScroll.bind(this)
+    this.handlePageEnd = this.handlePageEnd.bind(this)
+    this.handleDeleteComment = this.handleDeleteComment.bind(this)
+    this.handleNewComment = this.handleNewComment.bind(this)
   }
 
-  componentDidMount() {
-    window.onscroll = this.handleScroll;
-    this.getArtist(true);
+  componentDidMount () {
+    window.onscroll = this.handleScroll
+    this.getArtist(true)
   }
 
-  componentWillUnmount() {
-    window.onscroll = null;
+  componentWillUnmount () {
+    window.onscroll = null
   }
 
-  handleYear(year) {
-    const params = { year };
-    this.props.history.push('/albums', params);
+  handleYear (year) {
+    const params = { year }
+    this.props.history.push('/albums', params)
   }
 
-  handleGenre(genre) {
-    const params = { genre };
-    this.props.history.push('/albums', params);
+  handleGenre (genre) {
+    const params = { genre }
+    this.props.history.push('/albums', params)
   }
 
-  handleAlbumsOrder(order) {
-    const albumsEndPoint = `${this.albumsEndPoint}?${order}=true`;
-    this.albumsSortBy = order;
-    this.getAlbums(albumsEndPoint);
+  handleAlbumsOrder (order) {
+    const albumsEndPoint = `${this.albumsEndPoint}?${order}=true`
+    this.albumsSortBy = order
+    this.getAlbums(albumsEndPoint)
   }
 
-  handleScroll() {
-    infiniteScroll(this.state.commentsPagination, this.handlePageEnd);
+  handleScroll () {
+    infiniteScroll(this.state.commentsPagination, this.handlePageEnd)
   }
 
-  handlePageEnd() {
+  handlePageEnd () {
     // Page has been scrolled to the end, hence retrieve the next set of
     // comments.
 
     // Disable scroll handling whilst records are being retrieved.
-    window.onscroll = null;
+    window.onscroll = null
     const commentsPageEndPoint = `${this.commentsEndPoint}?page=${
       this.state.commentsPagination.next_page
-    }`;
-    this.waiting = true;
-    this.forceUpdate(); // Render spinner
-    this.getComments(commentsPageEndPoint);
+    }`
+    this.waiting = true
+    this.forceUpdate() // Render spinner
+    this.getComments(commentsPageEndPoint)
   }
 
-  handleDeleteComment(commentId) {
+  handleDeleteComment (commentId) {
     // Note, we need to copy the comments hash map since we must not mutate
     // React state directly.
-    const comments = new Map([...this.state.comments]);
+    const comments = new Map([...this.state.comments])
     // Delete the comment of interest.
-    comments.delete(commentId);
+    comments.delete(commentId)
     // Update the count.
-    const commentsCount = this.state.commentsCount - 1;
+    const commentsCount = this.state.commentsCount - 1
     // Apply the updated state.
-    this.setState({ comments, commentsCount });
+    this.setState({ comments, commentsCount })
   }
 
-  handleNewComment(comment) {
+  handleNewComment (comment) {
     // Note, we need to copy the comments hash map since we must not mutate
     // React state directly.
     //
@@ -122,149 +122,149 @@ class ArtistShowPage extends Component {
     const comments = new Map([
       ...[[comment.id, comment]],
       ...this.state.comments
-    ]);
+    ])
     // Update the count.
-    const commentsCount = this.state.commentsCount + 1;
+    const commentsCount = this.state.commentsCount + 1
     // Apply the updated state.
-    this.setState({ comments, commentsCount });
+    this.setState({ comments, commentsCount })
   }
 
-  getArtist(scrollToTop = false) {
+  getArtist (scrollToTop = false) {
     axios
       .get(this.artistEndPoint)
-      .then((response) => {
-        this.loaded = this.pageProgress.done();
-        document.title = response.data.artist.name;
+      .then(response => {
+        this.loaded = this.pageProgress.done()
+        document.title = response.data.artist.name
         this.setState({
           artist: response.data.artist,
           albums: response.data.albums,
-          comments: new Map(response.data.comments.map((c) => [c.id, c])),
+          comments: new Map(response.data.comments.map(c => [c.id, c])),
           commentsPagination: response.data.comments_pagination,
           commentsCount: response.data.comments_pagination.total_count
-        });
+        })
         if (this.scrollToComments) {
-          this.scrollToComments = false;
-          this.commentsAnchor.scrollIntoView();
+          this.scrollToComments = false
+          this.commentsAnchor.scrollIntoView()
         } else if (scrollToTop) {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, 0)
         }
       })
-      .catch((error) => {
-        this.pageProgress.done();
+      .catch(error => {
+        this.pageProgress.done()
         if (error.response && error.response.status === 404) {
-          this.setState({ notFound: true });
+          this.setState({ notFound: true })
         } else {
-          this.setState({ error: error });
+          this.setState({ error: error })
         }
-      });
+      })
   }
 
-  getAlbums(albumsEndPoint) {
+  getAlbums (albumsEndPoint) {
     axios
       .get(albumsEndPoint)
-      .then((response) => {
-        this.setState({ albums: response.data.albums });
+      .then(response => {
+        this.setState({ albums: response.data.albums })
       })
-      .catch((error) => {
-        this.setState({ error: error });
-      });
+      .catch(error => {
+        this.setState({ error: error })
+      })
   }
 
-  getComments(commentsEndPoint) {
+  getComments (commentsEndPoint) {
     axios
       .get(commentsEndPoint)
-      .then((response) => {
-        this.waiting = false;
+      .then(response => {
+        this.waiting = false
         if (!window.onscroll) {
           // Re-enable scroll handling now that the records have been
           // retrieved.
-          window.onscroll = this.handleScroll;
+          window.onscroll = this.handleScroll
         }
         this.setState({
           comments: new Map([
             ...this.state.comments,
-            ...response.data.comments.map((c) => [c.id, c])
+            ...response.data.comments.map(c => [c.id, c])
           ]),
           commentsPagination: response.data.pagination
-        });
+        })
       })
-      .catch((error) => {
-        this.setState({ error: error });
-      });
+      .catch(error => {
+        this.setState({ error: error })
+      })
   }
 
-  artistRetrieved() {
+  artistRetrieved () {
     if (!this.loaded || this.state.notFound || this.state.error) {
-      return false;
+      return false
     } else {
-      return true;
+      return true
     }
   }
 
-  renderHeader() {
-    return <PageHeader>{this.state.artist.name}</PageHeader>;
+  renderHeader () {
+    return <PageHeader>{this.state.artist.name}</PageHeader>
   }
 
-  renderWikipedia(wikipedia) {
+  renderWikipedia (wikipedia) {
     if (!wikipedia) {
-      return;
+      return
     }
 
-    const wikipediaURL = `https://www.wikipedia.org/wiki/${wikipedia}`;
+    const wikipediaURL = `https://www.wikipedia.org/wiki/${wikipedia}`
 
     return (
-      <a href={wikipediaURL} target="_blank" rel="noopener noreferrer">
+      <a href={wikipediaURL} target='_blank' rel='noopener noreferrer'>
         Wikipedia
       </a>
-    );
+    )
   }
 
-  renderWebsite(website, websiteLink) {
+  renderWebsite (website, websiteLink) {
     if (!website) {
-      return <div className="spacer-bottom-sm" />;
+      return <div className='spacer-bottom-sm' />
     }
 
     return (
-      <div className="website">
-        <span className="icon spacer-right-xxs">
-          <FontAwesome name="globe" />
+      <div className='website'>
+        <span className='icon spacer-right-xxs'>
+          <FontAwesome name='globe' />
         </span>
-        <a href={website} target="_blank" rel="noopener noreferrer">
+        <a href={website} target='_blank' rel='noopener noreferrer'>
           {websiteLink}
         </a>
       </div>
-    );
+    )
   }
 
-  renderArtist() {
-    const { description, wikipedia, website } = this.state.artist;
-    const websiteLink = this.state.artist.website_link;
+  renderArtist () {
+    const { description, wikipedia, website } = this.state.artist
+    const websiteLink = this.state.artist.website_link
 
     return (
-      <div className="description">
+      <div className='description'>
         <p>{description} </p>
         {this.renderWikipedia(wikipedia)}
         {this.renderWebsite(website, websiteLink)}
       </div>
-    );
+    )
   }
 
-  albumsSortByActivity(sortBy) {
+  albumsSortByActivity (sortBy) {
     if (this.albumsSortBy === sortBy) {
-      return 'active';
+      return 'active'
     }
   }
 
-  renderAlbumsList(albumsCount) {
+  renderAlbumsList (albumsCount) {
     if (albumsCount === 0) {
-      return;
+      return
     }
 
-    const artistSlug = this.state.artist.slug;
+    const artistSlug = this.state.artist.slug
 
     return (
       <div>
-        <ul className="albums-order">
+        <ul className='albums-order'>
           <li
             className={this.albumsSortByActivity(ARTIST_ALBUMS_SORT_BY.newest)}
             onClick={() => this.handleAlbumsOrder(ARTIST_ALBUMS_SORT_BY.newest)}
@@ -299,14 +299,14 @@ class ArtistShowPage extends Component {
           onGenre={this.handleGenre}
         />
       </div>
-    );
+    )
   }
 
-  renderAlbums() {
-    const albumsCount = this.state.albums.length;
+  renderAlbums () {
+    const albumsCount = this.state.albums.length
 
     return (
-      <div className="albums">
+      <div className='albums'>
         <PageHeader>
           Albums{' '}
           <small>
@@ -314,14 +314,14 @@ class ArtistShowPage extends Component {
           </small>
         </PageHeader>
         {this.renderAlbumsList()}
-        <div className="spacer-bottom-lg" />
+        <div className='spacer-bottom-lg' />
       </div>
-    );
+    )
   }
 
-  renderNewComment() {
+  renderNewComment () {
     if (!appAuth.isLoggedIn()) {
-      return;
+      return
     }
 
     return (
@@ -329,12 +329,12 @@ class ArtistShowPage extends Component {
         resourcePath={this.artistSlug}
         onNewComment={this.handleNewComment}
       />
-    );
+    )
   }
 
-  renderCommentsList(count) {
+  renderCommentsList (count) {
     if (count === 0) {
-      return <h4>No comments have been posted for this artist</h4>;
+      return <h4>No comments have been posted for this artist</h4>
     }
 
     return (
@@ -343,27 +343,27 @@ class ArtistShowPage extends Component {
         onDeleteComment={this.handleDeleteComment}
         shortHeader
       />
-    );
+    )
   }
 
-  renderSpinner() {
+  renderSpinner () {
     if (this.waiting) {
       return (
-        <div className="WaitingSpinner">
-          <FontAwesome name="spinner" spin pulse />
+        <div className='WaitingSpinner'>
+          <FontAwesome name='spinner' spin pulse />
         </div>
-      );
+      )
     }
   }
 
-  renderComments() {
-    const count = this.state.commentsCount;
-    const commentsCount = numeral(count).format('0,0');
+  renderComments () {
+    const count = this.state.commentsCount
+    const commentsCount = numeral(count).format('0,0')
 
     return (
       <div
-        className="comments"
-        ref={(commentsAnchor) => (this.commentsAnchor = commentsAnchor)}
+        className='comments'
+        ref={commentsAnchor => (this.commentsAnchor = commentsAnchor)}
       >
         <PageHeader>
           Comments{' '}
@@ -375,36 +375,36 @@ class ArtistShowPage extends Component {
         {this.renderCommentsList(count)}
         {this.renderSpinner()}
       </div>
-    );
+    )
   }
-  render() {
-    this.pageProgress.start();
+  render () {
+    this.pageProgress.start()
 
     if (this.state.notFound) {
-      toastAlert(`The artist ${this.artistSlug} does not exist`);
-      return <Redirect to="/artists" />;
+      toastAlert(`The artist ${this.artistSlug} does not exist`)
+      return <Redirect to='/artists' />
     }
     if (this.state.error) {
-      toastAlert('Connection failure, please retry again soon');
-      return <Redirect to="/" />;
+      toastAlert('Connection failure, please retry again soon')
+      return <Redirect to='/' />
     }
 
     if (!this.artistRetrieved()) {
-      return null;
+      return null
     }
 
     return (
       <Row>
-        <Col md={10} mdOffset={1} className="ArtistShow">
+        <Col md={10} mdOffset={1} className='ArtistShow'>
           {this.renderHeader()}
           {this.renderArtist()}
           {this.renderAlbums()}
           {this.renderComments()}
         </Col>
       </Row>
-    );
+    )
   }
 }
 
-export default ArtistShowPage;
-export { ARTIST_ALBUMS_SORT_BY };
+export default ArtistShowPage
+export { ARTIST_ALBUMS_SORT_BY }

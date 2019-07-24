@@ -1,12 +1,12 @@
-import { appAuth } from '../lib/appAuth';
+import { appAuth } from '../lib/appAuth'
 
-const Logout = (props) => {
+const Logout = props => {
   if (appAuth.isLoggedIn()) {
-    appAuth.logOut();
+    appAuth.logOut()
   }
 
-  props.history.push('/log_in');
-  return null;
-};
+  props.history.push('/log_in')
+  return null
+}
 
-export default Logout;
+export default Logout

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import axios from 'axios';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import axios from 'axios'
 import {
   Row,
   Col,
@@ -9,172 +9,172 @@ import {
   ControlLabel,
   Radio,
   Button
-} from 'react-bootstrap';
-import FontAwesome from 'react-fontawesome';
-import '../styles/AlbumsFilter.css';
-import { API_HOST } from '../config';
+} from 'react-bootstrap'
+import FontAwesome from 'react-fontawesome'
+import '../styles/AlbumsFilter.css'
+import { API_HOST } from '../config'
 
-const GENRES_ENDPOINT = `${API_HOST}/genres.json`;
+const GENRES_ENDPOINT = `${API_HOST}/genres.json`
 
 class AlbumsFilter extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
 
     // The value of the radio controls.
-    this.sort = 'title';
-    this.order = 'forward';
+    this.sort = 'title'
+    this.order = 'forward'
 
     this.state = {
       genres: [],
       selectButtonText: 'Select'
-    };
+    }
 
     // Bind 'this' for callback functions.
-    this.handleSortTitle = this.handleSortTitle.bind(this);
-    this.handleSortYear = this.handleSortYear.bind(this);
-    this.handleOrderForward = this.handleOrderForward.bind(this);
-    this.handleOrderReverse = this.handleOrderReverse.bind(this);
+    this.handleSortTitle = this.handleSortTitle.bind(this)
+    this.handleSortYear = this.handleSortYear.bind(this)
+    this.handleOrderForward = this.handleOrderForward.bind(this)
+    this.handleOrderReverse = this.handleOrderReverse.bind(this)
   }
 
-  componentDidMount() {
-    this.getGenres();
+  componentDidMount () {
+    this.getGenres()
   }
 
-  getGenres() {
-    axios.get(GENRES_ENDPOINT).then((response) => {
+  getGenres () {
+    axios.get(GENRES_ENDPOINT).then(response => {
       this.setState({
         genres: response.data.genres
-      });
-    });
+      })
+    })
   }
 
-  genreValue() {
-    return this.genreSelect.value;
+  genreValue () {
+    return this.genreSelect.value
   }
 
-  yearValue() {
-    return this.yearInput.value;
+  yearValue () {
+    return this.yearInput.value
   }
 
-  sortValue() {
-    return this.sort;
+  sortValue () {
+    return this.sort
   }
 
-  orderValue() {
-    return this.order;
+  orderValue () {
+    return this.order
   }
 
-  handleSortTitle() {
-    this.sort = 'title';
+  handleSortTitle () {
+    this.sort = 'title'
   }
 
-  handleSortYear() {
-    this.sort = 'year';
+  handleSortYear () {
+    this.sort = 'year'
   }
 
-  handleOrderForward() {
-    this.order = 'forward';
+  handleOrderForward () {
+    this.order = 'forward'
   }
 
-  handleOrderReverse() {
-    this.order = 'reverse';
+  handleOrderReverse () {
+    this.order = 'reverse'
   }
 
-  selecting() {
+  selecting () {
     this.setState({
       selectButtonText: (
         <div>
-          <FontAwesome name="spinner" spin pulse /> Selecting
+          <FontAwesome name='spinner' spin pulse /> Selecting
         </div>
       )
-    });
+    })
   }
 
-  selected() {
-    this.setState({ selectButtonText: 'Select' });
+  selected () {
+    this.setState({ selectButtonText: 'Select' })
   }
 
-  renderGenreOptions() {
-    return this.state.genres.map((genre) => (
+  renderGenreOptions () {
+    return this.state.genres.map(genre => (
       <option key={genre.id} value={genre.name}>
         {genre.name}
       </option>
-    ));
+    ))
   }
 
-  render() {
+  render () {
     return (
-      <Row className="AlbumsFilter">
+      <Row className='AlbumsFilter'>
         <Col md={12}>
           <form onSubmit={this.props.onFilterSubmit}>
-            <FormGroup className="col-md-2 col-md-offset-2">
+            <FormGroup className='col-md-2 col-md-offset-2'>
               <ControlLabel>Genre</ControlLabel>
               <FormControl
-                componentClass="select"
-                bsSize="sm"
-                inputRef={(select) => (this.genreSelect = select)}
+                componentClass='select'
+                bsSize='sm'
+                inputRef={select => (this.genreSelect = select)}
               >
-                <option value="Choose">Choose</option>
+                <option value='Choose'>Choose</option>
                 {this.renderGenreOptions()}
               </FormControl>
             </FormGroup>
 
-            <FormGroup className="col-md-2">
+            <FormGroup className='col-md-2'>
               <ControlLabel>Year(s)</ControlLabel>
               <FormControl
-                type="text"
-                bsSize="sm"
-                placeholder="2000, 2004..2008"
-                className="year"
-                pattern="[0-9., ]+"
-                inputRef={(input) => (this.yearInput = input)}
+                type='text'
+                bsSize='sm'
+                placeholder='2000, 2004..2008'
+                className='year'
+                pattern='[0-9., ]+'
+                inputRef={input => (this.yearInput = input)}
               />
             </FormGroup>
 
-            <FormGroup className="col-md-1">
+            <FormGroup className='col-md-1'>
               <ControlLabel>Sort</ControlLabel>
               <Radio
-                name="sortRadioGroup"
-                className="RadioFirst"
+                name='sortRadioGroup'
+                className='RadioFirst'
                 defaultChecked
                 onChange={this.handleSortTitle}
               >
                 Title
               </Radio>
               <Radio
-                name="sortRadioGroup"
-                className="RadioLast"
+                name='sortRadioGroup'
+                className='RadioLast'
                 onChange={this.handleSortYear}
               >
                 Year
               </Radio>
             </FormGroup>
 
-            <FormGroup className="col-md-1">
+            <FormGroup className='col-md-1'>
               <ControlLabel>Order</ControlLabel>
               <Radio
-                name="orderRadioGroup"
-                className="RadioFirst"
+                name='orderRadioGroup'
+                className='RadioFirst'
                 defaultChecked
                 onChange={this.handleOrderForward}
               >
                 Forward
               </Radio>
               <Radio
-                name="orderRadioGroup"
-                className="RadioLast"
+                name='orderRadioGroup'
+                className='RadioLast'
                 onChange={this.handleOrderReverse}
               >
                 Reverse
               </Radio>
             </FormGroup>
 
-            <FormGroup className="col-md-1">
+            <FormGroup className='col-md-1'>
               <Button
-                type="submit"
-                bsStyle="success"
-                bsSize="small"
-                className="submit"
+                type='submit'
+                bsStyle='success'
+                bsSize='small'
+                className='submit'
               >
                 {this.state.selectButtonText}
               </Button>
@@ -182,12 +182,12 @@ class AlbumsFilter extends Component {
           </form>
         </Col>
       </Row>
-    );
+    )
   }
 }
 
 AlbumsFilter.propTypes = {
   onFilterSubmit: PropTypes.func
-};
+}
 
-export default AlbumsFilter;
+export default AlbumsFilter

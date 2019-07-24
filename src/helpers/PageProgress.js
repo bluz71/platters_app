@@ -1,24 +1,24 @@
-import NProgress from 'nprogress';
+import NProgress from 'nprogress'
 
 class PageProgress {
-  constructor() {
-    this.loaded = false;
+  constructor () {
+    this.loaded = false
   }
 
-  start() {
+  start () {
     if (!this.loaded) {
-      NProgress.start();
+      NProgress.start()
     }
   }
 
-  done() {
+  done () {
     if (!this.loaded) {
-      this.loaded = true;
-      NProgress.done();
+      this.loaded = true
+      NProgress.done()
     }
 
-    return true;
+    return true
   }
 }
 
-export default PageProgress;
+export default PageProgress

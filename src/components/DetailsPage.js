@@ -1,23 +1,23 @@
-import React from 'react';
-import { Row, Col, PageHeader } from 'react-bootstrap';
-import '../styles/MiscPage.css';
+import React from 'react'
+import { Row, Col, PageHeader } from 'react-bootstrap'
+import '../styles/MiscPage.css'
 
 const DetailsPage = () => {
-  document.title = 'Platters App';
-  window.scrollTo(0, 0);
+  document.title = 'Platters App'
+  window.scrollTo(0, 0)
 
   return (
     <Row>
       <Col md={10} mdOffset={1}>
-        <div className="MiscPage">
+        <div className='MiscPage'>
           <PageHeader>Core technologies</PageHeader>
           <ul>
             <li>
               <h3>
                 <a
-                  href="https://reactjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://reactjs.org'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   React
                 </a>{' '}
@@ -28,9 +28,9 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="https://github.com/facebookincubator/create-react-app"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://github.com/facebookincubator/create-react-app'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   Create React App
                 </a>
@@ -40,9 +40,9 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="https://platters.cc/details"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://platters.cc/details'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   Ruby on Rails API back-end
                 </a>
@@ -51,10 +51,10 @@ const DetailsPage = () => {
                 Content for this application is delivered in JSON format from a
                 complimentary{' '}
                 <a
-                  href="https://platters.cc/details"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="standout"
+                  href='https://platters.cc/details'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='standout'
                 >
                   Ruby on Rails
                 </a>{' '}
@@ -64,14 +64,14 @@ const DetailsPage = () => {
           </ul>
           <br />
 
-          <h2 className="page-header">Significant JavaScript Libraries</h2>
+          <h2 className='page-header'>Significant JavaScript Libraries</h2>
           <ul>
             <li>
               <h3>
                 <a
-                  href="https://github.com/axios/axios"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://github.com/axios/axios'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   axios
                 </a>
@@ -81,9 +81,9 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="http://numeraljs.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='http://numeraljs.com'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   Numeral.js
                 </a>
@@ -95,9 +95,9 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="https://github.com/blakeembrey/pluralize"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://github.com/blakeembrey/pluralize'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   Pluralize
                 </a>
@@ -107,9 +107,9 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="https://react-bootstrap.github.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://react-bootstrap.github.io'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   React-Bootstrap
                 </a>
@@ -122,9 +122,9 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="https://reacttraining.com/react-router"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://reacttraining.com/react-router'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   React Router
                 </a>
@@ -134,9 +134,9 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="https://github.com/auth0/jwt-decode"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://github.com/auth0/jwt-decode'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   jwt-decode
                 </a>
@@ -146,9 +146,9 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="https://github.com/google-fabric/velocity-react"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://github.com/google-fabric/velocity-react'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   velocity-react
                 </a>
@@ -156,10 +156,10 @@ const DetailsPage = () => {
               <p>
                 React components for interacting with the{' '}
                 <a
-                  href="http://velocityjs.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="standout"
+                  href='http://velocityjs.org/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='standout'
                 >
                   Velocity
                 </a>{' '}
@@ -171,9 +171,9 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="https://github.com/rstacruz/nprogress"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://github.com/rstacruz/nprogress'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   nprogress
                 </a>
@@ -188,9 +188,9 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="https://www.npmjs.com/package/local-time"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://www.npmjs.com/package/local-time'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   local-time
                 </a>
@@ -204,9 +204,9 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="https://github.com/andre487/node-linkify-lite"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://github.com/andre487/node-linkify-lite'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   linkify-lite
                 </a>
@@ -216,14 +216,14 @@ const DetailsPage = () => {
           </ul>
           <br />
 
-          <h2 className="page-header">Deployment</h2>
+          <h2 className='page-header'>Deployment</h2>
           <ul>
             <li>
               <h3>
                 <a
-                  href="https://surge.sh"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://surge.sh'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   Surge
                 </a>
@@ -233,10 +233,10 @@ const DetailsPage = () => {
                 developers who need to deploy and host static site projects.
                 Details about using Surge can be found
                 <a
-                  href="https://hackernoon.com/simple-react-development-in-2017-113bd563691f"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="standout"
+                  href='https://hackernoon.com/simple-react-development-in-2017-113bd563691f'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='standout'
                 >
                   {' '}
                   here
@@ -246,9 +246,9 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="https://github.com/sintaxi/surge"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://github.com/sintaxi/surge'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   Surge CLI
                 </a>
@@ -258,14 +258,14 @@ const DetailsPage = () => {
           </ul>
           <br />
 
-          <h2 className="page-header">Development</h2>
+          <h2 className='page-header'>Development</h2>
           <ul>
             <li>
               <h3>
                 <a
-                  href="https://travis-ci.org/bluz71/platters"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://travis-ci.org/bluz71/platters'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   Travis CI
                 </a>
@@ -278,9 +278,9 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="https://eslint.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://eslint.org'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   eslint
                 </a>
@@ -290,9 +290,9 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="https://prettier.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://prettier.io/'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   Prettier
                 </a>
@@ -302,14 +302,14 @@ const DetailsPage = () => {
           </ul>
           <br />
 
-          <h2 className="page-header">Testing</h2>
+          <h2 className='page-header'>Testing</h2>
           <ul>
             <li>
               <h3>
                 <a
-                  href="https://facebook.github.io/jest"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://facebook.github.io/jest'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   Jest
                 </a>
@@ -319,9 +319,9 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="http://airbnb.io/enzyme"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='http://airbnb.io/enzyme'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   Enzyme
                 </a>
@@ -335,9 +335,9 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="https://github.com/blainekasten/enzyme-matchers"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://github.com/blainekasten/enzyme-matchers'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   jest-enzyme
                 </a>
@@ -347,14 +347,14 @@ const DetailsPage = () => {
           </ul>
           <br />
 
-          <h2 className="page-header">Miscellaneous application features</h2>
+          <h2 className='page-header'>Miscellaneous application features</h2>
           <ul>
             <li>
               <h3>
                 <a
-                  href="https://bluz71.github.io/2017/12/22/browser-navigation-in-react-components.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://bluz71.github.io/2017/12/22/browser-navigation-in-react-components.html'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   Browser navigation with React components
                 </a>
@@ -371,10 +371,10 @@ const DetailsPage = () => {
                 Artists and Albums search results will update live as a user is
                 typing in search terms. Note,
                 <a
-                  href="https://lodash.com/docs#debounce"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="standout"
+                  href='https://lodash.com/docs#debounce'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='standout'
                 >
                   {' '}
                   debounce{' '}
@@ -394,9 +394,9 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href="https://dev.to/felipperegazio/how-to-create-a-simple-honeypot-to-protect-your-web-forms-from-spammers--25n8"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://dev.to/felipperegazio/how-to-create-a-simple-honeypot-to-protect-your-web-forms-from-spammers--25n8'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   Honeypot field protection against Bots
                 </a>
@@ -420,32 +420,32 @@ const DetailsPage = () => {
           </ul>
           <br />
 
-          <h2 className="page-header">Logo</h2>
+          <h2 className='page-header'>Logo</h2>
           <p>
             Record player icon, made by&nbsp;
             <a
-              href="http://www.flaticon.com/authors/freepik"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="standout"
+              href='http://www.flaticon.com/authors/freepik'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='standout'
             >
               Freepik
             </a>{' '}
             from&nbsp;
             <a
-              href="http://www.flaticon.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="standout"
+              href='http://www.flaticon.com'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='standout'
             >
               www.flaticon.com
             </a>
             , is licensed by&nbsp;
             <a
-              href="https://creativecommons.org/licenses/by/3.0/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="standout"
+              href='https://creativecommons.org/licenses/by/3.0/'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='standout'
             >
               CC 3.0 BY
             </a>
@@ -454,7 +454,7 @@ const DetailsPage = () => {
         </div>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default DetailsPage;
+export default DetailsPage

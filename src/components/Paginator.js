@@ -1,16 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Pagination } from 'react-bootstrap';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Pagination } from 'react-bootstrap'
 
 const Paginator = ({ pagination, onPageChange }) => {
-  const { current_page, total_pages } = pagination;
+  /* eslint-disable camelcase */
+  const { current_page, total_pages } = pagination
 
   return (
     <Pagination
-      prev={current_page === 1 ? false : true}
-      next={current_page === total_pages ? false : true}
-      first={current_page === 1 ? false : true}
-      last={current_page === total_pages ? false : true}
+      prev={current_page !== 1}
+      next={current_page !== total_pages}
+      first={current_page !== 1}
+      last={current_page !== total_pages}
       ellipsis
       boundaryLinks
       items={total_pages}
@@ -18,12 +19,13 @@ const Paginator = ({ pagination, onPageChange }) => {
       activePage={current_page}
       onSelect={onPageChange}
     />
-  );
-};
+  )
+  /* eslint-disable camelcase */
+}
 
 Paginator.propTypes = {
   pagination: PropTypes.object,
   onPageChange: PropTypes.func
-};
+}
 
-export default Paginator;
+export default Paginator

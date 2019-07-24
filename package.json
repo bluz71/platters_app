@@ -40,6 +40,16 @@
     "enzyme-adapter-react-16": "^1.7.0",
     "jest-enzyme": "^7.0.1"
   },
+  "standard": {
+    "globals": [
+      "describe",
+      "expect",
+      "fetch",
+      "it",
+      "jest",
+      "localStorage"
+    ]
+  },
   "browserslist": [
     ">0.2%",
     "not dead",

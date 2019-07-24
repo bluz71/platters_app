@@ -1,32 +1,32 @@
-import React from 'react';
-import { Row, Col, PageHeader } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import '../styles/MiscPage.css';
+import React from 'react'
+import { Row, Col, PageHeader } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import '../styles/MiscPage.css'
 
 const AboutPage = () => {
-  document.title = 'Platters App';
-  window.scrollTo(0, 0);
+  document.title = 'Platters App'
+  window.scrollTo(0, 0)
 
   return (
     <Row>
       <Col md={8} mdOffset={2}>
-        <div className="MiscPage">
+        <div className='MiscPage'>
           <PageHeader>About</PageHeader>
           <p>
             Platters App, is an example web application developed using the{' '}
             <em>
               <a
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="standout"
+                href='https://reactjs.org'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='standout'
               >
                 React{' '}
               </a>
             </em>
             front-end JavaScript framework and associated technologies. Refer to
             the{' '}
-            <Link to="/details" className="standout">
+            <Link to='/details' className='standout'>
               {' '}
               details
             </Link>{' '}
@@ -37,10 +37,10 @@ const AboutPage = () => {
             associated back-end
             <em>
               <a
-                href="http://rubyonrails.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="standout"
+                href='http://rubyonrails.org'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='standout'
               >
                 {' '}
                 Ruby on Rails{' '}
@@ -48,20 +48,20 @@ const AboutPage = () => {
             </em>
             application
             <a
-              href="https://platters.cc"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="standout"
+              href='https://platters.cc'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='standout'
             >
               {' '}
               Platters{' '}
             </a>
             . Refer to the Platters{' '}
             <a
-              href="https://platters.cc/about"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="standout"
+              href='https://platters.cc/about'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='standout'
             >
               about{' '}
             </a>
@@ -84,10 +84,10 @@ const AboutPage = () => {
               <p>
                 Github repository:{' '}
                 <a
-                  href="https://github.com/bluz71/platters_app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="standout"
+                  href='https://github.com/bluz71/platters_app'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='standout'
                 >
                   Platters App
                 </a>
@@ -97,10 +97,10 @@ const AboutPage = () => {
               <p>
                 Github account:{' '}
                 <a
-                  href="https://github.com/bluz71"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="standout"
+                  href='https://github.com/bluz71'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='standout'
                 >
                   bluz71
                 </a>
@@ -114,14 +114,14 @@ const AboutPage = () => {
             practise self-taught web development and deployment knowledge gained
             from the following disparate sources:
           </p>
-          <h3 className="spacer-left-xs">Books</h3>
+          <h3 className='spacer-left-xs'>Books</h3>
           <ul>
             <li>
               <h4>
                 <a
-                  href="http://shop.oreilly.com/product/0636920049579.do"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='http://shop.oreilly.com/product/0636920049579.do'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   Learn React
                 </a>
@@ -130,23 +130,23 @@ const AboutPage = () => {
             <li>
               <h4>
                 <a
-                  href="https://leanpub.com/the-road-to-learn-react"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://leanpub.com/the-road-to-learn-react'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   The Road to Learn React
                 </a>
               </h4>
             </li>
           </ul>
-          <h3 className="spacer-left-xs">Online</h3>
+          <h3 className='spacer-left-xs'>Online</h3>
           <ul>
             <li>
               <h4>
                 <a
-                  href="https://www.codecademy.com/learn/react-101"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://www.codecademy.com/learn/react-101'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   Codecademy Learn ReactJS: Part I
                 </a>
@@ -155,9 +155,9 @@ const AboutPage = () => {
             <li>
               <h4>
                 <a
-                  href="https://www.codecademy.com/learn/react-102"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://www.codecademy.com/learn/react-102'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   Codecademy Learn ReactJS: Part II
                 </a>
@@ -166,9 +166,9 @@ const AboutPage = () => {
             <li>
               <h4>
                 <a
-                  href="https://www.udemy.com/react-redux"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href='https://www.udemy.com/react-redux'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   Udemy Modern React with Redux
                 </a>
@@ -181,7 +181,7 @@ const AboutPage = () => {
             <em>React</em> was chosen, from a host of possible JavaScript
             development choices, due to the following appealing factors:
           </p>
-          <ul className="spacer-top-sm">
+          <ul className='spacer-top-sm'>
             <li>
               <p>Abundant selection of learning material</p>
             </li>
@@ -196,7 +196,7 @@ const AboutPage = () => {
         </div>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default AboutPage;
+export default AboutPage

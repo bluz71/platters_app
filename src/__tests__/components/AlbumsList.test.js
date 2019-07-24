@@ -1,7 +1,7 @@
-import React from 'react';
-import { shallow, mount } from 'enzyme';
-import { MemoryRouter } from 'react-router-dom';
-import AlbumsList from '../../components/AlbumsList';
+import React from 'react'
+import { shallow, mount } from 'enzyme'
+import { MemoryRouter } from 'react-router-dom'
+import AlbumsList from '../../components/AlbumsList'
 
 const albums = () => {
   return [
@@ -23,20 +23,20 @@ const albums = () => {
       cover_url: 'http://localhost:3000/small_DEF--DEF.jpg',
       tracks: ['1. First', '2. Second', '3. Third']
     }
-  ];
-};
+  ]
+}
 
 describe('<AlbumsList />', () => {
   it('renders without crashing', () => {
-    shallow(<AlbumsList albums={[]} />);
-  });
+    shallow(<AlbumsList albums={[]} />)
+  })
 
   it('renders a list of albums', () => {
     const wrapper = mount(
       <MemoryRouter initialEntries={[{ key: 'testKey' }]}>
         <AlbumsList albums={albums()} />
       </MemoryRouter>
-    );
-    expect(wrapper).toMatchSnapshot();
-  });
-});
+    )
+    expect(wrapper).toMatchSnapshot()
+  })
+})

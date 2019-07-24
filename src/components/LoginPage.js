@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from 'react'
+import axios from 'axios'
 import {
   Row,
   Col,
@@ -10,81 +10,81 @@ import {
   ControlLabel,
   FormControl,
   Button
-} from 'react-bootstrap';
-import FontAwesome from 'react-fontawesome';
-import { Link } from 'react-router-dom';
-import '../styles/LoginPage.css';
-import { appAuth } from '../lib/appAuth';
-import { API_HOST } from '../config';
-import { toastAlert } from '../helpers/toastMessage';
+} from 'react-bootstrap'
+import FontAwesome from 'react-fontawesome'
+import { Link } from 'react-router-dom'
+import '../styles/LoginPage.css'
+import { appAuth } from '../lib/appAuth'
+import { API_HOST } from '../config'
+import { toastAlert } from '../helpers/toastMessage'
 
-const LOGIN_ENDPOINT = `${API_HOST}/api/log_in`;
+const LOGIN_ENDPOINT = `${API_HOST}/api/log_in`
 
 class LoginPage extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
 
-    document.title = 'Platters App';
+    document.title = 'Platters App'
 
     this.state = {
       logInButtonText: 'Sign in'
-    };
+    }
 
     // Bind 'this' for callback functions.
-    this.handleUserSubmit = this.handleUserSubmit.bind(this);
+    this.handleUserSubmit = this.handleUserSubmit.bind(this)
   }
 
-  handleUserSubmit(event) {
-    event.preventDefault();
+  handleUserSubmit (event) {
+    event.preventDefault()
 
     this.setState({
       logInButtonText: (
         <div>
-          <FontAwesome name="spinner" spin pulse /> Signing in...
+          <FontAwesome name='spinner' spin pulse /> Signing in...
         </div>
       )
-    });
+    })
 
     const authUser = {
       auth_user: {
         email: this.emailInput.value,
         password: this.passwordInput.value
       }
-    };
+    }
 
-    this.postUser(authUser);
+    this.postUser(authUser)
   }
 
-  postUser(authUser) {
+  postUser (authUser) {
     axios
       .post(LOGIN_ENDPOINT, authUser)
-      .then((response) => {
-        appAuth.logIn(response.data.auth_token);
-        this.props.history.push('/');
+      .then(response => {
+        appAuth.logIn(response.data.auth_token)
+        this.props.history.push('/')
       })
-      .catch((error) => {
-        this.setState({ logInButtonText: 'Sign in' });
+      .catch(error => {
+        this.setState({ logInButtonText: 'Sign in' })
         if (error.response && error.response.status === 401) {
           toastAlert(
             `Incorrect log in credentials, ${error.response.data.error}`
-          );
+          )
         } else if (error.response && error.response.status === 404) {
-          toastAlert('Incorrect log in credentials, user not found');
+          toastAlert('Incorrect log in credentials, user not found')
         } else if (error.response && error.response.status === 403) {
-          toastAlert('User account has not been confirmed');
+          toastAlert('User account has not been confirmed')
         } else if (error.tokenMessage) {
-          toastAlert(error.tokenMessage);
+          toastAlert(error.tokenMessage)
         } else {
-          toastAlert('Server error, please try again later');
+          toastAlert('Server error, please try again later')
         }
-      });
+      })
   }
 
-  renderForm() {
+  renderForm () {
     return (
       <Well>
         <Form horizontal onSubmit={this.handleUserSubmit}>
-          <ul className="list-group" />
+          <ul className='list-group' />
 
           <FormGroup>
             <Col componentClass={ControlLabel} md={2}>
@@ -92,9 +92,9 @@ class LoginPage extends Component {
             </Col>
             <Col md={9}>
               <FormControl
-                type="email"
-                className="email"
-                inputRef={(input) => (this.emailInput = input)}
+                type='email'
+                className='email'
+                inputRef={input => (this.emailInput = input)}
               />
             </Col>
           </FormGroup>
@@ -105,9 +105,9 @@ class LoginPage extends Component {
             </Col>
             <Col md={9}>
               <FormControl
-                type="password"
-                className="password"
-                inputRef={(input) => (this.passwordInput = input)}
+                type='password'
+                className='password'
+                inputRef={input => (this.passwordInput = input)}
               />
             </Col>
           </FormGroup>
@@ -115,33 +115,33 @@ class LoginPage extends Component {
           <FormGroup>
             <Col mdOffset={2} md={9}>
               <Button
-                type="submit"
-                bsStyle="success"
-                bsSize="small"
-                className="submit"
+                type='submit'
+                bsStyle='success'
+                bsSize='small'
+                className='submit'
               >
                 {this.state.logInButtonText}
               </Button>
-              <Link to="password/new" className="spacer-left-xsm">
+              <Link to='password/new' className='spacer-left-xsm'>
                 Forgot password?
               </Link>
             </Col>
           </FormGroup>
         </Form>
       </Well>
-    );
+    )
   }
 
-  render() {
+  render () {
     return (
-      <Row className="Login">
+      <Row className='Login'>
         <Col md={10} mdOffset={1}>
           <PageHeader>Log in</PageHeader>
           {this.renderForm()}
         </Col>
       </Row>
-    );
+    )
   }
 }
 
-export default LoginPage;
+export default LoginPage

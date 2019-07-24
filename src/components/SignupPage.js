@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from 'react'
+import axios from 'axios'
 import {
   Row,
   Col,
@@ -11,41 +11,41 @@ import {
   FormControl,
   HelpBlock,
   Button
-} from 'react-bootstrap';
-import FontAwesome from 'react-fontawesome';
-import { API_HOST, APPLICATION_HOST } from '../config';
-import { toastAlert, toastNotice } from '../helpers/toastMessage';
-import '../styles/SignupPage.css';
+} from 'react-bootstrap'
+import FontAwesome from 'react-fontawesome'
+import { API_HOST, APPLICATION_HOST } from '../config'
+import { toastAlert, toastNotice } from '../helpers/toastMessage'
+import '../styles/SignupPage.css'
 
-const USER_NEW_ENDPOINT = `${API_HOST}/api/users`;
+const USER_NEW_ENDPOINT = `${API_HOST}/api/users`
 
 class SignupPage extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
 
-    document.title = 'Platters App';
+    document.title = 'Platters App'
 
     this.state = {
       submitButtonText: 'Submit',
       errors: []
-    };
+    }
 
     // Bind 'this' for callback functions.
-    this.handleAccountSubmit = this.handleAccountSubmit.bind(this);
-    this.handleNameBlur = this.handleNameBlur.bind(this);
-    this.handleNameFocus = this.handleNameFocus.bind(this);
+    this.handleAccountSubmit = this.handleAccountSubmit.bind(this)
+    this.handleNameBlur = this.handleNameBlur.bind(this)
+    this.handleNameFocus = this.handleNameFocus.bind(this)
   }
 
-  handleAccountSubmit(event) {
-    event.preventDefault();
+  handleAccountSubmit (event) {
+    event.preventDefault()
 
     this.setState({
       submitButtonText: (
         <div>
-          <FontAwesome name="spinner" spin pulse /> Submitting...
+          <FontAwesome name='spinner' spin pulse /> Submitting...
         </div>
       )
-    });
+    })
 
     const newUser = {
       user: {
@@ -54,78 +54,78 @@ class SignupPage extends Component {
         name: this.nameInput.value,
         application_host: APPLICATION_HOST
       }
-    };
-
-    if (this.usernameInput.value.length > 0) {
-      newUser.user.username = this.usernameInput.value;
     }
 
-    this.postUser(newUser);
+    if (this.usernameInput.value.length > 0) {
+      newUser.user.username = this.usernameInput.value
+    }
+
+    this.postUser(newUser)
   }
 
-  handleNameBlur() {
-    this.forceUpdate();
+  handleNameBlur () {
+    this.forceUpdate()
   }
 
-  handleNameFocus() {
-    this.forceUpdate();
+  handleNameFocus () {
+    this.forceUpdate()
   }
 
-  postUser(newUser) {
+  postUser (newUser) {
     axios
       .post(USER_NEW_ENDPOINT, newUser)
-      .then((response) => {
-        this.setState({ submitButtonText: 'Submit' });
+      .then(response => {
+        this.setState({ submitButtonText: 'Submit' })
         toastNotice(
           `Hello ${
             newUser.user.name
           }, in order to complete your sign up, please follow the instructions in the email that was just sent to you. Please check your junk folder if you can not find the email.`
-        );
-        this.props.history.push('/');
+        )
+        this.props.history.push('/')
       })
-      .catch((error) => {
-        this.setState({ submitButtonText: 'Submit' });
+      .catch(error => {
+        this.setState({ submitButtonText: 'Submit' })
         if (error.response && error.response.status === 406) {
-          toastAlert('Account could not be created');
+          toastAlert('Account could not be created')
           this.setState({
             errors: error.response.data.errors
-          });
+          })
         } else if (error.response && error.response.status === 403) {
-          toastAlert('Bot detected');
-          this.props.history.push('/');
+          toastAlert('Bot detected')
+          this.props.history.push('/')
         } else {
-          toastAlert('Server error, please try again later');
+          toastAlert('Server error, please try again later')
         }
-      });
+      })
   }
 
-  renderNameErrors() {
+  renderNameErrors () {
     return this.state.errors.map((error, index) => (
-      <li key={index} className="list-group-item list-group-item-danger">
+      <li key={index} className='list-group-item list-group-item-danger'>
         {error}
       </li>
-    ));
+    ))
   }
 
-  hasNameErrors() {
+  hasNameErrors () {
     if (!this.nameInput) {
-      return;
+      return
     }
 
-    const name = this.nameInput.value;
+    const name = this.nameInput.value
     if (
       (name.length < 4 || name.length > 20) &&
       this.nameInput !== document.activeElement
     ) {
-      return 'has-error';
+      return 'has-error'
     }
   }
 
-  renderForm() {
+  renderForm () {
     return (
       <Well>
         <Form horizontal onSubmit={this.handleAccountSubmit}>
-          <ul className="list-group">{this.renderNameErrors()}</ul>
+          <ul className='list-group'>{this.renderNameErrors()}</ul>
 
           <FormGroup>
             <Col componentClass={ControlLabel} md={2}>
@@ -133,9 +133,9 @@ class SignupPage extends Component {
             </Col>
             <Col md={9}>
               <FormControl
-                type="email"
-                className="email"
-                inputRef={(input) => (this.emailInput = input)}
+                type='email'
+                className='email'
+                inputRef={input => (this.emailInput = input)}
               />
             </Col>
           </FormGroup>
@@ -146,9 +146,9 @@ class SignupPage extends Component {
             </Col>
             <Col md={9}>
               <FormControl
-                type="password"
-                className="password"
-                inputRef={(input) => (this.passwordInput = input)}
+                type='password'
+                className='password'
+                inputRef={input => (this.passwordInput = input)}
               />
             </Col>
           </FormGroup>
@@ -159,9 +159,9 @@ class SignupPage extends Component {
             </Col>
             <Col md={9}>
               <FormControl
-                type="text"
-                className="name"
-                inputRef={(input) => (this.nameInput = input)}
+                type='text'
+                className='name'
+                inputRef={input => (this.nameInput = input)}
                 onBlur={this.handleNameBlur}
                 onFocus={this.handleNameFocus}
               />
@@ -172,15 +172,15 @@ class SignupPage extends Component {
             </Col>
           </FormGroup>
 
-          <FormGroup className="username">
+          <FormGroup className='username'>
             <Col componentClass={ControlLabel} md={2}>
               Username
             </Col>
             <Col md={9}>
               <FormControl
-                type="text"
-                className="username"
-                inputRef={(input) => (this.usernameInput = input)}
+                type='text'
+                className='username'
+                inputRef={input => (this.usernameInput = input)}
               />
             </Col>
           </FormGroup>
@@ -188,10 +188,10 @@ class SignupPage extends Component {
           <FormGroup>
             <Col mdOffset={2} md={9}>
               <Button
-                type="submit"
-                bsStyle="success"
-                bsSize="small"
-                className="submit"
+                type='submit'
+                bsStyle='success'
+                bsSize='small'
+                className='submit'
               >
                 {this.state.submitButtonText}
               </Button>
@@ -199,19 +199,19 @@ class SignupPage extends Component {
           </FormGroup>
         </Form>
       </Well>
-    );
+    )
   }
 
-  render() {
+  render () {
     return (
-      <Row className="Signup">
+      <Row className='Signup'>
         <Col md={10} mdOffset={1}>
           <PageHeader>Sign up</PageHeader>
           {this.renderForm()}
         </Col>
       </Row>
-    );
+    )
   }
 }
 
-export default SignupPage;
+export default SignupPage

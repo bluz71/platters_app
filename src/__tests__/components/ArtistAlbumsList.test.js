@@ -1,8 +1,8 @@
-import React from 'react';
-import { shallow, mount } from 'enzyme';
-import ArtistAlbumsList from '../../components/ArtistAlbumsList';
+import React from 'react'
+import { shallow } from 'enzyme'
+import ArtistAlbumsList from '../../components/ArtistAlbumsList'
 
-const albums = (args) => {
+const albums = args => {
   return [
     {
       id: 1,
@@ -28,18 +28,18 @@ const albums = (args) => {
       genre: 'Rock',
       tracks_summary: ['1. First', '2. Second', '3. Third']
     }
-  ];
-};
+  ]
+}
 
 describe('<ArtistAlbumsList />', () => {
   it('renders without crashing', () => {
-    shallow(<ArtistAlbumsList albums={[]} />);
-  });
+    shallow(<ArtistAlbumsList albums={[]} />)
+  })
 
   it('renders of a list of artist albums', () => {
     const wrapper = shallow(
-      <ArtistAlbumsList albums={albums()} artistSlug="xyz" />
-    );
-    expect(wrapper).toMatchSnapshot();
-  });
-});
+      <ArtistAlbumsList albums={albums()} artistSlug='xyz' />
+    )
+    expect(wrapper).toMatchSnapshot()
+  })
+})
