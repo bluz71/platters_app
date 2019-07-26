@@ -278,14 +278,14 @@ const DetailsPage = () => {
             <li>
               <h3>
                 <a
-                  href='https://eslint.org'
+                  href='https://standardjs.com'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  eslint
+                  Standard JavaScript
                 </a>
               </h3>
-              <p>The pluggable linting utility for JavaScript and JSX.</p>
+              <p>JavaScript style guide, linter, and formatter.</p>
             </li>
             <li>
               <h3>

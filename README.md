@@ -40,7 +40,7 @@ Development
 -----------
 
 * [Travis CI](https://travis-ci.org/bluz71/platters)
-* [eslint](https://eslint.org)
+* [Standard JavaScript](https://standardjs.com)
 
 Testing
 -------
