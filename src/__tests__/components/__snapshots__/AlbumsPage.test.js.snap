@@ -453,9 +453,9 @@ exports[`<AlbumsPage /> renders 2006 albums 1`] = `
           >
             <TransitionGroup
               childFactory={[Function]}
-              component="span"
+              component="div"
             >
-              <span />
+              <div />
             </TransitionGroup>
           </VelocityTransitionGroup>
           <VelocityTransitionGroup
@@ -486,9 +486,9 @@ exports[`<AlbumsPage /> renders 2006 albums 1`] = `
           >
             <TransitionGroup
               childFactory={[Function]}
-              component="span"
+              component="div"
             >
-              <span />
+              <div />
             </TransitionGroup>
           </VelocityTransitionGroup>
         </div>
@@ -1136,9 +1136,9 @@ exports[`<AlbumsPage /> renders A albums 1`] = `
           >
             <TransitionGroup
               childFactory={[Function]}
-              component="span"
+              component="div"
             >
-              <span />
+              <div />
             </TransitionGroup>
           </VelocityTransitionGroup>
           <VelocityTransitionGroup
@@ -1169,9 +1169,9 @@ exports[`<AlbumsPage /> renders A albums 1`] = `
           >
             <TransitionGroup
               childFactory={[Function]}
-              component="span"
+              component="div"
             >
-              <span />
+              <div />
             </TransitionGroup>
           </VelocityTransitionGroup>
         </div>
@@ -1830,9 +1830,9 @@ exports[`<AlbumsPage /> renders ABC search match 1`] = `
           >
             <TransitionGroup
               childFactory={[Function]}
-              component="span"
+              component="div"
             >
-              <span />
+              <div />
             </TransitionGroup>
           </VelocityTransitionGroup>
           <VelocityTransitionGroup
@@ -1863,9 +1863,9 @@ exports[`<AlbumsPage /> renders ABC search match 1`] = `
           >
             <TransitionGroup
               childFactory={[Function]}
-              component="span"
+              component="div"
             >
-              <span />
+              <div />
             </TransitionGroup>
           </VelocityTransitionGroup>
         </div>
@@ -2525,9 +2525,9 @@ exports[`<AlbumsPage /> renders Pop albums 1`] = `
           >
             <TransitionGroup
               childFactory={[Function]}
-              component="span"
+              component="div"
             >
-              <span />
+              <div />
             </TransitionGroup>
           </VelocityTransitionGroup>
           <VelocityTransitionGroup
@@ -2558,9 +2558,9 @@ exports[`<AlbumsPage /> renders Pop albums 1`] = `
           >
             <TransitionGroup
               childFactory={[Function]}
-              component="span"
+              component="div"
             >
-              <span />
+              <div />
             </TransitionGroup>
           </VelocityTransitionGroup>
         </div>
@@ -3174,9 +3174,9 @@ exports[`<AlbumsPage /> renders first page 1`] = `
           >
             <TransitionGroup
               childFactory={[Function]}
-              component="span"
+              component="div"
             >
-              <span />
+              <div />
             </TransitionGroup>
           </VelocityTransitionGroup>
           <VelocityTransitionGroup
@@ -3207,9 +3207,9 @@ exports[`<AlbumsPage /> renders first page 1`] = `
           >
             <TransitionGroup
               childFactory={[Function]}
-              component="span"
+              component="div"
             >
-              <span />
+              <div />
             </TransitionGroup>
           </VelocityTransitionGroup>
         </div>
@@ -3969,9 +3969,9 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
           >
             <TransitionGroup
               childFactory={[Function]}
-              component="span"
+              component="div"
             >
-              <span />
+              <div />
             </TransitionGroup>
           </VelocityTransitionGroup>
           <VelocityTransitionGroup
@@ -4002,9 +4002,9 @@ exports[`<AlbumsPage /> renders random albums 1`] = `
           >
             <TransitionGroup
               childFactory={[Function]}
-              component="span"
+              component="div"
             >
-              <span />
+              <div />
             </TransitionGroup>
           </VelocityTransitionGroup>
         </div>
@@ -4817,9 +4817,9 @@ exports[`<AlbumsPage /> renders second page 1`] = `
           >
             <TransitionGroup
               childFactory={[Function]}
-              component="span"
+              component="div"
             >
-              <span />
+              <div />
             </TransitionGroup>
           </VelocityTransitionGroup>
           <VelocityTransitionGroup
@@ -4850,9 +4850,9 @@ exports[`<AlbumsPage /> renders second page 1`] = `
           >
             <TransitionGroup
               childFactory={[Function]}
-              component="span"
+              component="div"
             >
-              <span />
+              <div />
             </TransitionGroup>
           </VelocityTransitionGroup>
         </div>
