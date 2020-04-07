@@ -1,8 +1,2 @@
 - Migrate from Bootstrap 3 to Bootstrap 4:
-    https://getbootstrap.com/docs/4.0/migration/
-    http://upgrade-bootstrap.bootply.com/
-    https://medium.com/@lukaszholeczek/migration-from-bootstrap-3-to-bootstrap-4-4ec63a1dd8b1
     https://react-bootstrap.github.io/migrating/
-    https://demo.bootstraptor.com/bootstrap4/
-    https://coreui.io/blog/2018/01/31/migration-from-bootstrap-3-to-bootstrap-4/
-    https://ingresso.github.io/ingresso-bootstrap/migration/
