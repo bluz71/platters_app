@@ -180,7 +180,7 @@ class AlbumsPage extends Component {
   applyParams (newParams) {
     if (
       _.isEqual(this.params, newParams) &&
-      !newParams.hasOwnProperty('random')
+      !Object.prototype.hasOwnProperty.call(newParams, 'random')
     ) {
       // Nothing to do, new params have not changed, just return.
       // Note, if random is set then ignore this opt-out since it will always
@@ -239,8 +239,10 @@ class AlbumsPage extends Component {
   renderHeader () {
     const count = this.state.pagination.total_count
     const albumsCount = numeral(count).format('0,0')
-    const genre = this.params.hasOwnProperty('genre') ? this.params.genre : ''
-    const year = this.params.hasOwnProperty('year')
+    const genre = Object.prototype.hasOwnProperty.call(this.params, 'genre')
+      ? this.params.genre
+      : ''
+    const year = Object.prototype.hasOwnProperty.call(this.params, 'year')
       ? ` from ${this.params.year}`
       : ''
 
@@ -261,7 +263,7 @@ class AlbumsPage extends Component {
     if (
       this.filtering ||
       this.searching ||
-      this.params.hasOwnProperty('random')
+      Object.prototype.hasOwnProperty.call(this.params, 'random')
     ) {
       return false
     } else {

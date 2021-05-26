@@ -94,9 +94,7 @@ class ArtistShowPage extends Component {
 
     // Disable scroll handling whilst records are being retrieved.
     window.onscroll = null
-    const commentsPageEndPoint = `${this.commentsEndPoint}?page=${
-      this.state.commentsPagination.next_page
-    }`
+    const commentsPageEndPoint = `${this.commentsEndPoint}?page=${this.state.commentsPagination.next_page}`
     this.waiting = true
     this.forceUpdate() // Render spinner
     this.getComments(commentsPageEndPoint)
@@ -279,9 +277,7 @@ class ArtistShowPage extends Component {
           </li>
           <li
             className={this.albumsSortByActivity(ARTIST_ALBUMS_SORT_BY.longest)}
-            onClick={() =>
-              this.handleAlbumsOrder(ARTIST_ALBUMS_SORT_BY.longest)
-            }
+            onClick={() => this.handleAlbumsOrder(ARTIST_ALBUMS_SORT_BY.longest)}
           >
             Longest
           </li>
@@ -377,6 +373,7 @@ class ArtistShowPage extends Component {
       </div>
     )
   }
+
   render () {
     this.pageProgress.start()
 
