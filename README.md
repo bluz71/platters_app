@@ -7,7 +7,7 @@ This application, Platters App, is an example web application developed using
 Build Status
 ------------
 
-[![Build Status](https://travis-ci.org/bluz71/platters_app.svg?branch=master)](https://travis-ci.org/bluz71/platters_app)
+![Build Status](https://github.com/bluz71/platters_app/actions/workflows/jest.yml/badge.svg)
 
 Core Technologies
 -----------------
